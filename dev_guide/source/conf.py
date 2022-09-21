@@ -80,7 +80,7 @@ html_theme_options = {
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 
-html_title = "Elastic Volume Service - API Reference"
+html_title = "Elastic Volume Service - Developer Guide"
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -91,7 +91,7 @@ html_static_path = ['_static']
 # -- Options for PDF output --------------------------------------------------
 latex_documents = [
 ('index',
-     'evs-api-ref.tex',
-     u'Elastic Volume Service - API Reference',
+     'evs-dev-guide.tex',
+     u'Elastic Volume Service - Developer Guide',
      u'OpenTelekomCloud', 'manual'),
 ]
