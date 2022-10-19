@@ -1,0 +1,110 @@
+:original_name: evs_04_2058.html
+
+.. _evs_04_2058:
+
+Reprotecting a Replication Consistency Group (Deprecated)
+=========================================================
+
+Function
+--------
+
+This API is used to reprotect a replication consistency group. After resources in a faulty AZ have been restored and functioned as DR resources, a reprotection can be performed to synchronize data in all EVS replication pairs of a replication consistency group.
+
+A reprotection can only be performed after the resources in the faulty primary AZ have been restored and can be used to synchronize data in all EVS replication pairs of a replication consistency group.
+
+.. note::
+
+   This API has been deprecated. To use this function, see `Storage Disaster Recovery Service API Reference <https://docs.otc.t-systems.com/en-us/api/sdrs/sdrs_01_0000.html>`__.
+
+Constraints
+-----------
+
+-  The replication consistency group failover is complete.
+-  The resources in the faulty AZ have been restored.
+-  The replication consistency group status is **failovered**.
+
+URI
+---
+
+-  URI format
+
+   POST /v2/{project_id}/os-vendor-replication-consistency-groups/{replication_consistency_group_id}/action
+
+-  Parameter description
+
+   +----------------------------------+-----------+--------------------------------------------------------+
+   | Parameter                        | Mandatory | Description                                            |
+   +==================================+===========+========================================================+
+   | project_id                       | Yes       | Specifies the project ID.                              |
+   +----------------------------------+-----------+--------------------------------------------------------+
+   | replication_consistency_group_id | Yes       | Specifies the ID of the replication consistency group. |
+   +----------------------------------+-----------+--------------------------------------------------------+
+
+Request
+-------
+
+-  Parameter description
+
+   +--------------------------------------------+-----------+--------+-----------------------------------------------------------------------------------------------------+
+   | Parameter                                  | Mandatory | Type   | Description                                                                                         |
+   +============================================+===========+========+=====================================================================================================+
+   | os-reprotect-replication-consistency-group | Yes       | object | The parameter value is null, indicating that the replication consistency group will be reprotected. |
+   +--------------------------------------------+-----------+--------+-----------------------------------------------------------------------------------------------------+
+
+-  Example request
+
+   .. code-block::
+
+      {
+          "os-reprotect-replication-consistency-group": null
+      }
+
+Response
+--------
+
+None
+
+Status Codes
+------------
+
+-  Normal
+
+   ============== =====================================
+   Returned Value Description
+   ============== =====================================
+   200            The server has processed the request.
+   ============== =====================================
+
+-  Abnormal
+
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | Returned Value                    | Description                                                                                |
+   +===================================+============================================================================================+
+   | 400 Bad Request                   | The server failed to process the request.                                                  |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | 401 Unauthorized                  | You must enter the username and password to access the requested page.                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | 403 Forbidden                     | You are forbidden to access the requested page.                                            |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | 404 Not Found                     | The requested page was not found.                                                          |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | 405 Method Not Allowed            | You are not allowed to use the method specified in the request.                            |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | 406 Not Acceptable                | The response generated by the server cannot be accepted by the client.                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | 407 Proxy Authentication Required | You must use the proxy server for authentication. Then, the request can be processed.      |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | 408 Request Timeout               | The request timed out.                                                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | 409 Conflict                      | The request cannot be processed due to a conflict.                                         |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | 500 Internal Server Error         | Failed to complete the request because of an internal service error.                       |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | 501 Not Implemented               | Failed to complete the request because the server does not support the requested function. |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | 502 Bad Gateway                   | Failed to complete the request because the server has received an invalid response.        |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | 503 Service Unavailable           | Failed to complete the request because the service is unavailable.                         |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
+   | 504 Gateway Timeout               | A gateway timeout error occurs.                                                            |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+
