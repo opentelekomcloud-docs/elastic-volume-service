@@ -25,7 +25,6 @@ a Disk Backup Vault and Configuring the Backup Policy
 
 #. (Optional) Select the disks you want to back up in the disk list. Selected disks will appear in the right area.
 
-   .. _evs_01_0110__en-us_topic_0157095235_fig204531717131710:
 
    .. figure:: /_static/images/en-us_image_0269609232.png
       :alt: **Figure 1** Selecting disks
@@ -62,4 +61,3 @@ a Disk Backup Vault and Configuring the Backup Policy
    You can associate disks to the new vault or create backups for disks. For details, see **Vault Management** in the *Cloud Backup and Recovery User Guide*.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-

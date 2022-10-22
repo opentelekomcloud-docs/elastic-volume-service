@@ -20,7 +20,6 @@ A capacity expansion operation includes the following steps:
 #. :ref:`Expand the disk capacity on the management console. <evs_01_0006__section87622024418>`
 #. :ref:`Log in to the server and extend the disk partition and file system. <evs_01_0006__section487311389414>`
 
-.. _evs_01_0006__fig76833489137:
 
 .. figure:: /_static/images/en-us_image_0228748662.png
    :alt: **Figure 1** Capacity expansion procedure

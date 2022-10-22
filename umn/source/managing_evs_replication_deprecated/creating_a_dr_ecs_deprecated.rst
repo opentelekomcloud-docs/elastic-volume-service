@@ -97,4 +97,3 @@ Procedure
       When the DR ECS is not stopped and its system disk is used to create an EVS replication pair, the DR ECS status will change to **REBUILDING**. In this state, you cannot stop the DR ECS, detach EVS disks from it, or expand its EVS disks.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-

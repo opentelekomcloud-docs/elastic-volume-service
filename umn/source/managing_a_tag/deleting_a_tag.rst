@@ -36,4 +36,3 @@ Procedure
    Return to the tag list. If the tag is no longer displayed in the tag list, the deletion is successful.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-
