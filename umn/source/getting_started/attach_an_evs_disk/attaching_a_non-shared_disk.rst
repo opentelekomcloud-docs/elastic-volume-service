@@ -50,4 +50,3 @@ Attaching the Disk on the EVS Console
    After the disk has been attached to a server, the disk can be used only after you have initialized it. For details, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-

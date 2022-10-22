@@ -60,8 +60,5 @@ Procedure
 #. Take note of the DR ECS information. For details, see :ref:`4 <evs_01_0025__li23677833165924>` to :ref:`5 <evs_01_0025__li3726148311399>`.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-
 .. |image2| image:: /_static/images/en-us_image_0238263421.jpg
-
 .. |image3| image:: /_static/images/en-us_image_0238263421.jpg
-

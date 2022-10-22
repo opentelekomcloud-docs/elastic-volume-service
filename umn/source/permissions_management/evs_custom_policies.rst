@@ -11,7 +11,6 @@ You can create custom policies in either of the following ways:
 
 -  Visual editor: Select cloud services, actions, resources, and request conditions. This does not require knowledge of policy syntax.
 
-   .. _evs_01_0090__fig12962142615110:
 
    .. figure:: /_static/images/en-us_image_0000001242362390.jpg
       :alt: **Figure 1** Create Custom Policy
