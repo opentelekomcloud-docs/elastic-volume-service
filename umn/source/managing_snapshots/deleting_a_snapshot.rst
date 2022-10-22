@@ -40,6 +40,4 @@ Procedure
    If the snapshot is no longer displayed in the snapshot list, the snapshot is deleted successfully.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-
 .. |image2| image:: /_static/images/en-us_image_0238263087.png
-

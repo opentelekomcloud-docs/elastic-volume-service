@@ -58,4 +58,3 @@ Procedure
    -  In Linux, see :ref:`Partition and File System Extension Preparations (Linux) <evs_01_0035>`.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-

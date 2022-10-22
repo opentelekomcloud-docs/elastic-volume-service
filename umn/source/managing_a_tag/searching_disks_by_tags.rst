@@ -38,6 +38,4 @@ Procedure
    Disks owning the added tags are displayed in the list, and the search is complete.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-
 .. |image2| image:: /_static/images/en-us_image_0238263232.png
-

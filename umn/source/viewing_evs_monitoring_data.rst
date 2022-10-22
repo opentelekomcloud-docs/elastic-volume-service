@@ -73,4 +73,3 @@ Viewing Monitoring Data
    For more information about Cloud Eye, see the *Cloud Eye User Guide*.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-

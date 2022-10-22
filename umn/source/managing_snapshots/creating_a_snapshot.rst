@@ -93,6 +93,4 @@ Creating a Snapshot on the Snapshots Page
    When the snapshot status changes to **Available**, the snapshot has been created.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-
 .. |image2| image:: /_static/images/en-us_image_0237893718.png
-

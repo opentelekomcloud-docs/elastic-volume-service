@@ -49,4 +49,3 @@ Procedure
    When the disk status changes to **Available**, the disk is successfully created.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-

@@ -79,7 +79,6 @@ In this section, Windows Server 2008 R2 Enterprise 64bit is used as an example.
 
    The sizes and available spaces of the volumes on the current disk are displayed in the middle pane.
 
-   .. _evs_faq_0053__fig174673391438:
 
    .. figure:: /_static/images/en-us_image_0187937488.png
       :alt: **Figure 1** Disk Management page
@@ -102,7 +101,6 @@ In this section, Windows Server 2016 Standard 64bit is used as an example.
 
    The **Server Manager** window is displayed.
 
-   .. _evs_faq_0053__fig0450125511307:
 
    .. figure:: /_static/images/en-us_image_0187940206.png
       :alt: **Figure 2** Server Manager page
@@ -116,7 +114,6 @@ In this section, Windows Server 2016 Standard 64bit is used as an example.
 
    In the middle pane, you can view the sizes and available spaces of the volumes on the disk.
 
-   .. _evs_faq_0053__fig11761034193212:
 
    .. figure:: /_static/images/en-us_image_0187940368.png
       :alt: **Figure 3** Disk list page

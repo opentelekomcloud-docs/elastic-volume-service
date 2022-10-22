@@ -12,7 +12,6 @@ Elastic Volume Service (EVS) offers scalable block storage for cloud servers. Wi
 
 EVS disks are sometimes just referred to as disks in this document.
 
-.. _en-us_topic_0014580741__fig1392425915011:
 
 .. figure:: /_static/images/en-us_image_0205523160.png
    :alt: **Figure 1** EVS architecture

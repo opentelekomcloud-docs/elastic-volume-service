@@ -36,4 +36,3 @@ Procedure
 #. The snapshot list is displayed. After the snapshot status changes from **Rolling back** to **Available**, the data rollback is successful.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-

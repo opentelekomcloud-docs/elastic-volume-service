@@ -56,4 +56,3 @@ Procedure
    The **Tags** tab is displayed, and you can view the newly added tag.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-

@@ -144,12 +144,7 @@ Detaching a Shared Disk
    If the shared EVS disk has been attached to multiple servers and needs to be detached from only some of its servers, the disk status will go back to **In-use** after the disk has been detached from the target servers. The disk status changes to **Available** only when it has been detached from all the servers.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-
 .. |image2| image:: /_static/images/en-us_image_0238263087.png
-
 .. |image3| image:: /_static/images/en-us_image_0237893718.png
-
 .. |image4| image:: /_static/images/en-us_image_0238263087.png
-
 .. |image5| image:: /_static/images/en-us_image_0238263087.png
-
