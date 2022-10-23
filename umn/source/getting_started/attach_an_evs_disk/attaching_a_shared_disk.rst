@@ -42,7 +42,6 @@ Attaching the Disk on the EVS Console
 
    Shared disks support batch attachment so that you can attach a shared disk to multiple servers at a time. The left area in the **Attach Disk** dialog box shows the server list. After you select the target servers, the selected servers will be displayed in the right area.
 
-   .. _evs_01_0037__fig24573759111041:
 
    .. figure:: /_static/images/en-us_image_0152639916.png
       :alt: **Figure 1** Attach Disk
@@ -59,4 +58,3 @@ Attaching the Disk on the EVS Console
       If you simply attach a shared disk to multiple servers, files cannot be shared between the servers as shared disks do not have the cluster capability. Therefore, build a shared file system or deploy a cluster management system to share files between servers.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-

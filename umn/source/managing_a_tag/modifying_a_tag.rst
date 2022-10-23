@@ -36,4 +36,3 @@ Procedure
    Return to the tag list. If the tag value is changed, the modification is complete.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-

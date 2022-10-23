@@ -59,4 +59,3 @@ Related Operations
 For more detachment FAQs, see :ref:`Detachment <evs_01_0079>`.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-

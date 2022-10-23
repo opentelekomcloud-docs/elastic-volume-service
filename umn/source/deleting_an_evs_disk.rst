@@ -36,6 +36,4 @@ Procedure
 #. In the displayed dialog box, confirm the information and click **Yes**.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-
 .. |image2| image:: /_static/images/en-us_image_0238263087.png
-

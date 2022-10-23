@@ -34,7 +34,6 @@ Procedure
 
    The **Server Manager** window is displayed.
 
-   .. _evs_01_0045__fig128445136715:
 
    .. figure:: /_static/images/en-us_image_0132368216.png
       :alt: **Figure 1** Server Manager
@@ -46,7 +45,6 @@ Procedure
 
    The **Computer Management** window is displayed.
 
-   .. _evs_01_0045__fig11577433192617:
 
    .. figure:: /_static/images/en-us_image_0175083503.png
       :alt: **Figure 2** Computer Management
@@ -58,7 +56,6 @@ Procedure
 
    Disks are displayed in the right pane. If there is a disk that is not initialized, the system will prompt you with the **Initialize Disk** dialog box.
 
-   .. _evs_01_0045__fig11358119588:
 
    .. figure:: /_static/images/en-us_image_0175083504.png
       :alt: **Figure 3** Disk list
@@ -70,7 +67,6 @@ Procedure
 
    The **Computer Management** window is displayed.
 
-   .. _evs_01_0045__fig68332918241:
 
    .. figure:: /_static/images/en-us_image_0175083507.png
       :alt: **Figure 4** Computer Management (Windows Server 2016)
@@ -88,7 +84,6 @@ Procedure
 
    The **New Simple Volume Wizard** window is displayed.
 
-   .. _evs_01_0045__fig19509202633615:
 
    .. figure:: /_static/images/en-us_image_0175083508.png
       :alt: **Figure 5** New Simple Volume Wizard (Windows Server 2016)
@@ -100,7 +95,6 @@ Procedure
 
    The **Specify Volume Size** page is displayed.
 
-   .. _evs_01_0045__fig209619215384:
 
    .. figure:: /_static/images/en-us_image_0175083509.png
       :alt: **Figure 6** Specify Volume Size (Windows Server 2016)
@@ -112,7 +106,6 @@ Procedure
 
    The **Assign Drive Letter or Path** page is displayed.
 
-   .. _evs_01_0045__fig631143204114:
 
    .. figure:: /_static/images/en-us_image_0175083510.png
       :alt: **Figure 7** Assign Driver Letter or Path (Windows Server 2016)
@@ -124,7 +117,6 @@ Procedure
 
    The **Format Partition** page is displayed.
 
-   .. _evs_01_0045__fig1400313143015:
 
    .. figure:: /_static/images/en-us_image_0175083511.png
       :alt: **Figure 8** Format Partition (Windows Server 2016)
@@ -136,7 +128,6 @@ Procedure
 
    The **Completing the New Simple Volume Wizard** page is displayed.
 
-   .. _evs_01_0045__fig380162213463:
 
    .. figure:: /_static/images/en-us_image_0175083512.png
       :alt: **Figure 9** Completing the New Simple Volume Wizard (Windows Server 2016)
@@ -164,7 +155,6 @@ Procedure
 
    If New Volume (D:) appears, the disk is successfully initialized and no further action is required.
 
-   .. _evs_01_0045__fig4958111374510:
 
    .. figure:: /_static/images/en-us_image_0175083515.png
       :alt: **Figure 11** This PC (Windows Server 2016)
@@ -173,4 +163,3 @@ Procedure
       **Figure 11** This PC (Windows Server 2016)
 
 .. |image1| image:: /_static/images/en-us_image_0238263336.png
-

@@ -209,4 +209,3 @@ The following operations are for reference only. For details, see **Assigning a 
       **service network restart**
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-
