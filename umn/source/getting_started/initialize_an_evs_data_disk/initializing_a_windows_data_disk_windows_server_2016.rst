@@ -38,7 +38,6 @@ Procedure
    .. figure:: /_static/images/en-us_image_0132368216.png
       :alt: **Figure 1** Server Manager
 
-
       **Figure 1** Server Manager
 
 #. In the upper right corner, choose **Tools** > **Computer Management**.
@@ -48,7 +47,6 @@ Procedure
 
    .. figure:: /_static/images/en-us_image_0175083503.png
       :alt: **Figure 2** Computer Management
-
 
       **Figure 2** Computer Management
 
@@ -60,7 +58,6 @@ Procedure
    .. figure:: /_static/images/en-us_image_0175083504.png
       :alt: **Figure 3** Disk list
 
-
       **Figure 3** Disk list
 
 #. In the **Initialize Disk** dialog box, the to-be-initialized disk is selected. Select a disk partition style and click **OK**. In this example, **GPT (GUID Partition Table)** is selected.
@@ -70,7 +67,6 @@ Procedure
 
    .. figure:: /_static/images/en-us_image_0175083507.png
       :alt: **Figure 4** Computer Management (Windows Server 2016)
-
 
       **Figure 4** Computer Management (Windows Server 2016)
 
@@ -88,7 +84,6 @@ Procedure
    .. figure:: /_static/images/en-us_image_0175083508.png
       :alt: **Figure 5** New Simple Volume Wizard (Windows Server 2016)
 
-
       **Figure 5** New Simple Volume Wizard (Windows Server 2016)
 
 #. Follow the prompts and click **Next**.
@@ -98,7 +93,6 @@ Procedure
 
    .. figure:: /_static/images/en-us_image_0175083509.png
       :alt: **Figure 6** Specify Volume Size (Windows Server 2016)
-
 
       **Figure 6** Specify Volume Size (Windows Server 2016)
 
@@ -110,7 +104,6 @@ Procedure
    .. figure:: /_static/images/en-us_image_0175083510.png
       :alt: **Figure 7** Assign Driver Letter or Path (Windows Server 2016)
 
-
       **Figure 7** Assign Driver Letter or Path (Windows Server 2016)
 
 #. Assign a drive letter or path to your partition and click **Next**. The system assigns drive letter D by default. In this example, the default setting is used.
@@ -121,7 +114,6 @@ Procedure
    .. figure:: /_static/images/en-us_image_0175083511.png
       :alt: **Figure 8** Format Partition (Windows Server 2016)
 
-
       **Figure 8** Format Partition (Windows Server 2016)
 
 #. Specify format settings and click **Next**. The system selects the NTFS file system by default. You can specify the file system type as required. In this example, the default setting is used.
@@ -131,7 +123,6 @@ Procedure
 
    .. figure:: /_static/images/en-us_image_0175083512.png
       :alt: **Figure 9** Completing the New Simple Volume Wizard (Windows Server 2016)
-
 
       **Figure 9** Completing the New Simple Volume Wizard (Windows Server 2016)
 
@@ -148,7 +139,6 @@ Procedure
    .. figure:: /_static/images/en-us_image_0175083513.png
       :alt: **Figure 10** Disk initialization succeeded (Windows Server 2016)
 
-
       **Figure 10** Disk initialization succeeded (Windows Server 2016)
 
 #. After the volume is created, click |image1| on the task bar and check whether a new volume appears in **This PC**. In this example, New Volume (D:) is the new volume.
@@ -158,7 +148,6 @@ Procedure
 
    .. figure:: /_static/images/en-us_image_0175083515.png
       :alt: **Figure 11** This PC (Windows Server 2016)
-
 
       **Figure 11** This PC (Windows Server 2016)
 

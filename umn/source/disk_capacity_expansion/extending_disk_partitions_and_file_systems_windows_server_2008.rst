@@ -58,7 +58,6 @@ In this example, the system disk has 50 GB originally, and 22 GB is added on the
    .. figure:: /_static/images/en-us_image_0090103571.png
       :alt: **Figure 1** Disk Management (system disk)
 
-
       **Figure 1** Disk Management (system disk)
 
    .. note::
@@ -73,7 +72,6 @@ In this example, the system disk has 50 GB originally, and 22 GB is added on the
    .. figure:: /_static/images/en-us_image_0044524716.png
       :alt: **Figure 2** Choosing **Extend Volume**
 
-
       **Figure 2** Choosing **Extend Volume**
 
 #. On the displayed **Extend Volume Wizard** window, click **Next**.
@@ -82,7 +80,6 @@ In this example, the system disk has 50 GB originally, and 22 GB is added on the
    .. figure:: /_static/images/en-us_image_0044524701.png
       :alt: **Figure 3** Extend Volume Wizard
 
-
       **Figure 3** Extend Volume Wizard
 
 #. In the text box to the right of **Select the amount of space in MB**, enter the amount of the additional space and click **Next**.
@@ -90,7 +87,6 @@ In this example, the system disk has 50 GB originally, and 22 GB is added on the
 
    .. figure:: /_static/images/en-us_image_0044524678.png
       :alt: **Figure 4** Selecting space
-
 
       **Figure 4** Selecting space
 
@@ -101,7 +97,6 @@ In this example, the system disk has 50 GB originally, and 22 GB is added on the
 
    .. figure:: /_static/images/en-us_image_0044524671.png
       :alt: **Figure 5** Capacity expansion succeeded
-
 
       **Figure 5** Capacity expansion succeeded
 
@@ -124,7 +119,6 @@ In this example, the system disk has 40 GB originally, and 60 GB is added on the
    .. figure:: /_static/images/en-us_image_0169144806.png
       :alt: **Figure 6** Refresh (system disk)
 
-
       **Figure 6** Refresh (system disk)
 
 #. If you cannot view the additional space, right-click **Disk Management** and choose **Refresh** from the shortcut menu.
@@ -135,7 +129,6 @@ In this example, the system disk has 40 GB originally, and 60 GB is added on the
    .. figure:: /_static/images/en-us_image_0169144807.png
       :alt: **Figure 7** Unallocated disk space (system disk)
 
-
       **Figure 7** Unallocated disk space (system disk)
 
 #. In the **Unallocated** area of **Disk 0**, right-click the blank area and choose **New Simple Volume**.
@@ -143,7 +136,6 @@ In this example, the system disk has 40 GB originally, and 60 GB is added on the
 
    .. figure:: /_static/images/en-us_image_0169144808.png
       :alt: **Figure 8** New Simple Volume (system disk)
-
 
       **Figure 8** New Simple Volume (system disk)
 
@@ -153,7 +145,6 @@ In this example, the system disk has 40 GB originally, and 60 GB is added on the
    .. figure:: /_static/images/en-us_image_0169144809.png
       :alt: **Figure 9** New Simple Volume Wizard (system disk)
 
-
       **Figure 9** New Simple Volume Wizard (system disk)
 
 #. On the displayed **Specify Volume Size** page, set **Simple volume size in MB** and click **Next**. In this example, the default size is used.
@@ -161,7 +152,6 @@ In this example, the system disk has 40 GB originally, and 60 GB is added on the
 
    .. figure:: /_static/images/en-us_image_0169144810.png
       :alt: **Figure 10** Specify Volume Size (system disk)
-
 
       **Figure 10** Specify Volume Size (system disk)
 
@@ -171,7 +161,6 @@ In this example, the system disk has 40 GB originally, and 60 GB is added on the
    .. figure:: /_static/images/en-us_image_0169144811.png
       :alt: **Figure 11** Assign Driver Letter or Path (system disk)
 
-
       **Figure 11** Assign Driver Letter or Path (system disk)
 
 #. On the displayed **Format Partition** page, click **Format this volume with the following settings**, set parameters based on the requirements, and select **Perform a quick format**. Then, click **Next**.
@@ -179,7 +168,6 @@ In this example, the system disk has 40 GB originally, and 60 GB is added on the
 
    .. figure:: /_static/images/en-us_image_0169144812.png
       :alt: **Figure 12** Format Partition (system disk)
-
 
       **Figure 12** Format Partition (system disk)
 
@@ -191,13 +179,11 @@ In this example, the system disk has 40 GB originally, and 60 GB is added on the
    .. figure:: /_static/images/en-us_image_0169144813.png
       :alt: **Figure 13** Completing the New Simple Volume Wizard (new volume F:)
 
-
       **Figure 13** Completing the New Simple Volume Wizard (new volume F:)
 
 
    .. figure:: /_static/images/en-us_image_0169144814.png
       :alt: **Figure 14** New Volume (F:)
-
 
       **Figure 14** New Volume (F:)
 
@@ -220,7 +206,6 @@ In this example, the data disk has 100 GB originally, and 50 GB is added on the 
    .. figure:: /_static/images/en-us_image_0125151939.png
       :alt: **Figure 15** Disk Management (data disk)
 
-
       **Figure 15** Disk Management (data disk)
 
    .. note::
@@ -235,7 +220,6 @@ In this example, the data disk has 100 GB originally, and 50 GB is added on the 
    .. figure:: /_static/images/en-us_image_0044524713.png
       :alt: **Figure 16** Choosing Extend Volume (Windows Server 2008)
 
-
       **Figure 16** Choosing Extend Volume (Windows Server 2008)
 
 #. On the displayed **Extend Volume Wizard** window, click **Next**.
@@ -244,7 +228,6 @@ In this example, the data disk has 100 GB originally, and 50 GB is added on the 
    .. figure:: /_static/images/en-us_image_0044524709.png
       :alt: **Figure 17** Extend Volume Wizard (Windows Server 2008)
 
-
       **Figure 17** Extend Volume Wizard (Windows Server 2008)
 
 #. In the text box to the right of **Select the amount of space in MB**, enter the amount of the additional space and click **Next**.
@@ -252,7 +235,6 @@ In this example, the data disk has 100 GB originally, and 50 GB is added on the 
 
    .. figure:: /_static/images/en-us_image_0044524739.png
       :alt: **Figure 18** Selecting space (Windows Server 2008)
-
 
       **Figure 18** Selecting space (Windows Server 2008)
 
@@ -263,7 +245,6 @@ In this example, the data disk has 100 GB originally, and 50 GB is added on the 
 
    .. figure:: /_static/images/en-us_image_0044524683.png
       :alt: **Figure 19** Capacity expansion succeeded (Windows Server 2008)
-
 
       **Figure 19** Capacity expansion succeeded (Windows Server 2008)
 
@@ -286,7 +267,6 @@ In this example, the data disk has 40 GB originally, and 60 GB is added on the m
    .. figure:: /_static/images/en-us_image_0169138641.png
       :alt: **Figure 20** Refresh (data disk)
 
-
       **Figure 20** Refresh (data disk)
 
 #. If you cannot view the additional space, right-click **Disk Management** and choose **Refresh** from the shortcut menu.
@@ -297,7 +277,6 @@ In this example, the data disk has 40 GB originally, and 60 GB is added on the m
    .. figure:: /_static/images/en-us_image_0169139666.png
       :alt: **Figure 21** Unallocated disk space (data disk)
 
-
       **Figure 21** Unallocated disk space (data disk)
 
 #. In the **Unallocated** area of **Disk 1**, right-click the blank area and choose **New Simple Volume**.
@@ -305,7 +284,6 @@ In this example, the data disk has 40 GB originally, and 60 GB is added on the m
 
    .. figure:: /_static/images/en-us_image_0169140345.png
       :alt: **Figure 22** New Simple Volume (data disk)
-
 
       **Figure 22** New Simple Volume (data disk)
 
@@ -315,7 +293,6 @@ In this example, the data disk has 40 GB originally, and 60 GB is added on the m
    .. figure:: /_static/images/en-us_image_0169137709.png
       :alt: **Figure 23** New Simple Volume Wizard (data disk)
 
-
       **Figure 23** New Simple Volume Wizard (data disk)
 
 #. On the displayed **Specify Volume Size** page, set **Simple volume size in MB** and click **Next**. In this example, the default size is used.
@@ -323,7 +300,6 @@ In this example, the data disk has 40 GB originally, and 60 GB is added on the m
 
    .. figure:: /_static/images/en-us_image_0169137710.png
       :alt: **Figure 24** Specify Volume Size (data disk)
-
 
       **Figure 24** Specify Volume Size (data disk)
 
@@ -333,7 +309,6 @@ In this example, the data disk has 40 GB originally, and 60 GB is added on the m
    .. figure:: /_static/images/en-us_image_0169142103.png
       :alt: **Figure 25** Assign Driver Letter or Path (data disk)
 
-
       **Figure 25** Assign Driver Letter or Path (data disk)
 
 #. On the displayed **Format Partition** page, click **Format this volume with the following settings**, set parameters based on the requirements, and select **Perform a quick format**. Then, click **Next**.
@@ -341,7 +316,6 @@ In this example, the data disk has 40 GB originally, and 60 GB is added on the m
 
    .. figure:: /_static/images/en-us_image_0169142386.png
       :alt: **Figure 26** Format Partition (data disk)
-
 
       **Figure 26** Format Partition (data disk)
 
@@ -353,12 +327,10 @@ In this example, the data disk has 40 GB originally, and 60 GB is added on the m
    .. figure:: /_static/images/en-us_image_0169142986.png
       :alt: **Figure 27** Completing the New Simple Volume Wizard (new volume E:)
 
-
       **Figure 27** Completing the New Simple Volume Wizard (new volume E:)
 
 
    .. figure:: /_static/images/en-us_image_0169137711.png
       :alt: **Figure 28** New Volume (E:)
-
 
       **Figure 28** New Volume (E:)

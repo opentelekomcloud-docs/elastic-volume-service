@@ -46,7 +46,6 @@ Procedure
    .. figure:: /_static/images/en-us_image_0152756082.png
       :alt: **Figure 1** Detach Disk (system disk)
 
-
       **Figure 1** Detach Disk (system disk)
 
 #. Click **Yes** to detach the disk.

@@ -12,5 +12,4 @@ Basic Operation Procedure
 .. figure:: /_static/images/en-us_image_0129867556.png
    :alt: **Figure 1** Basic operation procedure
 
-
    **Figure 1** Basic operation procedure

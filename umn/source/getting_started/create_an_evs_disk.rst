@@ -35,7 +35,6 @@ Procedure
       .. figure:: /_static/images/en-us_image_0154391346.png
          :alt: **Figure 1** Non-encrypted disks
 
-
          **Figure 1** Non-encrypted disks
 
    -  :ref:`Figure 2 <en-us_topic_0021738346__fig1523406103916>` shows the parameter setting of encrypted disks.
@@ -44,7 +43,6 @@ Procedure
 
       .. figure:: /_static/images/en-us_image_0152701021.png
          :alt: **Figure 2** Encrypted disks
-
 
          **Figure 2** Encrypted disks
 

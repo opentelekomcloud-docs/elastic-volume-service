@@ -29,7 +29,6 @@ a Disk Backup Vault and Configuring the Backup Policy
    .. figure:: /_static/images/en-us_image_0269609232.png
       :alt: **Figure 1** Selecting disks
 
-
       **Figure 1** Selecting disks
 
    .. note::
