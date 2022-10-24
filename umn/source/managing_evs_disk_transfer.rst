@@ -36,7 +36,6 @@ The following example shows you how to transfer an EVS disk from account A to ac
 .. figure:: /_static/images/en-us_image_0000001119238510.png
    :alt: **Figure 1** EVS disk transfer process
 
-
    **Figure 1** EVS disk transfer process
 
 #. User A creates the transfer. For details, see "Creating a Disk Transfer" in the *Elastic Volume Service API Reference*.

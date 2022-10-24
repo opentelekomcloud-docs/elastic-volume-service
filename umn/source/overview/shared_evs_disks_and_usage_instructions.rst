@@ -20,7 +20,6 @@ A shared EVS disk can be attached to a maximum of 16 servers. Servers that EVS s
 .. figure:: /_static/images/en-us_image_0197136031.png
    :alt: **Figure 1** Application scenario of shared EVS disks
 
-
    **Figure 1** Application scenario of shared EVS disks
 
 Usage Precautions

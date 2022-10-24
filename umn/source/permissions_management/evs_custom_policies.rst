@@ -15,7 +15,6 @@ You can create custom policies in either of the following ways:
    .. figure:: /_static/images/en-us_image_0000001242362390.jpg
       :alt: **Figure 1** Create Custom Policy
 
-
       **Figure 1** Create Custom Policy
 
 -  JSON: Edit JSON policies from scratch or based on an existing policy.

@@ -57,7 +57,6 @@ Detaching a Non-shared Disk
          .. figure:: /_static/images/en-us_image_0163801956.png
             :alt: **Figure 1** Detach Disk
 
-
             **Figure 1** Detach Disk
 
       d. Click **Yes** to detach the disk.
@@ -72,7 +71,6 @@ Detaching a Non-shared Disk
 
          .. figure:: /_static/images/en-us_image_0152754019.png
             :alt: **Figure 2** Detach Disk dialog box
-
 
             **Figure 2** Detach Disk dialog box
 
@@ -114,7 +112,6 @@ Detaching a Shared Disk
          .. figure:: /_static/images/en-us_image_0163801385.png
             :alt: **Figure 3** Detaching a shared disk
 
-
             **Figure 3** Detaching a shared disk
 
       d. Click **Yes** to detach the disk.
@@ -129,7 +126,6 @@ Detaching a Shared Disk
 
          .. figure:: /_static/images/en-us_image_0152754508.png
             :alt: **Figure 4** Detaching a shared disk dialog box
-
 
             **Figure 4** Detaching a shared disk dialog box
 
