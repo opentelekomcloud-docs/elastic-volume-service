@@ -605,7 +605,7 @@ During an expansion, the additional space is added to the end of the disk. There
 
 #. Perform the following operations based on the file system of the disk:
 
-   -  For the **ext**\ *\** file system
+   -  For the **ext**\ ``*`` file system
 
       a. Run the following command to check the correctness of the file system on the partition:
 
