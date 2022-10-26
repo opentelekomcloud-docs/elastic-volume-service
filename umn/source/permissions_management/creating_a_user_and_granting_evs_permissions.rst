@@ -28,7 +28,6 @@ Process Flow
 .. figure:: /_static/images/en-us_image_0171882862.png
    :alt: **Figure 1** Process for granting EVS permissions
 
-
    **Figure 1** Process for granting EVS permissions
 
 #. .. _evs_01_0089__li10176121316284:

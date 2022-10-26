@@ -15,7 +15,6 @@ Windows data disk
 .. figure:: /_static/images/en-us_image_0238302626.png
    :alt: **Figure 1** Volume (D:) appears
 
-
    **Figure 1** Volume (D:) appears
 
 **Solution**: New data disks are not formatted and partitioned by default. Only formatted and partitioned drives show up in **This PC**. You must manually initialize the disk before it can be viewed here.

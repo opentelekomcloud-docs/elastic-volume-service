@@ -38,7 +38,6 @@ Attaching the Disk on the EVS Console
    .. figure:: /_static/images/en-us_image_0133519241.png
       :alt: **Figure 1** Attach Disk dialog box
 
-
       **Figure 1** Attach Disk dialog box
 
 #. Select the server and then select a device name from the drop-down list. Ensure that the disk and server are in the same AZ.

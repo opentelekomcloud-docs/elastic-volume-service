@@ -12,7 +12,6 @@ EVS and Other Services
 .. figure:: /_static/images/en-us_image_0139105429.png
    :alt: **Figure 1** Relationships between EVS and other services
 
-
    **Figure 1** Relationships between EVS and other services
 
 -  ECS: EVS disks can be attached to ECSs and used as scalable block storage devices.

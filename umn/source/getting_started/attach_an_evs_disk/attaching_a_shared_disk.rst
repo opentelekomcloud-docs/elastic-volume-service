@@ -46,7 +46,6 @@ Attaching the Disk on the EVS Console
    .. figure:: /_static/images/en-us_image_0152639916.png
       :alt: **Figure 1** Attach Disk
 
-
       **Figure 1** Attach Disk
 
 #. Select the target servers and then select a device name from the drop-down list for each server you selected. Ensure that the disk and servers are in the same AZ.

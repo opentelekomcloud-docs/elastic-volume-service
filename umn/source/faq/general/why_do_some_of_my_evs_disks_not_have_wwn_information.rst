@@ -18,7 +18,6 @@ You can view the WWN of a SCSI EVS disk on the management console. The details a
    .. figure:: /_static/images/en-us_image_0107917672.png
       :alt: **Figure 1** Queried WWN information
 
-
       **Figure 1** Queried WWN information
 
 -  If the SCSI EVS disk was created before the WWN feature rollout, the disk WWN will fail to be obtained.
@@ -29,6 +28,5 @@ You can view the WWN of a SCSI EVS disk on the management console. The details a
 
    .. figure:: /_static/images/en-us_image_0107919973.png
       :alt: **Figure 2** No WWN information
-
 
       **Figure 2** No WWN information

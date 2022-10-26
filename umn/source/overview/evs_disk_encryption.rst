@@ -68,7 +68,6 @@ Application Scenarios of EVS Disk Encryption
 .. figure:: /_static/images/en-us_image_0205531351.png
    :alt: **Figure 1** User relationships
 
-
    **Figure 1** User relationships
 
 -  If the security administrator uses the encryption function for the first time ever, the operation process is as follows:

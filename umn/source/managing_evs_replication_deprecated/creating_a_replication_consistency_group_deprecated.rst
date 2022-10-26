@@ -17,7 +17,6 @@ A replication consistency group is composed of EVS replication pairs from a grou
 .. figure:: /_static/images/en-us_image_0094231725.png
    :alt: **Figure 1** Relationship between EVS replication pairs and replication consistency groups
 
-
    **Figure 1** Relationship between EVS replication pairs and replication consistency groups
 
 Existing EVS replication pairs can be added to a replication consistency group upon the group creation. To add EVS replication pairs to or remove them from a replication consistency group after the group creation, see :ref:`Updating a Replication Consistency Group (Deprecated) <evs_01_0029>`.

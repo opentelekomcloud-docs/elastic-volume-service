@@ -16,7 +16,6 @@ EVS disks are sometimes just referred to as disks in this document.
 .. figure:: /_static/images/en-us_image_0205523160.png
    :alt: **Figure 1** EVS architecture
 
-
    **Figure 1** EVS architecture
 
 EVS Advantages
