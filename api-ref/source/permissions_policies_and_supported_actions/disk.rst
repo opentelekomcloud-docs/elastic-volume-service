@@ -9,7 +9,7 @@ This topic describes only the authorization information of EVS v2 APIs. For the 
 
 For example, the v2 API for creating disks is POST /v2/{project_id}/cloudvolumes, and the v3 API for creating disks is POST /v3/{project_id}/cloudvolumes. The authorization information of both APIs is the same.
 
-In the following tables, Y indicates that the item is supported, and × indicates that the item is not supported.
+In the following tables, Y indicates that the item is supported, and x indicates that the item is not supported.
 
 +---------------------------------------------------------------+------------------------------------------------------------------+-------------------------------------+-----------------+
 | Permission                                                    | API                                                              | Action                              | IAM Project     |
