@@ -93,7 +93,7 @@ html_static_path = ['_static']
 
 # -- Options for PDF output --------------------------------------------------
 latex_documents = [
-('index',
+    ('index',
      'evs-dev-guide.tex',
      u'Elastic Volume Service - Developer Guide',
      u'OpenTelekomCloud', 'manual'),
