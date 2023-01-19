@@ -212,49 +212,68 @@ Procedure
 
    -  Example request
 
-      GET /v2/9c53a566cb3443ab910cf0daebca90c4/backups
+      GET /v3/{project_id}/backups
 
    -  Example response
 
       .. code-block::
 
          {
-             "backups": [
-                 {
-                     "id": "1d1139d8-8989-49d3-8aa1-83eb691e6db2",
-                     "links": [
-                         {
-                             "href": "http://192.168.82.222:8776/v2/b23b579f08c84228b9b4673c46f0c442/backups/1d1139d8-8989-49d3-8aa1-83eb691e6db2",
-                             "rel": "self"
-                         },
-                         {
-                             "href": "http://192.168.82.222:8776/b23b579f08c84228b9b4673c46f0c442/backups/1d1139d8-8989-49d3-8aa1-83eb691e6db2",
-                             "rel": "bookmark"
-                         }
-                     ],
-                     "name": null
-                 },
-                 {
-                     "id": "b3cf7a16-decc-4beb-8077-682737d94a58",
-                     "links": [
-                         {
-                             "href": "http://192.168.82.222:8776/v2/b23b579f08c84228b9b4673c46f0c442/backups/b3cf7a16-decc-4beb-8077-682737d94a58",
-                             "rel": "self"
-                         },
-                         {
-                             "href": "http://192.168.82.222:8776/b23b579f08c84228b9b4673c46f0c442/backups/b3cf7a16-decc-4beb-8077-682737d94a58",
-                             "rel": "bookmark"
-                         }
-                     ],
-                     "name": null
-                 }
-             ],
-             "backups_links": [
-                 {
-                     "href": "http://192.168.82.222:8776/b23b579f08c84228b9b4673c46f0c442/backups?limit=1&offset=1&marker=b3cf7a16-decc-4beb-8077-682737d94a58",
-                     "rel": "next"
-                 }
-             ]
+           "count" : 2,
+           "backups" : [ {
+             "provider_id" : "0daac4c5-6707-4851-97ba-169e36266b66",
+             "checkpoint_id" : "1fced58b-2a31-4851-bcbb-96216f83ce99",
+             "updated_at" : "2020-02-21T07:07:25.113761",
+             "vault_id" : "cca85ea5-00a4-418d-9222-bd83985bc515",
+             "id" : "b1c4afd9-e7a6-4888-9010-c2bac3aa7910",
+             "resource_az" : "br-iaas-odin1a",
+             "image_type" : "backup",
+             "resource_id" : "1a503932-ee8f-4dd5-8248-8dfb57e584c5",
+             "resource_size" : 40,
+             "children" : [ ],
+             "extend_info" : {
+               "auto_trigger" : true,
+               "supported_restore_mode" : "backup",
+               "contain_system_disk" : true,
+               "support_lld" : true,
+               "system_disk" : false
+             },
+             "project_id" : "0605767b5780d5762fc5c0118072a564",
+             "status" : "available",
+             "resource_name" : "test001-02",
+             "description" : "",
+             "expired_at" : "2020-05-21T07:00:54.060493",
+             "name" : "autobk_b629",
+             "created_at" : "2020-02-21T07:00:54.065135",
+             "resource_type" : "OS::Nova::Server"
+           }, {
+             "provider_id" : "d1603440-187d-4516-af25-121250c7cc97",
+             "checkpoint_id" : "f64c351f-769f-4c04-8806-fd90a59e9b12",
+             "updated_at" : "2020-02-21T07:09:37.767084",
+             "vault_id" : "79bd9daa-884f-4f84-b8fe-235d58cd927d",
+             "id" : "5606aab5-2dc2-4498-8144-dc848d099af5",
+             "resource_az" : "br-iaas-odin1a",
+             "image_type" : "backup",
+             "resource_id" : "54f7ccbc-072f-4ec5-a7b7-b24dabdb4539",
+             "resource_size" : 40,
+             "children" : [ ],
+             "extend_info" : {
+               "auto_trigger" : true,
+               "snapshot_id" : "e3def9a8-e4b4-4c12-b132-f4ba8ce9a34f",
+               "bootable" : true,
+               "support_lld" : true,
+               "encrypted" : false,
+               "system_disk" : false
+             },
+             "project_id" : "0605767b5780d5762fc5c0118072a564",
+             "status" : "available",
+             "resource_name" : "qsy_000",
+             "description" : "",
+             "expired_at" : "2020-03-22T07:00:34.877896",
+             "name" : "autobk_6809",
+             "created_at" : "2020-02-21T07:00:34.882174",
+             "resource_type" : "OS::Cinder::Volume"
+           } ]
          }
 
 #. Create EVS disks.
