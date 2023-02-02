@@ -31,12 +31,12 @@ Procedure
 
    The expansion page is displayed.
 
-#. Set the **Add Capacity (GB)** parameter and click **Next**.
+#. Set the **Add Capacity (GiB)** parameter and click **Next**.
 
-#. On the **Details** page, check the disk information again.
+#. On the **Details** page, check the disk details.
 
-   -  If you do not need to modify the specifications, click **Submit** to start the expansion.
-   -  If you need to modify the specifications, click **Previous** to modify parameters.
+   -  If you do not need to modify the specifications, click **Submit**.
+   -  If you need to modify the specifications, click **Previous**.
 
    After the specifications are submitted, go back to the disk list page.
 
@@ -50,7 +50,7 @@ Procedure
 
 #. Attach the disk to the server. For details, see :ref:`Attach an EVS Disk <evs_01_0107>`.
 
-#. After a disk has been expanded on the management console, only the disk storage capacity is enlarged, but its additional space cannot be used directly. You must log in to the server and extend the disk partition and file system.
+#. After the disk has been expanded on the management console, only the disk storage capacity is enlarged, but its additional space cannot be used directly. You must log in to the server and extend the disk partition and file system.
 
    The operation method varies depending on the server OS.
 

@@ -2,15 +2,15 @@
 
 .. _evs_01_0042:
 
-Managing EVS Disk Transfer
-==========================
+Managing EVS Transfers
+======================
 
 Scenarios
 ---------
 
-Through EVS disk transfer, EVS disks can be transferred from one account to another. After the transfer succeeds, the ownerships of the EVS disks belong to the target account only. Currently, only data disks can be transferred.
+Through EVS transfer, EVS disks can be transferred from one account to another. After the transfer succeeds, the ownerships of the EVS disks belong to the target account only.
 
-Currently, users can use the disk transfer function via API only. For details, see chapter "EVS Disk Transfer" in the *Elastic Volume Service API Reference*.
+Users can use disk transfer via API only. For more information, see chapter "EVS Transfer" in the *Elastic Volume Service API Reference*.
 
 Constraints
 -----------
@@ -24,11 +24,11 @@ Constraints
 Procedure
 ---------
 
-The following example shows you how to transfer an EVS disk from account A to account B. User A belongs to account A, and user B belongs to account B. User A creates the transfer. User B accepts the transfer through the transfer ID (**transfer_id**) and authentication key (**auth_key**). After the transfer has been accepted, the transfer is complete. :ref:`Figure 1 <evs_01_0042__fig86501415163119>` shows the basic transfer process.
+The following example shows you how to transfer an EVS disk from account A to account B. User A belongs to account A, and user B belongs to account B. User A creates the transfer. User B accepts the transfer using the transfer ID (**transfer_id**) and authentication key (**auth_key**). After the transfer has been accepted, the transfer is complete. :ref:`Figure 1 <evs_01_0042__fig86501415163119>` shows the basic transfer process.
 
 .. note::
 
-   -  **transfer_id** specifies the disk transfer ID. Each EVS disk transfer has a transfer ID, and user B uses this ID to accept the disk transfer.
+   -  **transfer_id** specifies the disk transfer ID. Each EVS disk transfer has a transfer ID, and user B uses this ID to accept the disk transfer. The transfer ID expires after user B accepts the transfer.
    -  **auth_key** specifies the identity authentication key of the disk transfer. Each EVS disk transfer has an authentication key, and user B uses this key for authentication when accepting the disk transfer.
 
 .. _evs_01_0042__fig86501415163119:

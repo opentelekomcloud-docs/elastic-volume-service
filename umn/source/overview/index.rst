@@ -9,10 +9,10 @@ Overview
 -  :ref:`Disk Types and Performance <en-us_topic_0014580744>`
 -  :ref:`Device Types and Usage Instructions <en-us_topic_0052554220>`
 -  :ref:`Shared EVS Disks and Usage Instructions <en-us_topic_0032860759>`
--  :ref:`EVS Disk Encryption <evs_01_0001>`
+-  :ref:`EVS Encryption <evs_01_0001>`
 -  :ref:`EVS Backup <evs_01_0021>`
 -  :ref:`EVS Snapshot <en-us_topic_0066809008>`
--  :ref:`Differences Between EVS Disk Backup and EVS Snapshot <evs_01_0048>`
+-  :ref:`Differences Between EVS Backups and EVS Snapshots <evs_01_0048>`
 -  :ref:`EVS Replication (Deprecated) <evs_01_0020>`
 -  :ref:`Permissions Management <evs_01_0086>`
 -  :ref:`EVS and Other Services <evs_01_0106>`
@@ -26,10 +26,10 @@ Overview
    disk_types_and_performance
    device_types_and_usage_instructions
    shared_evs_disks_and_usage_instructions
-   evs_disk_encryption
+   evs_encryption
    evs_backup
    evs_snapshot
-   differences_between_evs_disk_backup_and_evs_snapshot
+   differences_between_evs_backups_and_evs_snapshots
    evs_replication_deprecated
    permissions_management
    evs_and_other_services

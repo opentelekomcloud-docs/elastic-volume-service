@@ -21,7 +21,7 @@ Procedure
 
    The disk list page is displayed.
 
-#. In the disk list, locate the target disk and click on the disk name.
+#. In the disk list, locate the desired disk and click the disk name.
 
    The disk details page is displayed.
 

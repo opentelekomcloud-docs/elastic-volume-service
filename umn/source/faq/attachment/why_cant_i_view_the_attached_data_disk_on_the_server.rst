@@ -5,23 +5,23 @@
 Why Can't I View the Attached Data Disk on the Server?
 ======================================================
 
-Windows data disk
------------------
+Troubleshooting
+---------------
 
-**Symptom**: A data disk has been attached to a Windows server on the management console, but the disk cannot be viewed on the server. For example, Volume (D:) was not shown in **This PC** of a Windows server running Windows Server 2012. Normally, Volume (D:) appears, as shown in :ref:`Figure 1 <evs_faq_0022__fig156291639133210>`.
+.. table:: **Table 1** Possible causes
 
-.. _evs_faq_0022__fig156291639133210:
+   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+   | OS                    | Possible Cause                                                                                                                                                             | Solution                                                      |
+   +=======================+============================================================================================================================================================================+===============================================================+
+   | Linux                 | -  New data disks are not formatted and partitioned by default, and an unformatted disk will not be listed in the command output. You must manually initialize the disk.   | :ref:`Linux Data Disk <evs_faq_0022__section1514019519474>`   |
+   |                       | -  If a data disk cannot be found after the server is restarted, automatic partition mounting at system start may not be configured.                                       |                                                               |
+   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+   | Windows               | New data disks are not formatted and partitioned by default. Only formatted and partitioned drives show up in the resource manager. You must manually initialize the disk. | :ref:`Windows Data Disk <evs_faq_0022__section1894911274212>` |
+   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
-.. figure:: /_static/images/en-us_image_0238302626.png
-   :alt: **Figure 1** Volume (D:) appears
+.. _evs_faq_0022__section1514019519474:
 
-   **Figure 1** Volume (D:) appears
-
-**Solution**: New data disks are not formatted and partitioned by default. Only formatted and partitioned drives show up in **This PC**. You must manually initialize the disk before it can be viewed here.
-
-For details, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
-
-Linux data disk
+Linux Data Disk
 ---------------
 
 **Symptom**: A data disk has been attached to a Linux server on the management console, but the disk cannot be viewed on the server.
@@ -42,13 +42,13 @@ Run **df -TH** to view the disk information. CentOS 7.4 is used in this example.
 
 Unlike the normal command output, only system disk **/dev/vda1** is visible, but data disk **/dev/vdb1** is missing from the command output.
 
-**Solution**
+**Cause Analysis**:
 
--  **Method 1**: New data disks are not formatted and partitioned by default, and an unformatted disk will not be listed in the command output. You must manually initialize the disk.
+-  **Cause 1**: New data disks are not formatted and partitioned by default, and an unformatted disk will not be listed in the command output. You must manually initialize the disk.
 
    For details, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
 
--  **Method 2**: If the data disk cannot be found after the server is restarted, automatic partition mounting at system start may not be configured. Perform the following steps:
+-  **Cause 2**: If a data disk cannot be found after the server is restarted, automatic partition mounting at system start may not be configured. Perform the following steps:
 
    #. Run the following command to mount the partition again:
 
@@ -99,7 +99,7 @@ Unlike the normal command output, only system disk **/dev/vda1** is visible, but
       -  The fourth column indicates the partition mount option. Normally, this parameter is set to **defaults**.
       -  The fifth column indicates the Linux dump backup option.
 
-         -  **0**: No Linux dump backup is used. This is the default setting. You can set this parameter to **0**.
+         -  **0**: Linux dump backup is not used. Normally, dump backup is not used, and you can set this parameter to **0**.
          -  **1**: Linux dump backup is used.
 
       -  The sixth column indicates the fsck option, that is, whether to use fsck to check the attached disk during startup.
@@ -142,3 +142,21 @@ Unlike the normal command output, only system disk **/dev/vda1** is visible, but
 
             root@ecs-test-0001 ~]# mount | grep /mnt/sdc
             /dev/vdb1 on /mnt/sdc type ext4 (rw,relatime,data=ordered)
+
+.. _evs_faq_0022__section1894911274212:
+
+Windows Data Disk
+-----------------
+
+**Symptom**: A data disk has been attached to a Windows server on the management console, but the disk cannot be viewed on the server. For example, Volume (D:) was not shown in **This PC** of a Windows server running Windows Server 2012. Normally, Volume (D:) appears, as shown in :ref:`Figure 1 <evs_faq_0022__fig156291639133210>`.
+
+.. _evs_faq_0022__fig156291639133210:
+
+.. figure:: /_static/images/en-us_image_0000001327868762.png
+   :alt: **Figure 1** Volume (D:) appears
+
+   **Figure 1** Volume (D:) appears
+
+**Solution**: New data disks are not formatted and partitioned by default. Only formatted and partitioned drives show up in **This PC**. You must manually initialize the disk before it can be viewed here.
+
+For details, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.

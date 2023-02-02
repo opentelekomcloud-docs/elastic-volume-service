@@ -19,5 +19,5 @@ EVS disks can be used as system disks or data disks, but the way you detach each
 
       In Linux, a data disk is typically mounted on a mount point other than **/dev/vda**. In Windows, a data disk is normally a volume other than **Volume (C:)**.
 
-   -  Offline: The server must be in the **Stopped** state. If it is not, stop the server and then detach the data disk.
-   -  Online: Some OSs support online detachment. In this case, you do not need to stop the server before detaching the data disk. For more information, see **Storage** > **Detaching an EVS Disk from a Running ECS** in the *Elastic Cloud Server* *User Guide*.
+   -  Offline detachment: The server must be in the **Stopped** state. If it is not, stop the server and then detach the data disk.
+   -  Online detachment: Some OSs support online detachment. In this case, you do not need to stop the server before detaching the data disk. For more information, see **Storage** > **Detaching an EVS Disk from a Running ECS** in the *Elastic Cloud Server* *User Guide*.

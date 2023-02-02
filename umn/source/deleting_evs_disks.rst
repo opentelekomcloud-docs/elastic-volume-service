@@ -2,8 +2,8 @@
 
 .. _evs_01_0005:
 
-Deleting an EVS Disk
-====================
+Deleting EVS Disks
+==================
 
 Scenarios
 ---------

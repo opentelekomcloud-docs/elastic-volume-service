@@ -17,13 +17,18 @@ Constraints
 
 -  A shared disk can be attached to a maximum of 16 servers. These servers and the shared disk must be in the same AZ within a region.
 
+   .. important::
+
+      If you simply attach a shared disk to multiple servers, files cannot be shared among them. Because there are no mutually agreed data read/write rules among servers, read and write operations from them may interfere with each other, or unpredictable errors may occur. To share files between servers, set up a shared file system or a clustered management system first.
+
 -  If a shared disk is in the **In-use** state, ensure that the maximum number of servers that the disk can be attached to has not been reached.
 
--  All the servers of a shared disk must run either Windows or Linux no matter the disk is attached to them in a batch or individually.
+-  All the servers attached with a shared disk must run either Windows or Linux.
 
-   For example, if you attach a shared disk to multiple Windows servers in a batch and then detach it from all its servers, the disk cannot be attached to Linux servers later. This is because Windows and Linux support different file systems and cannot identify the original file system on the disk. Improper operations may damage the original file system.
+   For example, if you attach a shared disk to multiple Windows servers and then detach it from these servers, the shared disk cannot be attached to Linux servers later. This is because Windows and Linux support different file systems and cannot identify the original file system on the disk. Improper operations may damage the original file system.
 
 -  A shared disk can only be used as a data disk. It cannot be used as a system disk.
+-  Cloud servers created from ISO images are only used for OS installation. They have limited functions and cannot have EVS disks attached.
 
 Attaching the Disk on the EVS Console
 -------------------------------------
@@ -40,7 +45,7 @@ Attaching the Disk on the EVS Console
 
    The **Attach Disk** dialog box is displayed.
 
-   Shared disks support batch attachment so that you can attach a shared disk to multiple servers at a time. The left area in the **Attach Disk** dialog box shows the server list. After you select the target servers, the selected servers will be displayed in the right area.
+   Shared disks support batch attachment so that you can attach a shared disk to multiple servers. The left area in the **Attach Disk** dialog box shows the server list. After you select the target servers, the selected servers will be displayed in the right area.
 
 
    .. figure:: /_static/images/en-us_image_0152639916.png
@@ -52,8 +57,9 @@ Attaching the Disk on the EVS Console
 
 #. Click **OK** to return to the disk list page. The status of the disk is **Attaching**, indicating that the disk is being attached to the servers. When the disk status changes to **In-use**, the disk is successfully attached.
 
-   .. important::
+Follow-Up Operations
+--------------------
 
-      If you simply attach a shared disk to multiple servers, files cannot be shared between the servers as shared disks do not have the cluster capability. Therefore, build a shared file system or deploy a cluster management system to share files between servers.
+If you are attaching a new disk, you must then log in to the server and initialize the disk before it can be used. To learn how to initialize disks, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png

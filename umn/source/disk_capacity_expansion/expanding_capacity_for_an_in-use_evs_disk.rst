@@ -56,12 +56,12 @@ Procedure
 
          The expansion page is displayed.
 
-#. Set the **Add Capacity (GB)** parameter and click **Next**.
+#. Set the **Add Capacity (GiB)** parameter and click **Next**.
 
-#. On the **Details** page, check the disk information again.
+#. On the **Details** page, check the disk details.
 
-   -  If you do not need to modify the specifications, click **Submit** to start the expansion.
-   -  If you need to modify the specifications, click **Previous** to modify parameters.
+   -  If you do not need to modify the specifications, click **Submit**.
+   -  If you need to modify the specifications, click **Previous**.
 
    After the specifications are submitted, go back to the disk list page.
 
@@ -73,7 +73,7 @@ Procedure
 
       If the expansion fails, technical support personnel will contact you and help you handle this error. Do not perform any operations on the disk before the technical support personnel contact you. If you require that the error be handled as soon as possible, contact our technical support personnel. The disk will no longer be charged after its status changes to **Expansion failed**.
 
-#. After a disk has been expanded on the management console, only the disk storage capacity is enlarged, but its additional space cannot be used directly. You must log in to the server and extend the disk partition and file system.
+#. After the disk has been expanded on the management console, only the disk storage capacity is enlarged, but its additional space cannot be used directly. You must log in to the server and extend the disk partition and file system.
 
    The operation method varies depending on the server OS.
 

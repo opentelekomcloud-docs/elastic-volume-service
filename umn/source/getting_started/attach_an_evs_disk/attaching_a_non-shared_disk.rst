@@ -18,6 +18,11 @@ A system disk must be created during a server creation and is automatically atta
 
 This section describes how to attach a non-shared disk. A non-shared disk can be attached to one server only.
 
+Constraints
+-----------
+
+Cloud servers created from ISO images are only used for OS installation. They have limited functions and cannot have EVS disks attached.
+
 Attaching the Disk on the EVS Console
 -------------------------------------
 
@@ -31,9 +36,8 @@ Attaching the Disk on the EVS Console
 
 #. Locate the target disk in the list and click **Attach**.
 
-   The **Attach Disk** dialog box is displayed, as shown in :ref:`Figure 1 <evs_01_0036__fig15846164615421>`.
+   The **Attach Disk** dialog box is displayed.
 
-   .. _evs_01_0036__fig15846164615421:
 
    .. figure:: /_static/images/en-us_image_0133519241.png
       :alt: **Figure 1** Attach Disk dialog box
@@ -47,5 +51,10 @@ Attaching the Disk on the EVS Console
 #. Initialize the disk.
 
    After the disk has been attached to a server, the disk can be used only after you have initialized it. For details, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
+
+Follow-Up Operations
+--------------------
+
+If you are attaching a new disk, you must then log in to the server and initialize the disk before it can be used. To learn how to initialize disks, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png

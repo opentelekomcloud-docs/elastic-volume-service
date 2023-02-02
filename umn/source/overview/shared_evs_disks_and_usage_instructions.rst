@@ -10,11 +10,11 @@ What Are Shared EVS Disks?
 
 Shared EVS disks are block storage devices that support concurrent read/write operations and can be attached to multiple servers. Shared EVS disks feature multiple attachments, high-concurrency, high-performance, and high-reliability. They are usually used for enterprise business-critical applications that require cluster deployment. Multiple servers can access the same shared EVS disk at the same time.
 
-A shared EVS disk can be attached to a maximum of 16 servers. Servers that EVS supports include ECSs and BMSs. To achieve file sharing, you need to deploy a shared file system or a cluster management system, such as Windows MSCS, Veritas VCS, or CFS.
+A shared EVS disk can be attached to a maximum of 16 servers. Servers that EVS supports include ECSs and BMSs. To share files, you need to deploy a shared file system or a cluster management system, such as Windows MSCS, Veritas VCS, or CFS.
 
 .. important::
 
-   To use shared EVS disks, you must set up a shared file system or similar cluster management system. If you directly attach EVS disks to multiple servers, the EVS disks cannot be shared and data may be overwritten.
+   You must set up a shared file system or cluster management system before using shared EVS disks. If you directly attach a disk to multiple servers, the sharing function will not work and data may be overwritten.
 
 
 .. figure:: /_static/images/en-us_image_0197136031.png
@@ -25,7 +25,7 @@ A shared EVS disk can be attached to a maximum of 16 servers. Servers that EVS s
 Usage Precautions
 -----------------
 
-Most common clusters, such as Windows MSCS and Veritas VCS and CFS, require SCSI reservations. Therefore, you are advised to use shared SCSI EVS disks for clusters. If a SCSI EVS disk is attached to a Xen ECS for use, you must install the driver. For details, see :ref:`Device Types and Usage Instructions <en-us_topic_0052554220>`.
+Because most cluster applications, such as Windows MSCS, Veritas VCS, and Veritas CFS, require SCSI reservations, you are advised to use shared EVS disks with SCSI. If a SCSI EVS disk is attached to a Xen ECS for use, you must install the driver. For details, see :ref:`Device Types and Usage Instructions <en-us_topic_0052554220>`.
 
 You can create shared VBD disks or shared SCSI disks. It is recommended that you attach the shared disk to the ECSs in the same ECS group to improve service reliability.
 
@@ -52,14 +52,14 @@ Advantages
 ----------
 
 -  Multiple attachments: A shared EVS disk can be attached to a maximum of 16 servers.
--  High-performance: When multiple servers concurrently access a shared ultra-high I/O EVS disk, random read/write IOPS can reach up to 160,000.
+-  High-performance: The random read/write IOPS of a shared ultra-high I/O disk can reach up to 160,000.
 -  High-reliability: Shared EVS disks support both manual and automatic backup, delivering highly reliable data storage.
--  Wide application scenarios: Shared EVS disks can be used for Linux RHCS clusters where only VBD EVS disks are needed. Whereas, they can also be used for Windows MSCS and Veritas VCS clusters that require SCSI reservations.
+-  Wide range of use: Shared EVS disks can be used for Linux RHCS clusters where only VBD EVS disks are needed. They can also be used for Windows MSCS and Veritas VCS clusters that require SCSI reservations.
 
 Specifications and Performance
 ------------------------------
 
-The specifications and performance of shared EVS disks are the same as those of non-shared EVS disks. For details, see :ref:`Disk Types and Performance <en-us_topic_0014580744>`.
+Shared EVS disks have the same specifications and performance as non-shared EVS disks. For details, see :ref:`Disk Types and Performance <en-us_topic_0014580744>`.
 
 Data Sharing Principle and Common Usage Mistakes
 ------------------------------------------------
@@ -84,7 +84,7 @@ If shared EVS disks are not managed by a cluster system, the following issues ma
 
 Before you attach a shared EVS disk to multiple servers, the disk device type needs to be determined. The device type can be either VBD or SCSI. Shared SCSI EVS disks support SCSI reservations. Before using SCSI reservations, you need to install a driver in the server OS and ensure that the OS image is included in the compatibility list.
 
-For details about the usages of shared EVS disks, see :ref:`Managing a Shared EVS Disk <evs_01_0010>`.
+For details about the usages of shared EVS disks, see :ref:`Managing Shared EVS Disks <evs_01_0010>`.
 
 .. important::
 

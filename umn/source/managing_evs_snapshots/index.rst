@@ -2,8 +2,8 @@
 
 .. _evs_01_0111:
 
-Managing Snapshots
-==================
+Managing EVS Snapshots
+======================
 
 -  :ref:`Snapshot Overview <evs_01_0098>`
 -  :ref:`Creating a Snapshot <en-us_topic_0066615262>`

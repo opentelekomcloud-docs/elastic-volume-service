@@ -40,4 +40,4 @@ The snapshot function helps address your following needs:
 Usage Instructions
 ------------------
 
-For details about the snapshot usages, see :ref:`Managing Snapshots <evs_01_0111>`.
+For details about the snapshot usages, see :ref:`Managing EVS Snapshots <evs_01_0111>`.

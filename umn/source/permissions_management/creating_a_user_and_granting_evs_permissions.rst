@@ -9,7 +9,7 @@ This chapter describes how to use IAM to implement fine-grained permissions cont
 
 -  Create IAM users for employees based on your enterprise's organizational structure. Each IAM user will have their own security credentials for accessing EVS resources.
 -  Grant only the permissions required for users to perform a specific task.
--  Entrust an account or cloud service to perform efficient O&M on your EVS resources.
+-  Entrust an account or cloud service to perform professional and efficient O&M on your EVS resources.
 
 If your account does not require individual IAM users, skip this chapter.
 
