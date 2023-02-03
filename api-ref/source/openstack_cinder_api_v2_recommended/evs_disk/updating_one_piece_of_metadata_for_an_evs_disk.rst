@@ -80,9 +80,9 @@ Response
    +-----------------------+-----------------------+-------------------------------------------------------------------------+
    | Parameter             | Type                  | Description                                                             |
    +=======================+=======================+=========================================================================+
-   | message               | String                | Specifies the error message returned when an error occurs.              |
+   | message               | String                | The error message returned if an error occurs.                          |
    +-----------------------+-----------------------+-------------------------------------------------------------------------+
-   | code                  | String                | Specifies the error code returned when an error occurs.                 |
+   | code                  | String                | The error code returned if an error occurs.                             |
    |                       |                       |                                                                         |
    |                       |                       | For details about the error code, see :ref:`Error Codes <evs_04_0038>`. |
    +-----------------------+-----------------------+-------------------------------------------------------------------------+

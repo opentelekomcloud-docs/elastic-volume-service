@@ -13,7 +13,7 @@ This API is used to expand the capacity of an EVS disk.
 -  If the status of the to-be-expanded disk is **available**, there are no restrictions.
 -  If the status of the to-be-expanded disk is **in-use**, the restrictions are as follows:
 
-   -  The shared disk cannot be expanded, that is, the value of parameter **multiattach** must be **false**.
+   -  A shared disk cannot be expanded, that is, the value of parameter **multiattach** must be **false**.
    -  The status of the server to which the disk attached must be **ACTIVE**, **PAUSED**, **SUSPENDED**, or **SHUTOFF**.
 
 URI
@@ -83,9 +83,9 @@ Response
    +-----------------------+-----------------------+-------------------------------------------------------------------------+
    | Parameter             | Type                  | Description                                                             |
    +=======================+=======================+=========================================================================+
-   | message               | String                | Specifies the error message returned when an error occurs.              |
+   | message               | String                | The error message returned if an error occurs.                          |
    +-----------------------+-----------------------+-------------------------------------------------------------------------+
-   | code                  | String                | Specifies the error code returned when an error occurs.                 |
+   | code                  | String                | The error code returned if an error occurs.                             |
    |                       |                       |                                                                         |
    |                       |                       | For details about the error code, see :ref:`Error Codes <evs_04_0038>`. |
    +-----------------------+-----------------------+-------------------------------------------------------------------------+

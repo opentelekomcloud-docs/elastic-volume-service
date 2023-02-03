@@ -38,7 +38,7 @@ Request
    +-----------------+------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter       | Type             | Mandatory       | Description                                                                                                                                              |
    +=================+==================+=================+==========================================================================================================================================================+
-   | tags            | Array of objects | No              | Specifies the key-value pairs of the tag. For details, see :ref:`Parameters in the resource_tag field <evs_04_3016__evs_04_2032_li8528152083214>`.       |
+   | tags            | Array of objects | No              | Specifies the key-value pairs of the tag. For details, see :ref:`Parameters in the tags field <evs_04_3016__evs_04_2032_li8528152083214>`.               |
    |                 |                  |                 |                                                                                                                                                          |
    |                 |                  |                 | The **tags** field cannot be left empty.                                                                                                                 |
    |                 |                  |                 |                                                                                                                                                          |
@@ -160,9 +160,9 @@ Response
    +-----------------------+-----------------------+-------------------------------------------------------------------------+
    | Parameter             | Type                  | Description                                                             |
    +=======================+=======================+=========================================================================+
-   | message               | String                | Specifies the error message returned when an error occurs.              |
+   | message               | String                | The error message returned if an error occurs.                          |
    +-----------------------+-----------------------+-------------------------------------------------------------------------+
-   | code                  | String                | Specifies the error code returned when an error occurs.                 |
+   | code                  | String                | The error code returned if an error occurs.                             |
    |                       |                       |                                                                         |
    |                       |                       | For details about the error code, see :ref:`Error Codes <evs_04_0038>`. |
    +-----------------------+-----------------------+-------------------------------------------------------------------------+

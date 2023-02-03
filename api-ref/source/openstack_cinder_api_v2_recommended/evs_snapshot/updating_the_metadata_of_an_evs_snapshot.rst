@@ -1,31 +1,30 @@
-:original_name: evs_04_2101.html
+:original_name: evs_04_2102.html
 
-.. _evs_04_2101:
+.. _evs_04_2102:
 
-Updating One Piece of Metadata for an EVS Snapshot
-==================================================
+Updating the Metadata of an EVS Snapshot
+========================================
 
 Function
 --------
 
-This API is used to update one piece of the EVS snapshot metadata.
+This API is used to update the metadata of an EVS snapshot.
 
 URI
 ---
 
 -  URI format
 
-   PUT /v2/{project_id}/snapshots/{snapshot_id}/metadata/{key}
+   PUT /v2/{project_id}/snapshots/{snapshot_id}/metadata
 
 -  Parameter description
 
-   =========== ========= ======================================
+   =========== ========= ================
    Parameter   Mandatory Description
-   =========== ========= ======================================
+   =========== ========= ================
    project_id  Yes       The project ID.
    snapshot_id Yes       The snapshot ID.
-   key         Yes       The key of the metadata to be updated.
-   =========== ========= ======================================
+   =========== ========= ================
 
 Request
 -------
@@ -35,26 +34,27 @@ Request
    +-----------+--------+-----------+----------------------------------------------------------------------------------------------------------------------+
    | Parameter | Type   | Mandatory | Description                                                                                                          |
    +===========+========+===========+======================================================================================================================+
-   | meta      | Object | Yes       | The metadata to be updated. For details, see :ref:`Parameter in the metadata field <evs_04_2101__li54973602211845>`. |
+   | metadata  | Object | Yes       | The metadata to be updated. For details, see :ref:`Parameter in the metadata field <evs_04_2102__li54973602211845>`. |
    +-----------+--------+-----------+----------------------------------------------------------------------------------------------------------------------+
 
--  .. _evs_04_2101__li54973602211845:
+-  .. _evs_04_2102__li54973602211845:
 
    Parameter in the **metadata** field
 
-   +-----------+--------+-----------+------------------------------------------------------------+
-   | Parameter | Type   | Mandatory | Description                                                |
-   +===========+========+===========+============================================================+
-   | key_val   | String | No        | A piece of metadata, which is made up of a key-value pair. |
-   +-----------+--------+-----------+------------------------------------------------------------+
+   +-----------+--------+-----------+--------------------------------------------------------------------------------+
+   | Parameter | Type   | Mandatory | Description                                                                    |
+   +===========+========+===========+================================================================================+
+   | key_val   | String | No        | The metadata information, which is made up of one or multiple key-value pairs. |
+   +-----------+--------+-----------+--------------------------------------------------------------------------------+
 
 -  Example request
 
    .. code-block::
 
       {
-          "meta": {
-              "key1": "value1"
+          "metadata": {
+              "key1": "value1",
+              "key2": "value2"
           }
       }
 
@@ -63,15 +63,15 @@ Response
 
 -  Response parameters
 
-   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter | Type   | Description                                                                                                                          |
-   +===========+========+======================================================================================================================================+
-   | meta      | Object | A piece of snapshot metadata, which is made up of a key-value pair.                                                                  |
-   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------+
-   | error     | Object | The error message returned if an error occurs. For details, see :ref:`Parameters in the error field <evs_04_2101__li0419202382514>`. |
-   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------+--------+---------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter | Type   | Description                                                                                                                     |
+   +===========+========+=================================================================================================================================+
+   | metadata  | Object | The snapshot metadata, which is made up of key-value pairs.                                                                     |
+   +-----------+--------+---------------------------------------------------------------------------------------------------------------------------------+
+   | error     | Object | The error message returned if an error occurs. For details, see :ref:`Parameters in the error field <evs_04_2102__li24688256>`. |
+   +-----------+--------+---------------------------------------------------------------------------------------------------------------------------------+
 
--  .. _evs_04_2101__li0419202382514:
+-  .. _evs_04_2102__li24688256:
 
    Parameters in the **error** field
 
@@ -90,8 +90,9 @@ Response
    .. code-block::
 
       {
-          "meta": {
-              "key1": "value1"
+          "metadata": {
+              "key1": "value1",
+              "key2": "value2"
           }
       }
 

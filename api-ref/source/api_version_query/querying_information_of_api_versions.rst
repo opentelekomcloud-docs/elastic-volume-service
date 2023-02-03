@@ -60,7 +60,7 @@ Response
    +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
    | status                | String                | Specifies the API version status. The value can be as follows:                                                                                      |
    |                       |                       |                                                                                                                                                     |
-   |                       |                       | -  **CURRENT**: indicates a major version.                                                                                                          |
+   |                       |                       | -  **CURRENT**: EVS custom APIs provide multiple versions. For the APIs offering same functions, you are recommended to use the v2 APIs.            |
    |                       |                       | -  **SUPPORTED**: indicates an earlier version which is still supported.                                                                            |
    |                       |                       | -  **DEPRECATED**: indicates a deprecated version that may be deleted later.                                                                        |
    +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+

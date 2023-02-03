@@ -5,10 +5,10 @@
 EVS Tag
 =======
 
--  :ref:`Deleting Tags of an EVS Resource by Key <evs_04_2025>`
+-  :ref:`Deleting the Tag of an EVS Resource by Key <evs_04_2025>`
 -  :ref:`Obtaining All Tags of an EVS Resource Type <evs_04_2026>`
 -  :ref:`Batch Adding Tags for the Specified EVS Disk <evs_04_2027>`
--  :ref:`Batch Deleting Tags for the Specified EVS Disk <evs_04_2029>`
+-  :ref:`Batch Deleting Tags of a Specified EVS Disk <evs_04_2029>`
 -  :ref:`Querying Tags of an EVS Disk <evs_04_2031>`
 -  :ref:`Querying the Number of EVS Disks by Tag <evs_04_2032>`
 -  :ref:`Querying Details of EVS Disks by Tag <evs_04_2034>`
@@ -24,10 +24,10 @@ EVS Tag
    :maxdepth: 1
    :hidden: 
 
-   deleting_tags_of_an_evs_resource_by_key
+   deleting_the_tag_of_an_evs_resource_by_key
    obtaining_all_tags_of_an_evs_resource_type
    batch_adding_tags_for_the_specified_evs_disk
-   batch_deleting_tags_for_the_specified_evs_disk
+   batch_deleting_tags_of_a_specified_evs_disk
    querying_tags_of_an_evs_disk
    querying_the_number_of_evs_disks_by_tag
    querying_details_of_evs_disks_by_tag
