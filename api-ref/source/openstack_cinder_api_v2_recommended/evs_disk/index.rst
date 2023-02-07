@@ -14,9 +14,9 @@ EVS Disk
 -  :ref:`Querying EVS Disk Types <evs_04_2071>`
 -  :ref:`Querying Details About an EVS Disk Type <evs_04_2072>`
 -  :ref:`Querying Details of Tenant Quotas <evs_04_2073>`
--  :ref:`Adding Metadata of an EVS Disk <evs_04_2074>`
+-  :ref:`Adding the Metadata for an EVS Disk <evs_04_2074>`
 -  :ref:`Querying Metadata of an EVS Disk <evs_04_2075>`
--  :ref:`Updating Metadata of an EVS Disk <evs_04_2076>`
+-  :ref:`Updating the Metadata of an EVS Disk <evs_04_2076>`
 -  :ref:`Querying One Piece of Metadata for an EVS Disk <evs_04_2077>`
 -  :ref:`Updating One Piece of Metadata for an EVS Disk <evs_04_2078>`
 -  :ref:`Deleting One Piece of Metadata for an EVS Disk <evs_04_2079>`
@@ -36,9 +36,9 @@ EVS Disk
    querying_evs_disk_types
    querying_details_about_an_evs_disk_type
    querying_details_of_tenant_quotas
-   adding_metadata_of_an_evs_disk
+   adding_the_metadata_for_an_evs_disk
    querying_metadata_of_an_evs_disk
-   updating_metadata_of_an_evs_disk
+   updating_the_metadata_of_an_evs_disk
    querying_one_piece_of_metadata_for_an_evs_disk
    updating_one_piece_of_metadata_for_an_evs_disk
    deleting_one_piece_of_metadata_for_an_evs_disk

@@ -41,59 +41,311 @@ Request
 Response
 --------
 
--  Parameter description
+-  Response parameters
 
-   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter | Type   | Description                                                                                                                                                  |
-   +===========+========+==============================================================================================================================================================+
-   | quota_set | Object | Specifies the queried quota information. For details, see :ref:`Parameters in the quota_set field <evs_04_3037__evs_04_2073_li4741865201620>`.               |
-   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | error     | Object | Specifies the error message returned when an error occurs. For details, see :ref:`Parameters in the error field <evs_04_3037__evs_04_2073_li0419202382514>`. |
-   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter | Type   | Description                                                                                                                                      |
+   +===========+========+==================================================================================================================================================+
+   | quota_set | Object | The returned quota information. For details, see :ref:`Parameters in the quota_set field <evs_04_3037__evs_04_2073_li4741865201620>`.            |
+   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | error     | Object | The error message returned if an error occurs. For details, see :ref:`Parameters in the error field <evs_04_3037__evs_04_2073_li0419202382514>`. |
+   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 -  .. _evs_04_3037__evs_04_2073_li4741865201620:
 
    Parameters in the **quota_set** field
 
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter            | Type   | Description                                                                                                                                                                                                            |
-   +======================+========+========================================================================================================================================================================================================================+
-   | volumes              | Object | Specifies the number of disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.                                       |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | snapshots            | Object | Specifies the number of snapshots. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.                                   |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | gigabytes            | Object | Specifies the total size (GB) of disks and snapshots allowed. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.        |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | volumes_SSD          | Object | Specifies the number of reserved ultra-high I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.               |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | volumes_SAS          | Object | Specifies the number of reserved high I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.                     |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | volumes_SATA         | Object | Specifies the number of reserved common I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.                   |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | snapshots_SSD        | Object | Specifies the number of snapshots reserved for ultra-high I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs. |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | snapshots_SAS        | Object | Specifies the number of snapshots reserved for high I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.       |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | snapshots_SATA       | Object | Specifies the number of snapshots reserved for common I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.     |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | gigabytes_SSD        | Object | Specifies the size (GB) reserved for ultra-high I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.           |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | gigabytes_SAS        | Object | Specifies the size (GB) reserved for high I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.                 |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | gigabytes_SATA       | Object | Specifies the size (GB) reserved for common I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.               |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | id                   | String | Specifies the tenant ID. The tenant ID is actually the project ID.                                                                                                                                                     |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | backups              | Object | Specifies the number of backups. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.                                     |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | backup_gigabytes     | Object | Specifies the backup size (GB). Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.                                      |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | per_volume_gigabytes | Object | Specifies the capacity quota of each EVS disk. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota), and are made up of key-value pairs.                       |
-   +----------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter             | Type                  | Description                                                                                                                                                                                                                                                                        |
+   +=======================+=======================+====================================================================================================================================================================================================================================================================================+
+   | volumes               | Object                | The number of disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs. See :ref:`Parameters in the QuotaDetailVolumes field <evs_04_3037__evs_04_2073_li292012111347>`.       |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | snapshots             | Object                | The number of snapshots. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs. See :ref:`Parameters in the QuotaDetailSnapshots field <evs_04_3037__evs_04_2073_li963171713412>`. |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | gigabytes             | Object                | The total size (GB) of disks and snapshots allowed. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                         |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailGigabytes field <evs_04_3037__evs_04_2073_li12781611113418>`.                                                                                                                                                                               |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | volumes_SSD           | Object                | The number of reserved ultra-high I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                                |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailVolumesSSD field <evs_04_3037__evs_04_2073_li2874195493416>`.                                                                                                                                                                               |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | volumes_SAS           | Object                | The number of reserved high I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                                      |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailVolumesSAS field <evs_04_3037__evs_04_2073_li07672462342>`.                                                                                                                                                                                 |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | volumes_SATA          | Object                | The number of reserved common I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                                    |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailVolumesSATA field <evs_04_3037__evs_04_2073_li3935163483411>`.                                                                                                                                                                              |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | volumes_ESSD          | Object                | The number of reserved extreme SSD disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                                   |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailVolumesESSD field <evs_04_3037__evs_04_2073_li6211423143513>`.                                                                                                                                                                              |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | snapshots_SSD         | Object                | The number of snapshots reserved for ultra-high I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                  |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailSnapshotsSSD field <evs_04_3037__evs_04_2073_li33071651163411>`.                                                                                                                                                                            |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | snapshots_SAS         | Object                | The number of snapshots reserved for high I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                        |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailSnapshotsSAS field <evs_04_3037__evs_04_2073_li1766714373411>`.                                                                                                                                                                             |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | snapshots_SATA        | Object                | The number of snapshots reserved for common I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                      |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailSnapshotsSATA field <evs_04_3037__evs_04_2073_li4447143018345>`.                                                                                                                                                                            |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | snapshots_ESSD        | Object                | The number of snapshots reserved for extreme SSD disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                     |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailSnapshotsESSD field <evs_04_3037__evs_04_2073_li144181011123512>`.                                                                                                                                                                          |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | gigabytes_SSD         | Object                | The size (GB) reserved for ultra-high I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                            |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailGigabytesSSD field <evs_04_3037__evs_04_2073_li1538024919344>`.                                                                                                                                                                             |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | gigabytes_SAS         | Object                | The size (GB) reserved for high I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                                  |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailGigabytesSAS field <evs_04_3037__evs_04_2073_li1513517383342>`.                                                                                                                                                                             |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | gigabytes_SATA        | Object                | The size (GB) reserved for common I/O disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                                |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailGigabytesSATA field <evs_04_3037__evs_04_2073_li1794762693411>`.                                                                                                                                                                            |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | gigabytes_ESSD        | Object                | The size (GB) reserved for extreme SSD disks. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                               |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailGigabytesESSD field <evs_04_3037__evs_04_2073_li9208164663417>`.                                                                                                                                                                            |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | id                    | String                | The tenant ID. The tenant ID is the same as the project ID.                                                                                                                                                                                                                        |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | backups               | Object                | The number of backups. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs. See :ref:`Parameters in the QuotaDetailBackups field <evs_04_3037__evs_04_2073_li39301654113311>`.   |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | backup_gigabytes      | Object                | The backup size (GB). Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                                                       |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailBackupGigabytes field <evs_04_3037__evs_04_2073_li18465426336>`.                                                                                                                                                                            |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | per_volume_gigabytes  | Object                | The capacity quota of each disk. Sub-parameters include **reserved** (reserved quota), **limit** (maximum quota), and **in_use** (used quota). They are all made up of key-value pairs.                                                                                            |
+   |                       |                       |                                                                                                                                                                                                                                                                                    |
+   |                       |                       | See :ref:`Parameters in the QuotaDetailPerVolumeGigabytes field <evs_04_3037__evs_04_2073_li687518353519>`.                                                                                                                                                                        |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
    .. note::
 
       If the **limit** value returned in the response is **-1**, no quota limit has been set.
+
+-  .. _evs_04_3037__evs_04_2073_li18465426336:
+
+   Parameters in the **QuotaDetailBackupGigabytes** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li39301654113311:
+
+   Parameters in the **QuotaDetailBackups** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li12781611113418:
+
+   Parameters in the **QuotaDetailGigabytes** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li963171713412:
+
+   Parameters in the **QuotaDetailSnapshots** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li292012111347:
+
+   Parameters in the **QuotaDetailVolumes** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li1794762693411:
+
+   Parameters in the **QuotaDetailGigabytesSATA** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li9208164663417:
+
+   Parameters in the **QuotaDetailGigabytesESSD** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li4447143018345:
+
+   Parameters in the **QuotaDetailSnapshotsSATA** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li144181011123512:
+
+   Parameters in the **QuotaDetailSnapshotsESSD** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li3935163483411:
+
+   Parameters in the **QuotaDetailVolumesSATA** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li6211423143513:
+
+   Parameters in the **QuotaDetailVolumesESSD** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li1513517383342:
+
+   Parameters in the **QuotaDetailGigabytesSAS** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li1766714373411:
+
+   Parameters in the **QuotaDetailSnapshotsSAS** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li07672462342:
+
+   Parameters in the **QuotaDetailVolumesSAS** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li1538024919344:
+
+   Parameters in the **QuotaDetailGigabytesSSD** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li33071651163411:
+
+   Parameters in the **QuotaDetailSnapshotsSSD** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li2874195493416:
+
+   Parameters in the **QuotaDetailVolumesSSD** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
+
+-  .. _evs_04_3037__evs_04_2073_li687518353519:
+
+   Parameters in the **QuotaDetailPerVolumeGigabytes** field
+
+   ========= ======= ===================
+   Parameter Type    Description
+   ========= ======= ===================
+   in_use    Integer The used quota.
+   limit     Integer The maximum quota.
+   reserved  Integer The reserved field.
+   ========= ======= ===================
 
 -  .. _evs_04_3037__evs_04_2073_li0419202382514:
 
@@ -102,9 +354,9 @@ Response
    +-----------------------+-----------------------+-------------------------------------------------------------------------+
    | Parameter             | Type                  | Description                                                             |
    +=======================+=======================+=========================================================================+
-   | message               | String                | Specifies the error message returned when an error occurs.              |
+   | message               | String                | The error message returned if an error occurs.                          |
    +-----------------------+-----------------------+-------------------------------------------------------------------------+
-   | code                  | String                | Specifies the error code returned when an error occurs.                 |
+   | code                  | String                | The error code returned if an error occurs.                             |
    |                       |                       |                                                                         |
    |                       |                       | For details about the error code, see :ref:`Error Codes <evs_04_0038>`. |
    +-----------------------+-----------------------+-------------------------------------------------------------------------+
@@ -119,11 +371,6 @@ Response
                   "reserved": 0,
                   "limit": -1,
                   "in_use": 21
-              },
-              "volumes_SATA": {
-                  "reserved": 0,
-                  "limit": -1,
-                  "in_use": 8
               },
               "gigabytes": {
                   "reserved": 0,
@@ -166,11 +413,6 @@ Response
                   "limit": -1,
                   "in_use": 108
               },
-              "gigabytes_SATA": {
-                  "reserved": 0,
-                  "limit": -1,
-                  "in_use": 168
-              },
               "backups": {
                   "reserved": 0,
                   "limit": 100,
@@ -180,12 +422,8 @@ Response
                   "reserved": 0,
                   "limit": -1,
                   "in_use": 1085
-              },
-              "snapshots_SATA": {
-                  "reserved": 0,
-                  "limit": -1,
-                  "in_use": 0
               }
+
           }
       }
 

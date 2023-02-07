@@ -12,7 +12,7 @@ This API is used to reset the tags of an EVS resource, and the existing tags wil
 
 .. important::
 
-   This API call exists for compatibility reasons only and has been deprecated.
+   This API call exists for compatibility reasons only and is not meant to be used.
 
 Constraints
 -----------
