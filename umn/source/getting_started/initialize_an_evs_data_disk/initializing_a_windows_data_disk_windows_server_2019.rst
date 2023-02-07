@@ -2,15 +2,15 @@
 
 .. _evs_01_0045:
 
-Initializing a Windows Data Disk (Windows Server 2016)
+Initializing a Windows Data Disk (Windows Server 2019)
 ======================================================
 
 Scenarios
 ---------
 
-This section uses Windows Server 2016 Standard 64bit to describe how to initialize a data disk attached to a server running Windows.
+This section uses Windows Server 2019 Standard 64bit to describe how to initialize a data disk attached to a server running Windows.
 
-The maximum disk capacity supported by MBR is 2 TB, and that supported by GPT is 18 EB. Therefore, use the GPT partition style if your disk capacity is larger than 2 TB. For details about disk partition styles, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
+The maximum disk capacity supported by MBR is 2 TiB, and that supported by GPT is 18 EiB. Therefore, use the GPT partition style if your disk capacity is larger than 2 TiB. To learn more about disk partition styles, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
 
 The method for initializing a disk varies depending on the OS running on the server. This document is used for reference only. For the detailed operations and differences, see the product documents of the corresponding OS.
 
@@ -66,15 +66,15 @@ Procedure
 
 
    .. figure:: /_static/images/en-us_image_0175083507.png
-      :alt: **Figure 4** Computer Management (Windows Server 2016)
+      :alt: **Figure 4** Computer Management
 
-      **Figure 4** Computer Management (Windows Server 2016)
+      **Figure 4** Computer Management
 
    .. important::
 
-      The maximum disk capacity supported by MBR is 2 TB, and that supported by GPT is 18 EB. Because a data disk currently supports up to 32 TB, use the GPT partition style if your disk capacity is larger than 2 TB.
+      The maximum disk size supported by MBR is 2 TiB, and that supported by GPT is 18 EiB. Because an EVS data disk currently supports up to 32 TiB, use GPT if your disk size is larger than 2 TiB.
 
-      If you change the disk partition style after the disk has been used, the data on the disk will be cleared. Therefore, select a proper disk partition style when initializing the disk.
+      If the partition style is changed after the disk has been used, data on the disk will be cleared. Therefore, select an appropriate partition style when initializing the disk. If you must change the partition style to GPT after a disk has been used, it is recommended that you back up the disk data before the change.
 
 #. Right-click at the unallocated disk space and choose **New Simple Volume** from the shortcut menu.
 
@@ -82,9 +82,9 @@ Procedure
 
 
    .. figure:: /_static/images/en-us_image_0175083508.png
-      :alt: **Figure 5** New Simple Volume Wizard (Windows Server 2016)
+      :alt: **Figure 5** New Simple Volume Wizard
 
-      **Figure 5** New Simple Volume Wizard (Windows Server 2016)
+      **Figure 5** New Simple Volume Wizard
 
 #. Follow the prompts and click **Next**.
 
@@ -92,9 +92,9 @@ Procedure
 
 
    .. figure:: /_static/images/en-us_image_0175083509.png
-      :alt: **Figure 6** Specify Volume Size (Windows Server 2016)
+      :alt: **Figure 6** Specify Volume Size
 
-      **Figure 6** Specify Volume Size (Windows Server 2016)
+      **Figure 6** Specify Volume Size
 
 #. Specify the volume size and click **Next**. The system selects the maximum volume size by default. You can specify the volume size as required. In this example, the default setting is used.
 
@@ -102,9 +102,9 @@ Procedure
 
 
    .. figure:: /_static/images/en-us_image_0175083510.png
-      :alt: **Figure 7** Assign Driver Letter or Path (Windows Server 2016)
+      :alt: **Figure 7** Assign Driver Letter or Path
 
-      **Figure 7** Assign Driver Letter or Path (Windows Server 2016)
+      **Figure 7** Assign Driver Letter or Path
 
 #. Assign a drive letter or path to your partition and click **Next**. The system assigns drive letter D by default. In this example, the default setting is used.
 
@@ -112,9 +112,9 @@ Procedure
 
 
    .. figure:: /_static/images/en-us_image_0175083511.png
-      :alt: **Figure 8** Format Partition (Windows Server 2016)
+      :alt: **Figure 8** Format Partition
 
-      **Figure 8** Format Partition (Windows Server 2016)
+      **Figure 8** Format Partition
 
 #. Specify format settings and click **Next**. The system selects the NTFS file system by default. You can specify the file system type as required. In this example, the default setting is used.
 
@@ -122,9 +122,9 @@ Procedure
 
 
    .. figure:: /_static/images/en-us_image_0175083512.png
-      :alt: **Figure 9** Completing the New Simple Volume Wizard (Windows Server 2016)
+      :alt: **Figure 9** Completing the New Simple Volume Wizard
 
-      **Figure 9** Completing the New Simple Volume Wizard (Windows Server 2016)
+      **Figure 9** Completing the New Simple Volume Wizard
 
    .. important::
 
@@ -137,9 +137,9 @@ Procedure
    .. _evs_01_0045__fig14464150329:
 
    .. figure:: /_static/images/en-us_image_0175083513.png
-      :alt: **Figure 10** Disk initialization succeeded (Windows Server 2016)
+      :alt: **Figure 10** Disk initialized
 
-      **Figure 10** Disk initialization succeeded (Windows Server 2016)
+      **Figure 10** Disk initialized
 
 #. After the volume is created, click |image1| on the task bar and check whether a new volume appears in **This PC**. In this example, New Volume (D:) is the new volume.
 
@@ -147,8 +147,8 @@ Procedure
 
 
    .. figure:: /_static/images/en-us_image_0175083515.png
-      :alt: **Figure 11** This PC (Windows Server 2016)
+      :alt: **Figure 11** This PC
 
-      **Figure 11** This PC (Windows Server 2016)
+      **Figure 11** This PC
 
 .. |image1| image:: /_static/images/en-us_image_0238263336.png

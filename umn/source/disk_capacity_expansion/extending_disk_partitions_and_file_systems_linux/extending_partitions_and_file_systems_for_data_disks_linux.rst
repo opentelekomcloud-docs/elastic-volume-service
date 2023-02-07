@@ -12,7 +12,7 @@ After a disk has been expanded on the management console, the disk size is enlar
 
 In Linux, you must allocate the additional space to an existing partition or a new partition.
 
-This section uses CentOS 7.4 64bit as the sample OS to describe how to extend an MBR or GPT partition. The method for allocating the additional space varies depending on the server OS. This document is used for reference only. For detailed operations and differences, see the corresponding OS documents.
+This section uses CentOS 7.4 64bit as the sample OS to describe how to extend an MBR or GPT partition. The method for allocating the additional space varies with the server OS. This section is used for reference only. For detailed operations and differences, see the corresponding OS documents.
 
 -  :ref:`Creating a New MBR Partition <evs_01_0109__section20200028194016>`
 -  :ref:`Extending an Existing MBR Partition <evs_01_0109__section31113372194023>`
@@ -21,7 +21,7 @@ This section uses CentOS 7.4 64bit as the sample OS to describe how to extend an
 
 .. important::
 
-   Performing the expansion operations with caution. Misoperation may lead to data loss or exceptions. Therefore, you are advised to back up the disk data using backups or snapshots before expansion. For details about backups, see :ref:`Managing EVS Backup <evs_01_0110>`. For details about snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
+   Performing the expansion operations with caution. Misoperation may lead to data loss or exceptions. Therefore, you are advised to back up the disk data using CBR or snapshots before expansion. For details about using CBR, see :ref:`Managing EVS Backups <evs_01_0110>`. For details about using snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
 
 Prerequisites
 -------------
@@ -32,12 +32,17 @@ Prerequisites
    -  For how to log in to an ECS, see the *Elastic Cloud Server User Guide*.
    -  For how to log in to a BMS, see the *Bare Metal Server User Guide*.
 
+Constraints
+-----------
+
+The additional space cannot be added to the root partition of a data disk. To extend the root partition, expand the system disk instead.
+
 .. _evs_01_0109__section20200028194016:
 
 Creating a New MBR Partition
 ----------------------------
 
-Originally, data disk **/dev/vdb** has 100 GB and one partition (**/dev/vdb1**), and then 50 GB is added to the disk. The following procedure shows you how to create a new MBR partition **/dev/vdb2** with this 50 GB.
+Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**), and then 50 GiB is added to the disk. The following procedure shows you how to create a new MBR partition **/dev/vdb2** with this 50 GiB.
 
 #. Run the following command to view the disk partition information:
 
@@ -318,7 +323,7 @@ Extending an Existing MBR Partition
 
    If the additional space is allocated to an existing partition, data on the disk will not be cleared but you must use **umount** to unmount the existing partition. In this case, services will be affected.
 
-Originally, data disk **/dev/vdb** has 150 GB and two partitions (**/dev/vdb1** and **/dev/vdb2**), and then 80 GB is added to the disk. The following procedure shows you how to add this 80 GB to the existing MBR partition **/dev/vdb2**.
+Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1** and **/dev/vdb2**), and then 80 GiB is added to the disk. The following procedure shows you how to add this 80 GiB to the existing MBR partition **/dev/vdb2**.
 
 .. important::
 
@@ -601,7 +606,7 @@ Originally, data disk **/dev/vdb** has 150 GB and two partitions (**/dev/vdb1** 
 
          **mount** *Disk partition* *Mount point*
 
-         In this example, run the following command to the mount partition **/dev/vdb2** on **/mnt/test**:
+         In this example, run the following command to mount partition **/dev/vdb2** on **/mnt/test**:
 
          **mount** **/dev/vdb2** **/mnt/test**
 
@@ -625,7 +630,7 @@ Originally, data disk **/dev/vdb** has 150 GB and two partitions (**/dev/vdb1** 
 
          **mount** *Disk partition* *Mount point*
 
-         In this example, run the following command to the mount partition **/dev/vdb2** on **/mnt/test**:
+         In this example, run the following command to mount partition **/dev/vdb2** on **/mnt/test**:
 
          **mount** **/dev/vdb2** **/mnt/test**
 
@@ -685,7 +690,7 @@ Originally, data disk **/dev/vdb** has 150 GB and two partitions (**/dev/vdb1** 
 Creating a New GPT Partition
 ----------------------------
 
-Originally, data disk **/dev/vdb** has 100 GB and one partition (**/dev/vdb1**), and then 50 GB is added to the disk. The following procedure shows you how to create a new GPT partition **/dev/vdb2** with this 50 GB.
+Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**), and then 50 GiB is added to the disk. The following procedure shows you how to create a new GPT partition **/dev/vdb2** with this 50 GiB.
 
 #. Run the following command to view the disk partition information:
 
@@ -936,7 +941,7 @@ Extending an Existing GPT Partition
 
    If the additional space is allocated to an existing partition, data on the disk will not be cleared but you must use **umount** to unmount the existing partition. In this case, services will be affected.
 
-Originally, data disk **/dev/vdb** has 150 GB and two partitions (**/dev/vdb1** and **/dev/vdb2**), and then 80 GB is added to the disk. The following procedure shows you how to add this 80 GB to the existing GPT partition **/dev/vdb2**.
+Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1** and **/dev/vdb2**), and then 80 GiB is added to the disk. The following procedure shows you how to add this 80 GiB to the existing GPT partition **/dev/vdb2**.
 
 During an expansion, the additional space is added to the end of the disk. Therefore, if the disk has multiple partitions, the additional space can only be allocated to the partition at the disk end.
 
@@ -1175,7 +1180,7 @@ During an expansion, the additional space is added to the end of the disk. There
 
          **mount** *Disk partition* *Mount point*
 
-         In this example, run the following command to the mount partition **/dev/vdb2** on **/mnt/test**:
+         In this example, run the following command to mount partition **/dev/vdb2** on **/mnt/test**:
 
          **mount** **/dev/vdb2** **/mnt/test**
 
@@ -1199,7 +1204,7 @@ During an expansion, the additional space is added to the end of the disk. There
 
          **mount** *Disk partition* *Mount point*
 
-         In this example, run the following command to the mount partition **/dev/vdb2** on **/mnt/test**:
+         In this example, run the following command to mount partition **/dev/vdb2** on **/mnt/test**:
 
          **mount** **/dev/vdb2** **/mnt/test**
 
@@ -1288,7 +1293,7 @@ The following procedure shows how to set automatic disk mounting at server start
 
    **vi /etc/fstab**
 
-#. Press **i** to enter the editing mode.
+#. Press **i** to enter editing mode.
 
 #. Move the cursor to the end of the file and press **Enter**. Then, add the following information:
 
@@ -1322,7 +1327,7 @@ The following procedure shows how to set automatic disk mounting at server start
 
       **mount** **\|** **grep** **/mnt/sdc**
 
-      If information similar to the following is displayed, the automatic mounting function takes effect:
+      If information similar to the following is displayed, automatic mounting has been configured:
 
       .. code-block::
 

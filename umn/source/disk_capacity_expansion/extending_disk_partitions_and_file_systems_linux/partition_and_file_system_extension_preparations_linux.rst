@@ -41,9 +41,9 @@ Before extending the disk partition and file system, you must check the disk par
 
    .. note::
 
-      The maximum disk capacity that MBR supports is 2 TB, and the disk space exceeding 2 TB cannot be used.
+      The maximum disk capacity that MBR supports is 2 TiB, and the disk space exceeding 2 TiB cannot be used.
 
-      If your disk uses MBR and you need to expand the disk capacity to over 2 TB, change the partition style from MBR to GPT. Ensure that the disk data has been backed up before changing the partition style because services will be interrupted and data on the disk will be cleared during this change.
+      If your disk uses MBR and you need to expand the disk capacity to over 2 TiB, change the partition style from MBR to GPT. Ensure that the disk data has been backed up before changing the partition style because services will be interrupted and data on the disk will be cleared during this change.
 
 .. _evs_01_0035__section45741613172812:
 
@@ -67,7 +67,7 @@ Method 1: Check Partition Style and File System Format Using fdisk
       vdb    253:16   0  150G  0 disk
       └─vdb1 253:17   0  100G  0 part /mnt/sdc
 
-   In this example, data disk **/dev/vdb** already has partition **/dev/vdb1** before capacity expansion, and the additional 50 GB added has not been allocated yet. Therefore, **/dev/vdb** has 150 GB, and **/dev/vdb1** has 100 GB.
+   In this example, data disk **/dev/vdb** already has partition **/dev/vdb1** before capacity expansion, and the additional 50 GiB added has not been allocated yet. Therefore, **/dev/vdb** has 150 GiB, and **/dev/vdb1** has 100 GiB.
 
 #. Run the following command to view the current disk partition style:
 
@@ -156,7 +156,7 @@ Method 2: Check Partition Style and File System Format Using parted
       vdb    253:16   0  150G  0 disk
       └─vdb1 253:17   0  100G  0 part /mnt/sdc
 
-   In this example, data disk **/dev/vdb** already has partition **/dev/vdb1** before capacity expansion, and the additional 50 GB added has not been allocated yet. Therefore, **/dev/vdb** has 150 GB, and **/dev/vdb1** has 100 GB.
+   In this example, data disk **/dev/vdb** already has partition **/dev/vdb1** before capacity expansion, and the additional 50 GiB added has not been allocated yet. Therefore, **/dev/vdb** has 150 GiB, and **/dev/vdb1** has 100 GiB.
 
 #. Run the following command and enter **p** to view the disk partition style:
 

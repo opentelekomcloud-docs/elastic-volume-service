@@ -10,7 +10,9 @@ Scenarios
 
 This section uses CentOS 7.4 64bit to describe how to initialize a data disk attached to a server running Linux and use parted to partition the data disk.
 
-The maximum disk capacity supported by MBR is 2 TB, and that supported by GPT is 18 EB. Therefore, use the GPT partition style if your disk capacity is larger than 2 TB. In Linux, if you choose to use the GPT partition style, the fdisk partitioning tool cannot be used. Use the parted partitioning tool instead. For details about disk partition styles, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
+The maximum partition size that MBR supports is 2 TiB and that GPT supports is 18 EiB. If the disk size you need to partition is greater than 2 TiB, partition the disk using GPT.
+
+The fdisk partitioning tool is suitable only for MBR partitions, and the parted partitioning tool is suitable for both MBR and GPT partitions. For more information, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
 
 The method for initializing a disk varies depending on the OS running on the server. This document is used for reference only. For the detailed operations and differences, see the product documents of the corresponding OS.
 
@@ -26,7 +28,7 @@ Prerequisites
 Creating and Mounting a Partition
 ---------------------------------
 
-The following example shows you how a new partition can be created on a new data disk that has been attached to a server. The partition will be created using parted, and GPT is used as the partition style. Furthermore, the partition will be formatted using the ext4 file system, mounted on **/mnt/sdc**, and configured automatic mounting at system start.
+The following example shows you how a new partition can be created on a new data disk that has been attached to a server. The partition will be created using parted, and GPT will be used. Furthermore, the partition will be formatted using the ext4 file system, mounted on **/mnt/sdc**, and configured with automatic mounting at system start.
 
 #. Run the following command to query information about the new data disk:
 
@@ -89,9 +91,9 @@ The following example shows you how a new partition can be created on a new data
 
    .. important::
 
-      The maximum disk capacity supported by MBR is 2 TB, and that supported by GPT is 18 EB. Because a data disk currently supports up to 32 TB, use the GPT partition style if your disk capacity is larger than 2 TB.
+      The maximum disk size supported by MBR is 2 TiB, and that supported by GPT is 18 EiB. Because an EVS data disk currently supports up to 32 TiB, use GPT if your disk size is larger than 2 TiB.
 
-      If you change the disk partition style after the disk has been used, the data on the disk will be cleared. Therefore, select a proper disk partition style when initializing the disk.
+      If the partition style is changed after the disk has been used, data on the disk will be cleared. Therefore, select an appropriate partition style when initializing the disk. If you must change the partition style to GPT after a disk has been used, it is recommended that you back up the disk data before the change.
 
 #. Enter **p** and press **Enter** to view the disk partition style.
 
@@ -227,6 +229,10 @@ The following example shows you how a new partition can be created on a new data
 
    **mkdir /mnt/sdc**
 
+   .. note::
+
+      The **/mnt** directory exists on all Linux systems. If the mount point fails to create, it may be that the **/mnt** directory has been accidentally deleted. Run the **mkdir -p /mnt/sdc** command to create the mount point.
+
 #. Run the following command to mount the new partition on the created mount point:
 
    **mount** *Disk partition* *Mount point*
@@ -293,7 +299,7 @@ The following procedure shows how to set automatic disk mounting at server start
 
    **vi /etc/fstab**
 
-#. Press **i** to enter the editing mode.
+#. Press **i** to enter editing mode.
 
 #. Move the cursor to the end of the file and press **Enter**. Then, add the following information:
 
@@ -327,7 +333,7 @@ The following procedure shows how to set automatic disk mounting at server start
 
       **mount** **\|** **grep** **/mnt/sdc**
 
-      If information similar to the following is displayed, the automatic mounting function takes effect:
+      If information similar to the following is displayed, automatic mounting has been configured:
 
       .. code-block::
 

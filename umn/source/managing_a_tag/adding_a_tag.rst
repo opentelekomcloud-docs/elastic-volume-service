@@ -8,7 +8,7 @@ Adding a Tag
 Scenarios
 ---------
 
-This section is used to guide users to add a tag for an existing EVS disk. You can also add tags during the EVS disk creation. For details, see :ref:`Create an EVS Disk <en-us_topic_0021738346>`.
+This section is used to guide users to add a tag for an existing EVS disk. You can also add tags during the disk creation. For details, see :ref:`Create an EVS Disk <en-us_topic_0021738346>`.
 
 Tags are used to identify the cloud resources for purposes of easy categorization and quick search.
 
@@ -38,7 +38,7 @@ Procedure
 
    The disk list page is displayed.
 
-#. In the disk list, locate the target disk and click the disk name.
+#. In the disk list, locate the desired disk and click the disk name.
 
    The disk details page is displayed.
 

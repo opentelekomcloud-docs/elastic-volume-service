@@ -12,14 +12,14 @@ After a disk has been expanded on the management console, the disk size is enlar
 
 In Linux, you must allocate the additional space to an existing partition or a new partition.
 
-This section uses CentOS 7.4 64bit as the sample OS to describe how to extend an MBR partition of a SCSI data disk. The method for allocating the additional space varies depending on the server OS. This document is used for reference only. For detailed operations and differences, see the corresponding OS documents.
+This section uses CentOS 7.4 64bit as the sample OS to describe how to extend an MBR partition of a SCSI data disk. The method for allocating the additional space varies with the server OS. This section is used for reference only. For detailed operations and differences, see the corresponding OS documents.
 
 -  :ref:`Creating a New MBR Partition <evs_01_0018__section12265143819280>`
 -  :ref:`Extending an Existing MBR Partition <evs_01_0018__section31113372194023>`
 
 .. important::
 
-   Performing the expansion operations with caution. Misoperation may lead to data loss or exceptions. Therefore, you are advised to back up the disk data using backups or snapshots before expansion. For details about backups, see :ref:`Managing EVS Backup <evs_01_0110>`. For details about snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
+   Performing the expansion operations with caution. Misoperation may lead to data loss or exceptions. Therefore, you are advised to back up the disk data using CBR or snapshots before expansion. For details about using CBR, see :ref:`Managing EVS Backups <evs_01_0110>`. For details about using snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
 
 Prerequisites
 -------------
@@ -35,7 +35,7 @@ Prerequisites
 Creating a New MBR Partition
 ----------------------------
 
-Originally, data disk **/dev/sda** has 50 GB and one partition (**/dev/sda1**), and then 50 GB is added to the disk. The following procedure shows you how to create a new MBR partition **/dev/sda2** with this 50 GB.
+Originally, data disk **/dev/sda** has 50 GiB and one partition (**/dev/sda1**), and then 50 GiB is added to the disk. The following procedure shows you how to create a new MBR partition **/dev/sda2** with this 50 GiB.
 
 #. Run the following command to view the disk partition information:
 
@@ -351,7 +351,7 @@ Extending an Existing MBR Partition
 
    If the additional space is allocated to an existing partition, data on the disk will not be cleared but you must use **umount** to unmount the existing partition. In this case, services will be affected.
 
-Originally, SCSI data disk **/dev/sda** has 100 GB and two partitions (**/dev/sda1** and **/dev/sda2**), and then 50 GB is added to the disk. The following procedure shows you how to add this 50 GB to the existing MBR partition **/dev/sda2**.
+Originally, SCSI data disk **/dev/sda** has 100 GiB and two partitions (**/dev/sda1** and **/dev/sda2**), and then 50 GiB is added to the disk. The following procedure shows you how to add this 50 GiB to the existing MBR partition **/dev/sda2**.
 
 During an expansion, the additional space is added to the end of the disk. Therefore, if the disk has multiple partitions, the additional space can only be allocated to the partition at the disk end.
 
@@ -659,7 +659,7 @@ During an expansion, the additional space is added to the end of the disk. There
 
          **mount** *Disk partition* *Mount point*
 
-         In this example, run the following command to mount the partition **/dev/sda2** on **/mnt/test**:
+         In this example, run the following command to mount partition **/dev/sda2** on **/mnt/test**:
 
          **mount /dev/sda2 /mnt/test**
 
@@ -683,7 +683,7 @@ During an expansion, the additional space is added to the end of the disk. There
 
          **mount** *Disk partition* *Mount point*
 
-         In this example, run the following command to mount the partition **/dev/sda2** on **/mnt/test**:
+         In this example, run the following command to mount partition **/dev/sda2** on **/mnt/test**:
 
          **mount /dev/sda2 /mnt/test**
 
@@ -772,7 +772,7 @@ The following procedure shows how to set automatic disk mounting at server start
 
    **vi /etc/fstab**
 
-#. Press **i** to enter the editing mode.
+#. Press **i** to enter editing mode.
 
 #. Move the cursor to the end of the file and press **Enter**. Then, add the following information:
 
@@ -806,7 +806,7 @@ The following procedure shows how to set automatic disk mounting at server start
 
       **mount** **\|** **grep** **/mnt/sdc**
 
-      If information similar to the following is displayed, the automatic mounting function takes effect:
+      If information similar to the following is displayed, automatic mounting has been configured:
 
       .. code-block::
 

@@ -2,8 +2,8 @@
 
 .. _evs_01_0010:
 
-Managing a Shared EVS Disk
-==========================
+Managing Shared EVS Disks
+=========================
 
 How to Use Shared VBD and SCSI Disks?
 -------------------------------------
@@ -41,12 +41,12 @@ Deleting a Shared EVS Disk
 
 Because a shared EVS disk can be attached to multiple servers, ensure that the shared EVS disk is detached from all the servers before deletion.
 
-For details about how to delete a shared EVS disk, see :ref:`Deleting an EVS Disk <evs_01_0005>`.
+For details about how to delete a shared EVS disk, see :ref:`Deleting EVS Disks <evs_01_0005>`.
 
 Expanding a Shared EVS Disk
 ---------------------------
 
-Shared EVS disks must be expanded when they are in the **Available** state. For details, see :ref:`Expanding Capacity for an Available EVS Disk <evs_01_0008>`.
+Shared EVS disks must be expanded when they are in the **Available** state. For details, see :ref:`Expanding Capacity for an In-use EVS Disk <evs_01_0007>`.
 
 Related Operations
 ------------------

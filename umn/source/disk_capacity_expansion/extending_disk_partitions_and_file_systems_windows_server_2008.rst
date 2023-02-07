@@ -28,7 +28,7 @@ The method for allocating the additional space varies with the server OS. This s
 
 .. important::
 
-   Performing the expansion operations with caution. Misoperation may lead to data loss or exceptions. Therefore, you are advised to back up the disk data using backups or snapshots before expansion. For details about backups, see :ref:`Managing EVS Backup <evs_01_0110>`. For details about snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
+   Performing the expansion operations with caution. Misoperation may lead to data loss or exceptions. Therefore, you are advised to back up the disk data using CBR or snapshots before expansion. For details about using CBR, see :ref:`Managing EVS Backups <evs_01_0110>`. For details about using snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
 
 Prerequisites
 -------------
@@ -44,7 +44,7 @@ Prerequisites
 System Disk: Add Additional Space to Volume (C:)
 ------------------------------------------------
 
-In this example, the system disk has 50 GB originally, and 22 GB is added on the management console. The following procedure describes how to add this 22 GB to volume (C:) on the server. After the operation is complete, volume (C:) will have 72 GB of capacity and can be used as a system volume.
+In this example, the system disk has 50 GiB originally, and 22 GiB is added on the management console. The following procedure describes how to add this 22 GiB to volume (C:) on the server. After the operation is complete, volume (C:) will have 72 GiB of capacity and can be used as a system volume.
 
 #. On the desktop of the server, right-click **Computer** and choose **Manage** from the shortcut menu.
 
@@ -105,7 +105,7 @@ In this example, the system disk has 50 GB originally, and 22 GB is added on the
 System Disk: Create New Volume (F:) with Additional Space
 ---------------------------------------------------------
 
-In this example, the system disk has 40 GB originally, and 60 GB is added on the management console. The following procedure describes how to use this 60 GB to create a new volume, for example volume (F:), on the server. After the operation is complete, new volume (F:) has 60 GB of capacity and can be used as a data volume.
+In this example, the system disk has 40 GiB originally, and 60 GiB is added on the management console. The following procedure describes how to use this 60 GiB to create a new volume, for example volume (F:), on the server. After the operation is complete, new volume (F:) has 60 GiB of capacity and can be used as a data volume.
 
 #. On the desktop of the server, right-click **Computer** and choose **Manage** from the shortcut menu.
 
@@ -192,7 +192,7 @@ In this example, the system disk has 40 GB originally, and 60 GB is added on the
 Data Disk: Add Additional Space to Volume (D:)
 ----------------------------------------------
 
-In this example, the data disk has 100 GB originally, and 50 GB is added on the management console. The following procedure describes how to add this 50 GB to volume (D:) on the server. After the operation is complete, volume (D:) has 150 GB of capacity and can be used as a data volume.
+In this example, the data disk has 100 GiB originally, and 50 GiB is added on the management console. The following procedure describes how to add this 50 GiB to volume (D:) on the server. After the operation is complete, volume (D:) has 150 GiB of capacity and can be used as a data volume.
 
 #. On the desktop of the server, right-click **Computer** and choose **Manage** from the shortcut menu.
 
@@ -253,7 +253,7 @@ In this example, the data disk has 100 GB originally, and 50 GB is added on the 
 Data Disk: Create New Volume (E:) with Additional Space
 -------------------------------------------------------
 
-In this example, the data disk has 40 GB originally, and 60 GB is added on the management console. The following procedure describes how to use this 60 GB to create a new volume, for example volume (E:), on the server. After the operation is complete, new volume (E:) has 60 GB of capacity and can be used as a data volume.
+In this example, the data disk has 40 GiB originally, and 60 GiB is added on the management console. The following procedure describes how to use this 60 GiB to create a new volume, for example volume (E:), on the server. After the operation is complete, new volume (E:) has 60 GiB of capacity and can be used as a data volume.
 
 #. On the desktop of the server, right-click **Computer** and choose **Manage** from the shortcut menu.
 

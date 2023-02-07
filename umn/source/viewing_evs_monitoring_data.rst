@@ -8,7 +8,7 @@ Viewing EVS Monitoring Data
 Description
 -----------
 
-This section describes monitored metrics reported by EVS to Cloud Eye as well as their namespaces and dimensions. You can use console or APIs provided by Cloud Eye to query the metrics of the monitored objects and alarms generated for EVS.
+This section describes monitored metrics reported by EVS to Cloud Eye as well as their namespaces and dimensions. You can use the console or APIs provided by Cloud Eye to query the metrics of the monitored objects and alarms generated for EVS.
 
 Namespace
 ---------
@@ -20,25 +20,25 @@ Metrics
 
 .. table:: **Table 1** EVS metrics
 
-   +---------------------------------+----------------------+----------------------------------------------------------------+-----------------+------------------+------------------------------+
-   | Metric ID                       | Metric Name          | Description                                                    | Value Range     | Monitored Object | Monitoring Period (Raw Data) |
-   +=================================+======================+================================================================+=================+==================+==============================+
-   | disk_device_read_bytes_rate     | Disk Read Bandwidth  | Number of bytes read from the monitored disk per second        | >= 0 bytes/s    | EVS disk         | 5 minutes                    |
-   |                                 |                      |                                                                |                 |                  |                              |
-   |                                 |                      | Unit: Bytes/s                                                  |                 |                  |                              |
-   +---------------------------------+----------------------+----------------------------------------------------------------+-----------------+------------------+------------------------------+
-   | disk_device_write_bytes_rate    | Disk Write Bandwidth | Number of bytes written to the monitored disk per second       | >= 0 bytes/s    | EVS disk         | 5 minutes                    |
-   |                                 |                      |                                                                |                 |                  |                              |
-   |                                 |                      | Unit: Bytes/s                                                  |                 |                  |                              |
-   +---------------------------------+----------------------+----------------------------------------------------------------+-----------------+------------------+------------------------------+
-   | disk_device_read_requests_rate  | Disk Read IOPS       | Number of read requests sent to the monitored disk per second  | >= 0 Requests/s | EVS disk         | 5 minutes                    |
-   |                                 |                      |                                                                |                 |                  |                              |
-   |                                 |                      | Unit: Requests/s                                               |                 |                  |                              |
-   +---------------------------------+----------------------+----------------------------------------------------------------+-----------------+------------------+------------------------------+
-   | disk_device_write_requests_rate | Disk Write IOPS      | Number of write requests sent to the monitored disk per second | >= 0 Requests/s | EVS disk         | 5 minutes                    |
-   |                                 |                      |                                                                |                 |                  |                              |
-   |                                 |                      | Unit: Requests/s                                               |                 |                  |                              |
-   +---------------------------------+----------------------+----------------------------------------------------------------+-----------------+------------------+------------------------------+
+   +---------------------------------+----------------------+----------------------------------------------------------------+-----------------+------------------+----------------------+
+   | Metric ID                       | Metric Name          | Description                                                    | Value Range     | Monitored Object | Monitoring Period    |
+   +=================================+======================+================================================================+=================+==================+======================+
+   | disk_device_read_bytes_rate     | Disk Read Bandwidth  | Number of bytes read from the monitored disk per second        | >= 0 bytes/s    | EVS disk         | 5 minutes in average |
+   |                                 |                      |                                                                |                 |                  |                      |
+   |                                 |                      | Unit: Bytes/s                                                  |                 |                  |                      |
+   +---------------------------------+----------------------+----------------------------------------------------------------+-----------------+------------------+----------------------+
+   | disk_device_write_bytes_rate    | Disk Write Bandwidth | Number of bytes written to the monitored disk per second       | >= 0 bytes/s    | EVS disk         | 5 minutes in average |
+   |                                 |                      |                                                                |                 |                  |                      |
+   |                                 |                      | Unit: Bytes/s                                                  |                 |                  |                      |
+   +---------------------------------+----------------------+----------------------------------------------------------------+-----------------+------------------+----------------------+
+   | disk_device_read_requests_rate  | Disk Read IOPS       | Number of read requests sent to the monitored disk per second  | >= 0 Requests/s | EVS disk         | 5 minutes in average |
+   |                                 |                      |                                                                |                 |                  |                      |
+   |                                 |                      | Unit: Requests/s                                               |                 |                  |                      |
+   +---------------------------------+----------------------+----------------------------------------------------------------+-----------------+------------------+----------------------+
+   | disk_device_write_requests_rate | Disk Write IOPS      | Number of write requests sent to the monitored disk per second | >= 0 Requests/s | EVS disk         | 5 minutes in average |
+   |                                 |                      |                                                                |                 |                  |                      |
+   |                                 |                      | Unit: Requests/s                                               |                 |                  |                      |
+   +---------------------------------+----------------------+----------------------------------------------------------------+-----------------+------------------+----------------------+
 
 Dimension
 ---------

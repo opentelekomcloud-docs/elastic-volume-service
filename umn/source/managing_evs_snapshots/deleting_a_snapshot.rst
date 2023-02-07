@@ -27,7 +27,7 @@ Procedure
 
 #. Under **Storage**, click **Elastic Volume Service**.
 
-#. In the navigation tree on the left, choose **Elastic Volume Service** > **Snapshots**.
+#. In the navigation pane on the left, choose **Elastic Volume Service** > **Snapshots**.
 
    The snapshot list page is displayed.
 

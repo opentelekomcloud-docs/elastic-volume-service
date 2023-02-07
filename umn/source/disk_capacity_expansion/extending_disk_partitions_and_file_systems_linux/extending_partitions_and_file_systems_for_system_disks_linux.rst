@@ -12,7 +12,7 @@ After a disk has been expanded on the management console, the disk size is enlar
 
 In Linux, you must allocate the additional space to an existing partition or a new partition.
 
-This section uses CentOS 7.4 64bit and CentOS 6.5 64bit as the sample OSs to describe how to extend the disk partition using growpart and fdisk. The method for allocating the additional space varies with the server OS. This document is used for reference only. For detailed operations and differences, see the corresponding OS documents.
+This section uses CentOS 7.4 64bit and CentOS 6.5 64bit as the sample OSs to describe how to extend the disk partition using growpart and fdisk. The method for allocating the additional space varies with the server OS. This section is used for reference only. For detailed operations and differences, see the corresponding OS documents.
 
 For how to query the Linux kernel version, see :ref:`Querying the Linux Kernel Version <evs_01_0072__section13591111918215>`.
 
@@ -22,7 +22,7 @@ For how to query the Linux kernel version, see :ref:`Querying the Linux Kernel V
 
 .. important::
 
-   Performing the expansion operations with caution. Misoperation may lead to data loss or exceptions. Therefore, you are advised to back up the disk data using backups or snapshots before expansion. For details about backups, see :ref:`Managing EVS Backup <evs_01_0110>`. For details about snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
+   Performing the expansion operations with caution. Misoperation may lead to data loss or exceptions. Therefore, you are advised to back up the disk data using CBR or snapshots before expansion. For details about using CBR, see :ref:`Managing EVS Backups <evs_01_0110>`. For details about using snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
 
 Prerequisites
 -------------
@@ -65,7 +65,7 @@ Then, perform corresponding operations depending on whether the Linux kernel ver
 Extending an Existing MBR Partition (Kernel Version Later Than 3.6.0)
 ---------------------------------------------------------------------
 
-CentOS 7.4 64bit is used as the sample OS. Originally, system disk **/dev/vda** has 40 GB and one partition (**/dev/vda1**), and then 60 GB is added to the disk. The following procedure shows you how to allocate the additional 60 GB to the existing MBR partition **/dev/vda1**.
+CentOS 7.4 64bit is used as the sample OS. Originally, system disk **/dev/vda** has 40 GiB and one partition (**/dev/vda1**), and then 60 GiB is added to the disk. The following procedure shows you how to allocate the additional 60 GiB to the existing MBR partition **/dev/vda1**.
 
 #. (Optional) Run the following command to install the growpart tool:
 
@@ -171,7 +171,7 @@ Extending an Existing MBR Partition (Kernel Version Earlier Than 3.6.0)
 
    If the OS kernel version is earlier than 3.6.0, the extension of an existing MBR disk partition and file system takes effect only after a server reboot, and services will be interrupted.
 
-CentOS 6.5 64bit is used as the sample OS. Originally, system disk **/dev/vda** has 40 GB and one partition (**/dev/vda1**), and then 60 GB is added to the disk. The following procedure shows you how to allocate the additional 60 GB to the existing MBR partition **/dev/vda1**.
+CentOS 6.5 64bit is used as the sample OS. Originally, system disk **/dev/vda** has 40 GiB and one partition (**/dev/vda1**), and then 60 GiB is added to the disk. The following procedure shows you how to allocate the additional 60 GiB to the existing MBR partition **/dev/vda1**.
 
 #. (Optional) Run the following command to install the growpart tool:
 
@@ -289,7 +289,7 @@ CentOS 6.5 64bit is used as the sample OS. Originally, system disk **/dev/vda** 
 Creating a New MBR Partition
 ----------------------------
 
-Originally, system disk **/dev/vda** has 40 GB and one partition (**/dev/vda1**), and then 40 GB is added to the disk. The following procedure shows you how to create a new MBR partition **/dev/vda2** with this 40 GB.
+Originally, system disk **/dev/vda** has 40 GiB and one partition (**/dev/vda1**), and then 40 GiB is added to the disk. The following procedure shows you how to create a new MBR partition **/dev/vda2** with this 40 GiB.
 
 #. Run the following command to view the disk partition information:
 
@@ -311,7 +311,7 @@ Originally, system disk **/dev/vda** has 40 GB and one partition (**/dev/vda1**)
          Device Boot      Start         End      Blocks   Id  System
       /dev/vda1   *        2048    83886079    41942016   83  Linux
 
-   In the command output, the capacity of the **dev/vda** system disk is 80 GB, in which the in-use **dev/vda1** partition takes 40 GB and the additional 40 GB has not been allocated.
+   In the command output, the capacity of the **dev/vda** system disk is 80 GiB, in which the in-use **dev/vda1** partition takes 40 GiB and the additional 40 GiB has not been allocated.
 
 #. Run the following command to enter fdisk:
 
@@ -579,7 +579,7 @@ The following procedure shows how to set automatic disk mounting at server start
 
    **vi /etc/fstab**
 
-#. Press **i** to enter the editing mode.
+#. Press **i** to enter editing mode.
 
 #. Move the cursor to the end of the file and press **Enter**. Then, add the following information:
 
@@ -613,7 +613,7 @@ The following procedure shows how to set automatic disk mounting at server start
 
       **mount** **\|** **grep** **/mnt/sdc**
 
-      If information similar to the following is displayed, the automatic mounting function takes effect:
+      If information similar to the following is displayed, automatic mounting has been configured:
 
       .. code-block::
 
