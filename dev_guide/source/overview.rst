@@ -12,16 +12,22 @@ This chapter describes the concepts related to EVS to help you quickly understan
 Elastic Volume Service
 ----------------------
 
-EVS offers scalable block storage for servers. With high reliability, high performance, and rich specifications, EVS disks can be used for distributed file systems, development and test environments, data warehouse applications, and high-performance computing (HPC) scenarios to meet diverse service requirements.
+EVS offers scalable block storage for cloud servers. With high reliability, high performance, and a variety of specifications, EVS disks can be used for distributed file systems, development and test environments, data warehouses, and high-performance computing (HPC) applications.
 
-EVS disks are also referred to as disks in this document.
+EVS disks are sometimes just referred to as disks in this document.
+
+.. _evs_03_0001__section394673794715:
 
 Basic Concepts
 --------------
 
+-  Region
+
+   A region is a physical data center, which is completely isolated to improve fault tolerance and stability. After a resource is created, its region cannot be changed.
+
 -  AZ
 
-   An availability zone (AZ) is a physical location where resources use independent power supply and networks within a region. An AZ is insulated from failures in other AZs and provides inexpensive, low-latency network connectivity to other AZs in the same regions. A region can have more than one AZ. AZs are physically isolated but interconnected through an internal network.
+   An availability zone (AZ) is a physical location where resources use independent power supplies and networks. A region contains one or more AZs that are physically isolated but interconnected through internal networks. Because AZs are isolated from each other, any fault that occurs in an AZ will not affect other AZs.
 
 -  Project
 
@@ -35,8 +41,8 @@ Basic Concepts
 
 -  EVS snapshot
 
-   An EVS snapshot is a complete copy or image of the disk data at a specific time point. As a major disaster recovery (DR) approach, you can use a snapshot to completely restore the data to the time point when the snapshot was created.
+   An EVS snapshot is a complete copy or image of the disk data at a specific point in time. Snapshots can be used as a disaster recovery (DR) approach, and you can use snapshots to fully restore data to the time when the snapshot was taken.
 
--  EVS disk backup
+-  EVS backup
 
-   The EVS implements the backup function through Cloud Backup and Recovery (CBR). CBR allows you to create backups for EVS disks on the management console without stopping the servers. When data loss or data damage occurred due to virus invasion, misoperations, or software and hardware faults, you can use backups to restore the data, maximizing your data correctness and security.
+   EVS disks are backed up using Cloud Backup and Recovery (CBR). You can create backups for your disks on the console without stopping servers. If data is lost or damaged due to virus invasions, accidental deletions, or software/hardware faults, you can use backups to restore data, guaranteeing your data integrity and security.
