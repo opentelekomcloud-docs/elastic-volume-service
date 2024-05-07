@@ -5,7 +5,7 @@
 API Version Description and Usage Instructions
 ==============================================
 
-EVS APIs provide multiple versions. For the APIs offering same functions, you are recommended to use the v2 APIs.
+EVS APIs provide multiple versions. For APIs offering the same functions, you are recommended to use the v2 APIs.
 
 The current default microversion of v3 APIs is 3.0, and the maximum version is 3.50. You can specify the version number by adding **OpenStack-API-Version:volume** *Version number* to the request header. For example, add **OpenStack-API-Version:volume 3.50**.
 
