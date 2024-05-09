@@ -10,26 +10,26 @@ What Is EVS Encryption?
 
 In case your services require encryption for the data stored on EVS disks, EVS provides you with the encryption function. You can encrypt newly created EVS disks.
 
-EVS uses the industry-standard XTS-AES-256 encryption algorithm and keys to encrypt EVS disks. Keys used by encrypted EVS disks are provided by the Key Management Service (KMS), which is secure and convenient. Therefore, you do not need to establish and maintain the key management infrastructure. KMS uses the Hardware Security Module (HSM) that complies with FIPS 140-2 level 3 requirements to protect keys. All user keys are protected by the root key in HSM to prevent key exposure.
+EVS uses the industry-standard XTS-AES-256 encryption algorithm and keys to encrypt EVS disks. Keys used by encrypted EVS disks are provided by the Key Management Service (KMS), which is secure and convenient. So you do not need to establish and maintain the key management infrastructure. KMS uses the Hardware Security Module (HSM) that complies with FIPS 140-2 level 3 requirements to protect keys. All user keys are protected by the root key in HSM to prevent key exposure.
 
 .. important::
 
-   The encryption attribute of a disk cannot be changed after the disk is purchased.
+   The encryption attribute of a disk cannot be changed after the disk is created.
 
-   For details about how to create an encrypted disk, see **Getting Started** > **Purchase an EVS Disk** in the *Elastic Volume Service User Guide*.
+   For details about how to create an encrypted disk, see :ref:`Create an EVS Disk <en-us_topic_0021738346>`.
 
 Keys Used for EVS Encryption
 ----------------------------
 
-The keys provided by KMS include a Default Master Key and Customer Master Keys (CMKs).
+Keys provided by KMS include a Default Master Key and Customer Master Keys (CMKs).
 
 -  Default Master Key: A key that is automatically created by EVS through KMS and named **evs/default**.
 
-   The Default Master Key cannot be disabled and does not support scheduled deletion.
+   It cannot be disabled and does not support scheduled deletion.
 
 -  CMKs: Keys created by users. You may use existing CMKs or create new CMKs to encrypt disks. For details, see **Management** > **Creating a CMK** in the *Key Management Service User Guide*.
 
-When an encrypted disk is attached, EVS accesses KMS, and KMS sends the data key (DK) to the host memory for use. The disk uses the DK plaintext to encrypt and decrypt disk I/Os. The DK plaintext is only stored in the memory of the host housing the ECS and is not stored persistently on the media. If the CMK is disabled or deleted in KMS, the disk encrypted using this CMK can still use the DK plaintext stored in the host memory. If this disk is later detached, the DK plaintext will be deleted from the memory, and data cannot be read from or written to the disk. Before you re-attach this encrypted disk, ensure that the CMK is enabled.
+When an encrypted disk is attached, EVS accesses KMS, and KMS sends the data key (DK) to the host memory for use. The disk uses the DK plaintext to encrypt and decrypt disk I/Os. The DK plaintext is only stored in the memory of the host housing the ECS and is not stored persistently on the media. If a CMK is disabled or deleted in KMS, the disk encrypted using this CMK can still use the DK plaintext stored in the host memory. If this disk is later detached, the DK plaintext will be deleted from the memory, and data can no longer be read from or written to the disk. Before you re-attach this encrypted disk, ensure that the CMK is enabled.
 
 If you use a CMK to encrypt disks and this CMK is then disabled or scheduled for deletion, data cannot be read from or written to these disks or may never be restored. See :ref:`Table 1 <evs_01_0001__table15423135384216>` for more information.
 
@@ -53,53 +53,65 @@ If you use a CMK to encrypt disks and this CMK is then disabled or scheduled for
    | Deleted               |                                                                                                                           | Data on the disks can never be restored.                                                                                                                                             |
    +-----------------------+---------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Encryption Scenarios
+--------------------
+
+-  **System disk encryption**
+
+   System disks are created along with servers and cannot be created separately. So whether a system disk is encrypted or not depends on the image selected during the server creation. See the following table for details.
+
+   .. table:: **Table 2** Encryption relationship between images and system disks
+
+      +---------------------------------------+---------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+      | Creating Server Using Encrypted Image | Whether System Disk Will Be Encrypted | Description                                                                                                        |
+      +=======================================+=======================================+====================================================================================================================+
+      | Yes                                   | Yes                                   | For details, see **Managing Private Images** > **Encrypting Images** in the *Image Management Service User Guide*. |
+      +---------------------------------------+---------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+      | No                                    | No                                    | ``-``                                                                                                              |
+      +---------------------------------------+---------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+-  **Data disk encryption**
+
+   Data disks can be created along with servers or separately. Whether data disks are encrypted depends on their data sources. See the following table for details.
+
+   .. table:: **Table 3** Encryption relationship between backups, snapshots, images, and data disks
+
+      +-----------------+------------------------------------------------+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Created On      | Method of Creation                             | Whether Data Disk Will Be Encrypted | Description                                                                                                                                                                                                                                |
+      +=================+================================================+=====================================+============================================================================================================================================================================================================================================+
+      | The ECS console | Created together with the server               | Yes/No                              | When a data disk is created together with a server, you can choose to encrypt the disk or not. For details, see **Getting Started** > **Creating an ECS** > **Step 1: Configure Basic Settings** in the *Elastic Cloud Server User Guide*. |
+      +-----------------+------------------------------------------------+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | The EVS console | No data source selected                        | Yes/No                              | When an empty disk is created, you can choose whether to encrypt the disk or not. The encryption attribute of the disk cannot be changed after the disk has been created.                                                                  |
+      +-----------------+------------------------------------------------+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      |                 | Creating from a backup                         | Yes/No                              | -  When a disk is created from a backup, you can choose whether to encrypt the disk or not. The encryption attributes of the disk and backup do not need to be the same.                                                                   |
+      |                 |                                                |                                     | -  When you create a backup for a system or data disk, the encryption attribute of the backup will be the same as that of the disk.                                                                                                        |
+      +-----------------+------------------------------------------------+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      |                 | Creating from a snapshot                       | Yes                                 | A snapshot created from an encrypted disk is also encrypted.                                                                                                                                                                               |
+      |                 |                                                |                                     |                                                                                                                                                                                                                                            |
+      |                 | (The snapshot's source disk is encrypted.)     |                                     |                                                                                                                                                                                                                                            |
+      +-----------------+------------------------------------------------+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      |                 | Creating from a snapshot                       | No                                  | A snapshot created from a non-encrypted disk is not encrypted.                                                                                                                                                                             |
+      |                 |                                                |                                     |                                                                                                                                                                                                                                            |
+      |                 | (The snapshot's source disk is not encrypted.) |                                     |                                                                                                                                                                                                                                            |
+      +-----------------+------------------------------------------------+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      |                 | Creating from an image                         | Yes                                 | ``-``                                                                                                                                                                                                                                      |
+      |                 |                                                |                                     |                                                                                                                                                                                                                                            |
+      |                 | (The image's source disk is encrypted.)        |                                     |                                                                                                                                                                                                                                            |
+      +-----------------+------------------------------------------------+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      |                 | Creating from an image                         | No                                  | ``-``                                                                                                                                                                                                                                      |
+      |                 |                                                |                                     |                                                                                                                                                                                                                                            |
+      |                 | (The image's source disk is not encrypted.)    |                                     |                                                                                                                                                                                                                                            |
+      +-----------------+------------------------------------------------+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Who Can Use the Encryption Function?
 ------------------------------------
 
--  The security administrator (having Security Administrator permissions) can grant the KMS access rights to EVS for using the encryption function.
--  When a user who does not have the Security Administrator permissions needs to use the encryption function, the condition varies depending on whether the user is the first one ever in the current region or project to use this function.
+When a user uses the encryption function, the condition varies depending on whether the user is the first one ever in the current region or project to use this function.
 
-   -  If the user is the first one ever in the current region or project to use this function, the user must contact a user having the Security Administrator permissions to grant the KMS access rights to EVS. Then, the user can use encryption.
-   -  If the user is not the first one ever in the current region or project to use this function, the user can use encryption directly.
+-  If the user is the first user, the user needs to follow the prompt to create an agency, which grants KMS Administrator permissions to EVS. Then the user can create and obtain keys to encrypt and decrypt disks.
 
-From the perspective of a tenant, as long as the KMS access rights have been granted to EVS in a region, all the users in the same region can directly use the encryption function.
+   .. note::
 
-If there are multiple projects in the current region, the KMS access rights need to be granted to each project in this region.
+      The first user must have the KMS Administrator permissions to create the agency. If the user does not have the KMS Administrator permissions, contact the account administrator to grant the permissions first.
 
-Application Scenarios of EVS Encryption
----------------------------------------
-
-:ref:`Figure 1 <evs_01_0001__fig682110438439>` shows the user relationships under regions and projects from the perspective of a tenant. The following example uses region B to describe the two scenarios of using the encryption function.
-
-.. _evs_01_0001__fig682110438439:
-
-.. figure:: /_static/images/en-us_image_0205531351.png
-   :alt: **Figure 1** User relationships
-
-   **Figure 1** User relationships
-
--  If the security administrator uses the encryption function for the first time ever, the operation process is as follows:
-
-   #. Grant the KMS access rights to EVS.
-
-      After the KMS access rights have been granted, the system automatically creates a Default Master Key and names it **evs/default**. You can use the Default Master Key to encrypt EVS disks.
-
-      .. note::
-
-         EVS encryption relies on KMS. When the encryption function is used for the first time ever, the KMS access rights need to be granted to EVS. After the KMS access rights have been granted, all users in this region can use the encryption function, without requiring the KMS access rights to be granted again.
-
-   #. Select a key.
-
-      You can select one of the following keys:
-
-      -  Default Master Key: **evs/default**
-      -  CMKs: Existing or newly created CMKs. For details, see **Creating a CMK** in the *Key Management Service User Guide*.
-
-   After the security administrator has used the encryption function, all users in Region B can directly use encryption.
-
--  If User E (common user) uses the encryption function for the first time ever, the operation process is as follows:
-
-   #. When user E uses encryption, and the system prompts a message indicating that the KMS access rights have not been granted to EVS.
-   #. Contact the security administrator to grant the KMS access rights to EVS.
-
-   After the KMS access rights have been granted to EVS, User E as well as all users in Region B can directly use the encryption function and do not need to contact the security administrator to grant the KMS access rights to EVS again.
+-  If the user is not the first user, the user can use encryption directly.

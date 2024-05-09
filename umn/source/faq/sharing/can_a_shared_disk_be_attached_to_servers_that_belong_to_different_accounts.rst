@@ -5,4 +5,4 @@
 Can a Shared Disk Be Attached to Servers That Belong to Different Accounts?
 ===========================================================================
 
-No. A Shared disk can only be attached to servers that belong to the same account and are in the same AZ.
+No. A shared disk can only be attached to servers that belong to the same account and are in the same AZ.

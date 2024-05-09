@@ -69,6 +69,10 @@ Method 1: Check Partition Style and File System Format Using fdisk
 
    In this example, data disk **/dev/vdb** already has partition **/dev/vdb1** before capacity expansion, and the additional 50 GiB added has not been allocated yet. Therefore, **/dev/vdb** has 150 GiB, and **/dev/vdb1** has 100 GiB.
 
+   .. note::
+
+      If you run **lsblk** and find out that disk **/dev/vdb** has no partitions, format the disk by referring to :ref:`How Do I Extend the File System of an Unpartitioned Data Disk in Linux? <evs_faq_0073>` and expand the capacity. Otherwise, the additional space cannot be used after expansion.
+
 #. Run the following command to view the current disk partition style:
 
    **fdisk -l**
@@ -79,7 +83,7 @@ Method 1: Check Partition Style and File System Format Using fdisk
 
       [root@ecs-test-0001 ~]# fdisk -l
 
-      Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors
+      Disk /dev/vda: 42.9 GiB, 42949672960 bytes, 83886080 sectors
       Units = sectors of 1 * 512 = 512 bytes
       Sector size (logical/physical): 512 bytes / 512 bytes
       I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -89,7 +93,7 @@ Method 1: Check Partition Style and File System Format Using fdisk
          Device Boot      Start         End      Blocks   Id  System
       /dev/vda1   *        2048    83886079    41942016   83  Linux
 
-      Disk /dev/vdb: 161.1 GB, 161061273600 bytes, 314572800 sectors
+      Disk /dev/vdb: 161.1 GiB, 161061273600 bytes, 314572800 sectors
       Units = sectors of 1 * 512 = 512 bytes
       Sector size (logical/physical): 512 bytes / 512 bytes
       I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -101,7 +105,7 @@ Method 1: Check Partition Style and File System Format Using fdisk
 
    The value in the **System** column indicates the disk partition style. Value **Linux** indicates the MBR partition style. Value **GPT** indicates the GPT partition style.
 
-   -  If the disk partitions displayed are inconsistent with those obtained in :ref:`1 <evs_01_0035__li4640174163019>`, the partition that is not displayed uses the GPT partition style and has unallocated space. In this case, you cannot query all the partition information using the **fdisk -l** command. Go to :ref:`Method 2: Check Partition Style and File System Format Using parted <evs_01_0035__section7627683297>`.
+   -  If the disk partitions displayed are inconsistent with those obtained in :ref:`1 <evs_01_0035__li4640174163019>`, the possible reason may be that existing partitions uses GPT and there is unallocated disk space. In this case, you cannot query all the partitions using **fdisk -l**. Go to :ref:`Method 2: Check Partition Style and File System Format Using parted <evs_01_0035__section7627683297>`.
    -  If the disk partitions displayed are consistent with those obtained in :ref:`1 <evs_01_0035__li4640174163019>`, continue with the following operations.
 
 #. Run the following command to view the partition's file system format:
@@ -111,6 +115,11 @@ Method 1: Check Partition Style and File System Format Using fdisk
    In this example, run the following command:
 
    **blkid /dev/vdb1**
+
+   .. code-block:: console
+
+      [root@ecs-test-0001 ~]# blkid /dev/vdb1
+      /dev/vdb1: UUID="0b3040e2-1367-4abb-841d-ddb0b92693df" TYPE="ext4"
 
    In the command output, the **TYPE** value is **ext4**, indicating that **/dev/vdb1**'s file system format is **ext4**.
 
@@ -134,7 +143,7 @@ Method 1: Check Partition Style and File System Format Using fdisk
       Warning: skipping journal recovery because doing a read-only filesystem check.
       /dev/vdb1: clean, 11/6553600 files, 459544/26214144 blocks
 
-   If the file system status is **clean**, the file system status is normal. Otherwise, rectify the faulty and then perform the capacity expansion.
+   If the file system status is **clean**, the file system is normal. Otherwise, rectify the faulty and then perform the capacity expansion.
 
 .. _evs_01_0035__section7627683297:
 
@@ -157,6 +166,10 @@ Method 2: Check Partition Style and File System Format Using parted
       └─vdb1 253:17   0  100G  0 part /mnt/sdc
 
    In this example, data disk **/dev/vdb** already has partition **/dev/vdb1** before capacity expansion, and the additional 50 GiB added has not been allocated yet. Therefore, **/dev/vdb** has 150 GiB, and **/dev/vdb1** has 100 GiB.
+
+   .. note::
+
+      If you run **lsblk** and find out that disk **/dev/vdb** has no partitions, format the disk by referring to :ref:`How Do I Extend the File System of an Unpartitioned Data Disk in Linux? <evs_faq_0073>` and expand the capacity. Otherwise, the additional space cannot be used after expansion.
 
 #. Run the following command and enter **p** to view the disk partition style:
 
@@ -182,17 +195,17 @@ Method 2: Check Partition Style and File System Format Using parted
       blocks) or continue with the current setting?
       Fix/Ignore? Fix
       Model: Virtio Block Device (virtblk)
-      Disk /dev/vdb: 161GB
+      Disk /dev/vdb: 161GiB
       Sector size (logical/physical): 512B/512B
       Partition Table: gpt
       Disk Flags:
 
       Number  Start   End    Size   File system  Name  Flags
-       1      1049kB  107GB  107GB  ext4         test
+       1      1049kB  107GiB  107GiB  ext4         test
 
       (parted)
 
-   In the command output, parameter **Partition Table** indicates the disk partition style. Value **msdos** indicates the MBR partition style, and value **gpt** indicates the GPT partition style.
+   **Partition Table** indicates the disk partition style. **Partition Table: msdos** means MBR, **Partition Table: gpt** means GPT, and **Partition Table: loop** means that the whole disk is partitioned.
 
    -  If the following error information is displayed, enter **Fix**.
 

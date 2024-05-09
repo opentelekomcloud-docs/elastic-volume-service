@@ -10,7 +10,11 @@ What Is Capacity Expansion?
 
 If the capacity of an existing disk is insufficient, you can expand the disk capacity to increase the storage space.
 
-Both system disks and data disks can be expanded. Disk capacity can be expanded only, but cannot be reduced.
+Both system disks and data disks can be expanded. A system disk can be expanded to up to 1 TiB, and a data disk to 32 TiB. Disk capacity can only be expanded, not reduced.
+
+.. note::
+
+   If you detach a system disk and then attach it to an ECS as a data disk, the maximum capacity of this disk is still 1 TiB.
 
 How to Expand the Disk Capacity?
 --------------------------------
@@ -67,8 +71,12 @@ After the disk has been expanded on the management console, only the disk storag
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                      |
    |                                   | -  MBR partition style: Not supported                                                                                                                                                                                                                                                                                                                                                                                |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                      |
-   |                                   |    The maximum disk capacity that MBR supports is 2 TiB, and the disk space exceeding 2 TiB cannot be used. If your disk uses MBR and you need to expand the disk capacity to over 2 TiB, change the partition style from MBR to GPT. Ensure that the disk data has been backed up before changing the partition style because services will be interrupted and data on the disk will be deleted during this change. |
+   |                                   |    The maximum disk capacity that MBR supports is 2 TiB, and the disk space exceeding 2 TiB cannot be used. If your disk uses MBR and you need to expand the disk capacity to over 2 TiB, change the partition style from MBR to GPT. Ensure that the disk data has been backed up before changing the partition style because services will be interrupted and data on the disk will be cleared during this change. |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   If the server is stopped during the expansion, the additional space of a Windows system disk, Windows data disk, or Linux system disk may be automatically added to the last partition after the server is started. In this case, the additional space can be directly used. If the additional space is not automatically added, extend the partition and file system according to the preceding steps.
 
 Related Operations
 ------------------

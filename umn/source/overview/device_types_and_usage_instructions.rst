@@ -27,7 +27,9 @@ Common Application Scenarios and Usage Instructions of SCSI EVS Disks
 Do I Need to Install a Driver for SCSI EVS Disks?
 -------------------------------------------------
 
-To use SCSI EVS disks, you need to install a driver for certain server OSs.
+To use SCSI EVS disks, a cloud server must have a SCSI driver installed. If the SCSI driver is not pre-installed, you need to install it manually.
+
+Check whether you need to manually install the driver based on the server type.
 
 -  Bare Metal Server (BMS)
 
@@ -57,7 +59,7 @@ To use SCSI EVS disks, you need to install a driver for certain server OSs.
 
          For details, see **(Optional) Optimizing Windows Private Images** in the *Image Management Service User Guide*.
 
-      -  Linux images are not preinstalled with the PVSCSI driver. You need to obtain the source code of the open-source Linux driver at https://github.com/UVP-Tools/SAP-HANA-Tools.
+      -  Linux images are not preinstalled with the PVSCSI driver. You need to obtain the source code of the open-source Linux driver at https://github.com/UVP-Tools/SAP-HANA-Tools, compile the code, and then install the driver.
 
          Note that this driver is different from the PVSCSI drivers attached to some Linux distributions.
 

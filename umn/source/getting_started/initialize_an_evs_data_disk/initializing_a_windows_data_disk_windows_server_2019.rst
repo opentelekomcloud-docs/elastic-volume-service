@@ -12,7 +12,11 @@ This section uses Windows Server 2019 Standard 64bit to describe how to initiali
 
 The maximum disk capacity supported by MBR is 2 TiB, and that supported by GPT is 18 EiB. Therefore, use the GPT partition style if your disk capacity is larger than 2 TiB. To learn more about disk partition styles, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
 
-The method for initializing a disk varies depending on the OS running on the server. This document is used for reference only. For the detailed operations and differences, see the product documents of the corresponding OS.
+The method for initializing a disk varies slightly depending on the OS running on the server. This document is used for reference only. For the detailed operations and differences, see the product documents of the corresponding OS.
+
+.. important::
+
+   When using a disk for the first time, if you have not initialized it, including creating partitions and file systems, the additional space added to this disk in an expansion later may not be normally used.
 
 Prerequisites
 -------------
@@ -35,7 +39,7 @@ Procedure
    The **Server Manager** window is displayed.
 
 
-   .. figure:: /_static/images/en-us_image_0132368216.png
+   .. figure:: /_static/images/en-us_image_0000001855868573.png
       :alt: **Figure 1** Server Manager
 
       **Figure 1** Server Manager
@@ -45,7 +49,7 @@ Procedure
    The **Computer Management** window is displayed.
 
 
-   .. figure:: /_static/images/en-us_image_0175083503.png
+   .. figure:: /_static/images/en-us_image_0000001855948605.png
       :alt: **Figure 2** Computer Management
 
       **Figure 2** Computer Management
@@ -55,7 +59,7 @@ Procedure
    Disks are displayed in the right pane. If there is a disk that is not initialized, the system will prompt you with the **Initialize Disk** dialog box.
 
 
-   .. figure:: /_static/images/en-us_image_0175083504.png
+   .. figure:: /_static/images/en-us_image_0000001809029932.png
       :alt: **Figure 3** Disk list
 
       **Figure 3** Disk list
@@ -65,7 +69,7 @@ Procedure
    The **Computer Management** window is displayed.
 
 
-   .. figure:: /_static/images/en-us_image_0175083507.png
+   .. figure:: /_static/images/en-us_image_0000001809189776.png
       :alt: **Figure 4** Computer Management
 
       **Figure 4** Computer Management
@@ -74,14 +78,14 @@ Procedure
 
       The maximum disk size supported by MBR is 2 TiB, and that supported by GPT is 18 EiB. Because an EVS data disk currently supports up to 32 TiB, use GPT if your disk size is larger than 2 TiB.
 
-      If the partition style is changed after the disk has been used, data on the disk will be cleared. Therefore, select an appropriate partition style when initializing the disk. If you must change the partition style to GPT after a disk has been used, it is recommended that you back up the disk data before the change.
+      If the partition style is changed after the disk has been used, all data on the disk will be lost, so take care to select an appropriate partition style when initializing the disk. If you must change the partition style to GPT after a disk has been used, it is recommended that you back up the disk data before the change.
 
 #. Right-click at the unallocated disk space and choose **New Simple Volume** from the shortcut menu.
 
    The **New Simple Volume Wizard** window is displayed.
 
 
-   .. figure:: /_static/images/en-us_image_0175083508.png
+   .. figure:: /_static/images/en-us_image_0000001855868577.png
       :alt: **Figure 5** New Simple Volume Wizard
 
       **Figure 5** New Simple Volume Wizard
@@ -91,7 +95,7 @@ Procedure
    The **Specify Volume Size** page is displayed.
 
 
-   .. figure:: /_static/images/en-us_image_0175083509.png
+   .. figure:: /_static/images/en-us_image_0000001855948609.png
       :alt: **Figure 6** Specify Volume Size
 
       **Figure 6** Specify Volume Size
@@ -101,17 +105,17 @@ Procedure
    The **Assign Drive Letter or Path** page is displayed.
 
 
-   .. figure:: /_static/images/en-us_image_0175083510.png
-      :alt: **Figure 7** Assign Driver Letter or Path
+   .. figure:: /_static/images/en-us_image_0000001809029936.png
+      :alt: **Figure 7** Assign Drive Letter or Path
 
-      **Figure 7** Assign Driver Letter or Path
+      **Figure 7** Assign Drive Letter or Path
 
 #. Assign a drive letter or path to your partition and click **Next**. The system assigns drive letter D by default. In this example, the default setting is used.
 
    The **Format Partition** page is displayed.
 
 
-   .. figure:: /_static/images/en-us_image_0175083511.png
+   .. figure:: /_static/images/en-us_image_0000001809189780.png
       :alt: **Figure 8** Format Partition
 
       **Figure 8** Format Partition
@@ -121,22 +125,21 @@ Procedure
    The **Completing the New Simple Volume Wizard** page is displayed.
 
 
-   .. figure:: /_static/images/en-us_image_0175083512.png
+   .. figure:: /_static/images/en-us_image_0000001855868581.png
       :alt: **Figure 9** Completing the New Simple Volume Wizard
 
       **Figure 9** Completing the New Simple Volume Wizard
 
    .. important::
 
-      The partition sizes supported by file systems vary. Therefore, you are advised to choose an appropriate file system based on your service requirements.
+      The partition sizes supported by file systems vary. Choose an appropriate file system format based on your service requirements.
 
 #. Click **Finish**.
 
-   Wait for the initialization to complete. When the volume status changes to **Healthy**, the initialization has finished successfully, as shown in :ref:`Figure 10 <evs_01_0045__fig14464150329>`.
+   Wait for the initialization to complete. When the volume status changes to **Healthy**, the initialization has finished successfully.
 
-   .. _evs_01_0045__fig14464150329:
 
-   .. figure:: /_static/images/en-us_image_0175083513.png
+   .. figure:: /_static/images/en-us_image_0000001855948613.png
       :alt: **Figure 10** Disk initialized
 
       **Figure 10** Disk initialized
@@ -146,9 +149,9 @@ Procedure
    If New Volume (D:) appears, the disk is successfully initialized and no further action is required.
 
 
-   .. figure:: /_static/images/en-us_image_0175083515.png
+   .. figure:: /_static/images/en-us_image_0000001809189784.png
       :alt: **Figure 11** This PC
 
       **Figure 11** This PC
 
-.. |image1| image:: /_static/images/en-us_image_0238263336.png
+.. |image1| image:: /_static/images/en-us_image_0000001809029940.png

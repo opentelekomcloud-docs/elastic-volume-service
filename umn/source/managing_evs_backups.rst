@@ -8,12 +8,18 @@ Managing EVS Backups
 Scenarios
 ---------
 
-EVS backups are created using the CBR service. For details, see **Creating a Cloud Disk Backup** in the *Cloud Backup and Recovery User Guide*.
+EVS disk backups are created using the CBR service. For details, see **Creating a Cloud Disk Backup** in the *Cloud Backup and Recovery User Guide*.
 
-This section describes how to configure a backup policy for disks. With backup policies configured, data on EVS disks can be periodically backed up to improve data security.
+You can configure a backup policy for disks. With backup policies configured, data on EVS disks can be periodically backed up to improve data security.
 
-a Disk Backup Vault and Configuring a Backup Policy
----------------------------------------------------
+Constraints
+-----------
+
+-  Backups can be created only when the disks are in the **Available** or **In-use** state.
+-  Only users with the CBR FullAccess permissions can use the cloud disk backup function. If the user does not have the permissions, contact the account administrator to grant the permissions first.
+
+a Disk Backup Vault and Applying a Backup Policy
+------------------------------------------------
 
 #. Log in to the CBR console.
 
@@ -23,8 +29,9 @@ a Disk Backup Vault and Configuring a Backup Policy
 
 #. In the upper right corner, click **Create Disk Backup Vault**.
 
-#. (Optional) In the disk list, select the disks you want to back up. After disks are selected, they are added to the list of selected disks.
+#. (Optional) In the disk list, select the disks you want to back up. After disks are selected, they are added to the list of selected disks. See :ref:`Figure 1 <evs_01_0110__en-us_topic_0157095235_fig204531717131710>`.
 
+   .. _evs_01_0110__en-us_topic_0157095235_fig204531717131710:
 
    .. figure:: /_static/images/en-us_image_0269609232.png
       :alt: **Figure 1** Selecting disks
@@ -34,11 +41,11 @@ a Disk Backup Vault and Configuring a Backup Policy
    .. note::
 
       -  Only **Available** and **In-use** disks can be selected.
-      -  You can associate desired disks with the vault you created later if you skip this step.
+      -  You can also associate disks with the vault you are creating later if you skip this step.
 
-#. Specify the vault capacity. This capacity indicates the total size of the disks that you want to associate with this vault. Therefore, specify a vault capacity that is greater than or equal to the total size of the disks you want to back up. The value ranges from the total size of the disks to 10,485,760 in the unit of GiB.
+#. Specify a vault capacity ranging from the total sizes of disks to 10,485,760 GiB.
 
-#. Determine whether to configure auto backup.
+#. Configure auto backup.
 
    -  If you select **Configure**, you must then select an existing backup policy or create a new one. After the vault is created, the system applies this backup policy to the vault, and all disks associated with this vault will be automatically backed up based on this policy.
    -  If you select **Skip**, disks associated with this vault are not automatically backed up.
@@ -57,6 +64,6 @@ a Disk Backup Vault and Configuring a Backup Policy
 
 #. Go back to the disk backup page. The vault you created is displayed in the list.
 
-   You can associate disks to the new vault or create backups for the disks. For details, see **Vault Management** in the *Cloud Backup and Recovery User Guide*.
+   You can associate disks to the new vault or create backups for the disks. For details, see section "Vault Management" in the *Cloud Backup and Recovery User Guide*.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png

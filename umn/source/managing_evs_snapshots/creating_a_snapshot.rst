@@ -10,6 +10,10 @@ Scenarios
 
 You can create an EVS snapshot on the management console to save the EVS disk data at a specific time point.
 
+.. note::
+
+   Creating snapshots does not affect the performance of the disk.
+
 Constraints
 -----------
 
@@ -17,7 +21,6 @@ Constraints
 -  Snapshots can be created for both system disks and data disks.
 -  Snapshots can be created only for available or in-use disks.
 -  Snapshots of encrypted disks are stored encrypted, and those of non-encrypted disks are stored non-encrypted.
--  If a disk is created from a snapshot, the AZ of the disk is the same as that of the snapshot's source disk and cannot be changed.
 
 Creating a Snapshot on the Disks Page
 -------------------------------------
@@ -46,6 +49,12 @@ Creating a Snapshot on the Disks Page
       |                       | The name can contain a maximum of 64 characters. |                       |
       +-----------------------+--------------------------------------------------+-----------------------+
 
+
+   .. figure:: /_static/images/en-us_image_0000001571900348.png
+      :alt: **Figure 1** Create Snapshot
+
+      **Figure 1** Create Snapshot
+
 #. Click **Create Now**.
 
 #. Go back to the **Snapshots** page to view the snapshot creation information.
@@ -73,27 +82,38 @@ Creating a Snapshot on the Snapshots Page
 
    .. table:: **Table 2** Snapshot parameters
 
-      +-----------------------+----------------------------------------------------------------------------------------------+-----------------------+
-      | Parameter             | Description                                                                                  | Example Value         |
-      +=======================+==============================================================================================+=======================+
-      | Region                | Mandatory                                                                                    | ``-``                 |
-      |                       |                                                                                              |                       |
-      |                       | After you select a region, disks in the selected region will be displayed for you to choose. |                       |
-      +-----------------------+----------------------------------------------------------------------------------------------+-----------------------+
-      | Snapshot Name         | Mandatory                                                                                    | snapshot-01           |
-      |                       |                                                                                              |                       |
-      |                       | The name can contain a maximum of 64 characters.                                             |                       |
-      +-----------------------+----------------------------------------------------------------------------------------------+-----------------------+
-      | Select Disk           | Mandatory                                                                                    | volume-01             |
-      |                       |                                                                                              |                       |
-      |                       | Select a disk based on which the snapshot will be created.                                   |                       |
-      +-----------------------+----------------------------------------------------------------------------------------------+-----------------------+
+      +-----------------------+---------------------------------------------------------------------------------------------------+-----------------------+
+      | Parameter             | Description                                                                                       | Example Value         |
+      +=======================+===================================================================================================+=======================+
+      | Region                | Mandatory                                                                                         | ``-``                 |
+      |                       |                                                                                                   |                       |
+      |                       | After you select a region, disks in the selected region will be displayed for you to choose from. |                       |
+      +-----------------------+---------------------------------------------------------------------------------------------------+-----------------------+
+      | Snapshot Name         | Mandatory                                                                                         | snapshot-01           |
+      |                       |                                                                                                   |                       |
+      |                       | The name can contain a maximum of 64 characters.                                                  |                       |
+      +-----------------------+---------------------------------------------------------------------------------------------------+-----------------------+
+      | Select Disk           | Mandatory                                                                                         | volume-01             |
+      |                       |                                                                                                   |                       |
+      |                       | Select a disk based on which the snapshot will be created.                                        |                       |
+      +-----------------------+---------------------------------------------------------------------------------------------------+-----------------------+
+
+
+   .. figure:: /_static/images/en-us_image_0000001571754664.png
+      :alt: **Figure 2** Create Snapshot
+
+      **Figure 2** Create Snapshot
 
 #. Click **Create Now**.
 
 #. Go back to the **Snapshots** page to view the snapshot creation information.
 
    After the snapshot status changes to **Available**, the snapshot has been created.
+
+Snapshot FAQ
+------------
+
+For more snapshot FAQs, see :ref:`Snapshot <evs_01_0092>`.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
 .. |image2| image:: /_static/images/en-us_image_0237893718.png

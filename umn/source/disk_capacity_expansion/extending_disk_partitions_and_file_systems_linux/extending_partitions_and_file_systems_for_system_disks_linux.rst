@@ -8,9 +8,11 @@ Extending Partitions and File Systems for System Disks (Linux)
 Scenarios
 ---------
 
-After a disk has been expanded on the management console, the disk size is enlarged, but the additional space cannot be used directly.
+After a disk is expanded on the management console, the disk size is enlarged, but the additional space cannot be used directly.
 
 In Linux, you must allocate the additional space to an existing partition or a new partition.
+
+If the disk capacity is expanded when its server is stopped, the additional space of a Linux system disk will be automatically added to the partition at the disk end upon the server startup. In this case, the additional space can be used directly.
 
 This section uses CentOS 7.4 64bit and CentOS 6.5 64bit as the sample OSs to describe how to extend the disk partition using growpart and fdisk. The method for allocating the additional space varies with the server OS. This section is used for reference only. For detailed operations and differences, see the corresponding OS documents.
 
@@ -22,7 +24,7 @@ For how to query the Linux kernel version, see :ref:`Querying the Linux Kernel V
 
 .. important::
 
-   Performing the expansion operations with caution. Misoperation may lead to data loss or exceptions. Therefore, you are advised to back up the disk data using CBR or snapshots before expansion. For details about using CBR, see :ref:`Managing EVS Backups <evs_01_0110>`. For details about using snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
+   Performing the expansion operations with caution. Incorrect operations may lead to data loss or exceptions. So you are advised to back up the disk data using CBR or snapshots before expansion. For details about using CBR, see :ref:`Managing EVS Backups <evs_01_0110>`. For details about using snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
 
 Prerequisites
 -------------
@@ -32,6 +34,11 @@ Prerequisites
 
    -  For how to log in to an ECS, see the *Elastic Cloud Server User Guide*.
    -  For how to log in to a BMS, see the *Bare Metal Server User Guide*.
+
+Constraints
+-----------
+
+The additional space can only be added to the last partition of the disk.
 
 .. _evs_01_0072__section13591111918215:
 
@@ -73,7 +80,7 @@ CentOS 7.4 64bit is used as the sample OS. Originally, system disk **/dev/vda** 
 
    .. note::
 
-      You can run the **growpart** command to check whether the growpart tool has been installed. If the command output displays the tool usage instructions, the tool has been installed and you do not need to install it separately.
+      You can run **growpart** to check whether the growpart tool has been installed. If the command output displays the tool usage instructions, the tool has been installed and you do not need to install it again.
 
 #. Run the following command to view the total capacity of the **/dev/vda** system disk:
 
@@ -85,7 +92,7 @@ CentOS 7.4 64bit is used as the sample OS. Originally, system disk **/dev/vda** 
 
       [root@ecs-test-0001 ~]# fdisk -l
 
-      Disk /dev/vda: 107.4 GB, 107374182400 bytes, 209715200 sectors
+      Disk /dev/vda: 107.4 GiB, 107374182400 bytes, 209715200 sectors
       Units = sectors of 1 * 512 = 512 bytes
       Sector size (logical/physical): 512 bytes / 512 bytes
       I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -145,6 +152,10 @@ CentOS 7.4 64bit is used as the sample OS. Originally, system disk **/dev/vda** 
       old_desc_blocks = 5, new_desc_blocks = 13
       The filesystem on /dev/vda1 is now 26214139 blocks long.
 
+   .. note::
+
+      If the error message "open: No such file or directory while opening /dev/vdb1" is returned, an incorrect partition is specified. Run **df -TH** to view the disk partitions.
+
 #. Run the following command to view the new capacity of the **/dev/vda1** partition:
 
    **df -TH**
@@ -179,7 +190,7 @@ CentOS 6.5 64bit is used as the sample OS. Originally, system disk **/dev/vda** 
 
    .. note::
 
-      You can run the **growpart** command to check whether the growpart tool has been installed. If the command output displays the tool usage instructions, the tool has been installed and you do not need to install it separately.
+      You can run **growpart** to check whether the growpart tool has been installed. If the command output displays the tool usage instructions, the tool has been installed and you do not need to install it again.
 
 #. Run the following command to install the dracut-modules-growroot tool:
 
@@ -211,7 +222,7 @@ CentOS 6.5 64bit is used as the sample OS. Originally, system disk **/dev/vda** 
 
       [root@ecs-test-0002 ~]# fdisk -l
 
-      Disk /dev/vda: 107.4 GB, 107374182400 bytes
+      Disk /dev/vda: 107.4 GiB, 107374182400 bytes
       255 heads, 63 sectors/track, 13054 cylinders
       Units = cylinders of 16065 * 512 = 8225280 bytes
       Sector size (logical/physical): 512 bytes / 512 bytes
@@ -271,6 +282,10 @@ CentOS 6.5 64bit is used as the sample OS. Originally, system disk **/dev/vda** 
       resize2fs 1.41.12 (17-May-2010)
       The filesystem is already 26213807 blocks long.  Nothing to do!
 
+   .. note::
+
+      If the error message "open: No such file or directory while opening /dev/vdb1" is returned, an incorrect partition is specified. Run **df -TH** to view the disk partitions.
+
 #. Run the following command to view the new capacity of the **/dev/vda1** partition:
 
    **df -TH**
@@ -301,7 +316,7 @@ Originally, system disk **/dev/vda** has 40 GiB and one partition (**/dev/vda1**
 
       [root@ecs-2220 ~]# fdisk -l
 
-      Disk /dev/vda: 85.9 GB, 85899345920 bytes, 167772160 sectors
+      Disk /dev/vda: 85.9 GiB, 85899345920 bytes, 167772160 sectors
       Units = sectors of 1 * 512 = 512 bytes
       Sector size (logical/physical): 512 bytes / 512 bytes
       I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -348,7 +363,7 @@ Originally, system disk **/dev/vda** has 40 GiB and one partition (**/dev/vda1**
 
    .. note::
 
-      If the MBR partition style is used, a maximum of 4 primary partitions, or 3 primary partitions and 1 extended partition can be created. The extended partition cannot be used directly and must be divided into logical partitions before use.
+      If MBR is used, a maximum of four primary partitions, or three primary partitions plus one extended partition can be created. The extended partition must be divided into logical partitions before use.
 
       Disk partitions created using GPT are not categorized.
 
@@ -361,7 +376,7 @@ Originally, system disk **/dev/vda** has 40 GiB and one partition (**/dev/vda1**
       Select (default p): p
       Partition number (2-4, default 2):
 
-#. Partition number **2** is used in this example. Therefore, enter **2** and press **Enter.**
+#. Enter the serial number of the primary partition and press **Enter**. Partition number **2** is used in this example. Therefore, enter **2** and press **Enter.**
 
    Information similar to the following is displayed:
 
@@ -405,7 +420,7 @@ Originally, system disk **/dev/vda** has 40 GiB and one partition (**/dev/vda1**
 
       Command (m for help): p
 
-      Disk /dev/vda: 85.9 GB, 85899345920 bytes, 167772160 sectors
+      Disk /dev/vda: 85.9 GiB, 85899345920 bytes, 167772160 sectors
       Units = sectors of 1 * 512 = 512 bytes
       Sector size (logical/physical): 512 bytes / 512 bytes
       I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -543,26 +558,24 @@ Originally, system disk **/dev/vda** has 40 GiB and one partition (**/dev/vda1**
 
    .. note::
 
-      If the server is restarted, the mounting will become invalid. You can set automatic mounting for partitions at system start by modifying the **/etc/fstab** file. For details, see :ref:`Setting Automatic Mounting at System Start <evs_01_0072__section1107170115310>`.
+      If the server is restarted, the mounting will become invalid. You can modify the **/etc/fstab** file to configure automount at startup. See the following part for details.
 
-.. _evs_01_0072__section1107170115310:
+Configuring Automatic Mounting at System Start
+----------------------------------------------
 
-Setting Automatic Mounting at System Start
-------------------------------------------
+The **fstab** file controls what disks are automatically mounted at server startup. You can configure the **fstab** file of a server that has data. This operation will not affect the existing data.
 
-Modify the **fstab** file to set automatic disk mounting at server start. You can also set automatic mounting for the servers containing data. This operation will not affect the existing data.
-
-The following procedure shows how to set automatic disk mounting at server start by using UUIDs to identify disks in the **fstab** file. You are advised not to use device names to identify disks in the file because a device name may change (for example, from /dev/vdb1 to /dev/vdb2) during the server stop or start, resulting in improper server running after restart.
+The following example uses UUIDs to identify disks in the **fstab** file. You are advised not to use device names (like **/dev/vdb1**) to identify disks in the file because device names are assigned dynamically and may change (for example, from **/dev/vdb1** to **/dev/vdb2**) after a server stop or start. This can even prevent your server from booting up.
 
 .. note::
 
-   UUID is the unique character string for disk partitions in a Linux system.
+   UUIDs are the unique character strings for identifying partitions in Linux.
 
-#. Run the following command to query the partition UUID:
+#. Query the partition UUID.
 
    **blkid** *Disk partition*
 
-   In this example, run the following command to query the UUID of the **/dev/vdb1** partition:
+   In this example, the UUID of the **/dev/vdb1** partition is queried.
 
    **blkid /dev/vdb1**
 
@@ -573,9 +586,9 @@ The following procedure shows how to set automatic disk mounting at server start
       [root@ecs-test-0001 ~]# blkid /dev/vdb1
       /dev/vdb1: UUID="0b3040e2-1367-4abb-841d-ddb0b92693df" TYPE="ext4"
 
-   The UUID of the **/dev/vdb1** partition is displayed.
+   Carefully record the UUID, as you will need it for the following step.
 
-#. Run the following command to open the **fstab** file using the vi editor:
+#. Open the **fstab** file using the vi editor.
 
    **vi /etc/fstab**
 
@@ -591,9 +604,9 @@ The following procedure shows how to set automatic disk mounting at server start
 
    The system saves the configurations and exits the vi editor.
 
-#. Perform the following operations to verify the automatic mounting function:
+#. Verify that the disk is auto-mounted at startup.
 
-   a. Run the following command to unmount the partition:
+   a. Unmount the partition.
 
       **umount** *Disk partition*
 
@@ -601,11 +614,11 @@ The following procedure shows how to set automatic disk mounting at server start
 
       **umount /dev/vdb1**
 
-   b. Run the following command to reload all the content in the **/etc/fstab** file:
+   b. Reload all the content in the **/etc/fstab** file.
 
       **mount -a**
 
-   c. Run the following command to query the file system mounting information:
+   c. Query the file system mounting information.
 
       **mount** **\|** **grep** *Mount point*
 

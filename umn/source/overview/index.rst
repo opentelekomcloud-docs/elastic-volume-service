@@ -14,7 +14,9 @@ Overview
 -  :ref:`EVS Snapshot <en-us_topic_0066809008>`
 -  :ref:`Differences Between EVS Backups and EVS Snapshots <evs_01_0048>`
 -  :ref:`EVS Replication (Deprecated) <evs_01_0020>`
--  :ref:`Permissions Management <evs_01_0086>`
+-  :ref:`EVS Three-Copy Redundancy <evs_01_0056>`
+-  :ref:`Permissions <evs_01_0086>`
+-  :ref:`Constraints <evs_01_0085>`
 -  :ref:`EVS and Other Services <evs_01_0106>`
 -  :ref:`Basic Concepts <evs_01_0101>`
 
@@ -31,6 +33,8 @@ Overview
    evs_snapshot
    differences_between_evs_backups_and_evs_snapshots
    evs_replication_deprecated
-   permissions_management
+   evs_three-copy_redundancy
+   permissions
+   constraints
    evs_and_other_services
    basic_concepts/index

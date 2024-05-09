@@ -8,18 +8,21 @@ Elastic Volume Service - User Guide
    overview/index
    getting_started/index
    permissions_management/index
+   creating_and_using_an_evs_disk
+   attaching_an_existing_disk/index
+   viewing_evs_disk_details
    disk_capacity_expansion/index
-   detaching_an_evs_disk/index
-   deleting_evs_disks
+   detaching_and_releasing_an_evs_disk/index
+   managing_evs_snapshots/index
    managing_encrypted_evs_disks
    managing_shared_evs_disks
    managing_evs_backups
-   managing_evs_snapshots/index
-   managing_evs_replication_deprecated/index
    managing_evs_transfers
-   managing_a_tag/index
-   viewing_evs_monitoring_data
-   auditing
+   manage_evs_tags/index
+   managing_evs_replication_deprecated/index
+   manage_evs_quotas/index
+   managing_evs_monitoring_data/index
+   auditing_evs_operation_records
    faq/index
    appendix/index
    change_history

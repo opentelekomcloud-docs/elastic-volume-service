@@ -8,13 +8,15 @@ Rolling Back Data from a Snapshot
 Scenarios
 ---------
 
-If the data on an EVS disk is incorrect or damaged, you can roll back the data from a snapshot to the source disk to restore data. Snapshot rollback has the following constraints:
+If data on an EVS disk is incorrect or damaged, you can roll back data from a snapshot to the source disk.
 
 Constraints
 -----------
 
--  A snapshot can be rolled back only to its source disk. Rollback to another disk is not possible.
--  A snapshot can be rolled back only when the snapshot status is **Available** and the source disk status is **Available** (not attached to any server) or **Rollback failed**.
+-  Data of a snapshot can be rolled back only to its source disk. Rollback to another disk is not possible.
+-  Data of a snapshot can be rolled back only when the snapshot status is **Available** and its source disk status is **Available** (not attached to any server) or **Rollback failed**. If the source disk is attached, detach the disk first.
+-  A snapshot whose name starts with **autobk_snapshot_vbs\_**, **manualbk_snapshot_vbs\_**, **autobk_snapshot_csbs\_**, or **manualbk_snapshot_csbs\_** is automatically generated during backup. Such a snapshot can only be viewed. It cannot be used to roll back the disk data.
+-  Spot instances do not support snapshot-based rollback of the disk data.
 
 Procedure
 ---------
@@ -33,6 +35,6 @@ Procedure
 
 #. In the displayed dialog box, click **Yes**.
 
-#. The snapshot list is displayed. After the snapshot status changes from **Rolling back** to **Available**, the data rollback is successful.
+   The snapshot list is displayed. After the snapshot status changes from **Rolling back** to **Available**, the data rollback is successful.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png

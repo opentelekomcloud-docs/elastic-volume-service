@@ -18,3 +18,9 @@ To do so, perform the following operations:
 #. (Optional) Click the disk name to view more information, such as the disk backup and snapshot information.
 
    View more information on the **Summary** tab.
+
+
+   .. figure:: /_static/images/en-us_image_0000001571762676.png
+      :alt: **Figure 1** Viewing disk details
+
+      **Figure 1** Viewing disk details
