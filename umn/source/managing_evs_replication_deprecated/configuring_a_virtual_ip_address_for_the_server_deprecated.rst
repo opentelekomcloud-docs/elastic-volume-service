@@ -31,7 +31,7 @@ The following operations are for reference only. For details, see **Assigning a 
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
-#. Under **Computing**, click **Elastic Cloud Server**.
+#. Under **Compute**, click **Elastic Cloud Server**.
 
    The **Elastic Cloud Server** page is displayed.
 
@@ -92,7 +92,7 @@ The following operations are for reference only. For details, see **Assigning a 
 
    .. note::
 
-      The configuration method varies depending on the server OS. This document is used for reference only. For the detailed operations and differences, see the corresponding OS documents.
+      The configuration method varies depending on the server OS. This document is used for reference only. For detailed operations and differences, see the corresponding OS documents.
 
       For the Windows OS, see the `Microsoft official documentation <https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff710457(v=ws.10)>`__.
 
@@ -153,7 +153,7 @@ The following operations are for reference only. For details, see **Assigning a 
 
       **rm** *Name of the unnecessary NIC file*
 
-      For example, run the following command:
+      In this example, run the following commands:
 
       **rm ifcfg-eth1**
 

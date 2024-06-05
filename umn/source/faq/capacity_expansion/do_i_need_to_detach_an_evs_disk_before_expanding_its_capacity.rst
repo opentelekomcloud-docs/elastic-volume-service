@@ -15,6 +15,10 @@ An expansion consists of two phases:
       -  The disk's server is in the **Running** or **Stopped** state.
       -  The disk's server OS supports the expansion of In-use disks.
 
+         .. note::
+
+            Only some server OSs support capacity expansion of In-use disks. For details, see :ref:`Expanding Capacity for an In-use EVS Disk <evs_01_0007>`.
+
 #. Log in to the server and create a new partition or allocate the additional space to one that is already there.
 
    -  In Windows, there are no partition extensions that require the partition to be unmounted first.

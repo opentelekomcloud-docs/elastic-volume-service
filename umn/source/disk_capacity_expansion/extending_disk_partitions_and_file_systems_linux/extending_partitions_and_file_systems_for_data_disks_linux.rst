@@ -8,7 +8,7 @@ Extending Partitions and File Systems for Data Disks (Linux)
 Scenarios
 ---------
 
-After a disk has been expanded on the management console, the disk size is enlarged, but the additional space cannot be used directly.
+After a disk is expanded on the management console, the disk size is enlarged, but the additional space cannot be used directly.
 
 In Linux, you must allocate the additional space to an existing partition or a new partition.
 
@@ -21,7 +21,7 @@ This section uses CentOS 7.4 64bit as the sample OS to describe how to extend an
 
 .. important::
 
-   Performing the expansion operations with caution. Misoperation may lead to data loss or exceptions. Therefore, you are advised to back up the disk data using CBR or snapshots before expansion. For details about using CBR, see :ref:`Managing EVS Backups <evs_01_0110>`. For details about using snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
+   Performing the expansion operations with caution. Incorrect operations may lead to data loss or exceptions. So you are advised to back up the disk data using CBR or snapshots before expansion. For details about using CBR, see :ref:`Managing EVS Backups <evs_01_0110>`. For details about using snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
 
 Prerequisites
 -------------
@@ -35,7 +35,8 @@ Prerequisites
 Constraints
 -----------
 
-The additional space cannot be added to the root partition of a data disk. To extend the root partition, expand the system disk instead.
+-  The additional space of a data disk cannot be added to the root partition. To extend the root partition, expand the system disk instead.
+-  The additional space can only be added to the last partition of the disk.
 
 .. _evs_01_0109__section20200028194016:
 
@@ -54,7 +55,7 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
 
       [root@ecs-test-0001 ~]# fdisk -l
 
-      Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors
+      Disk /dev/vda: 42.9 GiB, 42949672960 bytes, 83886080 sectors
       Units = sectors of 1 * 512 = 512 bytes
       Sector size (logical/physical): 512 bytes / 512 bytes
       I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -64,7 +65,7 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
          Device Boot      Start         End      Blocks   Id  System
       /dev/vda1   *        2048    83886079    41942016   83  Linux
 
-      Disk /dev/vdb: 161.1 GB, 161061273600 bytes, 314572800 sectors
+      Disk /dev/vdb: 161.1 GiB, 161061273600 bytes, 314572800 sectors
       Units = sectors of 1 * 512 = 512 bytes
       Sector size (logical/physical): 512 bytes / 512 bytes
       I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -114,7 +115,7 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
 
    .. note::
 
-      If the MBR partition style is used, a maximum of 4 primary partitions, or 3 primary partitions and 1 extended partition can be created. The extended partition cannot be used directly and must be divided into logical partitions before use.
+      If MBR is used, a maximum of four primary partitions, or three primary partitions plus one extended partition can be created. The extended partition must be divided into logical partitions before use.
 
       Disk partitions created using GPT are not categorized.
 
@@ -176,7 +177,7 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
 
       Command (m for help): p
 
-      Disk /dev/vdb: 161.1 GB, 161061273600 bytes, 314572800 sectors
+      Disk /dev/vdb: 161.1 GiB, 161061273600 bytes, 314572800 sectors
       Units = sectors of 1 * 512 = 512 bytes
       Sector size (logical/physical): 512 bytes / 512 bytes
       I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -312,7 +313,7 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
 
    .. note::
 
-      If the server is restarted, the mounting will become invalid. You can set automatic mounting for partitions at system start by modifying the **/etc/fstab** file. For details, see :ref:`Setting Automatic Mounting at System Start <evs_01_0109__section1107170115310>`.
+      If the server is restarted, the mounting will become invalid. You can modify the **/etc/fstab** file to configure automount at startup. For details, see :ref:`Configuring Automatic Mounting at System Start <evs_01_0109__section1107170115310>`.
 
 .. _evs_01_0109__section31113372194023:
 
@@ -341,7 +342,7 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
 
       [root@ecs-test-0001 ~]# fdisk -l
 
-      Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors
+      Disk /dev/vda: 42.9 GiB, 42949672960 bytes, 83886080 sectors
       Units = sectors of 1 * 512 = 512 bytes
       Sector size (logical/physical): 512 bytes / 512 bytes
       I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -351,7 +352,7 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
          Device Boot      Start         End      Blocks   Id  System
       /dev/vda1   *        2048    83886079    41942016   83  Linux
 
-      Disk /dev/vdb: 247.0 GB, 246960619520 bytes, 482344960 sectors
+      Disk /dev/vdb: 247.0 GiB, 246960619520 bytes, 482344960 sectors
       Units = sectors of 1 * 512 = 512 bytes
       Sector size (logical/physical): 512 bytes / 512 bytes
       I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -424,7 +425,7 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
 
       .. note::
 
-         After deleting the partition, recreate the partition according to the following steps, and data on this disk will not be lost.
+         After deleting the partition, re-create the partition according to the following steps, and data on this disk will not be lost.
 
 #. Enter **n** and press **Enter** to create a new partition.
 
@@ -445,7 +446,7 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
 
    .. note::
 
-      If the MBR partition style is used, a maximum of 4 primary partitions, or 3 primary partitions and 1 extended partition can be created. The extended partition cannot be used directly and must be divided into logical partitions before use.
+      If MBR is used, a maximum of four primary partitions, or three primary partitions plus one extended partition can be created. The extended partition must be divided into logical partitions before use.
 
       Disk partitions created using GPT are not categorized.
 
@@ -490,7 +491,7 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
 
    In the command output, **Last sector** specifies the end sector.
 
-#. Ensure that the entered end sector is larger than or equal to the end sector recorded in :ref:`1 <evs_01_0109__li6396237219479>`. In this example, the recorded end sector is **314572799**, and the default end sector is used. Therefore, enter **482344959** and press **Enter**.
+#. Ensure that the entered end sector is greater than or equal to the end sector recorded in :ref:`1 <evs_01_0109__li6396237219479>`. In this example, the recorded end sector is **314572799**, and the default end sector is used. Therefore, enter **482344959** and press **Enter**.
 
    Information similar to the following is displayed:
 
@@ -505,7 +506,7 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
 
    The partition is created.
 
-#. Enter **p** and press **Enter** to view the partition details.
+#. Enter **p** and press **Enter** to print the partition details.
 
    Information similar to the following is displayed:
 
@@ -513,7 +514,7 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
 
       Command (m for help): p
 
-      Disk /dev/vdb: 247.0 GB, 246960619520 bytes, 482344960 sectors
+      Disk /dev/vdb: 247.0 GiB, 246960619520 bytes, 482344960 sectors
       Units = sectors of 1 * 512 = 512 bytes
       Sector size (logical/physical): 512 bytes / 512 bytes
       I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -591,6 +592,10 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
             resize2fs 1.42.9 (28-Dec-2013)
             Resizing the filesystem on /dev/vdb2 to 34078720 (4k) blocks.
             The filesystem on /dev/vdb2 is now 34078720 blocks long.
+
+         .. note::
+
+            If the error message "open: No such file or directory while opening /dev/vdb1" is returned, an incorrect partition is specified. Run **df -TH** to view the disk partitions.
 
       c. (Optional) Run the following command to create a mount point:
 
@@ -680,10 +685,6 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
       tmpfs          tmpfs     398M     0  398M   0% /run/user/0
       /dev/vdb1      ext4      106G   63M  101G   1% /mnt/sdc
       /dev/vdb2      ext4      138G   63M  131G   1% /mnt/test
-
-   .. note::
-
-      If the server is restarted, the mounting will become invalid. You can set automatic mounting for partitions at system start by modifying the **/etc/fstab** file. For details, see :ref:`Setting Automatic Mounting at System Start <evs_01_0109__section1107170115310>`.
 
 .. _evs_01_0109__section15940163415487:
 
@@ -820,17 +821,6 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
 
       (parted)
 
-#. Enter **q** and press **Enter** to exit parted.
-
-   Information similar to the following is displayed:
-
-   .. code-block::
-
-      (parted) q
-      Information: You may need to update /etc/fstab.
-
-   You can set automatic disk mounting by updating the **/etc/fstab** file. Before updating the file, set the file system format for the partition and mount the partition on the mount point.
-
 #. Run the following command to set the file system format for the new partition:
 
    **mkfs** **-t** *File system* *Disk partition*
@@ -930,7 +920,7 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
 
    .. note::
 
-      If the server is restarted, the mounting will become invalid. You can set automatic mounting for partitions at system start by modifying the **/etc/fstab** file. For details, see :ref:`Setting Automatic Mounting at System Start <evs_01_0109__section1107170115310>`.
+      If the server is restarted, the mounting will become invalid. You can modify the **/etc/fstab** file to configure automount at startup. For details, see :ref:`Configuring Automatic Mounting at System Start <evs_01_0109__section1107170115310>`.
 
 .. _evs_01_0109__section13346184710300:
 
@@ -1069,7 +1059,7 @@ During an expansion, the additional space is added to the end of the disk. There
       Partition number? 2
       (parted)
 
-#. Run the following command to recreate the partition and press **Enter**:
+#. Run the following command to re-create the partition and press **Enter**:
 
    **mkpart** *Partition name Start sector* *End sector*
 
@@ -1113,17 +1103,6 @@ During an expansion, the additional space is added to the end of the disk. There
 
       (parted)
 
-#. Enter **q** and press **Enter** to exit parted.
-
-   Information similar to the following is displayed:
-
-   .. code-block::
-
-      (parted) q
-      Information: You may need to update /etc/fstab.
-
-   You can set automatic disk mounting by updating the **/etc/fstab** file. Before updating the file, set the file system format for the partition and mount the partition on the mount point.
-
 #. Perform the following operations based on the file system of the disk:
 
    -  For the **ext**\ ``*`` file system
@@ -1165,6 +1144,10 @@ During an expansion, the additional space is added to the end of the disk. There
             resize2fs 1.42.9 (28-Dec-2013)
             Resizing the filesystem on /dev/vdb2 to 34078720 (4k) blocks.
             The filesystem on /dev/vdb2 is now 34078720 blocks long.
+
+         .. note::
+
+            If the error message "open: No such file or directory while opening /dev/vdb1" is returned, an incorrect partition is specified. Run **df -TH** to view the disk partitions.
 
       c. (Optional) Run the following command to create a mount point:
 
@@ -1255,28 +1238,24 @@ During an expansion, the additional space is added to the end of the disk. There
       /dev/vdb1      ext4      106G   63M  101G   1% /mnt/sdc
       /dev/vdb2      ext4      138G   63M  131G   1% /mnt/test
 
-   .. note::
-
-      If the server is restarted, the mounting will become invalid. You can set automatic mounting for partitions at system start by modifying the **/etc/fstab** file. For details, see :ref:`Setting Automatic Mounting at System Start <evs_01_0109__section1107170115310>`.
-
 .. _evs_01_0109__section1107170115310:
 
-Setting Automatic Mounting at System Start
-------------------------------------------
+Configuring Automatic Mounting at System Start
+----------------------------------------------
 
-Modify the **fstab** file to set automatic disk mounting at server start. You can also set automatic mounting for the servers containing data. This operation will not affect the existing data.
+The **fstab** file controls what disks are automatically mounted at server startup. You can configure the **fstab** file of a server that has data. This operation will not affect the existing data.
 
-The following procedure shows how to set automatic disk mounting at server start by using UUIDs to identify disks in the **fstab** file. You are advised not to use device names to identify disks in the file because a device name may change (for example, from /dev/vdb1 to /dev/vdb2) during the server stop or start, resulting in improper server running after restart.
+The following example uses UUIDs to identify disks in the **fstab** file. You are advised not to use device names (like **/dev/vdb1**) to identify disks in the file because device names are assigned dynamically and may change (for example, from **/dev/vdb1** to **/dev/vdb2**) after a server stop or start. This can even prevent your server from booting up.
 
 .. note::
 
-   UUID is the unique character string for disk partitions in a Linux system.
+   UUIDs are the unique character strings for identifying partitions in Linux.
 
-#. Run the following command to query the partition UUID:
+#. Query the partition UUID.
 
    **blkid** *Disk partition*
 
-   In this example, run the following command to query the UUID of the **/dev/vdb1** partition:
+   In this example, the UUID of the **/dev/vdb1** partition is queried.
 
    **blkid /dev/vdb1**
 
@@ -1287,9 +1266,9 @@ The following procedure shows how to set automatic disk mounting at server start
       [root@ecs-test-0001 ~]# blkid /dev/vdb1
       /dev/vdb1: UUID="0b3040e2-1367-4abb-841d-ddb0b92693df" TYPE="ext4"
 
-   The UUID of the **/dev/vdb1** partition is displayed.
+   Carefully record the UUID, as you will need it for the following step.
 
-#. Run the following command to open the **fstab** file using the vi editor:
+#. Open the **fstab** file using the vi editor.
 
    **vi /etc/fstab**
 
@@ -1305,9 +1284,9 @@ The following procedure shows how to set automatic disk mounting at server start
 
    The system saves the configurations and exits the vi editor.
 
-#. Perform the following operations to verify the automatic mounting function:
+#. Verify that the disk is auto-mounted at startup.
 
-   a. Run the following command to unmount the partition:
+   a. Unmount the partition.
 
       **umount** *Disk partition*
 
@@ -1315,11 +1294,11 @@ The following procedure shows how to set automatic disk mounting at server start
 
       **umount /dev/vdb1**
 
-   b. Run the following command to reload all the content in the **/etc/fstab** file:
+   b. Reload all the content in the **/etc/fstab** file.
 
       **mount -a**
 
-   c. Run the following command to query the file system mounting information:
+   c. Query the file system mounting information.
 
       **mount** **\|** **grep** *Mount point*
 

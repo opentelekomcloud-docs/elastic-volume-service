@@ -13,8 +13,13 @@ This section describes how to expand the capacity of an Available EVS disk on th
 Constraints
 -----------
 
--  Currently, disk capacities can only be expanded, but cannot be reduced.
--  A shared disk cannot be expanded in the **In-use** state. To expand a shared In-use disk, you must detach it from all its servers, wait until its status changes to **Available**, and then expand its capacity.
+-  Disk capacity can be expanded, but cannot be reduced.
+-  A shared disk in the **In-use** state cannot be expanded. To expand such a disk, you must detach it from all its servers, wait until its status changes to **Available**, and then expand its capacity.
+
+Prerequisites
+-------------
+
+Disk data has been backed up using CBR or snapshots. For details about backups, see :ref:`Managing EVS Backups <evs_01_0110>`. For details about snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
 
 Procedure
 ---------
@@ -31,14 +36,14 @@ Procedure
 
    The expansion page is displayed.
 
-#. Set the **Add Capacity (GiB)** parameter and click **Next**.
+#. Set the **New Capacity** parameter and click **Next**.
 
 #. On the **Details** page, check the disk details.
 
-   -  If you do not need to modify the specifications, click **Submit**.
-   -  If you need to modify the specifications, click **Previous**.
+   -  Click **Submit** to start the expansion.
+   -  Click **Previous** to change the settings.
 
-   After the specifications are submitted, go back to the disk list page.
+   After the configuration is submitted, go back to the disk list page.
 
 #. In the disk list, view the capacity of the target disk.
 
@@ -46,13 +51,17 @@ Procedure
 
    .. note::
 
-      If the expansion fails, technical support personnel will contact you and help you handle this error. Do not perform any operations on the disk before the technical support personnel contact you. If you require that the error be handled as soon as possible, contact our technical support personnel. The disk will no longer be charged after its status changes to **Expansion failed**.
+      When the status of a disk is **Expanding**, you are not allowed to modify the specifications of the ECS where the disk is attached.
+
+   .. note::
+
+      If the expansion fails, technical support personnel will contact you and help you handle this error. Do not perform any operations on the disk before the technical support personnel contact you. If you require that the error be handled as soon as possible, contact our technical support personnel. Disks whose capacities failed to be expanded are not billed.
 
 #. Attach the disk to the server. For details, see :ref:`Attach an EVS Disk <evs_01_0107>`.
 
-#. After the disk has been expanded on the management console, only the disk storage capacity is enlarged, but its additional space cannot be used directly. You must log in to the server and extend the disk partition and file system.
+#. Log in to the server and extend the partition and file system after the disk has been expanded on the console, because previous steps only enlarge the disk space.
 
-   The operation method varies depending on the server OS.
+   The operations vary depending on the server OS.
 
    -  In Windows, see :ref:`Extending Disk Partitions and File Systems (Windows Server 2008) <en-us_topic_0017616396>`.
    -  In Linux, see :ref:`Partition and File System Extension Preparations (Linux) <evs_01_0035>`.

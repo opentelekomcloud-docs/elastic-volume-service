@@ -23,7 +23,7 @@ Procedure
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
-#. Under **Computing**, click **Elastic Cloud Server**.
+#. Under **Compute**, click **Elastic Cloud Server**.
 
    The **Elastic Cloud Server** page is displayed.
 
@@ -52,7 +52,7 @@ Procedure
       +-----------------------+-----------------------+---------------------------------+
       |                       | vCPU                  | 4 cores                         |
       +-----------------------+-----------------------+---------------------------------+
-      |                       | Memory                | 8 GB                            |
+      |                       | Memory                | 8 GiB                           |
       +-----------------------+-----------------------+---------------------------------+
       |                       | Image                 | CentOS 7.2 64bit                |
       +-----------------------+-----------------------+---------------------------------+
@@ -61,8 +61,8 @@ Procedure
       | EVS disk              | Quantity              | -  System disk: 1               |
       |                       |                       | -  Data disk: 1                 |
       +-----------------------+-----------------------+---------------------------------+
-      |                       | Capacity              | -  System disk: 500 GB          |
-      |                       |                       | -  Data disk: 2000 GB           |
+      |                       | Capacity              | -  System disk: 500 GiB         |
+      |                       |                       | -  Data disk: 2,000 GiB         |
       +-----------------------+-----------------------+---------------------------------+
       |                       | Disk type             | -  System disk: common I/O      |
       |                       |                       | -  Data disk: ultra-high I/O    |

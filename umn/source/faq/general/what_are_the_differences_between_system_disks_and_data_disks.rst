@@ -5,7 +5,7 @@
 What Are the Differences Between System Disks and Data Disks?
 =============================================================
 
--  A system disk runs the server operating system. It is like drive C in a PC.
+-  A system disk runs the server OS. It is like drive C in a PC.
 
    When a server is created, a system disk is automatically created and attached. You cannot create a system disk separately. The maximum size of a system disk is 1,024 GiB.
 

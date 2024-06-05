@@ -8,7 +8,7 @@ Managing EVS Transfers
 Scenarios
 ---------
 
-Through EVS transfer, EVS disks can be transferred from one account to another. After the transfer succeeds, the ownerships of the EVS disks belong to the target account only.
+EVS transfer allows you to transfer disks from one account to another. After a transfer succeeds, the ownership of the disk belongs to the target account only.
 
 Users can use disk transfer via API only. For more information, see chapter "EVS Transfer" in the *Elastic Volume Service API Reference*.
 

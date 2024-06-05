@@ -5,10 +5,12 @@
 Basic Concepts
 ==============
 
+-  :ref:`EVS Concepts <evs_01_0102>`
 -  :ref:`Region and AZ <evs_01_0097>`
 
 .. toctree::
    :maxdepth: 1
    :hidden: 
 
+   evs_concepts
    region_and_az

@@ -50,7 +50,7 @@ Unlike the normal command output, only system disk **/dev/vda1** is visible, but
 
 -  **Cause 2**: If a data disk cannot be found after the server is restarted, automatic partition mounting at system start may not be configured. Perform the following steps:
 
-   #. Run the following command to mount the partition again:
+   #. Mount the data disk.
 
       **mount** *Disk partition* *Mount point*
 
@@ -58,15 +58,15 @@ Unlike the normal command output, only system disk **/dev/vda1** is visible, but
 
       **mount /dev/vdb1 /mnt/sdc**
 
-      Perform the following steps to enable automatic partition mounting at system start:
+      Perform the following steps to configure auto mount at system start:
 
    #. .. _evs_faq_0022__li840964143216:
 
-      Run the following command to query the partition UUID:
+      Query the partition UUID.
 
       **blkid** *Disk partition*
 
-      In this example, run the following command to query the UUID of the **/dev/vdb1** partition:
+      In this example, the UUID of the **/dev/vdb1** partition is queried.
 
       **blkid /dev/vdb1**
 
@@ -79,7 +79,7 @@ Unlike the normal command output, only system disk **/dev/vda1** is visible, but
 
       The UUID of the **/dev/vdb1** partition is displayed.
 
-   #. Run the following command to open the **fstab** file using the vi editor:
+   #. Open the **fstab** file using the vi editor.
 
       **vi /etc/fstab**
 
@@ -91,32 +91,32 @@ Unlike the normal command output, only system disk **/dev/vda1** is visible, but
 
          UUID=0b3040e2-1367-4abb-841d-ddb0b92693df /mnt/sdc                ext4    defaults        0 2
 
-      The preceding content is used for reference only. Add the information that is used in the environment. The parameters are described as follows:
+      In this example, the line starting with "UUID" is the information added. Edit this line to match the following format:
 
-      -  The first column indicates the partition UUID obtained in :ref:`2 <evs_faq_0022__li840964143216>`.
-      -  The second column indicates the directory on which the partition is mounted. You can query the mount point using the **df -TH** command.
-      -  The third column indicates the file system format of the partition. You can query the file system format using the **df -TH** command.
-      -  The fourth column indicates the partition mount option. Normally, this parameter is set to **defaults**.
-      -  The fifth column indicates the Linux dump backup option.
+      -  UUID: The UUID obtained in :ref:`2 <evs_faq_0022__li840964143216>`.
+      -  Mount point: The directory on which the partition is mounted. You can query the mount point using **df -TH**.
+      -  Filesystem: The file system format of the partition. You can query the file system format using **df -TH**.
+      -  Mount option: The partition mount option. Usually, this parameter is set to **defaults**.
+      -  Dump: The Linux dump backup option.
 
-         -  **0**: Linux dump backup is not used. Normally, dump backup is not used, and you can set this parameter to **0**.
+         -  **0**: Linux dump backup is not used. Usually, dump backup is not used, and you can set this parameter to **0**.
          -  **1**: Linux dump backup is used.
 
-      -  The sixth column indicates the fsck option, that is, whether to use fsck to check the attached disk during startup.
+      -  fsck: The fsck option, which means whether to use fsck to check the disk during startup.
 
-         -  **0**: not use fsck.
+         -  **0**: The fsck option is not used.
 
          -  If the mount point is the root partition (**/**), this parameter must be set to **1**.
 
-            When this parameter is set to **1** for the root partition, this parameter for other partitions must start with **2** because the system checks the partitions in the ascending order of the values.
+            If this parameter is set to **1** for the root partition, this parameter for other partitions must start with **2** because the system checks the partitions in the ascending order of the values.
 
    #. Press **Esc**, enter **:wq**, and press **Enter**.
 
       The system saves the configurations and exits the vi editor.
 
-      Perform the following operations to verify the automatic mounting function:
+      Verify that the disk is auto-mounted at startup.
 
-      a. Run the following command to unmount the partition:
+      a. Unmount the partition.
 
          **umount** *Disk partition*
 
@@ -124,11 +124,11 @@ Unlike the normal command output, only system disk **/dev/vda1** is visible, but
 
          **umount /dev/vdb1**
 
-      b. Run the following command to reload all the content in the **/etc/fstab** file:
+      b. Reload all the content in the **/etc/fstab** file.
 
          **mount -a**
 
-      c. Run the following command to query the file system mounting information:
+      c. Query the file system mounting information.
 
          **mount \| grep** *Mount point*
 
@@ -136,7 +136,7 @@ Unlike the normal command output, only system disk **/dev/vda1** is visible, but
 
          **mount \| grep** **/mnt/sdc**
 
-         If information similar to the following is displayed, automatic mounting has been configured:
+         If information similar to the following is displayed, auto mount has taken effect:
 
          .. code-block::
 

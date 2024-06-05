@@ -21,23 +21,25 @@ After a disk is attached to a server, you need to log in to the server to initia
 
    In both cases, you must initialize the data disk before using it. Choose an appropriate partition style based on your service plan.
 
+Prerequisites
+-------------
+
+-  The disk has been attached to a server.
+-  Data may be lost after a disk is initialized, so you are advised to create :ref:`snapshots <en-us_topic_0066615262>` or :ref:`backups <evs_01_0110>` before initializing a disk.
+
 Constraints
 -----------
 
-A disk created from a data source does not need to be initialized. Such a disk contains the data of the data source in the beginning. Initializing the disk may clear the initial data on this disk.
+-  A disk created from a data source does not need to be initialized. Such a disk contains the data of the source in the beginning. Initializing the disk may clear the initial data on it.
+-  Initializing a disk does not change the server's IP address or the disk ID.
+-  Initializing a disk does not delete the snapshots created for the disk, so you can still roll back snapshots to the original disk after the disk is initialized.
 
 Disk Partition Styles
 ---------------------
 
-.. important::
+:ref:`Table 1 <evs_01_0038__en-us_topic_0000001808490252_table2729705994129>` lists the common disk partition styles. In Linux, different partition styles require different partitioning tools.
 
-   The maximum disk size supported by MBR is 2 TiB, and that supported by GPT is 18 EiB. Because an EVS data disk currently supports up to 32 TiB, use GPT if your disk size is larger than 2 TiB.
-
-   If the partition style is changed after the disk has been used, data on the disk will be cleared. Therefore, select an appropriate partition style when initializing the disk. If you must change the partition style to GPT after a disk has been used, it is recommended that you back up the disk data before the change.
-
-:ref:`Table 1 <evs_01_0038__table2729705994129>` lists the common disk partition styles. In Linux, different partition styles require different partitioning tools.
-
-.. _evs_01_0038__table2729705994129:
+.. _evs_01_0038__en-us_topic_0000001808490252_table2729705994129:
 
 .. table:: **Table 1** Disk partition styles
 
@@ -56,3 +58,9 @@ Disk Partition Styles
    |                            |                                 |                                                                                                                                                                                                                                                            |                         |
    |                            | 1 EiB = 1048576 TiB             | Disk partitions created using GPT are not categorized.                                                                                                                                                                                                     |                         |
    +----------------------------+---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+
+
+.. important::
+
+   The maximum disk size supported by MBR is 2 TiB, and that supported by GPT is 18 EiB. Because an EVS data disk currently supports up to 32 TiB, use GPT if your disk size is larger than 2 TiB.
+
+   If the partition style is changed after the disk has been used, all data on the disk will be lost, so take care to select an appropriate partition style when initializing the disk. If you must change the partition style to GPT after a disk has been used, it is recommended that you back up the disk data before the change.

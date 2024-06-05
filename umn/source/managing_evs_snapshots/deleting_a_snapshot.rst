@@ -8,7 +8,7 @@ Deleting a Snapshot
 Scenarios
 ---------
 
-If a snapshot is no longer needed, you can delete the snapshot to release the virtual resources. Snapshot deletion has the following constraints:
+If a snapshot is no longer needed, you can delete it to release the virtual resources.
 
 Constraints
 -----------
@@ -17,6 +17,7 @@ Constraints
 -  If a disk is deleted, all the snapshots created for this disk will also be deleted.
 -  If a snapshot is deleted, disks rolled back and created from this snapshot are not affected.
 -  If you have reinstalled or changed the server OS, snapshots of the system disk are automatically deleted. Snapshots of the data disks can be used as usual.
+-  A snapshot whose name starts with **autobk_snapshot_vbs\_**, **manualbk_snapshot_vbs\_**, **autobk_snapshot_csbs\_**, or **manualbk_snapshot_csbs\_** is automatically generated during backup. You can only view details of such snapshots and cannot delete them.
 
 Procedure
 ---------
@@ -37,7 +38,7 @@ Procedure
 
 #. In the displayed dialog box, confirm the information and click **Yes**.
 
-   If the snapshot is no longer displayed in the snapshot list, the snapshot is deleted successfully.
+   If the snapshot disappears from the snapshot list, the snapshot is deleted successfully.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
 .. |image2| image:: /_static/images/en-us_image_0238263087.png
