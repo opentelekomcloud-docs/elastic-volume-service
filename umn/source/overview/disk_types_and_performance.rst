@@ -5,7 +5,7 @@
 Disk Types and Performance
 ==========================
 
-EVS disks are classified based on the disk I/O performance. EVS disks differ in performance and price. Choose the disk type most appropriate for your applications.
+EVS disks are classified based on the disk I/O performance. EVS disks differ in performance and price. You can choose whichever disk type that is the best fit for your applications.
 
 Application Scenarios
 ---------------------
@@ -25,9 +25,9 @@ EVS Performance
 
 EVS performance metrics include:
 
--  IOPS: Number of read/write operations performed by an EVS disk per second
--  Throughput: Amount of data read from and written into an EVS disk per second
--  Read/write I/O latency: Minimum interval between two consecutive read/write operations on an EVS disk
+-  IOPS: number of read/write operations performed by an EVS disk per second
+-  Throughput: amount of data read from and written into an EVS disk per second
+-  Read/write I/O latency: minimum interval between two consecutive read/write operations on an EVS disk
 
 .. table:: **Table 1** EVS performance data
 
@@ -53,48 +53,48 @@ EVS performance metrics include:
 
 EVS disk performance is closely related with the data block size:
 
--  If data blocks are of the same size, a disk can achieve either the maximum IOPS or maximum throughput depending on which one is reached first.
+-  If data blocks are all the same size, a disk can achieve either the maximum IOPS or maximum throughput depending on which one is reached first.
 -  If data blocks are of different sizes, the maximum performance metric that a disk can achieve varies:
 
    -  For small data blocks, such as 4 KiB or 8 KiB, a disk can reach the maximum IOPS.
-   -  For data blocks greater than or equal to 16 KiB, a disk can reach the maximum throughput.
+   -  For data blocks of a large size, 16 KiB or greater, a disk can reach the maximum throughput.
 
-The following uses an ultra-high I/O disk as an example. According to the formula, when the size of an ultra-high I/O disk is greater than or equal to 460 GiB, the disk theoretically can reach either the maximum IOPS 20,000 or the maximum throughput 350 MiB/s. However, this is not the case in practice. The maximum IOPS and maximum throughput that a disk can reach also vary with the data block size. For details, see :ref:`Table 2 <en-us_topic_0014580744__table721615248300>`.
+:ref:`Table 2 <en-us_topic_0014580744__en-us_topic_0078247520_table721615248300>` uses an ultra-high I/O disk as an example. In theory, when the size of an ultra-high I/O disk is at least 460 GiB, the disk theoretically can reach either the maximum IOPS 20,000 or the maximum throughput 350 MiB/s. However, this is not the case in practice. The maximum IOPS and maximum throughput that a disk can reach also vary with the data block size.
 
-.. _en-us_topic_0014580744__table721615248300:
+.. _en-us_topic_0014580744__en-us_topic_0078247520_table721615248300:
 
 .. table:: **Table 2** Maximum performance of an ultra-high I/O EVS disk
 
-   =============== ============ =======================
-   Data Block Size Max. IOPS    Max. Throughput (MiB/s)
-   =============== ============ =======================
-   4 KiB           About 20,000 About 78
-   8 KiB           About 20,000 About 156
-   16 KiB          About 20,000 About 312
-   32 KiB          About 11,200 About 350
-   =============== ============ =======================
+   ===================== ============ =======================
+   Data Block Size (KiB) Max. IOPS    Max. Throughput (MiB/s)
+   ===================== ============ =======================
+   4                     About 20,000 About 78
+   8                     About 20,000 About 156
+   16                    About 20,000 About 312
+   32                    About 11,200 About 350
+   ===================== ============ =======================
 
 Disk IOPS Calculation Formula
 -----------------------------
 
 Disk IOPS = Min. (Maximum IOPS, Minimum IOPS + IOPS per GiB x Capacity)
 
-The following example uses an ultra-high I/O EVS disk with a maximum IOPS of 20,000.
+Take an ultra-high I/O EVS disk with a maximum IOPS of 20,000 for example.
 
 -  If the disk capacity is 100 GiB, the disk IOPS is calculated as follows: Disk IOPS = Min. (20,000, 100 + 50 x 100)
 
-   The disk IOPS is 5,100, the smaller value between 20,000 and 5,100.
+   The disk IOPS is 5,100, the smaller of the two values (20,000 and 5,100).
 
 -  If the disk capacity is 1,000 GiB, the disk IOPS is calculated as follows: Disk IOPS = Min. (20,000, 100 + 50 x 1,000)
 
-   The disk IOPS is 20,000, the smaller value between 20,000 and 50,100.
+   The disk IOPS is 20,000, the smaller of the two values (20,000 and 50,100).
 
 Disk Burst Capability and Principles
 ------------------------------------
 
-EVS disks have burst capability, which allows a small-capacity disk to surpass its maximum IOPS within a certain period of time. This IOPS applies to individual disks.
+EVS disks have a burst capability. A small-capacity disk can surpass its official maximum IOPS for a short period of time. This IOPS applies to each disk individually.
 
-Disks with burst capability are well-suited for speeding up server startup. In most cases, system disks have small capacities. For example, the IOPS of a 50-GiB ultra-high I/O disk without burst capability can only reach up to 2,600, calculated as follows: IOPS = Min. (20,000, 100 + 50 x Capacity). If the disk has burst capability, its IOPS can burst up to 10,000.
+Disks with burst capability are well-suited for speeding up server startup. In most cases, system disks are fairly small, so their basic IOPS is fairly low. For example, the IOPS of a 50-GiB ultra-high I/O disk without burst can only reach up to 2,600 IOPS (Min. (20,000, 100 + 50 x Capacity)). But with burst capability, its IOPS can burst up to 10,000.
 
 The following example uses an ultra-high I/O EVS disk with the IOPS burst limit of 10,000.
 
@@ -110,34 +110,34 @@ Number of initial tokens = Burst duration x IOPS burst limit
 In the following example, a 100-GiB ultra-high I/O EVS disk is used, and the fixed burst duration is 1800s. Therefore, the number of initial tokens is 18,000,000 (1,800 x 10,000).
 
 -  Token production rate: This rate equals the disk maximum IOPS, which is 5,100 tokens/s.
--  Token consumption rate: This rate is calculated based on the I/O usage. Each I/O request consumes a token. The maximum consumption rate is 10,000 tokens/s, which is the larger value between the disk burst IOPS and maximum IOPS.
+-  Token consumption rate: This rate is based on the I/O usage. Each I/O request consumes a token. The maximum consumption rate is 10,000 tokens/s, which is the larger value of the disk burst IOPS and the maximum IOPS.
 
 Consumption principles
 
-When the token consumption rate is greater than the production rate, the number of tokens decreases accordingly, and eventually the disk IOPS will be consistent with the token production rate (the maximum IOPS). In this example, the disk can burst for approximately 3,673 seconds [18,000,000/(10,000 - 5,100)].
+When tokens are consumed faster than they are produced, the number of tokens decreases accordingly, and eventually the disk IOPS will be consistent with the token production rate (the maximum IOPS). In this example, the disk can burst for approximately 3,673 seconds [18,000,000/(10,000 - 5,100)].
 
 Reservation principles
 
-When the token consumption rate is smaller than the production rate, the number of tokens increases accordingly, enabling the disk to regain the burst capability. In this example, if the disk is suspended for approximately 3,529 seconds (18,000,000/5,100), the token bucket will be filled up with tokens.
+When tokens are consumed more slowly than they are produced, the number of tokens increases accordingly, and the disk regains burst capability. In this example, if the disk is suspended for approximately 3,529 seconds (18,000,000/5,100), the token bucket will be filled up with tokens.
 
 .. note::
 
    As long as there are tokens in the token bucket, the disk has the burst capability.
 
-:ref:`Figure 1 <en-us_topic_0014580744__fig10343858185721>` shows the token consumption and reservation principles. The blue bars indicate the disk IOPS usage, the green dashed line represents the maximum IOPS, the red dashed line indicates the IOPS burst limit, and the black curve indicates the changes of the number of tokens.
+:ref:`Figure 1 <en-us_topic_0014580744__en-us_topic_0078247520_fig10343858185721>` shows the token consumption and reservation principles. The blue bars indicate the disk IOPS usage, the green dashed line represents the maximum IOPS, the red dashed line indicates the IOPS burst limit, and the black curve indicates the changes of the number of tokens.
 
--  When the number of tokens is greater than zero, the disk IOPS can exceed 5,100 and has the capability to reach 10,000, the IOPS burst limit.
--  When the number of tokens is zero, the disk does not have the burst capability, and the maximum IOPS is 5,100.
--  When the disk IOPS is less than 5,100, the number of tokens starts to increase, and the disk can regain the burst capability.
+-  As long as there are tokens, the disk IOPS can exceed 5,100 and can burst to up to 10,000, the IOPS burst limit.
+-  When there are no more tokens, the disk loses the burst capability, and the disk IOPS can reach up to 5,100.
+-  Any time the disk IOPS is less than 5,100, the number of tokens starts to increase, and the disk regains the burst capability.
 
-.. _en-us_topic_0014580744__fig10343858185721:
+.. _en-us_topic_0014580744__en-us_topic_0078247520_fig10343858185721:
 
 .. figure:: /_static/images/en-us_image_0113597958.png
    :alt: **Figure 1** Burst capability diagram
 
    **Figure 1** Burst capability diagram
 
-Performance Test Method
------------------------
+Performance Testing
+-------------------
 
-For details about how to test the EVS disk performance parameters, see :ref:`How Can I Test My Disk Performance? <evs_faq_0019>`.
+For details about how to test the EVS disk performance, see :ref:`How Do I Test My Disk Performance? <evs_faq_0019>`.

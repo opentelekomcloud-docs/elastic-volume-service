@@ -43,7 +43,7 @@ Attachment
 -  :ref:`Why Can't I View the Attached Data Disk on the Server? <evs_faq_0022>`
 -  :ref:`Why Can't I Attach My Disk to a Server? <evs_faq_0025>`
 -  :ref:`Can I Attach a Disk to Multiple Servers? <evs_faq_0006>`
--  :ref:`Can I Attach a Disk to a Server in Another AZ? <evs_faq_0036>`
+-  :ref:`Can I Attach a Disk to a Server in a Different AZ? <evs_faq_0036>`
 -  :ref:`How Can I Add a Data Disk to an Existing Server? <evs_faq_0043>`
 -  :ref:`Can I Attach Different Types of Disks to the Same Server? <evs_faq_0055>`
 -  :ref:`What Should I Do If a Linux EVS Disk Is Attached to a Windows Server? <evs_faq_0076>`
@@ -72,7 +72,7 @@ Capacity
 Performance
 -----------
 
--  :ref:`How Can I Test My Disk Performance? <evs_faq_0019>`
+-  :ref:`How Do I Test My Disk Performance? <evs_faq_0019>`
 -  :ref:`Why Does My Disk Performance Test Using Fio Have Incorrect Results? <evs_faq_0080>`
 -  :ref:`How Can I Handle a Slowdown in Disk Read/Write Speed or Increased I/Os? <evs_faq_0081>`
 
@@ -92,7 +92,7 @@ Snapshot
 -  :ref:`Can I Create Snapshots for Multiple Disks at a Time? <evs_faq_0070>`
 -  :ref:`How Is a Snapshot Created for My Disk? <evs_faq_0057>`
 -  :ref:`Why Can't I Roll Back My Disk Data from a Snapshot? <evs_faq_0058>`
--  :ref:`Can I Roll Back the Data from a Snapshot After Reinstalling the OS or Formatting the Disk? <evs_faq_0062>`
+-  :ref:`Can I Roll Back Data from a Snapshot After Reinstalling the OS or Formatting the Disk? <evs_faq_0062>`
 -  :ref:`How Is the Snapshot Size Calculated? <evs_faq_0063>`
 -  :ref:`Do Snapshots Take Space on the Disk? <evs_faq_0064>`
 

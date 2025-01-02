@@ -9,4 +9,4 @@ If your disk capacity is greater than 2 TiB, do not use fdisk to partition the d
 
 In this case, use parted to repartition the disk and choose the GPT partition style because MBR does not support disks over 2 TiB.
 
-For details, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
+For details, see :ref:`Initialize an EVS Data Disk <evs_01_0058>`.

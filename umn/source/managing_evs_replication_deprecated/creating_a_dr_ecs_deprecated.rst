@@ -19,11 +19,11 @@ If a large number of physical resources in the primary AZ are faulty due to forc
 Procedure
 ---------
 
-#. Log in to the management console.
+#. Log in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
-#. Under **Compute**, click **Elastic Cloud Server**.
+#. Choose **Compute** > **Elastic Cloud Server**.
 
    The **Elastic Cloud Server** page is displayed.
 
@@ -31,13 +31,13 @@ Procedure
 
    The ECS details page is displayed.
 
-#. Take note of the production ECS information, including the ECS specifications, details of the EVS disks attached to the ECS, private IP address, and security group, as shown in :ref:`Table 1 <evs_01_0024__table8510771171728>`.
+#. Take note of the production ECS information, including the ECS specifications, details of the EVS disks attached to the ECS, private IP address, and security group, as shown in :ref:`Table 1 <evs_01_0024__en-us_topic_0080271666_table8510771171728>`.
 
    .. note::
 
       The listed parameter values are for reference only.
 
-   .. _evs_01_0024__table8510771171728:
+   .. _evs_01_0024__en-us_topic_0080271666_table8510771171728:
 
    .. table:: **Table 1** Information to be collected
 

@@ -31,24 +31,24 @@ If the fault persists after you have ruled out one cause, move on to the next on
 
 .. table:: **Table 1** Troubleshooting
 
-   +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Possible Cause                                            | Solution                                                                                                                                                            |
-   +===========================================================+=====================================================================================================================================================================+
-   | The partition's start sector number is not 4-KiB aligned. | Go to :ref:`Check Whether Partition's Start Sector Number Is 4-KiB Aligned <evs_faq_0080__en-us_topic_0000001073763031_en-us_topic_0267670624_section83925230328>`. |
-   |                                                           |                                                                                                                                                                     |
-   |                                                           | Delete the partition and select a 4-KiB aligned start sector number for the new partition.                                                                          |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | The disk used in testing was not a raw disk.              | Purchase an empty disk and attach it to a server for testing.                                                                                                       |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Stress test conditions were not properly set.             | Configure multi-core processing and arrange queues properly to maximize the concurrent performance.                                                                 |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | An inappropriate data block size was used.                | Set a suitable data block size.                                                                                                                                     |
-   |                                                           |                                                                                                                                                                     |
-   |                                                           | -  When testing the disk IOPS, set the data block size to a small value, for example, 4 KiB.                                                                        |
-   |                                                           | -  When testing the disk throughput, set the data block size to a large value, for example, 1024 KiB.                                                               |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Possible Cause                                            | Solution                                                                                                                                                                                         |
+   +===========================================================+==================================================================================================================================================================================================+
+   | The partition's start sector number is not 4-KiB aligned. | Go to :ref:`Check Whether Partition's Start Sector Number Is 4-KiB Aligned <evs_faq_0080__en-us_topic_0000001080217065_en-us_topic_0000001073763031_en-us_topic_0267670624_section83925230328>`. |
+   |                                                           |                                                                                                                                                                                                  |
+   |                                                           | Delete the partition and select a 4-KiB aligned start sector number for the new partition.                                                                                                       |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | The disk used in testing was not a raw disk.              | Purchase an empty disk and attach it to a server for testing.                                                                                                                                    |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Stress test conditions were not properly set.             | Configure multi-core processing and arrange queues properly to maximize the concurrent performance.                                                                                              |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | An inappropriate data block size was used.                | Set a suitable data block size.                                                                                                                                                                  |
+   |                                                           |                                                                                                                                                                                                  |
+   |                                                           | -  When testing the disk IOPS, set the data block size to a small value, for example, 4 KiB.                                                                                                     |
+   |                                                           | -  When testing the disk throughput, set the data block size to a large value, for example, 1024 KiB.                                                                                            |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. _evs_faq_0080__en-us_topic_0000001073763031_en-us_topic_0267670624_section83925230328:
+.. _evs_faq_0080__en-us_topic_0000001080217065_en-us_topic_0000001073763031_en-us_topic_0267670624_section83925230328:
 
 Check Whether Partition's Start Sector Number Is 4-KiB Aligned
 --------------------------------------------------------------
@@ -96,4 +96,4 @@ Check Whether Partition's Start Sector Number Is 4-KiB Aligned
 
       .. important::
 
-         If you delete the partition and select another start sector number for 4-KiB alignment, you will lose all the data on that partition. Exercise caution when performing this operation.
+         If you delete the partition and select another start sector number for 4-KiB alignment, you will lose all the data on that partition.

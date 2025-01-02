@@ -10,9 +10,9 @@ Scenarios
 
 Currently, users need to make API calls to create replication consistency groups and add EVS replication pairs to the groups. For details, see **Replication Consistency Group** in the *Elastic Volume Service API Reference*.
 
-A replication consistency group is composed of EVS replication pairs from a group of servers. These servers may run applications that are strongly correlated with each other and require unified management and application consistency. In this case, you can first create EVS replication pairs using the disks attached to these servers, then add these EVS replication pairs to a replication consistency group to facilitate management and consistency. :ref:`Figure 1 <evs_01_0028__fig1732359921243>` shows the relationship between EVS replication pairs and replication consistency groups. If you have performed an operation to a replication consistency group, all EVS replication pairs in this group are affected.
+A replication consistency group is composed of EVS replication pairs from a group of servers. These servers may run applications that are strongly correlated with each other and require unified management and application consistency. In this case, you can first create EVS replication pairs using the disks attached to these servers, then add these EVS replication pairs to a replication consistency group to facilitate management and consistency. :ref:`Figure 1 <evs_01_0028__en-us_topic_0080271670_fig1732359921243>` shows the relationship between EVS replication pairs and replication consistency groups. If you have performed an operation to a replication consistency group, all EVS replication pairs in this group are affected.
 
-.. _evs_01_0028__fig1732359921243:
+.. _evs_01_0028__en-us_topic_0080271670_fig1732359921243:
 
 .. figure:: /_static/images/en-us_image_0094231725.png
    :alt: **Figure 1** Relationship between EVS replication pairs and replication consistency groups

@@ -285,9 +285,9 @@ The following example shows you how a new primary partition can be created on a 
 
    .. note::
 
-      After the server is restarted, the disk will not be automatically mounted. You can modify the **/etc/fstab** file to configure automount at startup. For details, see :ref:`Configuring Automatic Mounting at System Start <evs_01_0033__en-us_topic_0000001808330216_section15839912195453>`.
+      After the server is restarted, the disk will not be automatically mounted. You can modify the **/etc/fstab** file to configure automount at startup. For details, see :ref:`Configuring Automatic Mounting at System Start <evs_01_0033__en-us_topic_0000001809189108_en-us_topic_0000001808330216_section15839912195453>`.
 
-.. _evs_01_0033__en-us_topic_0000001808330216_section15839912195453:
+.. _evs_01_0033__en-us_topic_0000001809189108_en-us_topic_0000001808330216_section15839912195453:
 
 Configuring Automatic Mounting at System Start
 ----------------------------------------------

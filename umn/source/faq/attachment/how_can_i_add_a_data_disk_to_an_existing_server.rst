@@ -17,4 +17,4 @@ Data disks can be created during or after the server creation. If you create dat
    -  If a data disk is created along with the server, you need to log in to the server and initialize the disk. The data disk will be visible after the initialization succeeds and the disk has been mounted via the **mount** command.
    -  If no data disk is created along with the server, you need to create a data disk and attach it to the server. Then, you need to log in to the server and initialize the disk. The data disk will be visible after the initialization succeeds and the disk has been mounted via the **mount** command.
 
-For details, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
+For details about how to initialize data disks, see :ref:`Initialize an EVS Data Disk <evs_01_0058>`.

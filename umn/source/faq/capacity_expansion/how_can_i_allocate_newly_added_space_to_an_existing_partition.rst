@@ -8,11 +8,9 @@ How Can I Allocate Newly Added Space to an Existing Partition?
 Windows
 -------
 
-In Windows, if your disk already has, for example, a D: drive and you want to add space to this volume, refer to the following:
+In Windows, if your disk already has, for example, a D drive and you want to add space to this drive, refer to the following:
 
-The **System Disk: Add Additional Capacity to New Volume (C:)** and **Data Disk: Add Additional Capacity to New Volume (D:)** parts in the following section:
-
-:ref:`Extending Disk Partitions and File Systems (Windows Server 2016) <evs_01_0126>`
+The **System Disk: Add the Additional Space to the Original Volume** and **Data Disk: Add the Additional Space to the Original Volume** parts in :ref:`Extending Disk Partitions and File Systems (Windows Server 2016) <evs_01_0126>`
 
 Linux
 -----

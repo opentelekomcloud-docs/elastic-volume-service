@@ -38,17 +38,17 @@ Procedure
 
    The **Disk Management** window is displayed.
 
-   -  If :ref:`Figure 1 <evs_01_0108__en-us_topic_0000001855169053_fig40496387105554>` is displayed, the new disk is offline. Go to :ref:`3 <evs_01_0108__en-us_topic_0000001855169053_li33296033102625>`.
-   -  If :ref:`Figure 4 <evs_01_0108__en-us_topic_0000001855169053_fig68332918241>` is displayed, the **Initialize Disk** window is prompted. Go to :ref:`5 <evs_01_0108__en-us_topic_0000001855169053_li34991214122212>`.
+   -  If :ref:`Figure 1 <evs_01_0108__en-us_topic_0000001855867909_en-us_topic_0000001855169053_fig40496387105554>` is displayed, the new disk is offline. Go to :ref:`3 <evs_01_0108__en-us_topic_0000001855867909_en-us_topic_0000001855169053_li33296033102625>`.
+   -  If :ref:`Figure 4 <evs_01_0108__en-us_topic_0000001855867909_en-us_topic_0000001855169053_fig68332918241>` is displayed, the **Initialize Disk** window is prompted. Go to :ref:`5 <evs_01_0108__en-us_topic_0000001855867909_en-us_topic_0000001855169053_li34991214122212>`.
 
-   .. _evs_01_0108__en-us_topic_0000001855169053_fig40496387105554:
+   .. _evs_01_0108__en-us_topic_0000001855867909_en-us_topic_0000001855169053_fig40496387105554:
 
    .. figure:: /_static/images/en-us_image_0000001855948581.png
       :alt: **Figure 1** Disk Management
 
       **Figure 1** Disk Management
 
-#. .. _evs_01_0108__en-us_topic_0000001855169053_li33296033102625:
+#. .. _evs_01_0108__en-us_topic_0000001855867909_en-us_topic_0000001855169053_li33296033102625:
 
    Disks are displayed in the right pane. In the **Disk 1** area, right-click **Offline** and choose **Online** from the shortcut menu to online the disk.
 
@@ -62,7 +62,7 @@ Procedure
 
       If the disk is offline, you need to bring it online before initializing it.
 
-#. After making the disk online, the disk status changes from **Offline** to **Not Initialized**. Right-click the disk status and choose **Initialize Disk** from the shortcut menu.
+#. After making the disk online, the status of **Disk 1** changes from **Offline** to **Not Initialized**. Right-click the disk status and choose **Initialize Disk** from the shortcut menu.
 
 
    .. figure:: /_static/images/en-us_image_0000001809189756.png
@@ -70,11 +70,11 @@ Procedure
 
       **Figure 3** Initialize Disk
 
-#. .. _evs_01_0108__en-us_topic_0000001855169053_li34991214122212:
+#. .. _evs_01_0108__en-us_topic_0000001855867909_en-us_topic_0000001855169053_li34991214122212:
 
    In the **Initialize Disk** dialog box, select the target disk, click **MBR (Master Boot Record)** or **GPT (GUID Partition Table)**, and click **OK**.
 
-   .. _evs_01_0108__en-us_topic_0000001855169053_fig68332918241:
+   .. _evs_01_0108__en-us_topic_0000001855867909_en-us_topic_0000001855169053_fig68332918241:
 
    .. figure:: /_static/images/en-us_image_0000001855868557.png
       :alt: **Figure 4** Unallocated space
@@ -83,7 +83,7 @@ Procedure
 
    .. important::
 
-      The maximum disk size supported by MBR is 2 TiB, and that supported by GPT is 18 EiB. Because an EVS data disk currently supports up to 32 TiB, use GPT if your disk size is larger than 2 TiB.
+      The maximum disk size supported by MBR is 2 TiB, and that supported by GPT is 18 EiB. Because an EVS data disk currently supports up to 32 TiB, use GPT if your disk size is greater than 2 TiB.
 
       If the partition style is changed after the disk has been used, all data on the disk will be lost, so take care to select an appropriate partition style when initializing the disk. If you must change the partition style to GPT after a disk has been used, it is recommended that you back up the disk data before the change.
 

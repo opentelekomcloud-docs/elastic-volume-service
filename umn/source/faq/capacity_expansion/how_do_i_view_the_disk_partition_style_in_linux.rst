@@ -7,15 +7,15 @@ How Do I View the Disk Partition Style in Linux?
 
 You can use either fdisk or parted to view the disk partition style.
 
--  :ref:`Method 1: Check Partition Style and File System Format Using fdisk <evs_faq_0131__evs_01_0035_section45741613172812>`
--  :ref:`Method 2: Check Partition Style and File System Format Using parted <evs_faq_0131__evs_01_0035_section7627683297>`
+-  :ref:`Method 1: Check Partition Style and File System Format Using fdisk <evs_faq_0131__en-us_topic_0000001808426658_en-us_topic_0085347864_section45741613172812>`
+-  :ref:`Method 2: Check Partition Style and File System Format Using parted <evs_faq_0131__en-us_topic_0000001808426658_en-us_topic_0085347864_section7627683297>`
 
-.. _evs_faq_0131__evs_01_0035_section45741613172812:
+.. _evs_faq_0131__en-us_topic_0000001808426658_en-us_topic_0085347864_section45741613172812:
 
 Method 1: Check Partition Style and File System Format Using fdisk
 ------------------------------------------------------------------
 
-#. .. _evs_faq_0131__evs_01_0035_li4640174163019:
+#. .. _evs_faq_0131__en-us_topic_0000001808426658_en-us_topic_0085347864_li4640174163019:
 
    Run the following command to view all the disks attached to the server:
 
@@ -36,7 +36,7 @@ Method 1: Check Partition Style and File System Format Using fdisk
 
    .. note::
 
-      If you run **lsblk** and find out that disk **/dev/vdb** has no partitions, format the disk by referring to :ref:`How Do I Extend the File System of an Unpartitioned Data Disk in Linux? <evs_faq_0073>` and expand the capacity. Otherwise, the additional space cannot be used after expansion.
+      If you run **lsblk** and find out that disk **/dev/vdb** has no partitions, format the disk by referring to :ref:`How Do I Extend the File System of an Unpartitioned Data Disk in Linux? <evs_faq_0073>` Otherwise, the additional space cannot be used after expansion.
 
 #. Run the following command to view the current disk partition style:
 
@@ -70,8 +70,8 @@ Method 1: Check Partition Style and File System Format Using fdisk
 
    The value in the **System** column indicates the disk partition style. Value **Linux** indicates the MBR partition style. Value **GPT** indicates the GPT partition style.
 
-   -  If the disk partitions displayed are inconsistent with those obtained in :ref:`1 <evs_faq_0131__evs_01_0035_li4640174163019>`, the possible reason may be that existing partitions uses GPT and there is unallocated disk space. In this case, you cannot query all the partitions using **fdisk -l**. Go to :ref:`Method 2: Check Partition Style and File System Format Using parted <evs_faq_0131__evs_01_0035_section7627683297>`.
-   -  If the disk partitions displayed are consistent with those obtained in :ref:`1 <evs_faq_0131__evs_01_0035_li4640174163019>`, continue with the following operations.
+   -  If the disk partitions displayed are inconsistent with those obtained in :ref:`1 <evs_faq_0131__en-us_topic_0000001808426658_en-us_topic_0085347864_li4640174163019>`, the possible reason may be that existing partitions uses GPT and there is unallocated disk space. In this case, you cannot query all the partitions using **fdisk -l**. Go to :ref:`Method 2: Check Partition Style and File System Format Using parted <evs_faq_0131__en-us_topic_0000001808426658_en-us_topic_0085347864_section7627683297>`.
+   -  If the disk partitions displayed are consistent with those obtained in :ref:`1 <evs_faq_0131__en-us_topic_0000001808426658_en-us_topic_0085347864_li4640174163019>`, continue with the following operations.
 
 #. Run the following command to view the partition's file system format:
 
@@ -110,7 +110,7 @@ Method 1: Check Partition Style and File System Format Using fdisk
 
    If the file system status is **clean**, the file system is normal. Otherwise, rectify the faulty and then perform the capacity expansion.
 
-.. _evs_faq_0131__evs_01_0035_section7627683297:
+.. _evs_faq_0131__en-us_topic_0000001808426658_en-us_topic_0085347864_section7627683297:
 
 Method 2: Check Partition Style and File System Format Using parted
 -------------------------------------------------------------------

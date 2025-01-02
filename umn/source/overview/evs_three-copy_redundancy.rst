@@ -43,18 +43,18 @@ How Does Three-Copy Redundancy Rapidly Rebuild Data?
 
 Each physical disk in the storage system stores multiple data blocks, whose copies are scattered on the nodes in the system according to certain distribution rules. When a physical server or disk fault is detected, the storage system automatically rebuilds the data. Since the copies of data blocks are scattered on different nodes, the storage system will start the data rebuild on multiple nodes simultaneously during a data restore, with only a small amount of data on each node. In this way, the system eliminates the potential performance bottlenecks that may occur when a large amount of data needs to be rebuilt on a single node, and therefore minimizes the adverse impacts exerted on upper-layer applications.
 
-:ref:`Figure 2 <evs_01_0056__fig5727201319315>` shows the data rebuild process.
+:ref:`Figure 2 <evs_01_0056__en-us_topic_0127363626_fig5727201319315>` shows the data rebuild process.
 
-.. _evs_01_0056__fig5727201319315:
+.. _evs_01_0056__en-us_topic_0127363626_fig5727201319315:
 
 .. figure:: /_static/images/en-us_image_0197133828.png
    :alt: **Figure 2** Data rebuild process
 
    **Figure 2** Data rebuild process
 
-:ref:`Figure 3 <evs_01_0056__fig0545141175416>` shows the data rebuild principle. For example, if physical disks on server F are faulty, the data blocks on these physical disks will be rebuilt on the physical disks of other servers.
+:ref:`Figure 3 <evs_01_0056__en-us_topic_0127363626_fig0545141175416>` shows the data rebuild principle. For example, if physical disks on server F are faulty, the data blocks on these physical disks will be rebuilt on the physical disks of other servers.
 
-.. _evs_01_0056__fig0545141175416:
+.. _evs_01_0056__en-us_topic_0127363626_fig0545141175416:
 
 .. figure:: /_static/images/en-us_image_0205534122.png
    :alt: **Figure 3** Data rebuild principle

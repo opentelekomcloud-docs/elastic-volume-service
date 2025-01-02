@@ -10,16 +10,16 @@ Troubleshooting
 
 .. table:: **Table 1** Possible causes
 
-   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-   | OS                    | Possible Cause                                                                                                                                                             | Solution                                                      |
-   +=======================+============================================================================================================================================================================+===============================================================+
-   | Linux                 | -  New data disks are not formatted and partitioned by default, and an unformatted disk will not be listed in the command output. You must manually initialize the disk.   | :ref:`Linux Data Disk <evs_faq_0022__section1514019519474>`   |
-   |                       | -  If a data disk cannot be found after the server is restarted, automatic partition mounting at system start may not be configured.                                       |                                                               |
-   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-   | Windows               | New data disks are not formatted and partitioned by default. Only formatted and partitioned drives show up in the resource manager. You must manually initialize the disk. | :ref:`Windows Data Disk <evs_faq_0022__section1894911274212>` |
-   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+   | OS                    | Possible Cause                                                                                                                                                             | Solution                                                                             |
+   +=======================+============================================================================================================================================================================+======================================================================================+
+   | Linux                 | -  New data disks are not formatted and partitioned by default. An unformatted disk will not be listed in the command output. You must manually initialize the disk.       | :ref:`Linux Data Disk <evs_faq_0022__en-us_topic_0132915322_section1514019519474>`   |
+   |                       | -  If a data disk cannot be found after the server is restarted, automatic partition mounting at system start may not be configured.                                       |                                                                                      |
+   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+   | Windows               | New data disks are not formatted and partitioned by default. Only formatted and partitioned drives show up in the resource manager. You must manually initialize the disk. | :ref:`Windows Data Disk <evs_faq_0022__en-us_topic_0132915322_section1894911274212>` |
+   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
 
-.. _evs_faq_0022__section1514019519474:
+.. _evs_faq_0022__en-us_topic_0132915322_section1514019519474:
 
 Linux Data Disk
 ---------------
@@ -46,7 +46,7 @@ Unlike the normal command output, only system disk **/dev/vda1** is visible, but
 
 -  **Cause 1**: New data disks are not formatted and partitioned by default, and an unformatted disk will not be listed in the command output. You must manually initialize the disk.
 
-   For details, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
+   For details about how to initialize data disks, see :ref:`Initialize an EVS Data Disk <evs_01_0058>`.
 
 -  **Cause 2**: If a data disk cannot be found after the server is restarted, automatic partition mounting at system start may not be configured. Perform the following steps:
 
@@ -60,7 +60,7 @@ Unlike the normal command output, only system disk **/dev/vda1** is visible, but
 
       Perform the following steps to configure auto mount at system start:
 
-   #. .. _evs_faq_0022__li840964143216:
+   #. .. _evs_faq_0022__en-us_topic_0132915322_li840964143216:
 
       Query the partition UUID.
 
@@ -93,7 +93,7 @@ Unlike the normal command output, only system disk **/dev/vda1** is visible, but
 
       In this example, the line starting with "UUID" is the information added. Edit this line to match the following format:
 
-      -  UUID: The UUID obtained in :ref:`2 <evs_faq_0022__li840964143216>`.
+      -  UUID: The UUID obtained in :ref:`2 <evs_faq_0022__en-us_topic_0132915322_li840964143216>`.
       -  Mount point: The directory on which the partition is mounted. You can query the mount point using **df -TH**.
       -  Filesystem: The file system format of the partition. You can query the file system format using **df -TH**.
       -  Mount option: The partition mount option. Usually, this parameter is set to **defaults**.
@@ -143,14 +143,14 @@ Unlike the normal command output, only system disk **/dev/vda1** is visible, but
             root@ecs-test-0001 ~]# mount | grep /mnt/sdc
             /dev/vdb1 on /mnt/sdc type ext4 (rw,relatime,data=ordered)
 
-.. _evs_faq_0022__section1894911274212:
+.. _evs_faq_0022__en-us_topic_0132915322_section1894911274212:
 
 Windows Data Disk
 -----------------
 
-**Symptom**: A data disk has been attached to a Windows server on the management console, but the disk cannot be viewed on the server. For example, Volume (D:) was not shown in **This PC** of a Windows server running Windows Server 2012. Normally, Volume (D:) appears, as shown in :ref:`Figure 1 <evs_faq_0022__fig156291639133210>`.
+**Symptom**: A data disk has been attached to a Windows server on the management console, but the disk cannot be viewed on the server. For example, Volume (D:) was not shown in **This PC** of a server running Windows Server 2012. Normally, Volume (D:) appears, as shown in :ref:`Figure 1 <evs_faq_0022__en-us_topic_0132915322_fig156291639133210>`.
 
-.. _evs_faq_0022__fig156291639133210:
+.. _evs_faq_0022__en-us_topic_0132915322_fig156291639133210:
 
 .. figure:: /_static/images/en-us_image_0000001327868762.png
    :alt: **Figure 1** Volume (D:) appears
@@ -159,4 +159,4 @@ Windows Data Disk
 
 **Solution**: New data disks are not formatted and partitioned by default. Only formatted and partitioned drives show up in **This PC**. You must manually initialize the disk before it can be viewed here.
 
-For details, see :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`.
+For details about how to initialize data disks, see :ref:`Initialize an EVS Data Disk <evs_01_0058>`.

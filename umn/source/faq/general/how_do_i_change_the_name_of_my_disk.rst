@@ -13,9 +13,9 @@ Disk names are used to identify disks. After a disk is created, you can perform 
 Procedure
 ---------
 
-#. Log in to the management console.
+#. Log in to the console.
 
-#. Under **Storage**, click **Elastic Volume Service**.
+#. Choose **Storage** > **Elastic Volume Service**.
 
    The disk list page is displayed.
 

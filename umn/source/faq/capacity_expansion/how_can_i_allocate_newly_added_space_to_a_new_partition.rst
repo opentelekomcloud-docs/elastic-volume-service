@@ -10,9 +10,7 @@ Windows
 
 In Windows, if you already have a D drive and want to add an E drive, refer to the following:
 
-The **System Disk: Add Additional Capacity to New Volume (F:)** and **Data Disk: Add Additional Capacity to New Volume (E:)** parts in the following section:
-
-:ref:`Extending Disk Partitions and File Systems (Windows) <evs_01_0126>`
+The **System Disk: Create a New Volume with the Additional Space** and **Data Disk: Create a New Volume with the Additional Space** parts in :ref:`Extending Disk Partitions and File Systems (Windows Server 2016) <evs_01_0126>`.
 
 Linux
 -----
