@@ -11,7 +11,9 @@ With IAM, you can control access to specific cloud resources. For example, if yo
 
 If your account does not require IAM for permissions management, you can skip this section.
 
-IAM is a free service. You only pay for the resources in your account. For more information about IAM, see section "Service Overview" in the *Identity and Access Management User Guide*.
+IAM is a free service. You only pay for the resources in your account.
+
+For more information about IAM, see `IAM Service Overview <https://docs.otc.t-systems.com/usermanual/iam/iam_01_0026.html>`__.
 
 EVS Permissions
 ---------------
@@ -25,9 +27,9 @@ You can grant users permissions by using roles and policies.
 -  Roles: A type of coarse-grained authorization mechanism that defines permissions related to user responsibilities. This mechanism provides only a limited number of service-level roles for authorization. When using roles to grant permissions, you need to also assign other roles on which the permissions depend to take effect. However, roles are not an ideal choice for fine-grained authorization and secure access control.
 -  Policies: A type of fine-grained authorization mechanism that defines permissions required to perform operations on specific cloud resources under certain conditions. This mechanism allows for more flexible policy-based authorization, meeting requirements for secure access control. For example, you can grant ECS users only the permissions for managing a certain type of ECSs. Most policies define permissions based on APIs. For the API actions supported by EVS, see section "Permissions Policies and Supported Actions" in the *Elastic Volume Service API Reference*.
 
-:ref:`Table 1 <evs_01_0086__table481412518317>` lists all the system-defined roles and policies supported by EVS.
+:ref:`Table 1 <evs_01_0086__en-us_topic_0171850870_table481412518317>` lists all the system-defined roles and policies supported by EVS.
 
-.. _evs_01_0086__table481412518317:
+.. _evs_01_0086__en-us_topic_0171850870_table481412518317:
 
 .. table:: **Table 1** System-defined roles and policies supported by EVS
 
@@ -38,44 +40,44 @@ You can grant users permissions by using roles and policies.
    +----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+------------+
    | EVS ReadOnlyAccess   | Read-only permissions for EVS. Users granted these permissions can view EVS resource data only.                                                          | System-defined policy | None       |
    +----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+------------+
-   | Server Administrator | Full permissions for EVS                                                                                                                                 | System role           | None       |
+   | Server Administrator | Full permissions for EVS                                                                                                                                 | System-defined role   | None       |
    +----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+------------+
 
 .. note::
 
    The **EVS Admin** and **EVS FullAccess** roles have the same permissions, and **EVS Admin** will be deprecated later. The **EVS Viewer** and **EVS ReadOnlyAccess** roles have the same permissions, and **EVS Viewer** will be deprecated later.
 
-:ref:`Table 2 <evs_01_0086__table470371811355>` lists the common operations supported by each system-defined policy of EVS. Select the policies as required.
+:ref:`Table 2 <evs_01_0086__en-us_topic_0171850870_table470371811355>` lists the common operations supported by each system-defined policy of EVS. Select the policies as required.
 
-.. _evs_01_0086__table470371811355:
+.. _evs_01_0086__en-us_topic_0171850870_table470371811355:
 
 .. table:: **Table 2** Common operations supported by each system-defined policy of EVS
 
-   ============================= ============== ==================
-   Operation                     EVS FullAccess EVS ReadOnlyAccess
-   ============================= ============== ==================
-   Creating disks                Y              x
-   Viewing the disk list         Y              Y
-   Viewing disk details          Y              Y
-   Attaching disks               Y              x
-   Detaching disks               Y              x
-   Deleting disks                Y              x
-   Expanding disk capacities     Y              x
-   Creating snapshots            Y              x
-   Deleting snapshots            Y              x
-   Rolling back snapshot data    Y              x
-   Creating disks from snapshots Y              x
-   Adding tags for disks         Y              x
-   Modifying tags                Y              x
-   Deleting tags                 Y              x
-   Searching for disks by tag    Y              Y
-   Changing disk names           Y              x
-   ============================= ============== ==================
+   ================================ ============== ==================
+   Operation                        EVS FullAccess EVS ReadOnlyAccess
+   ================================ ============== ==================
+   Creating disks                   Y              x
+   Viewing the disk list            Y              Y
+   Viewing disk details             Y              Y
+   Attaching disks                  Y              x
+   Detaching disks                  Y              x
+   Deleting disks                   Y              x
+   Expanding disk capacities        Y              x
+   Creating snapshots               Y              x
+   Deleting snapshots               Y              x
+   Rolling back data from snapshots Y              x
+   Creating disks from snapshots    Y              x
+   Adding tags for disks            Y              x
+   Modifying tags                   Y              x
+   Deleting tags                    Y              x
+   Searching for disks by tag       Y              Y
+   Changing disk names              Y              x
+   ================================ ============== ==================
 
-Related Links
+Helpful Links
 -------------
 
--  Permissions management sections in the *Identify and Access Management User Guide*
+-  `IAM Service Overview <https://docs.otc.t-systems.com/usermanual/iam/iam_01_0026.html>`__
 
 -  :ref:`Creating a User and Granting EVS Permissions <evs_01_0089>`
--  Section "Permissions Policies and Supported Actions" in the *Elastic Volume Service API Reference*
+-  "Permissions Policies and Supported Actions" in the *Elastic Volume Service API Reference*

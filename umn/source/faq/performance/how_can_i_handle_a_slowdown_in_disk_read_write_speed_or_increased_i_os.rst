@@ -12,7 +12,7 @@ If you are aware of a service slowdown, depending on if you are examining a Wind
 -  Windows: Open **Task Manager** and view the average response time.
 -  Linux: Run **iostat -dx** to view the I/O performance.
 
-If the disk read/write speed is slowed down, disk I/O increases, or the await time increases, the disk is likely encounters a performance bottleneck.
+If the disk read/write speed is slowed down, disk I/O increases, or the await time increases, the disk is likely to encounter a performance bottleneck.
 
 **Solution**
 

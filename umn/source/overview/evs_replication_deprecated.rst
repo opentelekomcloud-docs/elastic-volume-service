@@ -21,11 +21,6 @@ The replication function helps address your following needs:
 -  Data in DR disks is consistent with that in production disks in real time. You can perform a planned migration based on your service needs, that is, migrate the services from the primary AZ to the secondary AZ without data loss.
 -  If large-scale physical resources in the primary AZ become faulty due to force majeure, you can use DR disks in the secondary AZ to lower the impact exerted on services.
 
-Usage Instructions
-------------------
-
-For more use methods of EVS replication, see :ref:`Managing EVS Replication (Deprecated) <evs_01_0023>`.
-
 .. note::
 
    EVS replication APIs have been deprecated. If you need to use the replication function, see `Storage Disaster Recovery Service User Guide <https://docs.otc.t-systems.com/en-us/usermanual/sdrs/en-us_topic_0125068221.html>`__ and `Storage Disaster Recovery Service API Reference <https://docs.otc.t-systems.com/en-us/api/sdrs/sdrs_01_0000.html>`__.

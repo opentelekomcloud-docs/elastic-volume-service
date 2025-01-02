@@ -5,9 +5,9 @@
 What Are the Differences Between MBR and GPT Partition Styles?
 ==============================================================
 
-:ref:`Table 1 <evs_faq_0092__table2729705994129>` lists the common disk partition styles. In Linux, different partition styles require different partitioning tools.
+:ref:`Table 1 <evs_faq_0092__en-us_topic_0000001229286153_table2729705994129>` lists the common disk partition styles. In Linux, different partition styles require different partitioning tools.
 
-.. _evs_faq_0092__table2729705994129:
+.. _evs_faq_0092__en-us_topic_0000001229286153_table2729705994129:
 
 .. table:: **Table 1** Disk partition styles
 
@@ -29,6 +29,6 @@ What Are the Differences Between MBR and GPT Partition Styles?
 
 .. important::
 
-   The maximum disk size supported by MBR is 2 TiB, and that supported by GPT is 18 EiB. Because an EVS data disk currently supports up to 32 TiB, use GPT if your disk size is larger than 2 TiB.
+   The maximum disk size supported by MBR is 2 TiB, and that supported by GPT is 18 EiB. Because an EVS data disk currently supports up to 32 TiB, use GPT if your disk size is greater than 2 TiB.
 
    If you change the partition style after the disk has been used, the data on the disk will be cleared. Therefore, select an appropriate partition style when initializing the disk.

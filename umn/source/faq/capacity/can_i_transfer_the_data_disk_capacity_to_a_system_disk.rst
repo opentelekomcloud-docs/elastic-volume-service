@@ -21,10 +21,10 @@ Currently, the capacity of an EVS disk cannot be transferred to another disk. Mu
 
    #. Back up the data disk using the CBR service or by creating a snapshot.
 
-      For details about backups, see section "Managing EVS Backups" in the *Elastic Volume Service User Guide*. For details about snapshots, see :ref:`Creating a Snapshot <en-us_topic_0066615262>`.
+      For details about backups, see section "Managing EVS Backups" in the *Elastic Volume Service User Guide*. For details about snapshots, see :ref:`Creating an EVS Snapshot <evs_01_2721>`.
 
    #. Create a new data disk with the desired capacity and attach it to the server. After initializing the disk, copy the data from the original data disk to the new data disk.
 
    #. Confirm that the services on the new data disk are available. Then, delete the original data disk, and delete the created backup.
 
-   #. Expand the system disk capacity by referring to :ref:`Disk Capacity Expansion <evs_01_0059>`.
+   #. Expand the system disk capacity by referring to :ref:`Expanding EVS Disk Capacity <evs_01_0059>`.

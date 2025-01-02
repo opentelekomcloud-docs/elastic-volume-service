@@ -27,11 +27,11 @@ Procedure
 
 The following operations are for reference only. For details, see **Assigning a Virtual IP Address** in the *Virtual Private Cloud User Guide*.
 
-#. Log in to the management console.
+#. Log in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
-#. Under **Compute**, click **Elastic Cloud Server**.
+#. Choose **Compute** > **Elastic Cloud Server**.
 
    The **Elastic Cloud Server** page is displayed.
 
@@ -77,7 +77,7 @@ The following operations are for reference only. For details, see **Assigning a 
 
          After the virtual IP address is bound with the DR server, the subnet details page is displayed.
 
-#. .. _evs_01_0026__li894545421812:
+#. .. _evs_01_0026__en-us_topic_0080271668_li894545421812:
 
    On the subnet details page, take note of the subnet and the IP address of the server's NIC where the virtual IP address has been bound.
 
@@ -98,13 +98,13 @@ The following operations are for reference only. For details, see **Assigning a 
 
    a. Log in to the server as user **root**.
 
-   b. .. _evs_01_0026__li1422712286426:
+   b. .. _evs_01_0026__en-us_topic_0080271668_li1422712286426:
 
       Run the following command to check the name of the NIC bound with the virtual IP address in the server:
 
       **ifconfig**
 
-      You can obtain the NIC name using the NIC IP address recorded in :ref:`9 <evs_01_0026__li894545421812>`. In this example, the NIC name is **eth0**.
+      You can obtain the NIC name using the NIC IP address recorded in :ref:`9 <evs_01_0026__en-us_topic_0080271668_li894545421812>`. In this example, the NIC name is **eth0**.
 
    c. Run the following command to switch to the directory containing NIC configuration files:
 
@@ -137,11 +137,11 @@ The following operations are for reference only. For details, see **Assigning a 
 
          Configuration descriptions of the **NAME**, **IPADDR**, and **NETMASK** fields:
 
-         -  **NAME**: Specifies the NIC name recorded in :ref:`10.b <evs_01_0026__li1422712286426>`.
+         -  **NAME**: Specifies the NIC name recorded in :ref:`10.b <evs_01_0026__en-us_topic_0080271668_li1422712286426>`.
 
-         -  **IPADDR**: Specifies the NIC IP address recorded in :ref:`9 <evs_01_0026__li894545421812>`.
+         -  **IPADDR**: Specifies the NIC IP address recorded in :ref:`9 <evs_01_0026__en-us_topic_0080271668_li894545421812>`.
 
-         -  **NETMASK**: Specifies the subnet recorded in :ref:`9 <evs_01_0026__li894545421812>`.
+         -  **NETMASK**: Specifies the subnet recorded in :ref:`9 <evs_01_0026__en-us_topic_0080271668_li894545421812>`.
 
             In this example, the subnet mask has 24 bits. Therefore, enter **255.255.255.0** for **NETMASK**.
 
@@ -188,7 +188,7 @@ The following operations are for reference only. For details, see **Assigning a 
             Configuration descriptions of the **ATTR{address}** and **NAME** fields:
 
             -  **ATTR{address}**: specifies the MAC address of server's NIC.
-            -  **NAME**: Specifies the NIC name recorded in :ref:`10.b <evs_01_0026__li1422712286426>`.
+            -  **NAME**: Specifies the NIC name recorded in :ref:`10.b <evs_01_0026__en-us_topic_0080271668_li1422712286426>`.
 
                .. note::
 
@@ -200,9 +200,9 @@ The following operations are for reference only. For details, see **Assigning a 
 
             The system saves the configurations and exits the vi editor.
 
-      -  If no, go to :ref:`10.h <evs_01_0026__li145676502016>`.
+      -  If no, go to :ref:`10.h <evs_01_0026__en-us_topic_0080271668_li145676502016>`.
 
-   h. .. _evs_01_0026__li145676502016:
+   h. .. _evs_01_0026__en-us_topic_0080271668_li145676502016:
 
       Run the following command to restart the network service for the configuration to take effect:
 

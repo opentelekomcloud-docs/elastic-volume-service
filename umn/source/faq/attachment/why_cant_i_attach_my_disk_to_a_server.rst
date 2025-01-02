@@ -19,19 +19,19 @@ If the fault persists after you have ruled out one cause, move on to the next on
 
 .. table:: **Table 1** Troubleshooting
 
-   +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Symptom                                                                   | Solution                                                                                                                                                                                        |
-   +===========================================================================+=================================================================================================================================================================================================+
-   | The target server on the **Attach Disk** page could not be found.         | -  Go to :ref:`Check Whether the Disk and Server Are in the Same AZ <evs_faq_0025__en-us_topic_0000001072682645_en-us_topic_0267670624_section83925230328>`.                                    |
-   |                                                                           | -  Cloud servers created from ISO images are only used for OS installation. They have limited functions and cannot have EVS disks attached.                                                     |
-   +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | The **Attach** button is grayed out.                                      | -  Go to :ref:`Maximum Number of Disks That Can Be Attached to the Server Has Been Reached <evs_faq_0025__en-us_topic_0000001072682645_en-us_topic_0267670624_section129621513133311>`.         |
-   |                                                                           | -  Go to :ref:`Check Whether the Disk Has Been Added to a Replication Pair <evs_faq_0025__en-us_topic_0000001072682645_section4732195892910>`.                                                  |
-   +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | An incorrect OS type warning is displayed when a shared disk is attached. | Go to :ref:`Check Whether the Servers Attached with the Shared Disk Are Running the Same Type of OS <evs_faq_0025__en-us_topic_0000001072682645_en-us_topic_0267670624_section19691130175413>`. |
-   +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Symptom                                                                   | Solution                                                                                                                                                                                                                     |
+   +===========================================================================+==============================================================================================================================================================================================================================+
+   | The target server on the **Attach Disk** page could not be found.         | -  Go to :ref:`Check Whether the Disk and Server Are in the Same AZ <evs_faq_0025__en-us_topic_0000001080343847_en-us_topic_0000001072682645_en-us_topic_0267670624_section83925230328>`.                                    |
+   |                                                                           | -  Cloud servers created from ISO images are only used for OS installation. They have limited functions and cannot have EVS disks attached.                                                                                  |
+   +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | The **Attach** button is grayed out.                                      | -  Go to :ref:`Maximum Number of Disks That Can Be Attached to the Server Has Been Reached <evs_faq_0025__en-us_topic_0000001080343847_en-us_topic_0000001072682645_en-us_topic_0267670624_section129621513133311>`.         |
+   |                                                                           | -  Go to :ref:`Check Whether the Disk Has Been Added to a Replication Pair <evs_faq_0025__en-us_topic_0000001080343847_en-us_topic_0000001072682645_section4732195892910>`.                                                  |
+   +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | An incorrect OS type warning is displayed when a shared disk is attached. | Go to :ref:`Check Whether the Servers Attached with the Shared Disk Are Running the Same Type of OS <evs_faq_0025__en-us_topic_0000001080343847_en-us_topic_0000001072682645_en-us_topic_0267670624_section19691130175413>`. |
+   +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. _evs_faq_0025__en-us_topic_0000001072682645_en-us_topic_0267670624_section83925230328:
+.. _evs_faq_0025__en-us_topic_0000001080343847_en-us_topic_0000001072682645_en-us_topic_0267670624_section83925230328:
 
 Check Whether the Disk and Server Are in the Same AZ
 ----------------------------------------------------
@@ -53,6 +53,8 @@ Check Whether the Disk and Server Are in the Same AZ
 
    #. Create a new disk from this backup. During the creation, select the target AZ. You can also change the settings of **Disk Type** and **Advanced Settings** if needed.
 
+      .. code-block::
+
 
       .. figure:: /_static/images/en-us_image_0000001572095150.png
          :alt: **Figure 2** Create from backup
@@ -61,7 +63,7 @@ Check Whether the Disk and Server Are in the Same AZ
 
    #. After the disk is created, click **Attach**. Your target server is displayed on the **Attach Disk** page.
 
-.. _evs_faq_0025__en-us_topic_0000001072682645_en-us_topic_0267670624_section129621513133311:
+.. _evs_faq_0025__en-us_topic_0000001080343847_en-us_topic_0000001072682645_en-us_topic_0267670624_section129621513133311:
 
 Maximum Number of Disks That Can Be Attached to the Server Has Been Reached
 ---------------------------------------------------------------------------
@@ -78,7 +80,11 @@ Maximum Number of Disks That Can Be Attached to the Server Has Been Reached
 
    A shared disk can be attached to a maximum of 16 servers, but you can detach the shared disk from one server and attach it to a new one if needed.
 
-.. _evs_faq_0025__en-us_topic_0000001072682645_section4732195892910:
+   .. note::
+
+      Data may be lost after you detach an encrypted disk. For more information, see :ref:`If I Detach a Disk, Will I Lose the Data on My Disk? <evs_faq_0012>`.
+
+.. _evs_faq_0025__en-us_topic_0000001080343847_en-us_topic_0000001072682645_section4732195892910:
 
 Check Whether the Disk Has Been Added to a Replication Pair
 -----------------------------------------------------------
@@ -103,7 +109,7 @@ Check Whether the Disk Has Been Added to a Replication Pair
 
 #. After the replication pair is deleted, return to the disk list, and the disk can be attached.
 
-.. _evs_faq_0025__en-us_topic_0000001072682645_en-us_topic_0267670624_section19691130175413:
+.. _evs_faq_0025__en-us_topic_0000001080343847_en-us_topic_0000001072682645_en-us_topic_0267670624_section19691130175413:
 
 Check Whether the Servers Attached with the Shared Disk Are Running the Same Type of OS
 ---------------------------------------------------------------------------------------

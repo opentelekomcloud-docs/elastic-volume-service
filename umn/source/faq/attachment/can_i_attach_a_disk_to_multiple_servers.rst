@@ -11,4 +11,4 @@ Can I Attach a Disk to Multiple Servers?
    .. note::
 
       -  Shared disks are a type of EVS disks that can be attached to multiple servers.
-      -  To use shared disks, you must set up a shared file system or cluster management system. If you directly attach a disk to multiple servers, the disk sharing attribute does not work and data may be overwritten.
+      -  A shared file system or cluster management system must be set up before you can properly use a shared disk. If you simply attach a shared disk to multiple servers, data cannot be shared between those servers and may be overwritten.

@@ -7,14 +7,16 @@ What Should I Do If My Disk Starts to Run Out of Space?
 
 If your disk space starts to fill up, you can:
 
-#. Create a new disk and attach it to the server. For details, see :ref:`Create an EVS Disk <en-us_topic_0021738346>`.
+#. Create a new disk and attach it to the server. For details, see :ref:`Creating an EVS Disk <en-us_topic_0021738346>`.
 
 #. Expand the capacity of the existing disk. Both system disks and data disks can be expanded. An expansion operation includes two steps:
 
    a. Expand the disk capacity on the console.
    b. Log in to the server and extend the partition and file system.
 
-   For details, see :ref:`Disk Capacity Expansion <evs_01_0059>`
+   For details, see :ref:`Expanding EVS Disk Capacity <evs_01_0059>`.
+
+#. Free up the space on the disk. For details, see :ref:`How Do I Clean Up My Disk Space on a Windows Server? <evs_02_0010>`
 
 Differences Between Expanding an EVS Disk and Creating an EVS Disk
 ------------------------------------------------------------------

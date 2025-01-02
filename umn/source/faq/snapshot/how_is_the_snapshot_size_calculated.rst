@@ -5,4 +5,4 @@
 How Is the Snapshot Size Calculated?
 ====================================
 
-When you create a snapshot for a disk for the first time, the snapshot is a full snapshot, and its size is the same as the disk size. Subsequent snapshots created for the same disk are incremental snapshots, so they are only as large as the amount of data that has been added.
+The first snapshot is a full snapshot, which backs up all data (data blocks) on the EVS disk at the time of the snapshot. Subsequent snapshots are incremental snapshots, which back up only changed data blocks since the last snapshot.

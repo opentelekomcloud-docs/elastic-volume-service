@@ -10,9 +10,9 @@ Scenarios
 
 You find that the device name displayed in the ECS OS is different from that displayed on the management console and you cannot determine which disk name is correct. This section describes how to obtain the disk name used in an ECS OS according to the device identifier on the console.
 
-For details about how to attach disks, see :ref:`Attach an EVS Disk <evs_01_0107>`.
+For details about how to attach disks, see :ref:`Initialize an EVS Data Disk <evs_01_0058>`.
 
-.. _evs_faq_0094__en-us_topic_0103285575_section1041415015310:
+.. _evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_section1041415015310:
 
 Obtaining the Disk ID of an ECS on the Console
 ----------------------------------------------
@@ -37,16 +37,16 @@ Obtaining the Disk ID of an ECS on the Console
 
       -  If **Device Type** is **VBD**, use a serial number or BDF to obtain the disk device name.
 
-         If you use a serial number (recommended) to obtain the disk name, see :ref:`Using a Serial Number to Obtain the Disk Name (Windows) <evs_faq_0094__en-us_topic_0103285575_section1549713815243>` and :ref:`Using a Serial Number to Obtain a Disk Device Name (Linux) <evs_faq_0094__en-us_topic_0103285575_section1251215393317>`.
+         If you use a serial number (recommended) to obtain the disk device name, see :ref:`Using a Serial Number to Obtain the Disk Device Name (Windows) <evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_section1549713815243>` and :ref:`Using a Serial Number to Obtain a Disk Device Name (Linux) <evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_section1251215393317>`.
 
-         If you use a BDF to obtain the disk device name, see :ref:`Using a BDF to Obtain a Disk Device Name (Linux) <evs_faq_0094__en-us_topic_0103285575_section8901134753319>`. (BDF cannot be used to obtain the disk name of Windows ECSs.)
+         If you use a BDF to obtain the disk device name, see :ref:`Using a BDF to Obtain a Disk Device Name (Linux) <evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_section8901134753319>`. (BDF cannot be used to obtain the disk device name of Windows ECSs.)
 
-      -  If **Device Type** is **SCSI**, use a WWN to obtain the disk name. For details, see :ref:`Using a WWN to Obtain the Disk Name (Windows) <evs_faq_0094__en-us_topic_0103285575_section49041319248>` and :ref:`Using a WWN to Obtain a Disk Device Name (Linux) <evs_faq_0094__en-us_topic_0103285575_section436018073419>`.
+      -  If **Device Type** is **SCSI**, use a WWN to obtain the disk device name. For details, see :ref:`Using a WWN to Obtain the Disk Name (Windows) <evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_section49041319248>` and :ref:`Using a WWN to Obtain a Disk Device Name (Linux) <evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_section436018073419>`.
 
-.. _evs_faq_0094__en-us_topic_0103285575_section1549713815243:
+.. _evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_section1549713815243:
 
-Using a Serial Number to Obtain the Disk Name (Windows)
--------------------------------------------------------
+Using a Serial Number to Obtain the Disk Device Name (Windows)
+--------------------------------------------------------------
 
 If a serial number is displayed on the console, use either of the following methods to obtain the disk name.
 
@@ -101,15 +101,15 @@ If a serial number is displayed on the console, use either of the following meth
 
          **Get-CimInstance -ClassName Win32_LogicalDiskToPartition \|select Antecedent, Dependent \|fl**
 
-         As shown in :ref:`Figure 3 <evs_faq_0094__en-us_topic_0103285575_fig1960253814473>`, the disk is **Disk 0**.
+         As shown in :ref:`Figure 3 <evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_fig1960253814473>`, the disk is **Disk 0**.
 
       b. Run the following command to view the mapping between the serial number and the disk:
 
          **Get-Disk \|select Number, SerialNumber**
 
-         As shown in :ref:`Figure 3 <evs_faq_0094__en-us_topic_0103285575_fig1960253814473>`, the disk is **Disk 0**.
+         As shown in :ref:`Figure 3 <evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_fig1960253814473>`, the disk is **Disk 0**.
 
-         .. _evs_faq_0094__en-us_topic_0103285575_fig1960253814473:
+         .. _evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_fig1960253814473:
 
          .. figure:: /_static/images/en-us_image_0000001127906793.png
             :alt: **Figure 3** Viewing the disk on which the logical disk is created
@@ -126,16 +126,16 @@ If a serial number is displayed on the console, use either of the following meth
 
          **Get-WmiObject -Class Win32_LogicalDiskToPartition \|select Antecedent, Dependent \|fl**
 
-.. _evs_faq_0094__en-us_topic_0103285575_section1251215393317:
+.. _evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_section1251215393317:
 
 Using a Serial Number to Obtain a Disk Device Name (Linux)
 ----------------------------------------------------------
 
 If a serial number is displayed on the console, run either of the following commands to obtain the device name.
 
-**#** **udevadm info --query=all --name=/dev/xxx \| grep ID_SERIAL**
+**udevadm info --query=all --name=/dev/xxx \| grep ID_SERIAL**
 
-**# ll /dev/disk/by-id/\***
+**ll /dev/disk/by-id/\***
 
 .. note::
 
@@ -143,9 +143,9 @@ If a serial number is displayed on the console, run either of the following comm
 
 For example, if the serial number of the VBD disk is 62f0d06b-808d-480d-8, run either of the following commands:
 
-**# udevadm info --query=all --name=/dev/vdb \| grep ID_SERIAL**
+**udevadm info --query=all --name=/dev/vdb \| grep ID_SERIAL**
 
-**# ll /dev/disk/by-id/\***
+**ll /dev/disk/by-id/\***
 
 The following information is displayed:
 
@@ -160,7 +160,7 @@ The following information is displayed:
 
 **/dev/vdb** is the disk device name.
 
-.. _evs_faq_0094__en-us_topic_0103285575_section8901134753319:
+.. _evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_section8901134753319:
 
 Using a BDF to Obtain a Disk Device Name (Linux)
 ------------------------------------------------
@@ -183,12 +183,12 @@ Using a BDF to Obtain a Disk Device Name (Linux)
 
    **/dev/vdb** is the disk device name.
 
-.. _evs_faq_0094__en-us_topic_0103285575_section49041319248:
+.. _evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_section49041319248:
 
 Using a WWN to Obtain the Disk Name (Windows)
 ---------------------------------------------
 
-#. Obtain the device identifier on the console by referring to :ref:`Obtaining the Disk ID of an ECS on the Console <evs_faq_0094__en-us_topic_0103285575_section1041415015310>`.
+#. Obtain the device identifier on the console by referring to :ref:`Obtaining the Disk ID of an ECS on the Console <evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_section1041415015310>`.
 
 #. Manually convert the WWN.
 
@@ -211,7 +211,7 @@ Using a WWN to Obtain the Disk Name (Windows)
 
       **Figure 4** Disk with the serial number ending with **206127**
 
-.. _evs_faq_0094__en-us_topic_0103285575_section436018073419:
+.. _evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_section436018073419:
 
 Using a WWN to Obtain a Disk Device Name (Linux)
 ------------------------------------------------

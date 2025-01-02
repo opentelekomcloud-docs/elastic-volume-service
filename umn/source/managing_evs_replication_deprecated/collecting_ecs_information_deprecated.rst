@@ -27,13 +27,13 @@ Procedure
 
    The **Elastic Cloud Server** page is displayed.
 
-#. .. _evs_01_0025__li23677833165924:
+#. .. _evs_01_0025__en-us_topic_0080271667_li23677833165924:
 
    Click the name of the production ECS.
 
    The ECS details page is displayed.
 
-#. .. _evs_01_0025__li3726148311399:
+#. .. _evs_01_0025__en-us_topic_0080271667_li3726148311399:
 
    Perform the following operations to take note of the production ECS information:
 
@@ -57,7 +57,7 @@ Procedure
 
          Replace **{mac}** with the MAC address during operation.
 
-#. Take note of the DR ECS information. For details, see :ref:`4 <evs_01_0025__li23677833165924>` to :ref:`5 <evs_01_0025__li3726148311399>`.
+#. Take note of the DR ECS information. For details, see :ref:`4 <evs_01_0025__en-us_topic_0080271667_li23677833165924>` to :ref:`5 <evs_01_0025__en-us_topic_0080271667_li3726148311399>`.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
 .. |image2| image:: /_static/images/en-us_image_0238263421.jpg

@@ -9,23 +9,20 @@ The following table describes whether the disk type, device type, sharing, and e
 
 .. table:: **Table 1** EVS disk change description
 
-   +-----------------------+-----------------------+--------------------------------------------------------------------------------+
-   | Attribute             | Allow Change          | Change Direction                                                               |
-   +=======================+=======================+================================================================================+
-   | Disk type             | No                    | -  From high I/O to ultra-high I/O                                             |
-   |                       |                       | -  From ultra-high I/O to high I/O                                             |
-   |                       |                       |                                                                                |
-   |                       |                       | The preceding descriptions are examples only. EVS disk type cannot be changed. |
-   +-----------------------+-----------------------+--------------------------------------------------------------------------------+
-   | Sharing               | No                    | -  From shared to non-shared                                                   |
-   |                       |                       | -  From non-shared to shared                                                   |
-   +-----------------------+-----------------------+--------------------------------------------------------------------------------+
-   | Device type           | No                    | -  From SCSI to VBD                                                            |
-   |                       |                       | -  From VBD to SCSI                                                            |
-   +-----------------------+-----------------------+--------------------------------------------------------------------------------+
-   | Encryption            | No                    | -  From non-encrypted to encrypted                                             |
-   |                       |                       | -  From encrypted to non-encrypted                                             |
-   +-----------------------+-----------------------+--------------------------------------------------------------------------------+
+   +-----------------------+-----------------------+------------------------------------+
+   | Attribute             | Allow Change          | Change Direction                   |
+   +=======================+=======================+====================================+
+   | Disk type             | No                    | For details, see .                 |
+   +-----------------------+-----------------------+------------------------------------+
+   | Sharing               | No                    | -  From shared to non-shared       |
+   |                       |                       | -  From non-shared to shared       |
+   +-----------------------+-----------------------+------------------------------------+
+   | Device type           | No                    | -  From SCSI to VBD                |
+   |                       |                       | -  From VBD to SCSI                |
+   +-----------------------+-----------------------+------------------------------------+
+   | Encryption            | No                    | -  From non-encrypted to encrypted |
+   |                       |                       | -  From encrypted to non-encrypted |
+   +-----------------------+-----------------------+------------------------------------+
 
 **However, you can:**
 

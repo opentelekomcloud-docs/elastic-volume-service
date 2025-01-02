@@ -5,4 +5,4 @@
 Can I Perform Multiple Rollback Operations for a Snapshot?
 ==========================================================
 
-Yes. You can roll back a snapshot to the source disk multiple times as needed.
+Yes. You can use a snapshot to roll back data to the source disk multiple times as needed.

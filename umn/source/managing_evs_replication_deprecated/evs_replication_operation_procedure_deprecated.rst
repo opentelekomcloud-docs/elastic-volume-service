@@ -5,7 +5,7 @@
 EVS Replication Operation Procedure (Deprecated)
 ================================================
 
-For the EVS replication concepts, see :ref:`EVS Replication (Deprecated) <evs_01_0020>`. This chapter describes the basic functions and operations of EVS replication. :ref:`Figure 1 <evs_01_0060__evs_01_0023_fig1868775620529>` shows the operation procedure.
+For the EVS replication concepts, see :ref:`EVS Replication (Deprecated) <evs_01_0020>`. This chapter describes the basic functions and operations of EVS replication. :ref:`Figure 1 <evs_01_0060__en-us_topic_0129841799_en-us_topic_0080271663_fig1868775620529>` shows the operation procedure.
 
 #. Performing pre-configuration operations before using EVS replication: Create DR servers, configure the virtual IP address for servers, and collect server information.
 
@@ -29,7 +29,7 @@ For the EVS replication concepts, see :ref:`EVS Replication (Deprecated) <evs_01
 
    -  Expanding EVS disks in a replication consistency group: Expand EVS disks in one or multiple EVS replication pairs of the replication consistency group.
 
-   .. _evs_01_0060__evs_01_0023_fig1868775620529:
+   .. _evs_01_0060__en-us_topic_0129841799_en-us_topic_0080271663_fig1868775620529:
 
    .. figure:: /_static/images/en-us_image_0129867577.png
       :alt: **Figure 1** Operation procedure (EVS replication)
