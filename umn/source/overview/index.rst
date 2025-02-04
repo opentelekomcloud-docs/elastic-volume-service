@@ -7,7 +7,6 @@ Overview
 
 -  :ref:`What Is EVS? <en-us_topic_0014580741>`
 -  :ref:`Disk Types and Performance <en-us_topic_0014580744>`
--  :ref:`General Purpose SSD V2 Disks <evs_01_1137>`
 -  :ref:`Device Types <en-us_topic_0052554220>`
 -  :ref:`Disk Sharing <en-us_topic_0032860759>`
 -  :ref:`Disk Encryption <evs_01_0001>`
@@ -27,7 +26,6 @@ Overview
 
    what_is_evs
    disk_types_and_performance
-   general_purpose_ssd_v2_disks
    device_types
    disk_sharing
    disk_encryption
