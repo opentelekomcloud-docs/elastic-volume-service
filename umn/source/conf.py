@@ -110,7 +110,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'evs-umn.tex',
-     u'Elastic Volume Service - User Guide',
+    u'Elastic Volume Service - User Guide',
      u'OpenTelekomCloud', 'manual'),
 ]
 
