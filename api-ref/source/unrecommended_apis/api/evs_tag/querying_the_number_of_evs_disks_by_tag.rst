@@ -24,44 +24,44 @@ URI
 
 -  Parameter description
 
-   ========== ========= =========================
+   ========== ========= ===============
    Parameter  Mandatory Description
-   ========== ========= =========================
-   project_id Yes       Specifies the project ID.
-   ========== ========= =========================
+   ========== ========= ===============
+   project_id Yes       The project ID.
+   ========== ========= ===============
 
 Request
 -------
 
 -  Parameter description
 
-   +-----------------+------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter       | Type             | Mandatory       | Description                                                                                                                                              |
-   +=================+==================+=================+==========================================================================================================================================================+
-   | tags            | Array of objects | No              | Specifies the key-value pairs of the tag. For details, see :ref:`Parameters in the tags field <evs_04_3016__evs_04_2032_li8528152083214>`.               |
-   |                 |                  |                 |                                                                                                                                                          |
-   |                 |                  |                 | The **tags** field cannot be left empty.                                                                                                                 |
-   |                 |                  |                 |                                                                                                                                                          |
-   |                 |                  |                 | One tag list can contain a maximum of 10 keys.                                                                                                           |
-   |                 |                  |                 |                                                                                                                                                          |
-   |                 |                  |                 | Tag keys in a tag list must be unique.                                                                                                                   |
-   |                 |                  |                 |                                                                                                                                                          |
-   |                 |                  |                 | When multiple keys are specified in a tag list, only the disks having all specified keys are queried.                                                    |
-   |                 |                  |                 |                                                                                                                                                          |
-   |                 |                  |                 | .. note::                                                                                                                                                |
-   |                 |                  |                 |                                                                                                                                                          |
-   |                 |                  |                 |    If multiple tag lists are specified in the request, only the disks that meet the requirements of the last tag list are queried.                       |
-   +-----------------+------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | action          | String           | Yes             | Specifies the operation identifier.                                                                                                                      |
-   |                 |                  |                 |                                                                                                                                                          |
-   |                 |                  |                 | Specifying **count** queries the number of disks by tag.                                                                                                 |
-   +-----------------+------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | matches         | Array of objects | No              | Specifies the query criteria that the resource supports. For details, see :ref:`Parameters in the match field <evs_04_3016__evs_04_2032_li15751146383>`. |
-   |                 |                  |                 |                                                                                                                                                          |
-   |                 |                  |                 | The **matches** field cannot be left empty.                                                                                                              |
-   |                 |                  |                 |                                                                                                                                                          |
-   |                 |                  |                 | Tag keys in the list must be unique.                                                                                                                     |
-   +-----------------+------------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------+------------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Type             | Mandatory       | Description                                                                                                                                    |
+   +=================+==================+=================+================================================================================================================================================+
+   | tags            | Array of objects | No              | The key-value pairs of tags. For details, see :ref:`Parameters in the resource_tag field <evs_04_3016__evs_04_2032_li8528152083214>`.          |
+   |                 |                  |                 |                                                                                                                                                |
+   |                 |                  |                 | The **tags** field cannot be left empty.                                                                                                       |
+   |                 |                  |                 |                                                                                                                                                |
+   |                 |                  |                 | One tag list can contain a maximum of 10 keys.                                                                                                 |
+   |                 |                  |                 |                                                                                                                                                |
+   |                 |                  |                 | Tag keys in a tag list must be unique.                                                                                                         |
+   |                 |                  |                 |                                                                                                                                                |
+   |                 |                  |                 | When multiple keys are specified in a tag list, only the disks having all specified keys are queried.                                          |
+   |                 |                  |                 |                                                                                                                                                |
+   |                 |                  |                 | .. note::                                                                                                                                      |
+   |                 |                  |                 |                                                                                                                                                |
+   |                 |                  |                 |    If multiple tag lists are specified in the request, only the disks that meet the requirements of the last tag list are queried.             |
+   +-----------------+------------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | action          | String           | Yes             | The operation identifier.                                                                                                                      |
+   |                 |                  |                 |                                                                                                                                                |
+   |                 |                  |                 | Specifying **count** queries the number of disks by tag.                                                                                       |
+   +-----------------+------------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | matches         | Array of objects | No              | The query criteria that the resource supports. For details, see :ref:`Parameters in the match field <evs_04_3016__evs_04_2032_li15751146383>`. |
+   |                 |                  |                 |                                                                                                                                                |
+   |                 |                  |                 | The **matches** field cannot be left empty.                                                                                                    |
+   |                 |                  |                 |                                                                                                                                                |
+   |                 |                  |                 | Tag keys in the list must be unique.                                                                                                           |
+   +-----------------+------------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 
 -  .. _evs_04_3016__evs_04_2032_li8528152083214:
 
@@ -70,14 +70,14 @@ Request
    +-----------------+------------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter       | Type             | Mandatory       | Description                                                                                                                                   |
    +=================+==================+=================+===============================================================================================================================================+
-   | key             | String           | Yes             | Specifies the tag key.                                                                                                                        |
+   | key             | String           | Yes             | The tag key.                                                                                                                                  |
    |                 |                  |                 |                                                                                                                                               |
    |                 |                  |                 | -  Cannot be left blank.                                                                                                                      |
    |                 |                  |                 | -  Must be unique for each resource.                                                                                                          |
    |                 |                  |                 | -  Can contain a maximum of 36 characters.                                                                                                    |
    |                 |                  |                 | -  Can contain only digits, letters, hyphens (-), and underscores (_).                                                                        |
    +-----------------+------------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-   | values          | Array of objects | Yes             | Specifies the tag value.                                                                                                                      |
+   | values          | Array of objects | Yes             | The tag value.                                                                                                                                |
    |                 |                  |                 |                                                                                                                                               |
    |                 |                  |                 | -  Can contain a maximum of 43 characters.                                                                                                    |
    |                 |                  |                 | -  Can contain only digits, letters, hyphens (-), and underscores (_).                                                                        |
@@ -98,14 +98,14 @@ Request
    +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+
    | Parameter       | Type            | Mandatory       | Description                                                                                                |
    +=================+=================+=================+============================================================================================================+
-   | key             | String          | Yes             | Specifies the tag key. The value is of the enumerated type.                                                |
+   | key             | String          | Yes             | The tag key. The value is of the enumerated type.                                                          |
    |                 |                 |                 |                                                                                                            |
    |                 |                 |                 | The value can be as follows:                                                                               |
    |                 |                 |                 |                                                                                                            |
    |                 |                 |                 | -  **resource_name**: disk name.                                                                           |
    |                 |                 |                 | -  **service_type**: service type.                                                                         |
    +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+
-   | value           | String          | Yes             | Specifies the tag value.                                                                                   |
+   | value           | String          | Yes             | The tag value.                                                                                             |
    |                 |                 |                 |                                                                                                            |
    |                 |                 |                 | -  It can contain up to 255 Unicode characters.                                                            |
    |                 |                 |                 | -  An empty string specifies an exact match, and a non-empty string specifies a fuzzy query.               |
@@ -145,13 +145,13 @@ Response
 
 -  Parameter description
 
-   +-------------+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter   | Type    | Description                                                                                                                                                  |
-   +=============+=========+==============================================================================================================================================================+
-   | total_count | Integer | Specifies the total number of disks that meet the query criteria.                                                                                            |
-   +-------------+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | error       | Object  | Specifies the error message returned when an error occurs. For details, see :ref:`Parameters in the error field <evs_04_3016__evs_04_2032_li0419202382514>`. |
-   +-------------+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter   | Type    | Description                                                                                                                                        |
+   +=============+=========+====================================================================================================================================================+
+   | total_count | Integer | The total number of disks that meet the query criteria.                                                                                            |
+   +-------------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | error       | Object  | The error message returned when an error occurs. For details, see :ref:`Parameters in the error field <evs_04_3016__evs_04_2032_li0419202382514>`. |
+   +-------------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 -  .. _evs_04_3016__evs_04_2032_li0419202382514:
 
