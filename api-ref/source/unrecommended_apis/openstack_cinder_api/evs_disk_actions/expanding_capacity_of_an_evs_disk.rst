@@ -25,12 +25,12 @@ URI
 
 -  Parameter description
 
-   ========== ========= ===========================
+   ========== ========= =================
    Parameter  Mandatory Description
-   ========== ========= ===========================
-   project_id Yes       Specifies the project ID.
-   volume_id  Yes       Specifies the ID of a disk.
-   ========== ========= ===========================
+   ========== ========= =================
+   project_id Yes       The project ID.
+   volume_id  Yes       The ID of a disk.
+   ========== ========= =================
 
 Request
 -------

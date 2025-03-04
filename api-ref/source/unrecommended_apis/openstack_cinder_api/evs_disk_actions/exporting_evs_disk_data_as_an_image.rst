@@ -19,12 +19,12 @@ URI
 
 -  Parameter description
 
-   ========== ========= =========================
+   ========== ========= ===============
    Parameter  Mandatory Description
-   ========== ========= =========================
-   project_id Yes       Specifies the project ID.
-   volume_id  Yes       Specifies the disk ID.
-   ========== ========= =========================
+   ========== ========= ===============
+   project_id Yes       The project ID.
+   volume_id  Yes       The disk ID.
+   ========== ========= ===============
 
 Request
 -------

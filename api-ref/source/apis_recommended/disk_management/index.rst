@@ -13,6 +13,7 @@ Disk Management
 -  :ref:`Querying Details About a Disk <evs_04_2011>`
 -  :ref:`Querying EVS Disks <evs_04_2012>`
 -  :ref:`Expanding Capacity of an EVS Disk <evs_04_2014>`
+-  :ref:`Changing the EVS Disk Type <evs_04_4008>`
 
 .. toctree::
    :maxdepth: 1
@@ -26,3 +27,4 @@ Disk Management
    querying_details_about_a_disk
    querying_evs_disks
    expanding_capacity_of_an_evs_disk
+   changing_the_evs_disk_type

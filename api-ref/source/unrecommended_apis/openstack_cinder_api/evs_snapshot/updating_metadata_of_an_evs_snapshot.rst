@@ -19,12 +19,12 @@ URI
 
 -  Parameter description
 
-   =========== ========= ==========================
+   =========== ========= ================
    Parameter   Mandatory Description
-   =========== ========= ==========================
-   project_id  Yes       Specifies the project ID.
-   snapshot_id Yes       Specifies the snapshot ID.
-   =========== ========= ==========================
+   =========== ========= ================
+   project_id  Yes       The project ID.
+   snapshot_id Yes       The snapshot ID.
+   =========== ========= ================
 
 Request
 -------
