@@ -19,11 +19,11 @@ URI
 
 -  Parameter description
 
-   ========== ========= =========================
+   ========== ========= ===============
    Parameter  Mandatory Description
-   ========== ========= =========================
-   project_id Yes       Specifies the project ID.
-   ========== ========= =========================
+   ========== ========= ===============
+   project_id Yes       The project ID.
+   ========== ========= ===============
 
 -  Request filter parameters
 
