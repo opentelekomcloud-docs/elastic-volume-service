@@ -84,7 +84,7 @@ In the following tables, Y indicates that the item is supported, and x indicates
 |                                                               |                                                                  |                                     |                 |
 |                                                               |                                                                  | evs:volumes:get                     |                 |
 +---------------------------------------------------------------+------------------------------------------------------------------+-------------------------------------+-----------------+
-| Query the metadata of an EVS disk (OpenStack Cinder API).     | GET /v2/{project_id}/volumes/{volume_id}/metadata/{key}          | evs:volumes:get                     | Y               |
+| Query the metadata of an EVS disk (OpenStack Cinder API).     | GET /v2/{project_id}/volumes/{volume_id}/metadata                | evs:volumes:get                     | Y               |
 +---------------------------------------------------------------+------------------------------------------------------------------+-------------------------------------+-----------------+
 | Add the metadata of an EVS disk (OpenStack Cinder API).       | POST /v2/{project_id}/volumes/{volume_id}/metadata               | evs:volumes:update                  | Y               |
 |                                                               |                                                                  |                                     |                 |

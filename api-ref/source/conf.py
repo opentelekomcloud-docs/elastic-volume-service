@@ -113,7 +113,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'evs-api-ref.tex',
-    u'Elastic Volume Service - API Reference',
+     u'Elastic Volume Service - API Reference',
      u'OpenTelekomCloud', 'manual'),
 ]
 
