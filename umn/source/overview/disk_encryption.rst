@@ -106,10 +106,10 @@ Who Can Use the Encryption Function?
 
 When a user uses the encryption function, the condition varies depending on whether the user is the first one ever in the current region or project to use this function.
 
--  If the user is the first user, the user needs to follow the prompt to create an agency, which grants KMS Administrator permissions to EVS. Then the user can create and obtain keys to encrypt and decrypt disks.
+-  If the user is the first user, the user needs to follow the prompt to create an agency, which grants EVS KMSAccess permissions to EVS. Then the user can create and obtain keys to encrypt and decrypt disks.
 
    .. note::
 
-      The first user must have the KMS Administrator permissions to create the agency. If the user does not have the permissions, contact the account administrator to grant the permissions first.
+      The first user must have the EVS KMSAccess permissions to create the agency. If the user does not have the permissions, contact the account administrator to grant the permissions first.
 
 -  If the user is not the first user, the user can use encryption directly.
