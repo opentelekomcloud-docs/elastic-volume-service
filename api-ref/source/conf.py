@@ -38,6 +38,7 @@ otcdocs_doc_type = 'api-ref'
 otcdocs_service_category = 'storage'
 otcdocs_service_title = 'Elastic Volume Service'
 otcdocs_service_type = 'evs'
+otcdocs_service_environment = 'public'
 otcdocs_cloud_environment = 'eu_de'
 otcdocs_search_environment = 'hc_de'
 otcdocs_search_index = 'search_index_de'
@@ -113,7 +114,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'evs-api-ref.tex',
-     u'Elastic Volume Service - API Reference',
+    u'Elastic Volume Service - API Reference',
      u'OpenTelekomCloud', 'manual'),
 ]
 
