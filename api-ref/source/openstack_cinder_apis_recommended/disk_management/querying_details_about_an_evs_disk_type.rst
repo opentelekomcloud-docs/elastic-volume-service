@@ -105,10 +105,10 @@ Response
       {
           "volume_type": {
               "extra_specs": {
-                  "volume_backend_name": "SAS",
+                  "volume_backend_name": "SSD",
                   "availability-zone": "az-dc-1"
               },
-              "name": "SAS",
+              "name": "SSD",
               "qos_specs_id": null,
               "is_public": true,
               "id": "ea6e3c13-aac5-46e0-b280-745ed272e662",

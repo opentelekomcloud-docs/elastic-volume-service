@@ -94,7 +94,7 @@ Request
    |                     |                 |                 |                                                                                                                                                                                                                                                                                 |
    |                     |                 |                 | .. note::                                                                                                                                                                                                                                                                       |
    |                     |                 |                 |                                                                                                                                                                                                                                                                                 |
-   |                     |                 |                 |    -  When the disk is created from a snapshot, the disk type of the new disk will be consistent with that of the snapshot's source disk.                                                                                                                                       |
+   |                     |                 |                 |    -  If you create the disk from a snapshot, the **volume_type** value must be the same as that of the snapshot's source disk.                                                                                                                                                 |
    |                     |                 |                 |    -  For details about disk types, see **Disk Types and Performance** in the *Elastic Volume Service User Guide*.                                                                                                                                                              |
    +---------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | metadata            | Object          | No              | The disk metadata. The length of **key** and **value** under **metadata** can contain no more than 255 bytes.                                                                                                                                                                   |
@@ -176,7 +176,7 @@ Request
               "imageRef": "027cf713-45a6-45f0-ac1b-0ccc57ac12e2",
               "availability_zone": "az-dc-1",
               "description": "create for api test",
-              "volume_type": "SAS",
+              "volume_type": "SSD",
               "metadata": {
                   "volume_owner": "openapi"
               },
@@ -385,7 +385,7 @@ Response
               "status": "creating",
               "updated_at": null,
               "user_id": "39f6696ae23740708d0f358a253c2637",
-              "volume_type": "SAS"
+              "volume_type": "SSD"
           }
       }
 

@@ -231,14 +231,6 @@ Response
 
    Parameters in the **QuotaDetailSnapshotsESSD** field
 
-   ========= ======= ===================
-   Parameter Type    Description
-   ========= ======= ===================
-   in_use    Integer The used quota.
-   limit     Integer The maximum quota.
-   reserved  Integer The reserved field.
-   ========= ======= ===================
-
 -  .. _evs_04_3037__evs_04_2073_li3935163483411:
 
    Parameters in the **QuotaDetailVolumesSATA** field
@@ -254,14 +246,6 @@ Response
 -  .. _evs_04_3037__evs_04_2073_li6211423143513:
 
    Parameters in the **QuotaDetailVolumesESSD** field
-
-   ========= ======= ===================
-   Parameter Type    Description
-   ========= ======= ===================
-   in_use    Integer The used quota.
-   limit     Integer The maximum quota.
-   reserved  Integer The reserved field.
-   ========= ======= ===================
 
 -  .. _evs_04_3037__evs_04_2073_li1513517383342:
 
@@ -367,7 +351,7 @@ Response
 
       {
           "quota_set": {
-              "gigabytes_SAS": {
+              "gigabytes_SSD": {
                   "reserved": 0,
                   "limit": -1,
                   "in_use": 21
@@ -382,7 +366,7 @@ Response
                   "limit": 5120,
                   "in_use": 51
               },
-              "snapshots_SAS": {
+              "snapshots_SSD": {
                   "reserved": 0,
                   "limit": -1,
                   "in_use": 0
@@ -398,12 +382,12 @@ Response
                   "in_use": 6
               },
               "id": "cd631140887d4b6e9c786b67a6dd4c02",
-              "volumes_SAS": {
+              "volumes_ESSD": {
                   "reserved": 0,
                   "limit": -1,
                   "in_use": 2
               },
-              "snapshots_SSD": {
+              "snapshots_ESSD": {
                   "reserved": 0,
                   "limit": -1,
                   "in_use": 0
@@ -418,7 +402,7 @@ Response
                   "limit": 100,
                   "in_use": 10
               },
-              "gigabytes_SSD": {
+              "gigabytes_ESSD": {
                   "reserved": 0,
                   "limit": -1,
                   "in_use": 1085

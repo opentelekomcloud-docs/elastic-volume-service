@@ -264,7 +264,7 @@ Response
           "source_volid": null,
           "snapshot_id": null,
           "created_at": "2017-05-23T09:49:44.481299",
-          "volume_type": "SAS",
+          "volume_type": "SSD",
           "os-vol-tenant-attr:tenant_id": null,
           "os-volume-replication:extended_status": null,
           "volume_image_metadata": null

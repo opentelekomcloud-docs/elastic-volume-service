@@ -249,7 +249,7 @@ Response
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | hw:passthrough        | String                | The parameter that describes the disk device type in **metadata**. The value can be **true** or **false**.                                                         |
    |                       |                       |                                                                                                                                                                    |
-   |                       |                       | -  **true** indicates the SCSI device type, which allows ECS OSs to directly access the underlying storage media and support SCSI reservations commands.           |
+   |                       |                       | -  **true** indicates the SCSI device type, which allows ECS OSs to directly access the underlying storage media and support SCSI reservation commands.            |
    |                       |                       | -  **false** indicates the VBD device type (the default type), which supports only simple SCSI read/write commands.                                                |
    |                       |                       | -  If this parameter does not appear, the disk device type is VBD.                                                                                                 |
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -298,7 +298,7 @@ Response
                   ],
                   "metadata": {},
                   "name": "zjb_u25_test",
-                  "os-vol-host-attr:host": "pod01.xxx#SAS",
+                  "os-vol-host-attr:host": "pod01.xxx#SSD",
                   "volume_image_metadata": { },
                   "os-vol-mig-status-attr:migstat": null,
                   "os-vol-mig-status-attr:name_id": null,
@@ -312,7 +312,7 @@ Response
                   "status": "available",
                   "updated_at": "2016-05-25T02:42:22.341984",
                   "user_id": "b0524e8342084ef5b74f158f78fc3049",
-                  "volume_type": "SAS",
+                  "volume_type": "SSD",
                   "service_type": "EVS",
                   "wwn": " 688860300000d136fa16f48f05992360"
               }
