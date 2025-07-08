@@ -213,13 +213,13 @@ Response
                   "created_at": "2015-05-24T14:47:22.132268",
                   "updated_at": "2017-07-29T11:29:33.730076",
                   "extra_specs": {
-                      "volume_backend_name": "<or> iaas blockstorage_SAS <or> iaas blockstorage_SAS <or> iaas blockstoragesas",
+                      "volume_backend_name": "<or> iaas blockstorage_SSD <or> iaas blockstorage_SSD <or> iaas blockstoragesas",
                       "XX:availability_zone": "az-dc-1"
                   },
                   "is_public": true,
                   "deleted_at": null,
                   "id": "8247b6ed-37f0-4c48-8ef1-f0027fb332bc",
-                  "name": "SAS"
+                  "name": "SSD"
               },
               "container_format": "bare",
               "disk_format": "vhd",

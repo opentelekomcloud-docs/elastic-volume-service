@@ -190,7 +190,7 @@ Response
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | hw:passthrough        | String                | The parameter that describes the disk device type in **metadata**. The value can be **true** or **false**.                                                         |
    |                       |                       |                                                                                                                                                                    |
-   |                       |                       | -  **true** indicates the SCSI device type, which allows ECS OSs to directly access the underlying storage media and support SCSI reservations commands.           |
+   |                       |                       | -  **true** indicates the SCSI device type, which allows ECS OSs to directly access the underlying storage media and support SCSI reservation commands.            |
    |                       |                       | -  **false** indicates the VBD device type (the default type), which supports only simple SCSI read/write commands.                                                |
    |                       |                       | -  If this parameter does not appear, the disk device type is VBD.                                                                                                 |
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+

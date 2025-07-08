@@ -40,7 +40,7 @@ The following example shows how to query the status of the task whose task ID is
 Response
 --------
 
--  Parameter description
+-  Response parameters
 
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter             | Type                  | Description                                                                                                                          |

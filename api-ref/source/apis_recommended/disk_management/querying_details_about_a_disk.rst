@@ -221,8 +221,6 @@ Response
    |                       |                       | -  **false** indicates the VBD device type (the default type), which supports only simple SCSI read/write commands.                                                |
    |                       |                       | -  If this parameter does not appear, the disk device type is VBD.                                                                                                 |
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | full_clone            | String                | The clone method. If the disk is created from a snapshot, value **0** indicates the linked cloning method.                                                         |
-   +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 -  .. _evs_04_2011__li0419202382514:
 

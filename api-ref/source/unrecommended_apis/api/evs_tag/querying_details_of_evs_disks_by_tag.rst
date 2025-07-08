@@ -392,7 +392,7 @@ Response
                   "name": "resource1",
                   "bootable": "true",
                   "created_at": "2019-08-06T06:59:03.056682",
-                  "volume_type": "SAS",
+                  "volume_type": "SSD",
                   "shareable": false,
               },
               "tags": [{

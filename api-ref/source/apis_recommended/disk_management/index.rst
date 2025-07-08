@@ -6,7 +6,7 @@ Disk Management
 ===============
 
 -  :ref:`Creating EVS Disks <evs_04_2013>`
--  :ref:`Querying Details About All Disks <evs_04_2006>`
+-  :ref:`Querying Details About All Disks <evs_04_2005>`
 -  :ref:`Deleting an EVS Disk <evs_04_2008>`
 -  :ref:`Updating an EVS Disk <evs_04_2009>`
 -  :ref:`Querying Details About All Disks (Deprecated) <evs_04_2010>`

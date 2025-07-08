@@ -39,17 +39,17 @@ Request
 
 .. table:: **Table 3** RetypeVolume
 
-   +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter       | Mandatory       | Type            | Description                                                                                                                       |
-   +=================+=================+=================+===================================================================================================================================+
-   | new_type        | Yes             | String          | The new disk type.                                                                                                                |
-   |                 |                 |                 |                                                                                                                                   |
-   |                 |                 |                 | .. note::                                                                                                                         |
-   |                 |                 |                 |                                                                                                                                   |
-   |                 |                 |                 |    -  If the specified disk type is not available in the AZ, the disk type change will fail.                                      |
-   |                 |                 |                 |    -  If the source disk type is backed by SAS, you can change the disk type to any of the other types.                           |
-   |                 |                 |                 |    -  If the source disk type is backed by SSD, you can only change to another SSD-backed disk type, but not the SAS-backed type. |
-   +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                                                                                                                            |
+   +=================+=================+=================+========================================================================================================================================================================================+
+   | new_type        | Yes             | String          | The new disk type. For details about the disk type change, see `Changing the Disk Type <https://docs.otc.t-systems.com/elastic-volume-service/umn/changing_the_evs_disk_type.html>`__. |
+   |                 |                 |                 |                                                                                                                                                                                        |
+   |                 |                 |                 | .. note::                                                                                                                                                                              |
+   |                 |                 |                 |                                                                                                                                                                                        |
+   |                 |                 |                 |    -  If the specified disk type is not available in the AZ, the disk type change will fail.                                                                                           |
+   |                 |                 |                 |    -  If the source disk type is backed by SAS, you can change the disk type to any of the other types.                                                                                |
+   |                 |                 |                 |    -  If the source disk type is backed by SSD, you can only change to another SSD-backed disk type, but not the SAS-backed type.                                                      |
+   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Response
 --------
