@@ -15,17 +15,20 @@ Users can perform the following operations to view the resource quota details.
 Procedure
 ---------
 
-#. Log in to the console.
+#. Sign in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
-#. In the upper right corner of the page, click |image2|.
+#. Click |image2| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
 
-   The **Quotas** page is displayed.
+#. In the upper right corner of the page, click |image3|.
+
+   The **Service Quota** page is displayed.
 
 #. View the used and total quota of each type of resources on the displayed page.
 
    If a quota cannot meet service requirements, apply for a higher quota.
 
-.. |image1| image:: /_static/images/en-us_image_0275513364.png
-.. |image2| image:: /_static/images/en-us_image_0152727234.png
+.. |image1| image:: /_static/images/en-us_image_0000002335567601.png
+.. |image2| image:: /_static/images/en-us_image_0000002301568298.jpg
+.. |image3| image:: /_static/images/en-us_image_0000002335567609.png

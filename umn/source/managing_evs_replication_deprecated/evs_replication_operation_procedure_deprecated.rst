@@ -31,7 +31,7 @@ For the EVS replication concepts, see :ref:`EVS Replication (Deprecated) <evs_01
 
    .. _evs_01_0060__en-us_topic_0129841799_en-us_topic_0080271663_fig1868775620529:
 
-   .. figure:: /_static/images/en-us_image_0129867577.png
+   .. figure:: /_static/images/en-us_image_0000002301567706.png
       :alt: **Figure 1** Operation procedure (EVS replication)
 
       **Figure 1** Operation procedure (EVS replication)

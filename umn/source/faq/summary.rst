@@ -66,7 +66,7 @@ Capacity
 -  :ref:`What Should I Do If My Disk Starts to Run Out of Space? <evs_faq_0032>`
 -  :ref:`What Can I Do If the Capacity of My Disk Reaches the Maximum But I Still Need More Space? <evs_faq_0069>`
 -  :ref:`What Should I Do If I Use fdisk to Initialize a Disk Larger Than 2 TiB and Then the Space in Excess of 2 TiB Cannot Be Displayed? <evs_faq_0035>`
--  :ref:`How Can I View My Disk Usage? <evs_faq_0053>`
+-  :ref:`How Can I View the Available Capacity of My Disk? <evs_faq_0053>`
 -  :ref:`Can I Transfer the Data Disk Capacity to a System Disk? <evs_faq_0061>`
 
 Performance
@@ -92,7 +92,7 @@ Snapshot
 -  :ref:`Can I Create Snapshots for Multiple Disks at a Time? <evs_faq_0070>`
 -  :ref:`How Is a Snapshot Created for My Disk? <evs_faq_0057>`
 -  :ref:`Why Can't I Roll Back My Disk Data from a Snapshot? <evs_faq_0058>`
--  :ref:`Can I Roll Back Data from a Snapshot After Reinstalling the OS or Formatting the Disk? <evs_faq_0062>`
+-  :ref:`Can I Roll Back Data from a Snapshot After Reinstalling the OS or Formatting a Disk? <evs_faq_0062>`
 -  :ref:`How Is the Snapshot Size Calculated? <evs_faq_0063>`
 -  :ref:`Do Snapshots Take Space on the Disk? <evs_faq_0064>`
 

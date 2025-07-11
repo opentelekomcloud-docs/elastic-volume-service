@@ -8,12 +8,12 @@ Expanding Capacity for an In-use EVS Disk
 Scenarios
 ---------
 
-This section describes how to expand the capacity of an **In-use** EVS disk on the management console. The **In-use** status indicates that the disk has been attached to a server. You do not need to detach the disk when expanding an **In-use** disk.
+This section describes how to expand the capacity of an **In-use** EVS disk on the console. The **In-use** status indicates that the disk has been attached to a server. You do not need to detach the disk when expanding an **In-use** disk.
 
 .. _evs_01_0007__en-us_topic_0077678449_section158147122515:
 
-Notes and Constraints
----------------------
+Constraints
+-----------
 
 -  Disk capacity can be expanded, but cannot be reduced.
 
@@ -28,12 +28,12 @@ Notes and Constraints
 Prerequisites
 -------------
 
-Disk data has been backed up using CBR or snapshots. For details about backups, see :ref:`Managing EVS Disk Backups <evs_01_0110>`. For details about snapshots, see :ref:`Creating an EVS Snapshot <evs_01_2721>`.
+Disk data has been backed up using CBR or snapshots. For details about backups, see :ref:`Managing EVS Disk Backups <evs_01_0110>`. For details about snapshots, see :ref:`Managing EVS Snapshots <evs_01_0111>`.
 
 Procedure
 ---------
 
-#. Log in to the console.
+#. Sign in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
@@ -76,17 +76,17 @@ Procedure
 
    .. note::
 
-      When the status of the disk is **Expanding**, you are not allowed to modify the specifications of the ECS where the disk is attached.
+      When the disk is in the **Expanding** state, you cannot modify the specifications of the ECS where the disk is attached.
 
    .. note::
 
-      If the expansion fails, technical support personnel will contact you and help you handle this error. Do not perform any operations on the disk before the technical support personnel contact you. If you require that the error be handled as soon as possible, contact our technical support personnel. Disks whose capacities failed to be expanded are not billed.
+      If the expansion fails, technical support personnel will contact you and help you handle this error. Do not perform any operations on the disk before the technical support personnel contact you. If you require that the error be handled as soon as possible, contact our technical support personnel. A disk will no longer be billed if its status changes to **Expansion failed**.
 
 #. Log in to the server and extend the partition and file system after the disk has been expanded on the console, because previous steps only enlarge the disk space.
 
    The operations vary depending on the server OS.
 
-   -  For Windows, see :ref:`Extending Disk Partitions and File Systems (Windows Server 2008) <en-us_topic_0017616396>`.
+   -  For Windows, see :ref:`Extending Disk Partitions and File Systems (Windows Server 2016) <evs_01_0126>`.
    -  For Linux, see :ref:`Partition and File System Extension Preparations (Linux) <evs_01_0035>`.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png

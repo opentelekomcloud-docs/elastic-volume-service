@@ -33,7 +33,7 @@ The following example shows you how to transfer an EVS disk from account A to ac
 
 .. _evs_01_0042__en-us_topic_0093691164_fig86501415163119:
 
-.. figure:: /_static/images/en-us_image_0000001119238510.png
+.. figure:: /_static/images/en-us_image_0000002335566057.png
    :alt: **Figure 1** EVS disk transfer process
 
    **Figure 1** EVS disk transfer process

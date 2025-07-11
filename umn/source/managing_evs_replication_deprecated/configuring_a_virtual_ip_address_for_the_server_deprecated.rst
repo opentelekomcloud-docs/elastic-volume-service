@@ -27,7 +27,7 @@ Procedure
 
 The following operations are for reference only. For details, see **Assigning a Virtual IP Address** in the *Virtual Private Cloud User Guide*.
 
-#. Log in to the console.
+#. Sign in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 

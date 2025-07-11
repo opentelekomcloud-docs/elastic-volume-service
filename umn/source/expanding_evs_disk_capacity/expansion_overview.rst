@@ -21,25 +21,25 @@ How to Expand the Disk Capacity?
 
 A capacity expansion operation includes the following steps:
 
-#. :ref:`Expand the disk capacity on the management console. <evs_01_0006__en-us_topic_0077673797_section87622024418>`
-#. :ref:`Log in to the server and extend the disk partition and file system. <evs_01_0006__en-us_topic_0077673797_section487311389414>`
+#. :ref:`Expand the disk capacity on the console. <evs_01_0006__en-us_topic_0077673797_section87622024418>`
+#. :ref:`Log in to the server and extend the partition and file system. <evs_01_0006__en-us_topic_0077673797_section487311389414>`
 
 
-.. figure:: /_static/images/en-us_image_0228748662.png
+.. figure:: /_static/images/en-us_image_0000002146742298.png
    :alt: **Figure 1** Capacity expansion procedure
 
    **Figure 1** Capacity expansion procedure
 
 .. _evs_01_0006__en-us_topic_0077673797_section87622024418:
 
-Expand the Disk Capacity on the Management Console
---------------------------------------------------
+Expand the Disk Capacity on the Console
+---------------------------------------
 
 Choose a proper expansion method based on the disk status.
 
--  For an In-use disk:
+-  For an **In-use** disk:
 
-   The disk has been attached to a server. Check whether the disk can be expanded in the In-use state by referring to :ref:`Notes and Constraints <evs_01_0007__en-us_topic_0077678449_section158147122515>`.
+   The disk has been attached to a server. Check whether the disk can be expanded in the **In-use** state by referring to :ref:`Constraints <evs_01_0007__en-us_topic_0077678449_section158147122515>`.
 
    -  If yes, expand the disk capacity according to :ref:`Expanding Capacity for an In-use EVS Disk <evs_01_0007>`.
    -  If no, detach the disk. Then, expand the disk capacity according to :ref:`Expanding Capacity for an Available EVS Disk <evs_01_0008>`.
@@ -55,7 +55,7 @@ Choose a proper expansion method based on the disk status.
 Log In to the Server and Extend the Disk Partition and File System
 ------------------------------------------------------------------
 
-After the disk has been expanded on the management console, only the disk storage capacity is enlarged, but its additional space cannot be used directly. You must log in to the server and extend the disk partition and file system. For details, see :ref:`Table 1 <evs_01_0006__en-us_topic_0077673797_table458383431811>`.
+After the disk has been expanded on the console, only the disk storage capacity is enlarged, but its additional space cannot be used directly. You must log in to the server and extend the disk partition and file system. For details, see :ref:`Table 1 <evs_01_0006__en-us_topic_0077673797_table458383431811>`.
 
 .. _evs_01_0006__en-us_topic_0077673797_table458383431811:
 
@@ -64,10 +64,10 @@ After the disk has been expanded on the management console, only the disk storag
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Capacity After Expansion          | Extend Disk Partition and File System                                                                                                                                                                                                                                                                                                                                                                                |
    +===================================+======================================================================================================================================================================================================================================================================================================================================================================================================================+
-   | Disk capacity <= 2 TiB            | -  Windows: :ref:`Extending Disk Partitions and File Systems (Windows Server 2008) <en-us_topic_0017616396>`                                                                                                                                                                                                                                                                                                         |
+   | Disk capacity <= 2 TiB            | -  Windows: :ref:`Extending Disk Partitions and File Systems (Windows Server 2016) <evs_01_0126>`                                                                                                                                                                                                                                                                                                                    |
    |                                   | -  Linux: :ref:`Partition and File System Extension Preparations (Linux) <evs_01_0035>`                                                                                                                                                                                                                                                                                                                              |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Disk capacity > 2 TiB             | -  GPT partition style: :ref:`Extending Disk Partitions and File Systems (Windows Server 2008) <en-us_topic_0017616396>` or :ref:`Partition and File System Extension Preparations (Linux) <evs_01_0035>`                                                                                                                                                                                                            |
+   | Disk capacity > 2 TiB             | -  GPT partition style: :ref:`Extending Disk Partitions and File Systems (Windows Server 2016) <evs_01_0126>` or :ref:`Partition and File System Extension Preparations (Linux) <evs_01_0035>`                                                                                                                                                                                                                       |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                      |
    |                                   | -  MBR partition style: Not supported                                                                                                                                                                                                                                                                                                                                                                                |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                      |

@@ -52,7 +52,6 @@ EVS disks can be attached to servers to be used as system disks or data disks. F
    -  :ref:`Introduction to Data Disk Initialization Scenarios and Partition Styles <evs_01_0038>`
    -  Windows
 
-      -  :ref:`Initializing a Windows Data Disk (Windows Server 2008) <evs_01_0108>`
       -  :ref:`Initializing a Windows Data Disk (Windows Server 2019) <evs_01_0045>`
 
    -  Linux

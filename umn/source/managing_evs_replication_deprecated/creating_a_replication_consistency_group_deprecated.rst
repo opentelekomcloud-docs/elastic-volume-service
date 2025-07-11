@@ -14,7 +14,7 @@ A replication consistency group is composed of EVS replication pairs from a grou
 
 .. _evs_01_0028__en-us_topic_0080271670_fig1732359921243:
 
-.. figure:: /_static/images/en-us_image_0094231725.png
+.. figure:: /_static/images/en-us_image_0000002335526837.png
    :alt: **Figure 1** Relationship between EVS replication pairs and replication consistency groups
 
    **Figure 1** Relationship between EVS replication pairs and replication consistency groups

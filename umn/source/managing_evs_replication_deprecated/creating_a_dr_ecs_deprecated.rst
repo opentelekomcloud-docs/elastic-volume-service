@@ -19,7 +19,7 @@ If a large number of physical resources in the primary AZ are faulty due to forc
 Procedure
 ---------
 
-#. Log in to the console.
+#. Sign in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 

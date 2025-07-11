@@ -22,12 +22,12 @@ Run the **lsblk** command. Information similar to the following is displayed:
 
 In the command output, no partition but only a file system is created on data disk **/dev/vdb**.
 
-In the following example, CentOS 7.4 64bit is used as the sample OS, data disk **/dev/vdb** has 10 GiB, no partition but only a file system is created on the disk, and additional 50 GiB has been added to this data disk on the management console. The following steps show how to extend this 50 GiB to the file system.
+In the following example, CentOS 7.4 64bit is used as the sample OS, data disk **/dev/vdb** has 10 GiB, no partition but only a file system is created on the disk, and additional 50 GiB has been added to this data disk on the console. The following steps show how to extend this 50 GiB to the file system.
 
 -  :ref:`Extending the EXT* File System <evs_faq_0073__en-us_topic_0241926881_en-us_topic_0241810111_en-us_topic_0240716537_section63374919338>`
 -  :ref:`Extending the XFS File System <evs_faq_0073__en-us_topic_0241926881_en-us_topic_0241810111_en-us_topic_0240716537_section1248016813484>`
 
-The way you allocate additional space depends on the OS. This example is used for reference only. For the detailed operations and differences, see the corresponding OS documentations.
+The way you allocate additional space depends on the OS. This example is used for reference only. For detailed operations and differences, see the corresponding OS documentations.
 
 .. _evs_faq_0073__en-us_topic_0241926881_en-us_topic_0241810111_en-us_topic_0240716537_section63374919338:
 

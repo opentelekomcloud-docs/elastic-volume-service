@@ -7,20 +7,18 @@ How Can I View My Disk Details?
 
 To do so, perform the following operations:
 
-#. Log in to the management console.
+#. Log in to the console.
 
-#. Under **Storage**, click **Elastic Volume Service**.
+#. Choose **Storage** > **Elastic Volume Service** to go to the EVS console.
 
-   The disk list page is displayed.
-
-#. Locate the row that contains the target disk and view the disk specifications, attributes, and billing mode.
+#. Locate the row that contains the target disk and view the disk specifications, function, and other information.
 
 #. (Optional) Click the disk name to view more information, such as the disk backup and snapshot information.
 
    View more information on the **Summary** tab.
 
 
-   .. figure:: /_static/images/en-us_image_0000001571762676.png
+   .. figure:: /_static/images/en-us_image_0000002278805600.png
       :alt: **Figure 1** Viewing disk details
 
       **Figure 1** Viewing disk details

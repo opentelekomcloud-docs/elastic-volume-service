@@ -16,6 +16,7 @@ Notes and Constraints
 ---------------------
 
 -  Backups can be created only when the disks are in the **Available** or **In-use** state.
+-  Backup data can only be restored to original disks.
 -  Only users with the CBR FullAccess permissions can use the cloud disk backup function. If the user does not have the permissions, contact the account administrator to grant the permissions first.
 
 a Disk Backup Vault and Applying a Backup Policy
@@ -23,16 +24,16 @@ a Disk Backup Vault and Applying a Backup Policy
 
 #. Log in to the CBR console.
 
-   a. Log in to the management console.
+   a. Log in to the console.
    b. Click |image1| in the upper left corner and select the desired region and project.
-   c. Choose **Storage** > **Cloud Backup and Recovery** > **Cloud Disk Backups**.
+   c. Click |image2| in the upper left corner of the page and choose **Storage** > **Cloud Backup and Recovery** > **Cloud Disk Backups**.
 
 #. In the upper right corner, click **Create Disk Backup Vault**.
 
 #. (Optional) In the disk list, select the disks you want to back up. After disks are selected, they are added to the list of selected disks.
 
 
-   .. figure:: /_static/images/en-us_image_0269609232.png
+   .. figure:: /_static/images/en-us_image_0000002301566422.png
       :alt: **Figure 1** Selecting disks
 
       **Figure 1** Selecting disks
@@ -46,7 +47,7 @@ a Disk Backup Vault and Applying a Backup Policy
 
 #. Configure auto backup.
 
-   -  If you select **Configure**, you must then select an existing backup policy or create a new policy. After the vault is created, CBR will apply the policy to this vault, and all disks associated with this vault will be automatically backed up based on this policy.
+   -  If you select **Configure**, a backup policy will be applied to this vault and all disks associated with this vault will be automatically backed up based on the policy. You can select an existing backup policy or create a new one.
    -  If you select **Skip**, disks associated with this vault are not automatically backed up.
 
 #. Specify a name for the vault.
@@ -61,8 +62,9 @@ a Disk Backup Vault and Applying a Backup Policy
 
 #. Complete the creation as prompted.
 
-#. Go back to the disk backup page and view the created vault in the vault list.
+#. Go back to the **Cloud Disk Backups** page. You can see the created vault in the vault list.
 
    You can associate disks to the new vault or create backups for the disks. For details, see section "Vault Management" in the *Cloud Backup and Recovery User Guide*.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
+.. |image2| image:: /_static/images/en-us_image_0000002335565733.jpg

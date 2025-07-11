@@ -8,18 +8,18 @@ How Do I Obtain My Disk Device Name in the ECS OS Using the Device Identifier Pr
 Scenarios
 ---------
 
-You find that the device name displayed in the ECS OS is different from that displayed on the management console and you cannot determine which disk name is correct. This section describes how to obtain the disk name used in an ECS OS according to the device identifier on the console.
+You find that the device name displayed in the ECS OS is different from that displayed on the console and you cannot determine which disk name is correct. This section describes how to obtain the disk name used in an ECS OS according to the device identifier on the console.
 
-For details about how to attach disks, see :ref:`Initialize an EVS Data Disk <evs_01_0058>`.
+For details about how to attach disks, see :ref:`Attaching a Non-Shared Disk <evs_01_0036>`.
 
 .. _evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_section1041415015310:
 
 Obtaining the Disk ID of an ECS on the Console
 ----------------------------------------------
 
-#. Log in to the management console.
+#. Log in to the console.
 
-#. Under **Computing**, choose **Elastic Cloud Server**.
+#. Choose **Computing** > **Elastic Cloud Server**.
 
 #. Click the target ECS name in the ECS list.
 
@@ -72,10 +72,10 @@ If a serial number is displayed on the console, use either of the following meth
 
    **wmic path Win32_DiskDrive get SerialNumber**
 
-   Information similar to the following is displayed:
+   The following information is displayed.
 
 
-   .. figure:: /_static/images/en-us_image_0000001127902463.png
+   .. figure:: /_static/images/en-us_image_0000002278805652.png
       :alt: **Figure 1** Obtaining the disk serial number
 
       **Figure 1** Obtaining the disk serial number
@@ -85,7 +85,7 @@ If a serial number is displayed on the console, use either of the following meth
    **wmic** **diskdrive get Name, SerialNumber**
 
 
-   .. figure:: /_static/images/en-us_image_0000001081131958.png
+   .. figure:: /_static/images/en-us_image_0000002313495165.png
       :alt: **Figure 2** Checking the disk corresponding to the serial number
 
       **Figure 2** Checking the disk corresponding to the serial number
@@ -101,17 +101,17 @@ If a serial number is displayed on the console, use either of the following meth
 
          **Get-CimInstance -ClassName Win32_LogicalDiskToPartition \|select Antecedent, Dependent \|fl**
 
-         As shown in :ref:`Figure 3 <evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_fig1960253814473>`, the disk is **Disk 0**.
+         As shown in :ref:`Figure 3 <evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_fig1960253814473>`, the disk corresponding to drive C is Disk 0.
 
       b. Run the following command to view the mapping between the serial number and the disk:
 
          **Get-Disk \|select Number, SerialNumber**
 
-         As shown in :ref:`Figure 3 <evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_fig1960253814473>`, the disk is **Disk 0**.
+         As shown in :ref:`Figure 3 <evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_fig1960253814473>`, the disk corresponding to the "97c876c0-54b3-460a-b" serial number is Disk 0.
 
          .. _evs_faq_0094__en-us_topic_0000001217411506_en-us_topic_0103285575_fig1960253814473:
 
-         .. figure:: /_static/images/en-us_image_0000001127906793.png
+         .. figure:: /_static/images/en-us_image_0000002313462137.png
             :alt: **Figure 3** Viewing the disk on which the logical disk is created
 
             **Figure 3** Viewing the disk on which the logical disk is created
@@ -206,7 +206,7 @@ Using a WWN to Obtain the Disk Name (Windows)
 #. In the command output, the disk whose serial number ends with **206127** is the disk corresponding to the WWN.
 
 
-   .. figure:: /_static/images/en-us_image_0000001128111323.png
+   .. figure:: /_static/images/en-us_image_0000002278862484.png
       :alt: **Figure 4** Disk with the serial number ending with **206127**
 
       **Figure 4** Disk with the serial number ending with **206127**
@@ -233,4 +233,4 @@ Using a WWN to Obtain a Disk Device Name (Linux)
       [root@host-192-168-133-148 block]# ll /dev/disk/by-id/ |grep 6888603000008b32fa16688d09368506 |grep scsi-3
       lrwxrwxrwx 1 root root  9 May 21 20:22 scsi-36888603000008b32fa16688d09368506 -> ../../sda
 
-.. |image1| image:: /_static/images/en-us_image_0216898618.png
+.. |image1| image:: /_static/images/en-us_image_0000002278862480.png

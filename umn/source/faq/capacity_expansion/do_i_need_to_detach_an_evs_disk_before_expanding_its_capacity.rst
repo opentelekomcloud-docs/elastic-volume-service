@@ -7,7 +7,7 @@ Do I Need to Detach an EVS Disk Before Expanding Its Capacity?
 
 An expansion consists of two phases:
 
-#. Expand the disk capacity on the management console.
+#. Expand the disk capacity on the console.
 
    -  A shared, in-use disk cannot be expanded. You must detach the shared disk from all its servers and then expand its capacity.
    -  A non-shared, in-use disk can be expanded, and you can leave the disk attached during expansion as long as the following conditions are met:

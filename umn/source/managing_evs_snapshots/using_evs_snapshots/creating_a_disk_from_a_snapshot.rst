@@ -10,8 +10,8 @@ Scenarios
 
 This section describes how to create an EVS disk on the **Snapshots** page. You can also create an EVS disk from a snapshot by specifying the **Create from snapshot** parameter on the disk creation page. For details, see :ref:`Creating an EVS Disk <en-us_topic_0021738346>`.
 
-Notes and Constraints
----------------------
+Constraints
+-----------
 
 -  Batch disk creation from a snapshot is not supported.
 -  A disk created from a snapshot has the same device type (SCSI or VBD), encryption attribute, AZ, region, and disk type as the snapshot's source disk.
@@ -20,7 +20,7 @@ Notes and Constraints
 Creating an EVS Disk from a Snapshot
 ------------------------------------
 
-#. Log in to the console.
+#. Sign in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 

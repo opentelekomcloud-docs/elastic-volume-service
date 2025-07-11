@@ -13,7 +13,7 @@ If an existing tag is no longer needed, you can delete it.
 Procedure
 ---------
 
-#. Log in to the console.
+#. Sign in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 

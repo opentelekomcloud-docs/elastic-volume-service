@@ -30,9 +30,11 @@ Notes and Constraints
 ---------------------
 
 -  You can attach SCSI disks to BMSs and use them as data disks.
--  After a system disk is detached, some operations cannot be performed on the original server and the system disk. The restrictions are as follows:
+-  After a system disk is detached, some operations cannot be performed on the original server and the system disk. The unsupported operations are as follows:
 
-   -  Server: starting the server, remote login, resetting the password, changing server billing mode, changing server specifications, changing the OS, reinstalling the OS, creating images, creating backups, adding disks, changing the security group, and changing the VPC
+   -  Server: starting the server, remote login, resetting the password, changing the server billing mode, changing server specifications, changing the OS, reinstalling the OS, creating images, creating backups, adding disks, changing the security group, and changing the VPC
+
+-  A shared data disk can be detached from ECSs in a batch.
 
 Prerequisites
 -------------
@@ -40,15 +42,20 @@ Prerequisites
 -  Before detaching an EVS disk from a running Windows server, ensure that no programs are reading data from or writing data to the disk. Otherwise, data will be lost.
 
 -  Before detaching an EVS disk from a running Linux server, you must log in to the server and run the **umount** command to cancel the association between the disk and the file system, and ensure that no programs are reading data from or writing data to the disk. Otherwise, you will not be able to detach the disk.
+-  You are advised to back up data. You can :ref:`create snapshots <evs_01_2721>` or :ref:`use CBR to create disk backups <evs_01_0110>`.
 
 .. _evs_01_0003__en-us_topic_0077656290_section58976207172837:
 
 Detaching a System Disk
 -----------------------
 
-#. Log in to the console.
+#. Sign in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
+
+#. Click |image2| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
+
+   The **Elastic Volume Service** page is displayed.
 
 #. Choose **Compute** > **Elastic Cloud Server**.
 
@@ -56,20 +63,20 @@ Detaching a System Disk
 
 #. In the server list, locate the row that contains the server whose system disk is to be detached, click **More** in the **Operation** column, and choose **Stop**.
 
-   When the server status changes to **Stopped**, the server has been stopped.
+   When the server status changes to **Stopped**, it has been stopped.
 
 #. Click the name of this server.
 
    The server details page is displayed.
 
-#. Click the **Disks** tab to view the system disk attached to the server.
+#. Click the **Disks** tab to view the system disk of the server.
 
 #. Locate the row that contains the system disk and click **Detach**.
 
    The **Detach Disk** dialog box is displayed.
 
 
-   .. figure:: /_static/images/en-us_image_0152756082.png
+   .. figure:: /_static/images/en-us_image_0000002313460881.png
       :alt: **Figure 1** Detach Disk (system disk)
 
       **Figure 1** Detach Disk (system disk)
@@ -78,18 +85,18 @@ Detaching a System Disk
 
    After the operation had succeeded, the detached system disk is no longer displayed under the **Disks** tab.
 
-#. (Optional) :ref:`Re-attach <evs_01_0002>` the bootable disk to a server. You can use it as a system disk or data disk depending on the disk function you select.
+#. (Optional) :ref:`Re-attach <evs_01_0073>` the bootable disk to a server. You can use it as a system disk or data disk depending on the disk function you select.
 
 .. _evs_01_0003__en-us_topic_0077656290_section99431142597:
 
 Detaching a Non-Shared Data Disk
 --------------------------------
 
-#. Log in to the console.
+#. Sign in to the console.
 
-#. Click |image2| in the upper left corner and select the desired region and project.
+#. Click |image3| in the upper left corner and select the desired region and project.
 
-#. Click |image3| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
+#. Click |image4| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
 
    The **Elastic Volume Service** page is displayed.
 
@@ -103,12 +110,12 @@ Detaching a Non-Shared Data Disk
 
       b. Click the **Attachments** tab to view the server where the disk has been attached.
 
-      c. Click |image4| to select the server and click **Detach Disk**.
+      c. Click |image5| to select the server and click **Detach Disk**.
 
          The **Detach Disk** dialog box is displayed.
 
 
-         .. figure:: /_static/images/en-us_image_0000001962012184.png
+         .. figure:: /_static/images/en-us_image_0000002313460909.png
             :alt: **Figure 2** Detach Disk
 
             **Figure 2** Detach Disk
@@ -122,7 +129,7 @@ Detaching a Non-Shared Data Disk
          The **Detach Disk** dialog box is displayed.
 
 
-         .. figure:: /_static/images/en-us_image_0000001962012192.png
+         .. figure:: /_static/images/en-us_image_0000002313460937.png
             :alt: **Figure 3** Detach Disk dialog box
 
             **Figure 3** Detach Disk dialog box
@@ -138,15 +145,15 @@ Detaching a Non-Shared Data Disk
 Detaching a Shared Data Disk
 ----------------------------
 
-#. Log in to the console.
+#. Sign in to the console.
 
-#. Click |image5| in the upper left corner and select the desired region and project.
+#. Click |image6| in the upper left corner and select the desired region and project.
 
 #. Choose **Storage** > **Elastic Volume Service**.
 
    The **Elastic Volume Service** page is displayed.
 
-#. Choose a way to detach the disk by determining whether you want to check server information first.
+#. Choose a way to detach the disk by determining whether you want to check the server information first.
 
    -  If yes, perform the following procedure:
 
@@ -156,14 +163,14 @@ Detaching a Shared Data Disk
 
       b. Click the **Attachments** tab to view the servers where the disk has been attached.
 
-      c. Click |image6| to select servers and click **Detach Disk**.
+      c. Click |image7| to select servers and click **Detach Disk**.
 
-         Shared EVS disks support batch detachment so that you can select multiple servers at a time.
+         Shared EVS disks support batch detachment, so you can select multiple servers at a time.
 
          The **Detach Disk** dialog box is displayed.
 
 
-         .. figure:: /_static/images/en-us_image_0000001998573089.png
+         .. figure:: /_static/images/en-us_image_0000002313461021.png
             :alt: **Figure 4** Detaching a shared disk
 
             **Figure 4** Detaching a shared disk
@@ -177,30 +184,31 @@ Detaching a Shared Data Disk
          The **Detach Disk** dialog box is displayed.
 
 
-         .. figure:: /_static/images/en-us_image_0000001998573101.png
+         .. figure:: /_static/images/en-us_image_0000002313461049.png
             :alt: **Figure 5** Detaching a shared disk dialog box
 
             **Figure 5** Detaching a shared disk dialog box
 
-      b. Click |image7| to select servers.
+      b. Click |image8| to select servers.
 
-         Shared EVS disks support batch detachment so that you can select multiple servers at a time.
+         Shared EVS disks support batch detachment, so you can select multiple servers at a time.
 
       c. Click **Yes** to detach the disk.
 
-   In the disk list, the disk status is **Detaching**, indicating that the disk is being detached from the server.
+   In the disk list, the disk status is **Detaching**, indicating that the disk is being detached from the servers.
 
-   If a shared disk has been attached to multiple servers and you only detach it from some of the servers, the disk status will go back to **In-use** after the disk has been detached from the servers. The disk status changes to **Available** only after the disk has been detached from all the servers.
+   If a shared disk has been attached to multiple servers and you only detach it from some of the servers, the disk status will go back to **In-use** after the disk has been detached. The disk status changes to **Available** only after the disk has been detached from all the servers.
 
-Helpful Links
+Related Links
 -------------
 
 To check out more detachment FAQs, see :ref:`Detachment <evs_01_0079>`.
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
-.. |image2| image:: /_static/images/en-us_image_0237893718.png
-.. |image3| image:: /_static/images/en-us_image_0000001933286285.jpg
-.. |image4| image:: /_static/images/en-us_image_0000001998573081.png
-.. |image5| image:: /_static/images/en-us_image_0237893718.png
-.. |image6| image:: /_static/images/en-us_image_0238263087.png
+.. |image2| image:: /_static/images/en-us_image_0000001933286285.jpg
+.. |image3| image:: /_static/images/en-us_image_0237893718.png
+.. |image4| image:: /_static/images/en-us_image_0000001933286285.jpg
+.. |image5| image:: /_static/images/en-us_image_0000002278804436.png
+.. |image6| image:: /_static/images/en-us_image_0237893718.png
 .. |image7| image:: /_static/images/en-us_image_0238263087.png
+.. |image8| image:: /_static/images/en-us_image_0238263087.png

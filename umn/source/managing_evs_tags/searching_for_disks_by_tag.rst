@@ -13,7 +13,7 @@ Tags can be used to categorize EVS disks, and users can quickly search for their
 Procedure
 ---------
 
-#. Log in to the console.
+#. Sign in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
