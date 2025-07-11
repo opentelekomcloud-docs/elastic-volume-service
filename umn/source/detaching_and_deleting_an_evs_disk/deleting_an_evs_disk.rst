@@ -8,7 +8,7 @@ Deleting an EVS Disk
 Scenarios
 ---------
 
-If an EVS disk is no longer used, you can delete the disk to release the virtual resources. When a disk is deleted, EVS immediately destroys the metadata to ensure that data can no longer be accessed. In addition, the physical storage space of the disk is reclaimed and cleared before being re-assigned. For any new disk created based on the re-assigned physical space, before data is written to the disk, EVS returns zero for all the read requests to the disk.
+If an EVS disk is no longer used, you can delete the disk to release the virtual resources. After you permanently delete an EVS disk, EVS immediately destroys the metadata to ensure that data can no longer be accessed. In addition, the physical storage space of the EVS disk is reclaimed and cleared before being re-assigned. For any new disk created based on the re-assigned physical space, before data is written to the disk, EVS returns zero for all the read requests to the disk.
 
 Notes and Constraints
 ---------------------
@@ -19,14 +19,20 @@ Notes and Constraints
 
 .. important::
 
-   When you delete a disk, all the disk data including the legacy snapshots created for this disk will be deleted.
+   When you delete a disk, all the disk data including the snapshots created for this disk will be deleted.
 
    A deleted disk cannot be recovered.
+
+Prerequisites
+-------------
+
+-  Ensure that separately created disks are detached. For details, see :ref:`Detaching an EVS Disk <evs_01_0003>`.
+-  You are advised to back up data. You can :ref:`create standard snapshots <evs_01_2721>` or :ref:`use CBR to create disk backups <evs_01_0110>`.
 
 Deleting EVS Disks
 ------------------
 
-#. Log in to the console.
+#. Sign in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
@@ -34,13 +40,15 @@ Deleting EVS Disks
 
    The **Elastic Volume Service** page is displayed.
 
-#. In the disk list, locate the row that contains the target disk, click **More** in the **Operation** column, and choose **Delete**.
+#. In the disk list, locate the target disk and choose **More** > **Delete** in the **Operation** column.
 
-#. (Optional) If multiple disks are to be deleted, select |image3| in front of each disk and click **Delete** in the upper area of the list.
+#. (Optional) If multiple disks are to be deleted, select |image3| in front of each target disk and click **Delete** in the upper left area of the list.
 
-#. In the displayed dialog box, confirm the information and click **Yes**.
+#. On the displayed page, confirm the information and click **Yes**.
 
-Helpful Links
+#. Check that the disk disappears from the disk list.
+
+Related Links
 -------------
 
 For more deletion FAQs, see :ref:`Deletion <evs_01_0083>`.

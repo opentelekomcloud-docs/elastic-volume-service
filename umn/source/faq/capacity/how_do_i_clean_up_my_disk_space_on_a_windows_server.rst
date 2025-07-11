@@ -11,7 +11,6 @@ Scenarios
 When the EVS disk space on a server is insufficient, the server running speed will be affected, which will further affect user experience. You can clean up the disk space using either of the following methods:
 
 -  :ref:`Cleaning Up Disk Space Using the System Built-in Cleanup Tool <evs_02_0010__en-us_topic_0000001878349930_section8667185543115>`
--  :ref:`Uninstalling Unnecessary Programs on Control Panel <evs_02_0010__en-us_topic_0000001878349930_section5515111393213>`
 
 The following example uses a Windows Server 2016 server to illustrate how to clean up disk space on a server. In addition, you are advised to do the following to save disk space:
 
@@ -59,8 +58,6 @@ Cleaning Up Disk Space Using the System Built-in Cleanup Tool
       **Figure 3** Deletion confirmation
 
 #. Click **Delete Files** to clean up the disk space.
-
-.. _evs_02_0010__en-us_topic_0000001878349930_section5515111393213:
 
 Uninstalling Unnecessary Programs on Control Panel
 --------------------------------------------------

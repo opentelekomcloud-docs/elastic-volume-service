@@ -17,7 +17,7 @@ A shared EVS disk can be attached to a maximum of 16 servers, including ECSs or 
    A shared file system or cluster management system must be set up before you can properly use a shared disk. If you simply attach a shared disk to multiple servers, data cannot be shared between those servers and may be overwritten.
 
 
-.. figure:: /_static/images/en-us_image_0000001962240620.png
+.. figure:: /_static/images/en-us_image_0000002301564522.png
    :alt: **Figure 1** Application scenario of shared EVS disks
 
    **Figure 1** Application scenario of shared EVS disks
@@ -53,7 +53,7 @@ You can create shared VBD disks or shared SCSI disks. It is recommended that you
 
    -  The anti-affinity policy of an ECS group allows ECSs to be created on different physical servers to improve service reliability.
 
-      For details about ECS groups, see **Managing ECS Groups** in the *Elastic Cloud Server User Guide*.
+      For details about ECS groups, see section "Managing ECS Groups" in the *Elastic Cloud Server User Guide*.
 
    -  The SCSI reservation mechanism uses a SCSI reservation command to perform SCSI reservation operations. If an ECS sends such a command to an EVS disk, the disk is displayed as locked to other ECSs, preventing the data damage that may be caused by simultaneous reads/writes to the disk from multiple ECSs.
 
@@ -81,11 +81,6 @@ Deleting a Shared EVS Disk
 Because a shared EVS disk can be attached to multiple servers, ensure that the shared EVS disk is detached from all the servers before deletion.
 
 For details, see :ref:`Deleting an EVS Disk <evs_01_0005>`.
-
-Expanding a Shared EVS Disk
----------------------------
-
-Shared EVS disks must be expanded when they are in the **Available** state. For details, see :ref:`Expanding Capacity for an In-use EVS Disk <evs_01_0007>`.
 
 Data Sharing Principles and Common Usage Mistakes
 -------------------------------------------------
@@ -116,7 +111,7 @@ For details about how to use shared EVS disks, see :ref:`Managing Shared EVS Dis
 
    If you simply attach a shared disk to multiple servers, data or files cannot be shared between the servers, because the shared disk does not have the cluster management capability. To share files between servers, build a shared file system or deploy a cluster management system.
 
-Helpful Links
+Related Links
 -------------
 
 For more disk sharing FAQs, see :ref:`Sharing <evs_01_0084>`.

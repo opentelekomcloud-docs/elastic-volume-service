@@ -22,7 +22,7 @@ If the fault persists after you have ruled out one cause, move on to the next on
    +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Symptom                                                                   | Solution                                                                                                                                                                                                                     |
    +===========================================================================+==============================================================================================================================================================================================================================+
-   | The target server on the **Attach Disk** page could not be found.         | -  Go to :ref:`Check Whether the Disk and Server Are in the Same AZ <evs_faq_0025__en-us_topic_0000001080343847_en-us_topic_0000001072682645_en-us_topic_0267670624_section83925230328>`.                                    |
+   | The target server cannot be found on the **Attach Disk** page.            | -  Go to :ref:`Check Whether the Disk and Server Are in the Same AZ <evs_faq_0025__en-us_topic_0000001080343847_en-us_topic_0000001072682645_en-us_topic_0267670624_section83925230328>`.                                    |
    |                                                                           | -  Cloud servers created from ISO images are only used for OS installation. They have limited functions and cannot have EVS disks attached.                                                                                  |
    +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | The **Attach** button is grayed out.                                      | -  Go to :ref:`Maximum Number of Disks That Can Be Attached to the Server Has Been Reached <evs_faq_0025__en-us_topic_0000001080343847_en-us_topic_0000001072682645_en-us_topic_0267670624_section129621513133311>`.         |
@@ -78,7 +78,7 @@ Maximum Number of Disks That Can Be Attached to the Server Has Been Reached
 
 -  Shared disk: When you hover the mouse over the **Attach** button, message "This operation cannot be performed because the maximum number of servers that a shared disk can be attached to has been reached" is displayed.
 
-   A shared disk can be attached to a maximum of 16 servers, but you can detach the shared disk from one server and attach it to a new one if needed.
+   A shared disk can be attached to a maximum of 16 servers. You can detach the shared disk from one server and attach it to a new one if needed.
 
    .. note::
 

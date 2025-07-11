@@ -17,4 +17,4 @@ Solution:
 
 #. Mount the data disks.
 
-   **mount -t ntfs-3g** *Data disk path Mount point*
+   **mount -t ntfs-3g** *<data-disk-path> <mount-point>*

@@ -14,7 +14,7 @@ Troubleshoot this issue by performing the following steps:
       df -h
 
 
-   .. figure:: /_static/images/en-us_image_0000001616705554.png
+   .. figure:: /_static/images/en-us_image_0000002278805664.png
       :alt: **Figure 1** Checking the partition usage
 
       **Figure 1** Checking the partition usage
@@ -28,7 +28,7 @@ Troubleshoot this issue by performing the following steps:
       df -i
 
 
-   .. figure:: /_static/images/en-us_image_0000001616506910.png
+   .. figure:: /_static/images/en-us_image_0000002313495213.png
       :alt: **Figure 2** Checking the disk space usage
 
       **Figure 2** Checking the disk space usage
@@ -42,7 +42,7 @@ Troubleshoot this issue by performing the following steps:
       lsof | grep deleted
 
 
-   .. figure:: /_static/images/en-us_image_0000001616707610.png
+   .. figure:: /_static/images/en-us_image_0000002313462189.png
       :alt: **Figure 3** Checking the deleted process files in the system
 
       **Figure 3** Checking the deleted process files in the system

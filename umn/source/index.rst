@@ -5,13 +5,13 @@ Elastic Volume Service - User Guide
 .. toctree::
    :maxdepth: 1
 
-   overview/index
+   service_overview/index
    getting_started/index
    permissions_management/index
    creating_and_using_an_evs_disk
    attaching_an_existing_evs_disk/index
    viewing_evs_disk_details
-   changing_the_evs_disk_type
+   changing_the_evs_disk_type_beta
    expanding_evs_disk_capacity/index
    detaching_and_deleting_an_evs_disk/index
    managing_evs_snapshots/index

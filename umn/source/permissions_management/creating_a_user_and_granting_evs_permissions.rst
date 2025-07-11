@@ -18,14 +18,14 @@ This section describes the procedure for granting permissions (see :ref:`Figure 
 Prerequisites
 -------------
 
-Before granting permissions to user groups, learn about system-defined permissions in section "Permissions Management" in the *Elastic Volume Service User Guide* for EVS.
+Before granting permissions to user groups, learn about system-defined permissions in "Service Overview" > "Permissions" of the Elastic Volume Service.
 
 Process Flow
 ------------
 
 .. _evs_01_0089__en-us_topic_0171882195_fig15451536531:
 
-.. figure:: /_static/images/en-us_image_0171882862.png
+.. figure:: /_static/images/en-us_image_0000002301562770.png
    :alt: **Figure 1** Process for granting EVS permissions
 
    **Figure 1** Process for granting EVS permissions
