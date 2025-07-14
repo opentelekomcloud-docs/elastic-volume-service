@@ -8,7 +8,7 @@ Extending Partitions and File Systems for System Disks (Linux)
 Scenarios
 ---------
 
-After a disk is expanded on the management console, the disk size is enlarged, but the additional space cannot be used directly.
+After a disk is expanded on the console, the disk size is enlarged, but the additional space cannot be used directly.
 
 In Linux, you must allocate the additional space to an existing partition or a new partition.
 
@@ -24,14 +24,15 @@ For how to query the Linux kernel version, see :ref:`Querying the Linux Kernel V
 
 .. important::
 
-   Incorrect operations may lead to data loss or exceptions. So you are advised to back up the disk data using CBR or snapshots before expansion. For details about using CBR, see :ref:`Managing EVS Disk Backups <evs_01_0110>`. For details about using snapshots, see :ref:`Creating an EVS Snapshot <evs_01_2721>`.
+   Incorrect operations may lead to data loss or exceptions, so you are advised to back up the disk data using CBR or snapshots before expansion. For details about using CBR, see :ref:`Managing EVS Disk Backups <evs_01_0110>`. For details about using snapshots, see :ref:`Managing EVS Snapshots <evs_01_0111>`.
 
-Notes and Constraints
----------------------
+Constraints
+-----------
 
 -  The additional space of a data disk cannot be added to the root partition. To extend the root partition, expand the system disk instead.
--  During an expansion, the additional space is added to the end of the disk. If the disk has multiple partitions, the additional space can only be allocated to the partition at the disk end.
--  If a disk uses MBR, the storage space in excess of 2 TiB cannot be used because the maximum capacity that MBR supports is 2 TiB. If your disk already uses MBR for partitioning and you require more than 2 TiB after the capacity expansion, do as follows:
+-  During an expansion, the additional space is added to the end of the disk. If the disk has multiple partitions, the additional space can only be allocated to the last partition of the disk.
+-  If the target partition is an extended MBR partition (whose partition number is usually greater than or equal to 5), you need to first expand the extended partition and then the logical partition. Assume that you have three partitions, **/dev/vdb1** (primary partition), **/dev/vdb2** (extended partition), and **/dev/vdb5** (logical partition), you need to run **growpart /dev/vdb2** and then **growpart /dev/vdb5** to extend the partitions.
+-  The maximum disk capacity that MBR supports is 2 TiB, and the disk space in access of 2 TiB cannot be used. If your disk already uses MBR for partitioning and you require more than 2 TiB after the capacity expansion, do as follows:
 
    -  (Recommended) Create a new EVS disk and use GPT.
    -  Back up the disk data, perform the expansion, and then change the partition style from MBR to GPT. During this change, services will be interrupted and data on the disk will be erased.
@@ -39,7 +40,7 @@ Notes and Constraints
 Prerequisites
 -------------
 
--  You have expanded the disk capacity and attached the disk to a server on the management console. For details, see :ref:`Expanding Capacity for an In-use EVS Disk <evs_01_0007>` or :ref:`Expanding Capacity for an Available EVS Disk <evs_01_0008>`.
+-  You have expanded the disk capacity and attached the disk to a server on the console. For details, see :ref:`Expanding Capacity for an In-use EVS Disk <evs_01_0007>` or :ref:`Expanding Capacity for an Available EVS Disk <evs_01_0008>`.
 -  You have logged in to the ECS.
 
    -  For how to log in to an ECS, see the *Elastic Cloud Server User Guide*.

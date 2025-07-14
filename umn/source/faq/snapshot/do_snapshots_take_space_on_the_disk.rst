@@ -7,4 +7,4 @@ Do Snapshots Take Space on the Disk?
 
 No.
 
-Snapshots are stored on the physical disks that provide storage resources for EVS disks. Therefore, snapshots do not use the EVS disk space.
+Creating snapshots establishes relationships between snapshots and the disk data. Though snapshots are stored on disks, they do not occupy the disk space.

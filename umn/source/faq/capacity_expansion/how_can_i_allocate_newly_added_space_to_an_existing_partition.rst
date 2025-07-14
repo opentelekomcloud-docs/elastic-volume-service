@@ -17,7 +17,4 @@ Linux
 
 In Linux, if your disk already has, for example, partition **/dev/vdb1** and you want to add space to this partition, refer to the following:
 
-To extend disk partitions and file systems, see the following sections:
-
--  :ref:`Extending Partitions and File Systems for System Disks (Linux) <evs_01_0072>`
--  :ref:`Extending Partitions and File Systems for Data Disks (Linux) <evs_01_0109>`
+To extend disk partitions and file systems, see :ref:`Extending Disk Partitions and File Systems (Linux) <evs_01_0094>`.

@@ -5,5 +5,5 @@
 Can I Attach a Shared Disk to Servers Running Different OSs?
 ============================================================
 
--  It is recommended that you do not simultaneously attach a shared disk to servers running Linux and Windows.
--  If a shared disk is attached to servers running different versions of the same OS type, it can be used normally. For example, a shared disk attached to one server running CentOS 6 and another server running CentOS 7 can work fine.
+-  It is recommended that you do not attach a shared disk to both Linux and Windows servers.
+-  If you attach a shared disk to servers running different versions of the same OS type, for example CentOS 9 and CentOS 7 servers, you can use the shared disk normally.

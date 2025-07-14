@@ -10,7 +10,7 @@ Snapshot
 -  :ref:`Can I Create Snapshots for Multiple Disks at a Time? <evs_faq_0070>`
 -  :ref:`How Is a Snapshot Created for My Disk? <evs_faq_0057>`
 -  :ref:`Why Can't I Roll Back My Disk Data from a Snapshot? <evs_faq_0058>`
--  :ref:`Can I Roll Back Data from a Snapshot After Reinstalling the OS or Formatting the Disk? <evs_faq_0062>`
+-  :ref:`Can I Roll Back Data from a Snapshot After Reinstalling the OS or Formatting a Disk? <evs_faq_0062>`
 -  :ref:`How Is the Snapshot Size Calculated? <evs_faq_0063>`
 -  :ref:`Do Snapshots Take Space on the Disk? <evs_faq_0064>`
 -  :ref:`Can I Perform Multiple Rollback Operations for a Snapshot? <evs_faq_0088>`
@@ -27,7 +27,7 @@ Snapshot
    can_i_create_snapshots_for_multiple_disks_at_a_time
    how_is_a_snapshot_created_for_my_disk
    why_cant_i_roll_back_my_disk_data_from_a_snapshot
-   can_i_roll_back_data_from_a_snapshot_after_reinstalling_the_os_or_formatting_the_disk
+   can_i_roll_back_data_from_a_snapshot_after_reinstalling_the_os_or_formatting_a_disk
    how_is_the_snapshot_size_calculated
    do_snapshots_take_space_on_the_disk
    can_i_perform_multiple_rollback_operations_for_a_snapshot

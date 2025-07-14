@@ -19,11 +19,9 @@ Two EVS disks form an EVS replication pair. Therefore, the production disk ID, D
 Procedure
 ---------
 
-#. Log in to the management console.
+#. Log in to the console.
 
-#. Click |image1| in the upper left corner and select the desired region and project.
-
-#. Under **Computing**, click **Elastic Cloud Server**.
+#. Choose **Computing** > **Elastic Cloud Server**.
 
    The **Elastic Cloud Server** page is displayed.
 
@@ -41,13 +39,13 @@ Procedure
 
       Example ID: 4686b400-5a53-42f9-96f6-d2fe32bb9542
 
-   b. Click the **Disks** tab. Click |image2| to view the details of the corresponding disk and take note of all the production disk IDs.
+   b. Click the **Disks** tab. Click |image1| to view the details of the corresponding disk and take note of all the production disk IDs.
 
       You need to take note of the IDs of all the system disks and data disks attached to the production ECS.
 
       Example ID: ce86f381-99dc-422c-bb10-8014604cf5b9
 
-   c. Click the **NICs** tab. Click |image3| to view the private IP address, elastic IP address (EIP), virtual IP address, and MAC address of a production NIC and take note of the private IP addresses, EIPs, virtual IP addresses, and MAC addresses of all NICs accordingly.
+   c. Click the **NICs** tab. Click |image2| to view the private IP address, elastic IP address (EIP), virtual IP address, and MAC address of a production NIC and take note of the private IP addresses, EIPs, virtual IP addresses, and MAC addresses of all NICs accordingly.
 
       You need to take note of IP addresses of all NICs bound to the production ECS.
 
@@ -57,8 +55,7 @@ Procedure
 
          Replace **{mac}** with the MAC address during operation.
 
-#. Take note of the DR ECS information. For details, see :ref:`4 <evs_01_0025__en-us_topic_0080271667_li23677833165924>` to :ref:`5 <evs_01_0025__en-us_topic_0080271667_li3726148311399>`.
+#. Take note of the DR ECS information. For details, see :ref:`3 <evs_01_0025__en-us_topic_0080271667_li23677833165924>` to :ref:`4 <evs_01_0025__en-us_topic_0080271667_li3726148311399>`.
 
-.. |image1| image:: /_static/images/en-us_image_0237893718.png
+.. |image1| image:: /_static/images/en-us_image_0000002301727406.jpg
 .. |image2| image:: /_static/images/en-us_image_0238263421.jpg
-.. |image3| image:: /_static/images/en-us_image_0238263421.jpg

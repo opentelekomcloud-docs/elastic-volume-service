@@ -46,18 +46,18 @@ Procedure
 
 #. Click **OK** to go back to the disk list page.
 
-   The status of the disk is **Attaching**, indicating that the disk is being attached to the server. When the disk status changes to **In-use**, the disk has been attached.
+   The status of the disk is **Attaching**, indicating that the disk is being attached to the server. When the disk status changes to **In-use**, the disk is successfully attached.
 
 #. (Optional) Mount the existing disk partition on a mount point if you are attaching the disk to a Linux server. The mount command is as follows:
 
    .. code-block::
 
-      mount Disk partition Mount point
+      mount <disk-partition> <mount-point>
 
-Helpful Links
+Related Links
 -------------
 
 To check out more attachment FAQs, see :ref:`Attachment <evs_01_0078>`.
 
-.. |image1| image:: /_static/images/en-us_image_0000001959981980.png
-.. |image2| image:: /_static/images/en-us_image_0000001959822180.jpg
+.. |image1| image:: /_static/images/en-us_image_0000002301563090.png
+.. |image2| image:: /_static/images/en-us_image_0000002335522197.jpg

@@ -48,10 +48,10 @@ Procedure
 
    The status of the disk is **Attaching**, indicating that the disk is being attached to the server. When the function of the disk changes from **Bootable disk** to **System disk** and the disk status changes to **In-use**, the disk has been attached.
 
-Helpful Links
+Related Links
 -------------
 
 To check out more attachment FAQs, see :ref:`Attachment <evs_01_0078>`.
 
-.. |image1| image:: /_static/images/en-us_image_0000001996462329.png
-.. |image2| image:: /_static/images/en-us_image_0000001959981972.jpg
+.. |image1| image:: /_static/images/en-us_image_0000002335562397.png
+.. |image2| image:: /_static/images/en-us_image_0000002301563082.jpg

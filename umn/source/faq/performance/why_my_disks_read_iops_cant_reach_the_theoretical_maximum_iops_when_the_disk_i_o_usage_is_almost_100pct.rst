@@ -19,6 +19,6 @@ A 500 GiB ultra-high I/O disk had an I/O usage of 99.94%, but it only had 12,000
 
 -  **Why does the disk not reach the theoretical maximum IOPS?**
 
-   The actual maximum IOPS that a disk can reach is calculated as follows: Disk IOPS = Min. (Max. IOPS, Min. IOPS + IOPS per GiB x Disk size). For a 500 GiB disk, its IOPS is calculated as follows: Disk IOPS = Min. (20,000, 100 + 50 x 500) = 20,000
+   The actual maximum IOPS that a disk can reach is calculated as follows: Disk IOPS = Min. (Max. IOPS, Min. IOPS + IOPS per GiB x Disk size). For a 500 GiB ultra-high I/O disk, its IOPS is calculated as follows: Disk IOPS = Min. (20,000, 100 + 50 x 500) = 20,000
 
    The disk read IOPS is the number of read operations performed by the disk per second. IOPS is also affected by latency. In a single-queue access scenario with 4 KiB data blocks, the access latency of an ultra-high I/O disk is 1 ms, which means the disk can process 1,000 requests (IOPS) in a second. 12,000 IOPS indicates that the queue depth is 12. To reach the theoretical maximum IOPS (20,000), the queue depth should reach 20.

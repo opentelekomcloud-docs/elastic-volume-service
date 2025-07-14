@@ -10,25 +10,28 @@ Scenarios
 
 You can create EVS snapshots to save disk data at specific time points. Before you perform any critical operation, such as a data rollback, software upgrade, or data migration, you are advised to create snapshots to back up data. This ensures that your data is not affected even if an exception occurred during the operation.
 
-.. note::
+Constraints
+-----------
 
-   During the snapshot creation, disk I/Os are affected, so you may experience slow reads or writes at some points. It is recommended that you create snapshots at off-peak hours.
+-  Snapshots can be created for both system disks and data disks.
+-  Snapshots of encrypted disks are stored encrypted, and those of non-encrypted disks are stored non-encrypted.
+
+-  You can manually create a maximum of seven snapshots for a disk.
+
+Impacts on Performance
+----------------------
+
+During the snapshot creation, disk I/Os are affected, so you may experience slow reads or writes at some points. It is recommended that you create snapshots at off-peak hours.
 
 Prerequisites
 -------------
 
 Snapshots can only be created for **Available** or **In-use** disks.
 
-Notes and Constraints
----------------------
-
--  Snapshots can be created for both system disks and data disks.
--  Snapshots of encrypted disks are stored encrypted, and those of non-encrypted disks are stored non-encrypted.
-
 Creating a Snapshot on the **Disks** Page
 -----------------------------------------
 
-#. Log in to the console.
+#. Sign in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
@@ -53,21 +56,19 @@ Creating a Snapshot on the **Disks** Page
       +-----------------------+--------------------------------------------------+-----------------------+
 
 
-   .. figure:: /_static/images/en-us_image_0000001952166289.png
+   .. figure:: /_static/images/en-us_image_0000002277640246.png
       :alt: **Figure 1** Create Snapshot
 
       **Figure 1** Create Snapshot
 
 #. Click **Create Now**.
 
-#. Go back to the **Snapshots** page to view the snapshot creation information.
-
-   After the snapshot status changes to **Available**, the snapshot has been created.
+#. Go back to the **Snapshots** page. After the snapshot status changes to **Available**, the snapshot has been created.
 
 Creating a Snapshot on the **Snapshots** Page
 ---------------------------------------------
 
-#. Log in to the console.
+#. Sign in to the console.
 
 #. Click |image3| in the upper left corner and select the desired region and project.
 
@@ -102,18 +103,21 @@ Creating a Snapshot on the **Snapshots** Page
       +-----------------------+---------------------------------------------------------------------------------------------------+-----------------------+
 
 
-   .. figure:: /_static/images/en-us_image_0000001925046644.png
+   .. figure:: /_static/images/en-us_image_0000002312239949.png
       :alt: **Figure 2** Create Snapshot
 
       **Figure 2** Create Snapshot
 
 #. Click **Create Now**.
 
-#. Go back to the **Snapshots** page to view the snapshot creation information.
+#. Go back to the **Snapshots** page and view the snapshot creation progress in the snapshot list.
 
    After the snapshot status changes to **Available**, the snapshot has been created.
+
+   |image5|
 
 .. |image1| image:: /_static/images/en-us_image_0237893718.png
 .. |image2| image:: /_static/images/en-us_image_0000001933286285.jpg
 .. |image3| image:: /_static/images/en-us_image_0237893718.png
 .. |image4| image:: /_static/images/en-us_image_0000001933286285.jpg
+.. |image5| image:: /_static/images/en-us_image_0000002312239965.png

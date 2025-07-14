@@ -8,7 +8,7 @@ How Do I Test My Disk Performance?
 Precautions
 -----------
 
-In the disk performance test, if the start sector number is not 4-KiB aligned, the disk performance will be greatly affected. Ensure that the start sector number is 4-KiB aligned before you start the test.
+In the disk performance test, if the first sector number is not 4-KiB aligned, the disk performance will be greatly affected. Ensure that the first sector number is 4-KiB aligned before you start the test.
 
 .. note::
 
@@ -47,7 +47,7 @@ Install the performance measurement tool Iometer before the test. You can obtain
 
       .. important::
 
-         If you delete the partition and select another start sector number for 4-KiB alignment, you will lose all the data on that partition.
+         If you delete the partition and select another first sector number for 4-KiB alignment, you will lose all the data on that partition.
 
 #. .. _evs_faq_0019__en-us_topic_0077859679_li289157701139:
 
@@ -80,7 +80,7 @@ Install the performance measurement tool Iometer before the test. You can obtain
 Linux
 -----
 
-If you use an old version Linux OS, for example CentOS 6.5, and run **fdisk** to create partitions, the default start sector number will not be 4-KiB aligned, which will greatly affect the test performance. For this reason, if such an OS is used, you are advised to select a new start sector number, one that is 4-KiB aligned, when creating partitions.
+If you use an old version Linux OS, for example CentOS 6.5, and run **fdisk** to create partitions, the default first sector number will not be 4-KiB aligned, which will greatly affect the test performance. For this reason, if such an OS is used, you are advised to select a new first sector number, one that is 4-KiB aligned, when creating partitions.
 
 The way you test disk performance depends on the server OS. This section uses CentOS 7.2 64-bit as an example. For other Linux OSs, see the corresponding OS documentations.
 
@@ -90,7 +90,7 @@ The way you test disk performance depends on the server OS. This section uses Ce
 
    **yum install fio**
 
-#. Before you start the test, run the following command to check whether the start sector number is 4-KiB aligned:
+#. Before you start the test, run the following command to check whether the first sector number is 4-KiB aligned:
 
    **fdisk -lu**
 
@@ -126,12 +126,12 @@ The way you test disk performance depends on the server OS. This section uses Ce
          Device Boot      Start         End      Blocks   Id  System
       /dev/xvdc1            2048    41943039    20970496   83  Linux
 
-   -  If 8 can be divided by the start sector number, the number is 4-KiB aligned. Go to :ref:`4 <evs_faq_0019__en-us_topic_0077859679_li6577080021454>`.
-   -  If 8 cannot be divided by the start sector number, the number is not 4-KiB aligned. Delete the partition and select a 4-KiB aligned start sector number for the new partition before continuing the test.
+   -  If 8 can be divided by the first sector number, the number is 4-KiB aligned. Go to :ref:`4 <evs_faq_0019__en-us_topic_0077859679_li6577080021454>`.
+   -  If 8 cannot be divided by the first sector number, the number is not 4-KiB aligned. Delete the partition and select a 4-KiB aligned first sector number for the new partition before continuing the test.
 
       .. important::
 
-         If you delete the partition and select another start sector number for 4-KiB alignment, you will lose all the data on that partition.
+         If you delete the partition and select another first sector number for 4-KiB alignment, you will lose all the data on that partition.
 
 #. .. _evs_faq_0019__en-us_topic_0077859679_li6577080021454:
 
@@ -216,7 +216,7 @@ The way you test disk performance depends on the server OS. This section uses Ce
          | name                              | Defines the test task name.                                                                                                                                                                                                                                                                                                                                                     |
          +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. |image1| image:: /_static/images/en-us_image_0000001151849605.png
-.. |image2| image:: /_static/images/en-us_image_0000001105009866.png
-.. |image3| image:: /_static/images/en-us_image_0000001105009874.png
-.. |image4| image:: /_static/images/en-us_image_0000001105169704.png
+.. |image1| image:: /_static/images/en-us_image_0000002278862552.png
+.. |image2| image:: /_static/images/en-us_image_0000002278805728.png
+.. |image3| image:: /_static/images/en-us_image_0000002313495237.png
+.. |image4| image:: /_static/images/en-us_image_0000002313462213.png

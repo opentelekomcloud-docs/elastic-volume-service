@@ -12,7 +12,7 @@ An EVS disk has several statuses. :ref:`Table 1 <evs_01_0040__en-us_topic_009033
 .. table:: **Table 1** Disk status details
 
    +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
-   | EVS Disk Status       | Status Description                                                                                                                               | Allowed Operation                                      |
+   | EVS Disk Status       | Description                                                                                                                                      | Allowed Operation                                      |
    +=======================+==================================================================================================================================================+========================================================+
    | In-use                | The EVS disk is attached to a server and is in use.                                                                                              | -  Detaching                                           |
    |                       |                                                                                                                                                  | -  Creating backups                                    |
@@ -61,17 +61,17 @@ An EVS disk has several statuses. :ref:`Table 1 <evs_01_0040__en-us_topic_009033
    |                       |    -  When you roll back data from a snapshot, you can only roll back data to the source EVS disk. Rollback to a specific disk is not supported. |                                                        |
    |                       |    -  A snapshot can only be used for rollback when its source disk is in the **Available** or **Rollback failed** state.                        |                                                        |
    +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
-   | Rollback failed       | An error occurs when the EVS disk is rolled back from a snapshot.                                                                                | -  Deleting                                            |
+   | Rollback failed       | An error occurs when the EVS disk data is rolled back from a snapshot.                                                                           | -  Deleting                                            |
    |                       |                                                                                                                                                  | -  Rolling back data to EVS disks using snapshots      |
    +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
    | Awaiting transfer     | The EVS disk is awaiting for a transfer.                                                                                                         | None                                                   |
    +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
 
 
-.. figure:: /_static/images/en-us_image_0000001489883750.png
-   :alt: **Figure 1** Change of some EVS disk statuses
+.. figure:: /_static/images/en-us_image_0000002335530225.png
+   :alt: **Figure 1** Change between some of EVS disk statuses
 
-   **Figure 1** Change of some EVS disk statuses
+   **Figure 1** Change between some of EVS disk statuses
 
 .. note::
 

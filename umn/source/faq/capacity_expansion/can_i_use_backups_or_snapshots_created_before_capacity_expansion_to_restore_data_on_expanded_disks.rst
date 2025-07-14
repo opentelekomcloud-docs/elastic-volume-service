@@ -11,5 +11,5 @@ After the disk data is restored, the disk capacity is increased, but the additio
 
 To extend disk partitions and file systems, see the following sections:
 
--  :ref:`Extending Disk Partitions and File Systems (Windows) <evs_01_0126>`
+-  :ref:`Extending Disk Partitions and File Systems (Windows Server 2016) <evs_01_0126>`
 -  :ref:`Extending Disk Partitions and File Systems (Linux) <evs_01_0094>`

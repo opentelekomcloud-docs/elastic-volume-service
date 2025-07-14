@@ -12,23 +12,23 @@ An EVS snapshot is a complete copy or image of the disk data taken at a specific
 
 .. table:: **Table 1** Snapshot-related operations
 
-   +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
-   | Operation                      | Description                                                                                                                    | Reference                                                   |
-   +================================+================================================================================================================================+=============================================================+
-   | Creating snapshots             | You can create a snapshot to save the disk data at a specified time.                                                           | :ref:`Creating an EVS Snapshot <evs_01_2721>`               |
-   |                                |                                                                                                                                |                                                             |
-   |                                | .. note::                                                                                                                      |                                                             |
-   |                                |                                                                                                                                |                                                             |
-   |                                |    Snapshots are read-only. After snapshots are created, data in the snapshots cannot be modified.                             |                                                             |
-   +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
-   | Rolling back data              | If data on a disk is incorrect or damaged, you can roll back data from a snapshot to the source disk.                          | :ref:`Rolling Back Disk Data from a Snapshot <evs_01_0012>` |
-   +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
-   | Creating disks from a snapshot | You can create disks from a snapshot to quickly copy the snapshot data to disks.                                               | :ref:`Creating a Disk from a Snapshot <evs_01_0013>`        |
-   +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
-   | Checking snapshot information  | You can check the snapshot details, including the region and AZ, source disk information, and tags.                            | :ref:`Checking EVS Snapshot Details <evs_01_0122>`          |
-   +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
-   | Deleting snapshots             | If you no longer require certain snapshots or the snapshot quantity reaches the maximum allowed, you can delete the snapshots. | :ref:`Deleting an EVS Snapshot <evs_01_0011>`               |
-   +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+   +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+   | Operation                      | Description                                                                                                                     | Reference                                                   |
+   +================================+=================================================================================================================================+=============================================================+
+   | Creating snapshots             | You can create a snapshot to save the disk data at a specified time.                                                            | :ref:`Creating an EVS Snapshot <evs_01_2721>`               |
+   |                                |                                                                                                                                 |                                                             |
+   |                                | .. note::                                                                                                                       |                                                             |
+   |                                |                                                                                                                                 |                                                             |
+   |                                |    Snapshots are read-only. After snapshots are created, data in the snapshots cannot be modified.                              |                                                             |
+   +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+   | Rolling back data              | If data on a disk is incorrect or damaged, you can roll back data from a snapshot to the source disk.                           | :ref:`Rolling Back Disk Data from a Snapshot <evs_01_0012>` |
+   +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+   | Creating disks from a snapshot | You can create disks from a snapshot to quickly copy the snapshot data to disks.                                                | :ref:`Creating a Disk from a Snapshot <evs_01_0013>`        |
+   +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+   | Checking snapshot information  | You can check the snapshot details, including the region and AZ, source disk information, and tags.                             | :ref:`Checking EVS Snapshot Details <evs_01_0122>`          |
+   +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+   | Deleting snapshots             | If you no longer require certain snapshots or the snapshot quantity reaches the maximum allowed, you can delete some snapshots. | :ref:`Deleting an EVS Snapshot <evs_01_0011>`               |
+   +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 Snapshot Usage Scenarios
 ------------------------
@@ -58,18 +58,18 @@ Snapshot Principles
 
 The following example describes the snapshot principles with two snapshots s1 and s2 created for disk v1 at different points in time:
 
-#. Disk v1 is created, which contains no data.
+#. Disk v1 was created, which contains no data.
 
-#. Data d1 and d2 are written to disk v1. Data d1 and d2 are written to new spaces.
+#. Data d1 and d2 were written to disk v1. Data d1 and d2 were written to new spaces.
 
-#. Snapshot s1 is created for disk v1 modified in step 2. Data d1 and d2 are not saved as another copy elsewhere. Instead, a relationship between snapshot s1 and data d1 and d2 is established.
+#. Snapshot s1 was created for disk v1 modified in step 2. Data d1 and d2 were not saved as another copy elsewhere. Instead, a relationship between snapshot s1 and data d1 and d2 was established.
 
-#. Data d3 is written to disk v1, and data d2 is changed to d4. Data d3 and d4 are written to new spaces, and data d2 is not overwritten. The relationship between snapshot s1 and data d1 and d2 is still valid. Snapshot s1 can be used to restore data if needed.
+#. Data d3 was written to disk v1, and data d2 was changed to d4. Data d3 and d4 were written to new spaces, and data d2 was not overwritten. The relationship between snapshot s1 and data d1 and d2 was still valid. Snapshot s1 can be used to restore data if needed.
 
-#. Snapshot s2 is created for disk v1 modified in step 4, and a relationship between snapshot s2 and data d1, d3, and d4 is established.
+#. Snapshot s2 was created for disk v1 modified in step 4, and a relationship between snapshot s2 and data d1, d3, and d4 was established.
 
 
-   .. figure:: /_static/images/en-us_image_0000001991047461.png
+   .. figure:: /_static/images/en-us_image_0000002277743292.png
       :alt: **Figure 1** Snapshot principles
 
       **Figure 1** Snapshot principles

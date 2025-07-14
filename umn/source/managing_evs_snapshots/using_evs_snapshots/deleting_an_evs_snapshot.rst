@@ -8,25 +8,24 @@ Deleting an EVS Snapshot
 Scenarios
 ---------
 
-If you no longer require certain snapshots or the snapshot quantity reaches the maximum allowed, you can delete the snapshots.
+If you no longer require certain snapshots or the snapshot quantity reaches the maximum allowed, you can delete some snapshots.
 
 Prerequisites
 -------------
 
 -  The snapshot status must be **Available** or **Error**.
 
-Notes and Constraints
----------------------
+Constraints
+-----------
 
 -  If a snapshot is deleted, disks rolled back or created from this snapshot are not affected.
-
--  If a snapshot's source disk is deleted, all legacy snapshots of this disk are also deleted.
+-  If a snapshot's source disk is deleted, all snapshots of this disk are also deleted.
 -  If you reinstall or change the server OS, snapshots of the system disk are automatically deleted. Those of the data disks can be used as usual.
 
 Procedure
 ---------
 
-#. Log in to the console.
+#. Sign in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
