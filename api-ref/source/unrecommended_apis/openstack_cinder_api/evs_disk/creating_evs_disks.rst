@@ -232,7 +232,7 @@ Response
    +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------+
    | volume_type           | String                | The disk type.                                                                                                                           |
    |                       |                       |                                                                                                                                          |
-   |                       |                       | The value can be **ESSD**, **GPSSD**, **SSD**, **SAS**, or **SATA**.                                                        			  |
+   |                       |                       | The value can be **ESSD**, **GPSSD**, **SSD**, **SAS**, or **SATA**.                                                                     |
    |                       |                       |                                                                                                                                          |
    |                       |                       | -  **SSD**: the ultra-high I/O type                                                                                                      |
    |                       |                       | -  **SAS**: the high I/O type                                                                                                            |
