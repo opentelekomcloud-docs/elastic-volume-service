@@ -6,9 +6,10 @@
       - helpcenter-base-jobs
     vars:
       sphinx_pdf_files:
-        - evs-umn.pdf
-        - evs-api-ref.pdf
         - evs-dev-guide.pdf
+        - evs-api-ref.pdf
+        - evs-umn.pdf
+        - evs-best-practice.pdf
     check:
       jobs:
         - noop
