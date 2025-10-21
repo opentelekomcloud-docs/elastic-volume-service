@@ -8,6 +8,10 @@ Change History
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | Release On                        | Description                                                                                                                          |
 +===================================+======================================================================================================================================+
+| 2025-10-11                        | This issue is the fourth official release, which incorporates the following change:                                                  |
+|                                   |                                                                                                                                      |
+|                                   | Optimized some descriptions.                                                                                                         |
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | 2023-10-27                        | This issue is the third official release, which incorporates the following change:                                                   |
 |                                   |                                                                                                                                      |
 |                                   | Optimized the description of AZ and added the concept of region in section :ref:`Basic Concepts <evs_03_0001__section394673794715>`. |
