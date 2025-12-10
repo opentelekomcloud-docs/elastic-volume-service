@@ -12,7 +12,7 @@ The following table describes whether the disk type, device type, encryption, an
    +-----------------------+-----------------------+--------------------------------------------------------------------------+
    | Attribute             | Allow Change          | Change Direction                                                         |
    +=======================+=======================+==========================================================================+
-   | Disk type             | Yes                   | For details, see :ref:`Changing the EVS Disk Type (Beta) <evs_01_0062>`. |
+   | Disk type             | Yes                   | For details, see :ref:`Changing the EVS Disk Type <evs_01_0062>`.        |
    +-----------------------+-----------------------+--------------------------------------------------------------------------+
    | Sharing               | No                    | -  From shared to non-shared                                             |
    |                       |                       | -  From non-shared to shared                                             |
