@@ -16,7 +16,7 @@ If the disk read/write speed is slowed down, disk I/O increases, or the await ti
 
 **Solution**
 
-Method 1: Change to a disk type with a higher specification. For details, see :ref:`Changing the EVS Disk Type (Beta) <evs_01_0062>`.
+Method 1: Change to a disk type with a higher specification. For details, see :ref:`Changing the EVS Disk Type <evs_01_0062>`.
 
 Method 2: Create a new disk from a disk backup to retain the disk data. The procedure is as follows:
 
