@@ -2,8 +2,8 @@
 
 .. _evs_04_2014:
 
-Expanding Capacity of an EVS Disk
-=================================
+Expanding the Capacity of an EVS Disk
+=====================================
 
 Function
 --------
