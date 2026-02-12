@@ -23,7 +23,7 @@ Rolling Back Disk Data from a Snapshot
 
 #. Sign in to the console.
 
-#. Click |image1| in the upper left corner and select the desired region and project.
+#. Click |image1| in the upper left corner and select a region.
 
 #. Click |image2| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
 

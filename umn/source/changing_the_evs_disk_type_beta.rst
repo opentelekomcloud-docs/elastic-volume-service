@@ -37,19 +37,21 @@ The following table shows the supported changes between disk types.
 
 .. table:: **Table 2** Supported changes between disk types
 
-   +---------------------+---------------------------------------------------------------+
-   | Source Disk Type    | New Disk Type                                                 |
-   +=====================+===============================================================+
-   | Extreme SSD         | Ultra-high I/O or General Purpose SSD                         |
-   +---------------------+---------------------------------------------------------------+
-   | Ultra-high I/O      | Extreme SSD or General Purpose SSD                            |
-   +---------------------+---------------------------------------------------------------+
-   | General Purpose SSD | Extreme SSD or Ultra-high I/O                                 |
-   +---------------------+---------------------------------------------------------------+
-   | High I/O            | Extreme SSD, Ultra-high I/O, or General Purpose SSD           |
-   +---------------------+---------------------------------------------------------------+
-   | Common I/O          | Extreme SSD, Ultra-high I/O, General Purpose SSD, or High I/O |
-   +---------------------+---------------------------------------------------------------+
+   +--------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | Source Disk Type         | New Disk Type                                                                                                               |
+   +==========================+=============================================================================================================================+
+   | General Purpose SSD V2   | General Purpose SSD V2 (IOPS or throughput, or both changed), Ultra-high I/O, General Purpose SSD, or Extreme SSD           |
+   +--------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | Extreme SSD              | General Purpose SSD V2 (IOPS or throughput, or both changed), Ultra-high I/O or General Purpose SSD                         |
+   +--------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | Ultra-high I/O           | General Purpose SSD V2 (IOPS or throughput, or both changed), Extreme SSD, or General Purpose SSD                           |
+   +--------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | General Purpose SSD      | General Purpose SSD V2 (IOPS or throughput, or both changed), Extreme SSD or Ultra-high I/O                                 |
+   +--------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | High I/O                 | General Purpose SSD V2 (IOPS or throughput, or both changed), Extreme SSD, Ultra-high I/O, or General Purpose SSD           |
+   +--------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | Common I/O (end-of-sale) | General Purpose SSD V2 (IOPS or throughput, or both changed), Extreme SSD, Ultra-high I/O, General Purpose SSD, or High I/O |
+   +--------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Impact on the System
 --------------------

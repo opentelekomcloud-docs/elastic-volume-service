@@ -14,8 +14,8 @@ If the storage space on your servers is insufficient, you can create EVS disks t
 
    System disks cannot be created separately. They must be created together with servers.
 
-Notes and Constraints
----------------------
+Constraints
+-----------
 
 .. table:: **Table 1** Constraints on creating disks
 
@@ -34,6 +34,7 @@ Notes and Constraints
    | Other constraints                 | -  Capacities of multiple disks cannot be combined, and the capacity of a single disk cannot be split.                                                                                                  |
    |                                   | -  Disks can only be attached to servers in the same AZ.                                                                                                                                                |
    |                                   | -  The AZ of a disk cannot be changed after the disk has been created.                                                                                                                                  |
+   |                                   | -  Common I/O disks have reached their end-of-sale status.                                                                                                                                              |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Creating Disks On the EVS Console

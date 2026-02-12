@@ -10,16 +10,12 @@ EVS disks are classified based on the disk I/O performance. EVS disks differ in 
 Application Scenarios
 ---------------------
 
--  Common I/O: This type of EVS disks delivers a maximum IOPS of 1,000. They are suitable for applications that require large capacity, a medium read/write speed, and fewer transactions, such as enterprise office applications and small-scale test environments.
+-  Common I/O (end-of-sale): This type of EVS disks delivers a maximum IOPS of 1,000. They are suitable for applications that require large capacity, a medium read/write speed, and fewer transactions, such as enterprise office applications and small-scale test environments.
 -  High I/O: This type of EVS disks delivers a maximum IOPS of 3,000 and a minimum read/write latency of 6 ms. They are designed to meet the needs of mainstream high-performance, high-reliability applications, such as enterprise applications, large-scale development and test environments, and web server logs.
 -  Ultra-high I/O: This type of EVS disks delivers a maximum IOPS of 20,000 and a minimum read/write latency of 1 ms. They are excellent for read/write-intensive applications that require super-high I/O and bandwidth, such as distributed file systems in HPC scenarios or NoSQL/relational databases in I/O-intensive scenarios.
 -  Extreme SSD: This type of EVS disks delivers a maximum IOPS of 128,000. They are designed for workloads demanding super-high bandwidth and super-low latency, such as Oracle databases and AI applications.
 -  General Purpose SSD: This type of EVS disks delivers a maximum IOPS of 20,000. They are suitable for workloads requiring high throughput and low latency, such as enterprise OA, development and testing, web server logging, containers, and high-performance system disks.
-
-.. note::
-
-   -  High I/O (performance optimized I) and ultra-high I/O (latency optimized) EVS disks can only be attached to SAP HANA ECSs or HL1 ECSs.
-   -  If an Extreme SSD disk is attached to a BMS, it can reach a maximum IOPS of 128,000. If it is attached to an ECS, it can reach a maximum IOPS of 100,000 due to I/O queue limitations.
+-  General Purpose SSD V2: is a next-generation General Purpose SSD disk type. This type of disks allows you to buy disks of a given capacity with the IOPS and throughput tailored to your workloads. The disk capacity and performance are decoupled.
 
 EVS Performance
 ---------------

@@ -18,8 +18,8 @@ You can view the disk function in the disk list. A disk can be attached to a ser
 
    -  Bootable disks are the system disks detached from servers. A bootable disk can be re-attached to a server to be used as a system disk or data disk depending on the disk function selected.
 
-Notes and Constraints
----------------------
+Constraints
+-----------
 
 -  Cloud servers created from ISO images are only used for OS installation. They have limited functions and cannot have EVS disks attached.
 -  A non-shared disk can be attached to one server only.

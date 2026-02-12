@@ -25,7 +25,7 @@ a Disk Backup Vault and Applying a Backup Policy
 #. Log in to the CBR console.
 
    a. Log in to the console.
-   b. Click |image1| in the upper left corner and select the desired region and project.
+   b. Click |image1| in the upper left corner and select a region.
    c. Click |image2| in the upper left corner of the page and choose **Storage** > **Cloud Backup and Recovery** > **Cloud Disk Backups**.
 
 #. In the upper right corner, click **Create Disk Backup Vault**.
