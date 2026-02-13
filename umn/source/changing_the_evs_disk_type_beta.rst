@@ -2,7 +2,7 @@
 
 .. _evs_01_0062:
 
-Changing the EVS Disk Type
+Changing the EVS Disk Type (Beta)
 =================================
 
 Scenarios
