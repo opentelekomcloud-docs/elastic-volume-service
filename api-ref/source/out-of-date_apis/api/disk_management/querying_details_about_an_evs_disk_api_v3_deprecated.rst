@@ -1,21 +1,21 @@
-:original_name: evs_04_2007.html
+:original_name: evs_04_3005.html
 
-.. _evs_04_2007:
+.. _evs_04_3005:
 
-Querying Details About an EVS Disk
-==================================
+Querying Details About an EVS Disk (API V3) (Deprecated)
+========================================================
 
 Function
 --------
 
-This API is used to query details about an EVS disk.
+This API is used to query details about a disk.
 
 URI
 ---
 
 -  URI format
 
-   GET /v2/{project_id}/cloudvolumes/{volume_id}
+   GET /v3/{project_id}/os-vendor-volumes/{volume_id}
 
 -  Parameter description
 
@@ -33,22 +33,22 @@ Request
 
    .. code-block:: text
 
-      GET https://{endpoint}/v2/{project_id}/cloudvolumes/b104b8db-170d-441b-897a-3c8ba9c5a214
+      GET https://{endpoint}/v3/{project_id}/os-vendor-volumes/b104b8db-170d-441b-897a-3c8ba9c5a214
 
 Response
 --------
 
 -  Response parameters
 
-   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter | Type   | Description                                                                                                                                      |
-   +===========+========+==================================================================================================================================================+
-   | volume    | Object | The queried disk. For details, see :ref:`Parameters in the volume field <evs_04_2007__evs_04_2011_li3451542201439>`.                             |
-   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | error     | Object | The error message returned if an error occurs. For details, see :ref:`Parameters in the error field <evs_04_2007__evs_04_2011_li0419202382514>`. |
-   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter | Type   | Description                                                                                                                          |
+   +===========+========+======================================================================================================================================+
+   | volume    | Object | The queried disk. For details, see :ref:`Parameters in the volume field <evs_04_3005__li85501353123417>`.                            |
+   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | error     | Object | The error message returned if an error occurs. For details, see :ref:`Parameters in the error field <evs_04_3005__li0419202382514>`. |
+   +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------+
 
--  .. _evs_04_2007__evs_04_2011_li3451542201439:
+-  .. _evs_04_3005__li85501353123417:
 
    Parameters in the **volume** field
 
@@ -57,21 +57,17 @@ Response
    +=======================================+=======================+========================================================================================================================================================+
    | id                                    | String                | The disk ID.                                                                                                                                           |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | links                                 | Array of objects      | The disk URI. For details, see :ref:`Parameters in the links field <evs_04_2007__evs_04_2011_li4929184617138>`.                                        |
+   | links                                 | Array of objects      | The disk URI. For details, see :ref:`Parameters in the links field <evs_04_3005__li16591153203415>`.                                                   |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | name                                  | String                | The disk name.                                                                                                                                         |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | status                                | String                | The disk status. For details, see :ref:`EVS Disk Status <evs_04_0040>`.                                                                                |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | attachments                           | Array of objects      | The disk attachment information. For details, see :ref:`Parameters in the attachments field <evs_04_2007__evs_04_2011_li4186567617138>`.               |
+   | attachments                           | Array of objects      | The disk attachment information. For details, see :ref:`Parameters in the attachments field <evs_04_3005__li159875317347>`.                            |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | availability_zone                     | String                | The AZ to which the disk belongs.                                                                                                                      |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | count                                 | String                | The number of queried disks.                                                                                                                           |
-   +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | source_volid                          | String                | The source disk ID. This parameter has a value if the disk is created from a source disk.                                                              |
-   |                                       |                       |                                                                                                                                                        |
-   |                                       |                       | This field is currently not supported.                                                                                                                 |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | snapshot_id                           | String                | The snapshot ID. This parameter has a value if the disk is created from a snapshot.                                                                    |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -91,6 +87,8 @@ Response
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | volume_type                           | String                | The disk type.                                                                                                                                         |
    |                                       |                       |                                                                                                                                                        |
+   |                                       |                       | The disk type.                                                                                                                                         |
+   |                                       |                       |                                                                                                                                                        |
    |                                       |                       | The value can be **ESSD**, **GPSSD2**, **GPSSD**, **SSD**, **SAS**, or **SATA**.                                                                       |
    |                                       |                       |                                                                                                                                                        |
    |                                       |                       | -  **SSD**: the ultra-high I/O type                                                                                                                    |
@@ -107,7 +105,7 @@ Response
    |                                       |                       | -  **true**: indicates a bootable disk.                                                                                                                |
    |                                       |                       | -  **false**: indicates a non-bootable disk.                                                                                                           |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | metadata                              | Object                | The disk metadata. For details, see :ref:`Parameters in the metadata field <evs_04_2007__evs_04_2011_li29114110314>`.                                  |
+   | metadata                              | Object                | The disk metadata. For details, see :ref:`Parameters in the metadata field <evs_04_3005__li29114110314>`.                                              |
    |                                       |                       |                                                                                                                                                        |
    |                                       |                       | If **metadata** does not contain the **hw:passthrough** field, the disk device type is VBD.                                                            |
    |                                       |                       |                                                                                                                                                        |
@@ -120,8 +118,6 @@ Response
    | updated_at                            | String                | The time when the disk was updated.                                                                                                                    |
    |                                       |                       |                                                                                                                                                        |
    |                                       |                       | Time format: UTC YYYY-MM-DDTHH:MM:SS.XXXXXX                                                                                                            |
-   +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | os-volume-replication:driver_data     | String                | The reserved field.                                                                                                                                    |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | os-volume-replication:extended_status | String                | The reserved field.                                                                                                                                    |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -154,12 +150,14 @@ Response
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | wwn                                   | String                | The unique identifier used when attaching the disk.                                                                                                    |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | storage_cluster_id                    | String                | The reserved field.                                                                                                                                    |
+   +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | iops                                  | Object                | The disk IOPS information. This parameter is only returned for a general purpose SSD V2 disk.                                                          |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | throughput                            | Object                | The disk throughput information. This parameter is only returned for a general purpose SSD V2 disk.                                                    |
    +---------------------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
--  .. _evs_04_2007__evs_04_2011_li4929184617138:
+-  .. _evs_04_3005__li16591153203415:
 
    Parameters in the **links** field
 
@@ -170,7 +168,7 @@ Response
    rel       String The shortcut link marker name.
    ========= ====== ================================
 
--  .. _evs_04_2007__evs_04_2011_li4186567617138:
+-  .. _evs_04_3005__li159875317347:
 
    Parameters in the **attachments** field
 
@@ -194,7 +192,7 @@ Response
    | id                    | String                | The ID of the attached disk.                                                          |
    +-----------------------+-----------------------+---------------------------------------------------------------------------------------+
 
--  .. _evs_04_2007__evs_04_2011_li29114110314:
+-  .. _evs_04_3005__li29114110314:
 
    Parameters in the **metadata** field
 
@@ -211,12 +209,14 @@ Response
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | hw:passthrough        | String                | The parameter that describes the disk device type in **metadata**. The value can be **true** or **false**.                                                         |
    |                       |                       |                                                                                                                                                                    |
-   |                       |                       | -  **true** indicates the SCSI device type, which allows ECS OSs to directly access the underlying storage media. SCSI reservation commands are supported.         |
+   |                       |                       | -  **true** indicates the SCSI device type, which allows ECS OSs to directly access the underlying storage media and support SCSI reservation commands.            |
    |                       |                       | -  **false** indicates the VBD device type (the default type), which supports only simple SCSI read/write commands.                                                |
    |                       |                       | -  If this parameter does not appear, the disk device type is VBD.                                                                                                 |
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | full_clone            | String                | The clone method. If the disk is created from a snapshot, value **0** indicates the linked cloning method.                                                         |
+   +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
--  .. _evs_04_2007__evs_04_2011_li0419202382514:
+-  .. _evs_04_3005__li0419202382514:
 
    Parameters in the **error** field
 
@@ -267,7 +267,7 @@ Response
               "attachments": [ ],
               "links": [
                   {
-                      "href": "https://volume.az0.dc1.domainname.com/v2/40acc331ac784f34842ba4f08ff2be48/volumes/591ac654-26d8-41be-bb77-4f90699d2d41",
+                      "href": "https://volume.az0.dc1.domainname.com/v3/40acc331ac784f34842ba4f08ff2be48/volumes/591ac654-26d8-41be-bb77-4f90699d2d41",
                       "rel": "self"
                   },
                   {
@@ -294,7 +294,7 @@ Response
                   "key1": "value1",
                   "key2": "value2"
               },
-              "status": "available",
+              "status": "error_restoring",
               "description": "auto-created_from_restore_from_backup",
               "source_volid": null,
               "consistencygroup_id": null,
