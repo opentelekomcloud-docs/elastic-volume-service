@@ -7,7 +7,7 @@ How Can I View the Available Capacity of My Disk?
 
 You can view the available capacity of a disk on the ECS. The operations are as follows:
 
-#. Log in to the server.
+#. Log in to the server as user **root**.
 
    For how to log in to an ECS, see the *Elastic Cloud Server User Guide*.
 

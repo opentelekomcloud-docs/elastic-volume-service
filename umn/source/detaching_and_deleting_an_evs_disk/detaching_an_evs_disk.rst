@@ -51,7 +51,7 @@ Detaching a System Disk
 
 #. Sign in to the console.
 
-#. Click |image1| in the upper left corner and select the desired region and project.
+#. Click |image1| in the upper left corner and select a region.
 
 #. Click |image2| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
 
@@ -94,7 +94,7 @@ Detaching a Non-Shared Data Disk
 
 #. Sign in to the console.
 
-#. Click |image3| in the upper left corner and select the desired region and project.
+#. Click |image3| in the upper left corner and select a region.
 
 #. Click |image4| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
 
@@ -147,7 +147,7 @@ Detaching a Shared Data Disk
 
 #. Sign in to the console.
 
-#. Click |image6| in the upper left corner and select the desired region and project.
+#. Click |image6| in the upper left corner and select a region.
 
 #. Choose **Storage** > **Elastic Volume Service**.
 

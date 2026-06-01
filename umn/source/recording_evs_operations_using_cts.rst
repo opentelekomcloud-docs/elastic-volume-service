@@ -32,4 +32,4 @@ Key EVS Operations Recorded by CTS
 Viewing Traces
 --------------
 
-To view audit logs, see `Querying Real-Time Traces <https://docs.otc.t-systems.com/en-us/usermanual/cts/en-us_topic_0030598499.html>`__.
+To view audit logs, see `Querying Real-Time Traces <https://docs.otc.t-systems.com/en-us/usermanual/cts/en-us_topic_0030598499.html>`__
