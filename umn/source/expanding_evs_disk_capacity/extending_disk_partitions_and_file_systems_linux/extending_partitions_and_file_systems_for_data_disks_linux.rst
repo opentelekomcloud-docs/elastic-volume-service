@@ -28,8 +28,8 @@ Constraints
 
 -  The additional space of a data disk cannot be added to the root partition. To extend the root partition, expand the system disk instead.
 -  During an expansion, the additional space is added to the end of the disk. If the disk has multiple partitions, the additional space can only be allocated to the last partition of the disk.
--  If the target partition is an extended MBR partition (whose partition number is usually greater than or equal to 5), you need to first expand the extended partition and then the logical partition. Assume that you have three partitions, **/dev/vdb1** (primary partition), **/dev/vdb2** (extended partition), and **/dev/vdb5** (logical partition), you need to run **growpart /dev/vdb2** and then **growpart /dev/vdb5** to extend the partitions.
--  The maximum disk capacity that MBR supports is 2 TiB, and the disk space in access of 2 TiB cannot be used. If your disk already uses MBR for partitioning and you require more than 2 TiB after the capacity expansion, do as follows:
+-  If the target partition is an extended MBR partition (whose partition number is usually greater than or equal to 5), you need to first expand the extended partition and then the logical partition. Assume that you have three partitions: **/dev/vdb1** (primary partition), **/dev/vdb2** (extended partition), and **/dev/vdb5** (logical partition). You need to run **growpart /dev/vdb2** and then **growpart /dev/vdb5** to extend the partitions.
+-  The maximum disk capacity that MBR supports is 2 TiB, and the disk space in excess of 2 TiB cannot be used. If your disk already uses MBR for partitioning and you require more than 2 TiB after the capacity expansion, do as follows:
 
    -  (Recommended) Create a new EVS disk and use GPT.
    -  Back up the disk data, perform the expansion, and then change the partition style from MBR to GPT. During this change, services will be interrupted and data on the disk will be erased.
@@ -122,7 +122,7 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
 
       If MBR is used, a maximum of four primary partitions, or three primary partitions plus one extended partition can be created. The extended partition must be divided into logical partitions before use.
 
-      Disk partitions created using GPT are not categorized.
+      GPT partitions are not categorized.
 
 #. In this example, a primary partition is created. Therefore, enter **p** and press **Enter** to create a primary partition.
 
@@ -148,7 +148,7 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
 
 #. Enter the new partition's start sector and press **Enter**. In this example, the default start sector is used.
 
-   The system displays the start and end sectors of the partition's available space. You can customize the value within this range or use the default value. The start sector must be smaller than the partition's end sector.
+   The system displays the start and end sectors of the partition's available space. You can define a value within this range or use the default value. The start sector must be smaller than the partition's end sector.
 
    Information similar to the following is displayed:
 
@@ -162,7 +162,7 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
 
 #. Enter the new partition's end sector and press **Enter**. In this example, the default end sector is used.
 
-   The system displays the start and end sectors of the partition's available space. You can customize the value within this range or use the default value. The start sector must be smaller than the partition's end sector.
+   The system displays the start and end sectors of the partition's available space. You can define a value within this range or use the default value. The start sector must be smaller than the partition's end sector.
 
    Information similar to the following is displayed:
 
@@ -221,7 +221,7 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
 
 #. Run the following command to set the file system format for the new partition:
 
-   **mkfs** **-t** *File system* *Disk partition*
+   **mkfs** **-t** *file-system* *disk-partition*
 
    -  Sample command of the ext\* file system:
 
@@ -248,21 +248,21 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
 
    The formatting takes a while, and you need to observe the system running status. Once **done** is displayed in the command output, the formatting is complete.
 
-#. (Optional) Run the following command to create a mount point:
+#. (Optional) Create a mount point:
 
    Perform this step if you want to mount the partition on a new mount point.
 
-   **mkdir** *Mount point*
+   **mkdir** *mount-point*
 
-   In this example, run the following command to create the **/mnt/test** mount point:
+   In this example, create **/mnt/test**:
 
    **mkdir** **/mnt/test**
 
-#. Run the following command to mount the new partition:
+#. Mount the new partition:
 
-   **mount** *Disk partition* *Mount point*
+   **mount** *disk-partition* *mount-point*
 
-   In this example, run the following command to mount the new partition **/dev/vdb2** on **/mnt/test**:
+   In this example, mount the new partition **/dev/vdb2** on **/mnt/test**:
 
    **mount** **/dev/vdb2** **/mnt/test**
 
@@ -300,7 +300,7 @@ Extending an Existing MBR Partition
 
 .. important::
 
-   If the additional space is allocated to an existing partition, data on the disk will not be cleared but you must use **umount** to unmount the existing partition. In this case, services will be affected.
+   Expanding an existing partition will not delete data on the disk. However, the partition must first be unmounted using the **umount** command, which will interrupt online services.
 
 Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1** and **/dev/vdb2**), and then 80 GiB is added to the disk. The following procedure shows you how to add this 80 GiB to the existing MBR partition **/dev/vdb2**.
 
@@ -424,9 +424,9 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
 
    .. note::
 
-      If MBR is used, a maximum of four primary partitions, or three primary partitions plus one extended partition can be created. The extended partition must be divided into logical partitions before use.
+      If MBR is used, a maximum of four primary partitions or three primary partitions plus one extended partition can be created. The extended partition must be divided into logical partitions before use.
 
-      Disk partitions created using GPT are not categorized.
+      GPT partitions are not categorized.
 
 #. Ensure that the entered partition type is the same as the partition had before. In this example, a primary partition is used. Therefore, enter **p** and press **Enter** to create a primary partition.
 
@@ -509,6 +509,10 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
 
    Information similar to the following is displayed:
 
+   .. note::
+
+      In case that you want to discard the changes made before, you can exit fdisk by entering **q**.
+
    .. code-block::
 
       Command (m for help): w
@@ -520,10 +524,6 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
       The kernel still uses the old table. The new table will be used at
       the next reboot or after you run partprobe(8) or kpartx(8)
       Syncing disks.
-
-   .. note::
-
-      In case that you want to discard the changes made before, you can exit fdisk by entering **q**.
 
 #. Run the following command to synchronize the new partition table to the OS:
 
@@ -554,15 +554,19 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
             Pass 5: Checking group summary information
             /dev/vdb2: 11/3276800 files (0.0% non-contiguous), 251790/13107200 blocks
 
-      b. Run the following command to extend the file system of the partition:
+      b. Extend the file system of the partition:
 
-         **resize2fs** *Disk partition*
+         **resize2fs** *disk-partition*
 
          In this example, run the following command:
 
          **resize2fs** **/dev/vdb2**
 
          Information similar to the following is displayed:
+
+         .. note::
+
+            If the error message "open: No such file or directory while opening /dev/vdb1" is returned, an incorrect partition is specified. Run **df -TH** to view the disk partitions.
 
          .. code-block:: console
 
@@ -571,25 +575,21 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
             Resizing the filesystem on /dev/vdb2 to 34078720 (4k) blocks.
             The filesystem on /dev/vdb2 is now 34078720 blocks long.
 
-         .. note::
-
-            If the error message "open: No such file or directory while opening /dev/vdb1" is returned, an incorrect partition is specified. Run **df -TH** to view the disk partitions.
-
-      c. (Optional) Run the following command to create a mount point:
+      c. (Optional) Create a mount point:
 
          Perform this step if you want to mount the partition on a new mount point.
 
-         **mkdir** *Mount point*
+         **mkdir** *mount-point*
 
-         In this example, run the following command to create the **/mnt/test** mount point:
+         In this example, create **/mnt/test**:
 
          **mkdir** **/mnt/test**
 
-      d. Run the following command to mount the partition:
+      d. Mount the partition:
 
-         **mount** *Disk partition* *Mount point*
+         **mount** *disk-partition* *mount-point*
 
-         In this example, run the following command to mount partition **/dev/vdb2** on **/mnt/test**:
+         In this example, mount partition **/dev/vdb2** on **/mnt/test**:
 
          **mount** **/dev/vdb2** **/mnt/test**
 
@@ -599,21 +599,21 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
 
    -  For the **xfs** file system
 
-      a. (Optional) Run the following command to create a mount point:
+      a. (Optional) Create a mount point:
 
          Perform this step if you want to mount the partition on a new mount point.
 
-         **mkdir** *<mount-point>*
+         **mkdir** *mount-point*
 
-         In this example, run the following command to create the **/mnt/test** mount point:
+         In this example, create **/mnt/test**:
 
          **mkdir** **/mnt/test**
 
-      b. Run the following command to mount the partition:
+      b. Mount the partition:
 
-         **mount** *<disk-partition>* *<mount-point>*
+         **mount** *disk-partition* *mount-point*
 
-         In this example, run the following command to mount partition **/dev/vdb2** on **/mnt/test**:
+         In this example, mount partition **/dev/vdb2** on **/mnt/test**:
 
          **mount** **/dev/vdb2** **/mnt/test**
 
@@ -621,9 +621,9 @@ Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1**
 
             If the new partition is mounted on a directory that is not empty, the subdirectories and files in the directory will be hidden. Therefore, you are advised to mount the new partition on an empty directory or a new directory. If the new partition must be mounted on a directory that is not empty, move the subdirectories and files in this directory to another directory temporarily. After the partition is successfully mounted, move the subdirectories and files back.
 
-      c. Run the following command to extend the file system of the partition:
+      c. Extend the file system of the partition:
 
-         **sudo** **xfs\_growfs** *Disk partition*
+         **sudo** **xfs\_growfs** *disk-partition*
 
          In this example, run the following command:
 
@@ -801,7 +801,7 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
 
 #. Run the following command to set the file system format for the new partition:
 
-   **mkfs** **-t** *File system* *Disk partition*
+   **mkfs** **-t** *file-system* *disk-partition*
 
    -  Sample command of the ext\* file system:
 
@@ -855,21 +855,21 @@ Originally, data disk **/dev/vdb** has 100 GiB and one partition (**/dev/vdb1**)
 
    The formatting takes a while, and you need to observe the system running status. Once **done** is displayed in the command output, the formatting is complete.
 
-#. (Optional) Run the following command to create a mount point:
+#. (Optional) Create a mount point:
 
    Perform this step if you want to mount the partition on a new mount point.
 
-   **mkdir** *<mount-point>*
+   **mkdir** *mount-point*
 
-   In this example, run the following command to create the **/mnt/test** mount point:
+   In this example, create **/mnt/test**:
 
    **mkdir** **/mnt/test**
 
-#. Run the following command to mount the new partition:
+#. Mount the new partition:
 
-   **mount** *<disk-partition>* *<mount-point>*
+   **mount** *disk-partition* *mount-point*
 
-   In this example, run the following command to mount the new partition **/dev/vdb2** on **/mnt/test**:
+   In this example, mount the new partition **/dev/vdb2** on **/mnt/test**:
 
    **mount** **/dev/vdb2** **/mnt/test**
 
@@ -907,7 +907,7 @@ Extending an Existing GPT Partition
 
 .. important::
 
-   If the additional space is allocated to an existing partition, data on the disk will not be cleared but you must use **umount** to unmount the existing partition. In this case, services will be affected.
+   Expanding an existing partition will not delete data on the disk. However, the partition must first be unmounted using the **umount** command, which will interrupt online services.
 
 Originally, data disk **/dev/vdb** has 150 GiB and two partitions (**/dev/vdb1** and **/dev/vdb2**), and then 80 GiB is added to the disk. The following procedure shows you how to add this 80 GiB to the existing GPT partition **/dev/vdb2**.
 
@@ -1050,17 +1050,17 @@ During an expansion, the additional space is added to the end of the disk. There
 
    Information similar to the following is displayed:
 
+   .. note::
+
+      Data will be lost if:
+
+      -  The selected start sector differs from the partition's original start sector.
+      -  The selected end sector is smaller than the partition's original end sector.
+
    .. code-block::
 
       (parted) mkpart data 209713152s 100%
       (parted)
-
-   .. note::
-
-      Data will be lost if the following operations are performed:
-
-      -  Select a start sector other than the partition had before.
-      -  Select an end sector smaller than the partition had before.
 
 #. Enter **p** and press **Enter** to view the partition information.
 
@@ -1087,7 +1087,7 @@ During an expansion, the additional space is added to the end of the disk. There
 
       a. Run the following command to check the correctness of the file system on the partition:
 
-         **e2fsck** **-f** *<disk-partition>*
+         **e2fsck** **-f** *Disk partition*
 
          In this example, run the following command:
 
@@ -1106,9 +1106,9 @@ During an expansion, the additional space is added to the end of the disk. There
             Pass 5: Checking group summary information
             /dev/vdb2: 11/3276800 files (0.0% non-contiguous), 251790/13107200 blocks
 
-      b. Run the following command to extend the file system of the partition:
+      b. Extend the file system of the partition:
 
-         **resize2fs** *<disk-partition>*
+         **resize2fs** *disk-partition*
 
          In this example, run the following command:
 
@@ -1127,21 +1127,21 @@ During an expansion, the additional space is added to the end of the disk. There
 
             If the error message "open: No such file or directory while opening /dev/vdb1" is returned, an incorrect partition is specified. Run **df -TH** to view the disk partitions.
 
-      c. (Optional) Run the following command to create a mount point:
+      c. (Optional) Create a mount point:
 
          Perform this step if you want to mount the partition on a new mount point.
 
-         **mkdir** *<mount-point>*
+         **mkdir** *mount-point*
 
-         In this example, run the following command to create the **/mnt/test** mount point:
+         In this example, create **/mnt/test**:
 
          **mkdir** **/mnt/test**
 
-      d. Run the following command to mount the partition:
+      d. Mount the partition:
 
-         **mount** *<disk-partition>* *<mount-point>*
+         **mount** *disk-partition* *mount-point*
 
-         In this example, run the following command to mount partition **/dev/vdb2** on **/mnt/test**:
+         In this example, mount partition **/dev/vdb2** on **/mnt/test**:
 
          **mount** **/dev/vdb2** **/mnt/test**
 
@@ -1151,21 +1151,21 @@ During an expansion, the additional space is added to the end of the disk. There
 
    -  For the **xfs** file system
 
-      a. (Optional) Run the following command to create a mount point:
+      a. (Optional) Create a mount point:
 
          Perform this step if you want to mount the partition on a new mount point.
 
-         **mkdir** *<mount-point>*
+         **mkdir** *mount-point*
 
-         In this example, run the following command to create the **/mnt/test** mount point:
+         In this example, create **/mnt/test**:
 
          **mkdir** **/mnt/test**
 
-      b. Run the following command to mount the partition:
+      b. Mount the partition:
 
-         **mount** *<disk-partition>* *<mount-point>*
+         **mount** *disk-partition* *mount-point*
 
-         In this example, run the following command to mount partition **/dev/vdb2** on **/mnt/test**:
+         In this example, mount partition **/dev/vdb2** on **/mnt/test**:
 
          **mount** **/dev/vdb2** **/mnt/test**
 
@@ -1173,15 +1173,13 @@ During an expansion, the additional space is added to the end of the disk. There
 
             If the new partition is mounted on a directory that is not empty, the subdirectories and files in the directory will be hidden. Therefore, you are advised to mount the new partition on an empty directory or a new directory. If the new partition must be mounted on a directory that is not empty, move the subdirectories and files in this directory to another directory temporarily. After the partition is successfully mounted, move the subdirectories and files back.
 
-      c. Run the following command to extend the file system of the partition:
+      c. Extend the file system of the partition:
 
-         **sudo** **xfs\_growfs** *<disk-partition>*
+         **sudo** **xfs\_growfs** *disk-partition*
 
          In this example, run the following command:
 
          **sudo** **xfs\_growfs** **/dev/vdb2**
-
-         Information similar to the following is displayed:
 
          .. code-block:: console
 
@@ -1231,7 +1229,7 @@ The following example uses UUIDs to identify disks in the **fstab** file. You ar
 
 #. Query the partition UUID.
 
-   **blkid** *<disk-partition>*
+   **blkid** *Disk partition*
 
    In this example, the UUID of the **/dev/vdb1** partition is queried.
 
@@ -1266,7 +1264,7 @@ The following example uses UUIDs to identify disks in the **fstab** file. You ar
 
    a. Unmount the partition.
 
-      **umount** *<disk-partition>*
+      **umount** *Disk partition*
 
       In this example, run the following command:
 
@@ -1278,7 +1276,7 @@ The following example uses UUIDs to identify disks in the **fstab** file. You ar
 
    c. Query the file system mounting information.
 
-      **mount** **\|** **grep** *<mount-point>*
+      **mount** **\|** **grep** *Mount point*
 
       In this example, run the following command:
 

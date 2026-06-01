@@ -94,7 +94,7 @@ Attaching the Disk on the ECS Console
 
       -  If no disks are available, click **Create Disk** in the lower part of the list.
       -  For the constraints on attaching disks, see FAQ "What Are the Requirements for Attaching an EVS Disk to an ECS?" in the *Elastic Cloud Server User Guide*.
-      -  The device names for the local disks and EVS disks attached to a disk-intensive ECS comply with the following rules:
+      -  For a disk-intensive ECS, the device names for its local disks and EVS disks comply with the following rules:
 
          -  System disk: sda or vda
          -  Local disk: the device names in alphabetical order following sda or vda
@@ -115,7 +115,7 @@ Follow-Up Operations
 
 If you are attaching a new disk, you must then log in to the server and initialize the disk before it can be used. To learn how to initialize disks, see :ref:`Initializing an EVS Data Disk <evs_01_0058>`.
 
-Helpful Links
+Related Links
 -------------
 
 If your disk cannot be attached to a server, see :ref:`Why Can't I Attach My Disk to a Server? <evs_faq_0025>`.

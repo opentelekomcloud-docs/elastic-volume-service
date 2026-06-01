@@ -10,8 +10,8 @@ Scenarios
 
 If an EVS disk is no longer used, you can delete the disk to release the virtual resources. After you permanently delete an EVS disk, EVS immediately destroys the metadata to ensure that data can no longer be accessed. In addition, the physical storage space of the EVS disk is reclaimed and cleared before being re-assigned. For any new disk created based on the re-assigned physical space, before data is written to the disk, EVS returns zero for all the read requests to the disk.
 
-Notes and Constraints
----------------------
+Constraints
+-----------
 
 -  The disk status is **Available**, **Error**, **Expansion failed**, **Restoration failed**, or **Rollback failed**.
 -  The disk is not locked by any service.
@@ -32,9 +32,9 @@ Prerequisites
 Deleting EVS Disks
 ------------------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image1| in the upper left corner and select a region.
+#. Click |image1| in the upper left corner and select the desired region and project.
 
 #. Click |image2| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
 
@@ -53,6 +53,6 @@ Related Links
 
 For more deletion FAQs, see :ref:`Deletion <evs_01_0083>`.
 
-.. |image1| image:: /_static/images/en-us_image_0237893718.png
-.. |image2| image:: /_static/images/en-us_image_0000001933286285.jpg
+.. |image1| image:: /_static/images/en-us_image_0000002301561710.png
+.. |image2| image:: /_static/images/en-us_image_0000002301721398.jpg
 .. |image3| image:: /_static/images/en-us_image_0238263087.png

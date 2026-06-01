@@ -16,8 +16,8 @@ You can view the disk information in the disk list. A shared disk can be attache
 -  Function: Data disk
 -  Status: In-use or Available
 
-Notes and Constraints
----------------------
+Constraints
+-----------
 
 .. important::
 

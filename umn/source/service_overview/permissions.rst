@@ -33,15 +33,19 @@ You can grant users permissions by using roles and policies.
 
 .. table:: **Table 1** System-defined roles and policies supported by EVS
 
-   +----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
-   | Role/Policy Name     | Description                                                                                                                                              | Type                  | Dependencies |
-   +======================+==========================================================================================================================================================+=======================+==============+
-   | EVS FullAccess       | Full permissions for EVS. Users granted these permissions can create, attach, detach, query, and delete EVS resources, and expand capacity of EVS disks. | System-defined policy | None         |
-   +----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
-   | EVS ReadOnlyAccess   | Read-only permissions for EVS. Users granted these permissions can view EVS resource data only.                                                          | System-defined policy | None         |
-   +----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
-   | Server Administrator | Full permissions for EVS                                                                                                                                 | System-defined role   | None         |
-   +----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+   +----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------+
+   | Role/Policy Name     | Description                                                                                                                                                                                                                                                                | Type                  | Dependencies    |
+   +======================+============================================================================================================================================================================================================================================================================+=======================+=================+
+   | EVS FullAccess       | Full permissions for EVS. Users granted these permissions can create, attach, detach, query, and delete EVS resources, and expand capacity of EVS disks.                                                                                                                   | System-defined policy | None            |
+   +----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------+
+   | EVS ReadOnlyAccess   | Read-only permissions for EVS. Users granted these permissions can view EVS resource data only.                                                                                                                                                                            | System-defined policy | None            |
+   +----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------+
+   | Server Administrator | Full permissions for EVS                                                                                                                                                                                                                                                   | System-defined role   | None            |
+   +----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------+
+   | EVS KMSAccess        | The first user (granted KMS Administrator permissions) in a region or project to use encryption needs to follow the prompt to create an agency, which grants the EVS KMSAccess permissions to EVS. Then, the user can create and obtain keys to encrypt and decrypt disks. | System-defined policy | None            |
+   |                      |                                                                                                                                                                                                                                                                            |                       |                 |
+   |                      | These permissions allow the user to view the key list, query key details, create keys, and encrypt keys.                                                                                                                                                                   |                       |                 |
+   +----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+-----------------+
 
 .. note::
 
@@ -77,7 +81,7 @@ You can grant users permissions by using roles and policies.
 Related Links
 -------------
 
--  Section "Service Overview" in the *Identity and Access Management User Guide*
+-  `IAM Service Overview <https://docs.otc.t-systems.com/usermanual/iam/iam_01_0026.html>`__
 
--  :ref:`Creating a User and Granting EVS Permissions <evs_01_0089>`
--  Section "Permissions Policies and Supported Actions" in the *Elastic Volume Service API Reference*
+-  To find out how to create a user group and a user and grant them EVS permissions, see :ref:`Creating a User and Granting EVS Permissions <evs_01_0089>`.
+-  To learn more about the actions supported by EVS policies, see "Permissions Policies and Supported Actions" > "Introduction" in the *Elastic Volume Service API Reference*.

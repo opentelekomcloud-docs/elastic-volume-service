@@ -12,7 +12,7 @@ After a disk is expanded on the console, the disk size is enlarged, but the addi
 
 In Windows, you must allocate the additional space to an existing partition or a new partition.
 
-If the disk capacity is expanded on a stopped server, the additional space of a Windows system disk or Windows data disk will be automatically added to the partition at the end of the disk upon the server startup. In this case, the additional space can be used directly.
+If the disk capacity is expanded on a stopped server, the additional space of a Windows system disk or Windows data disk will be automatically added to the last partition upon the server startup. In this case, the additional space can be directly used.
 
 This section uses Windows Server 2016 Standard 64bit as the example OS to describe the expansion methods:
 
@@ -37,8 +37,8 @@ Constraints
 
 -  The additional space of a data disk cannot be added to the root partition. To extend the root partition, expand the system disk instead.
 -  During an expansion, the additional space is added to the end of the disk. If the disk has multiple partitions, the additional space can only be allocated to the last partition of the disk.
--  If the target partition is an extended MBR partition (whose partition number is usually greater than or equal to 5), you need to first expand the extended partition and then the logical partition. Assume that you have three partitions, **/dev/vdb1** (primary partition), **/dev/vdb2** (extended partition), and **/dev/vdb5** (logical partition), you need to run **growpart /dev/vdb2** and then **growpart /dev/vdb5** to extend the partitions.
--  The maximum disk capacity that MBR supports is 2 TiB, and the disk space in access of 2 TiB cannot be used. If your disk already uses MBR for partitioning and you require more than 2 TiB after the capacity expansion, do as follows:
+-  If the target partition is an extended MBR partition (whose partition number is usually greater than or equal to 5), you need to first expand the extended partition and then the logical partition. Assume that you have three partitions: **/dev/vdb1** (primary partition), **/dev/vdb2** (extended partition), and **/dev/vdb5** (logical partition). You need to run **growpart /dev/vdb2** and then **growpart /dev/vdb5** to extend the partitions.
+-  The maximum disk capacity that MBR supports is 2 TiB, and the disk space in excess of 2 TiB cannot be used. If your disk already uses MBR for partitioning and you require more than 2 TiB after the capacity expansion, do as follows:
 
    -  (Recommended) Create a new EVS disk and use GPT.
    -  Back up the disk data, perform the expansion, and then change the partition style from MBR to GPT. During this change, services will be interrupted and data on the disk will be erased.
@@ -126,10 +126,6 @@ In this example, the system disk has 40 GiB originally, and 60 GiB is added on t
 
       **Figure 6** Unallocated disk space (Windows Server 2016 system disk)
 
-   .. note::
-
-      If you cannot see the additional space, right-click **Disk Management** and choose **Refresh** from the shortcut menu.
-
 #. In the **Unallocated** area of **Disk 0**, right-click the blank area and choose **New Simple Volume**.
 
 
@@ -197,10 +193,6 @@ In this example, the data disk has 30 GiB originally, and 50 GiB is added on the
 
       **Figure 13** Disk Management (Windows Server 2016 data disk)
 
-   .. note::
-
-      If you cannot see the additional space, right-click **Disk Management** and choose **Refresh** from the shortcut menu.
-
 #. On the **Disk Management** page, select the disk and volume that you want to extend. The current volume size and unallocated space are displayed.
 
 #. Right-click the target volume and choose **Extend Volume**.
@@ -253,10 +245,6 @@ In this example, the data disk has 80 GiB originally, and 50 GiB is added on the
       :alt: **Figure 18** Unallocated disk space (Windows Server 2016 data disk)
 
       **Figure 18** Unallocated disk space (Windows Server 2016 data disk)
-
-   .. note::
-
-      If you cannot see the additional space, right-click **Disk Management** and choose **Refresh** from the shortcut menu.
 
 #. In the **Unallocated** area of **Disk 1**, right-click the blank area and choose **New Simple Volume**.
 

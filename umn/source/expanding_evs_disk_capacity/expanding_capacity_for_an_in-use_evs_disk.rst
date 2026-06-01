@@ -15,7 +15,7 @@ This section describes how to expand the capacity of an **In-use** EVS disk on t
 Constraints
 -----------
 
--  Disk capacity can be expanded, but cannot be reduced.
+-  Disk capacity can be increased, but cannot be reduced.
 
 -  When expanding an **In-use** disk, the server attached with this disk must be in the **Running** or **Stopped** state.
 
@@ -33,9 +33,9 @@ Disk data has been backed up using CBR or snapshots. For details about backups, 
 Procedure
 ---------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image1| in the upper left corner and select a region.
+#. Click |image1| in the upper left corner and select the desired region and project.
 
 #. Choose **Storage** > **Elastic Volume Service**.
 
@@ -63,10 +63,10 @@ Procedure
 
 #. Set the **New Capacity** parameter and click **Next**.
 
-#. On the **Details** page, check the disk configuration.
+#. On the **Details** page, check the disk settings.
 
    -  Click **Submit** to start the expansion.
-   -  Click **Previous** to change the settings.
+   -  Click **Previous** to change the settings, if needed.
 
    After the configuration is submitted, go back to the disk list page.
 
@@ -80,7 +80,7 @@ Procedure
 
    .. note::
 
-      If the expansion fails, technical support personnel will contact you and help you handle this error. Do not perform any operations on the disk before the technical support personnel contact you. If you require that the error be handled as soon as possible, contact our technical support personnel. A disk will no longer be billed if its status changes to **Expansion failed**.
+      If the expansion fails, technical support will contact you to resolve the issue. Do not perform any operations on the disk until technical support has contacted you. If you need a faster response, contact technical support directly. Disks with an **Expansion failed** status will not continue to be billed.
 
 #. Log in to the server and extend the partition and file system after the disk has been expanded on the console, because previous steps only enlarge the disk space.
 
@@ -89,4 +89,4 @@ Procedure
    -  For Windows, see :ref:`Extending Disk Partitions and File Systems (Windows Server 2016) <evs_01_0126>`.
    -  For Linux, see :ref:`Partition and File System Extension Preparations (Linux) <evs_01_0035>`.
 
-.. |image1| image:: /_static/images/en-us_image_0237893718.png
+.. |image1| image:: /_static/images/en-us_image_0000002301561710.png

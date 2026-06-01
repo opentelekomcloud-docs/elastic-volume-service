@@ -13,9 +13,9 @@ You can check the snapshot details, including the region and AZ, source disk inf
 Checking Snapshot Details
 -------------------------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image1| in the upper left corner and select a region.
+#. Click |image1| in the upper left corner and select the desired region and project.
 
 #. Choose **Storage** > **Elastic Volume Service**.
 
@@ -65,4 +65,4 @@ An EVS snapshot has several statuses. :ref:`Table 1 <evs_01_0122__en-us_topic_02
    |                       |    Temporary snapshots are created through the CBR service. Do not perform any operation on these snapshots.                                                                                                                             |                                                   |
    +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
 
-.. |image1| image:: /_static/images/en-us_image_0237893718.png
+.. |image1| image:: /_static/images/en-us_image_0000002301561710.png

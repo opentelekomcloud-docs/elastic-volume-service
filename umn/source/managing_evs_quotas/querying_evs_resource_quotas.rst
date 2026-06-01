@@ -15,7 +15,7 @@ Users can perform the following operations to view the resource quota details.
 Procedure
 ---------
 
-#. Sign in to the console.
+#. Log in to the console.
 
 #. Click |image1| in the upper left corner and select the desired region and project.
 
