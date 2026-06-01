@@ -2,8 +2,8 @@
 
 .. _evs_04_0063:
 
-Unrecommended APIs
-==================
+Out-of-Date APIs
+================
 
 -  :ref:`API <evs_04_3001>`
 -  :ref:`OpenStack Cinder API <evs_04_0050>`

@@ -10,6 +10,7 @@ Snapshot Management
 -  :ref:`Updating an EVS Snapshot <evs_04_2018>`
 -  :ref:`Querying Details About an EVS Snapshot <evs_04_2019>`
 -  :ref:`Querying Details About EVS Snapshots <evs_04_2021>`
+-  :ref:`Rolling Back Data from a Snapshot <evs_04_2020>`
 
 .. toctree::
    :maxdepth: 1
@@ -20,3 +21,4 @@ Snapshot Management
    updating_an_evs_snapshot
    querying_details_about_an_evs_snapshot
    querying_details_about_evs_snapshots
+   rolling_back_data_from_a_snapshot
