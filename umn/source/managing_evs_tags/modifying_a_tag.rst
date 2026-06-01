@@ -17,18 +17,18 @@ A tag consists of a tag key and a tag value. Tag rules are described as follows:
 
 First set of rules:
 
--  A tag key can contain a maximum of 36 characters. It can contain only letters, digits, special characters (.-_), and Unicode characters.
--  A tag value can contain a maximum of 43 characters. It can contain only letters, digits, special characters (.-_), and Unicode characters.
+-  A tag key can contain a maximum of 36 characters. It can contain only letters, digits, special characters (. - \_), and Unicode characters.
+-  A tag value can contain a maximum of 43 characters. It can contain only letters, digits, special characters (. - \_), and Unicode characters.
 
 Second set of rules:
 
--  A tag key can contain a maximum of 36 characters. It cannot contain special characters ``(=*<>\\,|/)`` or start or end with spaces.
--  A tag value can contain a maximum of 43 characters. It cannot contain special characters ``(=*<>\\,|/)`` or start or end with spaces.
+-  A tag key can contain a maximum of 36 characters. It cannot contain special characters (``= * < > \\ , | /``) or start or end with spaces.
+-  A tag value can contain a maximum of 43 characters. It cannot contain special characters (``= * < > \\ , | /``) or start or end with spaces.
 
 Third set of rules:
 
--  A tag key can contain a maximum of 128 characters. It cannot contain special characters ``(*<>\\/,|),`` start with **\_sys\_**, or start or end with spaces.
--  A tag value can contain a maximum of 255 characters. It cannot contain special characters ``(*<>\\,|)`` or start or end with spaces.
+-  A tag key can contain a maximum of 128 characters. It cannot contain special characters (``* < > \\ / , |``), start with **\_sys\_**, or start or end with spaces.
+-  A tag value can contain a maximum of 255 characters. It cannot contain special characters (``* < > \\ , |``) or start or end with spaces.
 
 Constraints
 -----------
@@ -39,9 +39,9 @@ Constraints
 Procedure
 ---------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image1| in the upper left corner and select a region.
+#. Click |image1| in the upper left corner and select the desired region and project.
 
 #. Choose **Storage** > **Elastic Volume Service**.
 
@@ -61,4 +61,4 @@ Procedure
 
    Return to the tag list. If the tag value is changed, the modification is complete.
 
-.. |image1| image:: /_static/images/en-us_image_0237893718.png
+.. |image1| image:: /_static/images/en-us_image_0000002301561710.png

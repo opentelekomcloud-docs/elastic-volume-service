@@ -24,7 +24,7 @@ Scenarios
 
    -  For an attached system disk, the disk function is displayed as **System disk**, and the disk status is displayed as **In-use** in the disk list. After the system disk is detached, the disk function changes to **Bootable disk**, and the status changes to **Available**.
    -  Bootable disks are the system disks detached from servers. A bootable disk can be re-attached to a server to be used as a system disk or data disk depending on the disk function selected.
-   -  For an attached data disk, the disk function is displayed as **Data disk**, and the disk status is displayed as **In-use** in the disk list. After the data disk is detached, the disk function remains unchanged, and the status changes to **Available**. For a shared disk, the status changes to **Available** only after it is detached from all its servers.
+   -  For an attached data disk, its function is displayed as **Data disk** and its status is displayed as **In-use** in the disk list. After the data disk is detached, the disk function remains unchanged, and the status changes to **Available**. For a shared disk, the status changes to **Available** only after it is detached from all its servers.
 
 Notes and Constraints
 ---------------------
@@ -41,7 +41,7 @@ Prerequisites
 
 -  Before detaching an EVS disk from a running Windows server, ensure that no programs are reading data from or writing data to the disk. Otherwise, data will be lost.
 
--  Before detaching an EVS disk from a running Linux server, you must log in to the server and run the **umount** command to cancel the association between the disk and the file system, and ensure that no programs are reading data from or writing data to the disk. Otherwise, you will not be able to detach the disk.
+-  Before detaching an EVS disk from a running Linux server, you must log in to the server and run the **umount** command to cancel the association between the disk and the file system, and ensure that no programs are reading data from or writing data to the disk. Otherwise, detaching the disk will fail.
 -  You are advised to back up data. You can :ref:`create snapshots <evs_01_2721>` or :ref:`use CBR to create disk backups <evs_01_0110>`.
 
 .. _evs_01_0003__en-us_topic_0077656290_section58976207172837:
@@ -49,13 +49,9 @@ Prerequisites
 Detaching a System Disk
 -----------------------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image1| in the upper left corner and select a region.
-
-#. Click |image2| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
-
-   The **Elastic Volume Service** page is displayed.
+#. Click |image1| in the upper left corner and select the desired region and project.
 
 #. Choose **Compute** > **Elastic Cloud Server**.
 
@@ -92,11 +88,11 @@ Detaching a System Disk
 Detaching a Non-Shared Data Disk
 --------------------------------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image3| in the upper left corner and select a region.
+#. Click |image2| in the upper left corner and select the desired region and project.
 
-#. Click |image4| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
+#. Click |image3| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
 
    The **Elastic Volume Service** page is displayed.
 
@@ -110,7 +106,7 @@ Detaching a Non-Shared Data Disk
 
       b. Click the **Attachments** tab to view the server where the disk has been attached.
 
-      c. Click |image5| to select the server and click **Detach Disk**.
+      c. Check |image4| to select the server and click **Detach Disk**.
 
          The **Detach Disk** dialog box is displayed.
 
@@ -145,9 +141,9 @@ Detaching a Non-Shared Data Disk
 Detaching a Shared Data Disk
 ----------------------------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image6| in the upper left corner and select a region.
+#. Click |image5| in the upper left corner and select the desired region and project.
 
 #. Choose **Storage** > **Elastic Volume Service**.
 
@@ -163,9 +159,9 @@ Detaching a Shared Data Disk
 
       b. Click the **Attachments** tab to view the servers where the disk has been attached.
 
-      c. Click |image7| to select servers and click **Detach Disk**.
+      c. Check |image6| to select servers and click **Detach Disk**.
 
-         Shared EVS disks support batch detachment, so you can select multiple servers at a time.
+         Shared EVS disks can be detached in batches. You can select multiple servers at a time.
 
          The **Detach Disk** dialog box is displayed.
 
@@ -189,9 +185,9 @@ Detaching a Shared Data Disk
 
             **Figure 5** Detaching a shared disk dialog box
 
-      b. Click |image8| to select servers.
+      b. Check |image7| to select servers.
 
-         Shared EVS disks support batch detachment, so you can select multiple servers at a time.
+         Shared EVS disks can be detached in batches. You can select multiple servers at a time.
 
       c. Click **Yes** to detach the disk.
 
@@ -204,11 +200,10 @@ Related Links
 
 To check out more detachment FAQs, see :ref:`Detachment <evs_01_0079>`.
 
-.. |image1| image:: /_static/images/en-us_image_0237893718.png
-.. |image2| image:: /_static/images/en-us_image_0000001933286285.jpg
-.. |image3| image:: /_static/images/en-us_image_0237893718.png
-.. |image4| image:: /_static/images/en-us_image_0000001933286285.jpg
-.. |image5| image:: /_static/images/en-us_image_0000002278804436.png
-.. |image6| image:: /_static/images/en-us_image_0237893718.png
+.. |image1| image:: /_static/images/en-us_image_0000002301561710.png
+.. |image2| image:: /_static/images/en-us_image_0000002301561710.png
+.. |image3| image:: /_static/images/en-us_image_0000002301721398.jpg
+.. |image4| image:: /_static/images/en-us_image_0000002278804436.png
+.. |image5| image:: /_static/images/en-us_image_0000002301561710.png
+.. |image6| image:: /_static/images/en-us_image_0238263087.png
 .. |image7| image:: /_static/images/en-us_image_0238263087.png
-.. |image8| image:: /_static/images/en-us_image_0238263087.png

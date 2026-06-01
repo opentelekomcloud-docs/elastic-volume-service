@@ -25,9 +25,9 @@ Constraints
 Procedure
 ---------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image1| in the upper left corner and select a region.
+#. Click |image1| in the upper left corner and select the desired region and project.
 
 #. Click |image2| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
 
@@ -43,5 +43,5 @@ Procedure
 
    If the snapshot disappears from the snapshot list, the snapshot is deleted successfully.
 
-.. |image1| image:: /_static/images/en-us_image_0237893718.png
-.. |image2| image:: /_static/images/en-us_image_0000001933286285.jpg
+.. |image1| image:: /_static/images/en-us_image_0000002301561710.png
+.. |image2| image:: /_static/images/en-us_image_0000002301721398.jpg

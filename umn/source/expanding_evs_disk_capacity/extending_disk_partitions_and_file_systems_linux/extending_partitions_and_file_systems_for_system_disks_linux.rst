@@ -31,8 +31,8 @@ Constraints
 
 -  The additional space of a data disk cannot be added to the root partition. To extend the root partition, expand the system disk instead.
 -  During an expansion, the additional space is added to the end of the disk. If the disk has multiple partitions, the additional space can only be allocated to the last partition of the disk.
--  If the target partition is an extended MBR partition (whose partition number is usually greater than or equal to 5), you need to first expand the extended partition and then the logical partition. Assume that you have three partitions, **/dev/vdb1** (primary partition), **/dev/vdb2** (extended partition), and **/dev/vdb5** (logical partition), you need to run **growpart /dev/vdb2** and then **growpart /dev/vdb5** to extend the partitions.
--  The maximum disk capacity that MBR supports is 2 TiB, and the disk space in access of 2 TiB cannot be used. If your disk already uses MBR for partitioning and you require more than 2 TiB after the capacity expansion, do as follows:
+-  If the target partition is an extended MBR partition (whose partition number is usually greater than or equal to 5), you need to first expand the extended partition and then the logical partition. Assume that you have three partitions: **/dev/vdb1** (primary partition), **/dev/vdb2** (extended partition), and **/dev/vdb5** (logical partition). You need to run **growpart /dev/vdb2** and then **growpart /dev/vdb5** to extend the partitions.
+-  The maximum disk capacity that MBR supports is 2 TiB, and the disk space in excess of 2 TiB cannot be used. If your disk already uses MBR for partitioning and you require more than 2 TiB after the capacity expansion, do as follows:
 
    -  (Recommended) Create a new EVS disk and use GPT.
    -  Back up the disk data, perform the expansion, and then change the partition style from MBR to GPT. During this change, services will be interrupted and data on the disk will be erased.
@@ -140,9 +140,9 @@ CentOS 7.4 64bit is used as the sample OS. Originally, system disk **/dev/vda** 
       [root@ecs-test-0001 ~]# growpart /dev/vda 1
       CHANGED: partition=1 start=2048 old: size=83884032 end=83886080 new: size=209713119,end=209715167
 
-#. Run the following command to extend the file system of the partition:
+#. Extend the file system of the partition:
 
-   **resize2fs** *Disk partition*
+   **resize2fs** *disk-partition*
 
    In this example, run the following command:
 
@@ -272,9 +272,9 @@ CentOS 6.5 64bit is used as the sample OS. Originally, system disk **/dev/vda** 
 
    After the server is restarted, reconnect to the server and perform the following steps.
 
-#. Run the following command to extend the file system of the partition:
+#. Extend the file system of the partition:
 
-   **resize2fs** *Disk partition*
+   **resize2fs** *disk-partition*
 
    In this example, run the following command:
 
@@ -282,15 +282,15 @@ CentOS 6.5 64bit is used as the sample OS. Originally, system disk **/dev/vda** 
 
    Information similar to the following is displayed:
 
+   .. note::
+
+      If the error message "open: No such file or directory while opening /dev/vdb1" is returned, an incorrect partition is specified. Run **df -TH** to view the disk partitions.
+
    .. code-block:: console
 
       [root@ecs-test-0002 ~]# resize2fs /dev/vda1
       resize2fs 1.41.12 (17-May-2010)
       The filesystem is already 26213807 blocks long.  Nothing to do!
-
-   .. note::
-
-      If the error message "open: No such file or directory while opening /dev/vdb1" is returned, an incorrect partition is specified. Run **df -TH** to view the disk partitions.
 
 #. Run the following command to view the new capacity of the **/dev/vda1** partition:
 
@@ -355,23 +355,18 @@ Originally, system disk **/dev/vda** has 40 GiB and one partition (**/dev/vda1**
 
    Information similar to the following is displayed:
 
+   .. note::
+
+      If MBR is used, a maximum of four primary partitions or three primary partitions plus one extended partition can be created. The extended partition must be divided into logical partitions before use.
+
+      GPT partitions are not categorized.
+
    .. code-block::
 
       Command (m for help): n
       Partition type:
          p   primary (1 primary, 0 extended, 3 free)
          e   extended
-
-   There are two types of disk partitions:
-
-   -  Choosing **p** creates a primary partition.
-   -  Choosing **e** creates an extended partition.
-
-   .. note::
-
-      If MBR is used, a maximum of four primary partitions, or three primary partitions plus one extended partition can be created. The extended partition must be divided into logical partitions before use.
-
-      Disk partitions created using GPT are not categorized.
 
 #. In this example, a primary partition is created. Therefore, enter **p** and press **Enter** to create a primary partition.
 
@@ -393,7 +388,7 @@ Originally, system disk **/dev/vda** has 40 GiB and one partition (**/dev/vda1**
 
 #. Enter the new partition's start sector and press **Enter**. In this example, the default start sector is used.
 
-   The system displays the start and end sectors of the partition's available space. You can customize the value within this range or use the default value. The start sector must be smaller than the partition's end sector.
+   The system displays the start and end sectors of the partition's available space. You can define a value within this range or use the default value. The start sector must be smaller than the partition's end sector.
 
    Information similar to the following is displayed:
 
@@ -405,7 +400,7 @@ Originally, system disk **/dev/vda** has 40 GiB and one partition (**/dev/vda1**
 
 #. Enter the new partition's end sector and press **Enter**. In this example, the default end sector is used.
 
-   The system displays the start and end sectors of the partition's available space. You can customize the value within this range or use the default value. The start sector must be smaller than the partition's end sector.
+   The system displays the start and end sectors of the partition's available space. You can define a value within this range or use the default value. The start sector must be smaller than the partition's end sector.
 
    Information similar to the following is displayed:
 
@@ -466,7 +461,7 @@ Originally, system disk **/dev/vda** has 40 GiB and one partition (**/dev/vda1**
 
 #. Run the following command to set the file system format for the new partition:
 
-   **mkfs** **-t** *File system* *Disk partition*
+   **mkfs** **-t** *file-system* *disk-partition*
 
    -  Sample command of the ext\* file system:
 
@@ -495,19 +490,19 @@ Originally, system disk **/dev/vda** has 40 GiB and one partition (**/dev/vda1**
 
    The formatting takes a while, and you need to observe the system running status. Once **done** is displayed in the command output, the formatting is complete.
 
-#. (Optional) Run the following command to create a mount point:
+#. (Optional) Create a mount point:
 
    Perform this step if you want to mount the partition on a new mount point.
 
-   **mkdir** *Mount point*
+   **mkdir** *mount-point*
 
    In this example, run the following command to create the **/opt** mount point:
 
    **mkdir /opt**
 
-#. Run the following command to mount the new partition:
+#. Mount the new partition:
 
-   **mount** *Disk partition* *Mount point*
+   **mount** *disk-partition* *mount-point*
 
    In this example, run the following command to mount the new partition **/dev/vda2** on **/opt**:
 

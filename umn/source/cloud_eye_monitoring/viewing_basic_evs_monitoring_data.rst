@@ -90,9 +90,9 @@ Dimension
 Viewing Monitoring Data
 -----------------------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image1| in the upper left corner and select a region.
+#. Click |image1| in the upper left corner and select the desired region and project.
 
 #. Choose **Storage** > **Elastic Volume Service**.
 
@@ -110,4 +110,4 @@ Viewing Monitoring Data
 
    For more information about Cloud Eye, see the *Cloud Eye User Guide*.
 
-.. |image1| image:: /_static/images/en-us_image_0237893718.png
+.. |image1| image:: /_static/images/en-us_image_0000002301561710.png

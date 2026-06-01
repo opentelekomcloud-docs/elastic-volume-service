@@ -71,7 +71,7 @@ Method 1: Check Partition Style and File System Format Using fdisk
 
    .. note::
 
-      If you run **lsblk** and find out that disk **/dev/vdb** has no partitions, format the disk by referring to :ref:`How Do I Extend the File System of an Unpartitioned Data Disk in Linux? <evs_faq_0073>` Otherwise, the additional space cannot be used after expansion.
+      If you run **lsblk** and find out that disk **/dev/vdb** has no partitions, the additional space may not be used properly after expansion. Find the solution in :ref:`How Do I Extend the File System of an Unpartitioned Data Disk in Linux? <evs_faq_0073>`
 
 #. Run the following command to view the current disk partition style:
 

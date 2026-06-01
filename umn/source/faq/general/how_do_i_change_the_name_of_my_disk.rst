@@ -13,7 +13,9 @@ Disk names are used to identify disks. After a disk is created, you can perform 
 Procedure
 ---------
 
-#. Sign in to the console.
+#. Log in to the console.
+
+#. Click |image1| in the upper left corner and select the desired region and project.
 
 #. Choose **Storage** > **Elastic Volume Service**.
 
@@ -23,7 +25,7 @@ Procedure
 
    -  Perform the following steps to change the disk name in the disk list:
 
-      a. In the disk list, locate the target disk in the **Name/ID** column and click |image1| to the right of the disk name.
+      a. In the disk list, locate the target disk in the **Name/ID** column and click |image2| to the right of the disk name.
 
          The **Edit Disk Name** dialog box is displayed.
 
@@ -39,14 +41,15 @@ Procedure
 
          The disk details page is displayed.
 
-      b. Click |image2| next to the disk name.
+      b. Click |image3| next to the disk name.
 
       c. Enter a new name.
 
-      d. Click |image3|.
+      d. Click |image4|.
 
          After the change is successful, the new disk name is displayed on the disk details page.
 
-.. |image1| image:: /_static/images/en-us_image_0000002313495109.png
+.. |image1| image:: /_static/images/en-us_image_0000002301561710.png
 .. |image2| image:: /_static/images/en-us_image_0000002313495109.png
-.. |image3| image:: /_static/images/en-us_image_0000002313462085.png
+.. |image3| image:: /_static/images/en-us_image_0000002313495109.png
+.. |image4| image:: /_static/images/en-us_image_0000002313462085.png

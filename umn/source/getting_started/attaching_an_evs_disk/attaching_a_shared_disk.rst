@@ -28,7 +28,7 @@ Constraints
 
 -  A shared disk can only be attached to multiple servers running the same type of OS (either Windows or Linux).
 
-   For example, if you attach a shared disk to multiple Windows servers and then detach it from these servers, the shared disk cannot be attached to Linux servers later. This is because Windows and Linux support different file systems and cannot identify the original file system on the disk. Improper operations may damage the original file system.
+   For example, if you attach a shared disk to multiple Windows servers and then detach it from these servers, the shared disk cannot be attached to Linux servers later. This is because Windows and Linux support different file systems. Improper operations may damage the original file system.
 
 -  A shared disk can only be used as a data disk. It cannot be used as a system disk.
 -  Cloud servers created from ISO images are only used for OS installation. They have limited functions and cannot have EVS disks attached.
@@ -111,7 +111,7 @@ Follow-Up Operations
 
 If you are attaching a new disk, you need then log in to the server and initialize the disk before it can be used. To learn how to initialize disks, see :ref:`Initializing an EVS Data Disk <evs_01_0058>`.
 
-Helpful Links
+Related Links
 -------------
 
 If your disk cannot be attached to a server, see :ref:`Why Can't I Attach My Disk to a Server? <evs_faq_0025>`.

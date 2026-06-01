@@ -10,8 +10,8 @@ Scenarios
 
 If data on an EVS disk is incorrect or damaged, you can roll back data from a snapshot to the source disk.
 
-Notes and Constraints
----------------------
+Constraints
+-----------
 
 -  Snapshot data can only be rolled back to source EVS disks. Rollback to a different disk is not possible.
 -  You can only roll back disk data from a snapshot when the source disk status is **Available** (not attached to any server) or **Rollback failed**. If the source disk is attached, detach the disk first.
@@ -21,9 +21,9 @@ Notes and Constraints
 Rolling Back Disk Data from a Snapshot
 --------------------------------------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image1| in the upper left corner and select a region.
+#. Click |image1| in the upper left corner and select the desired region and project.
 
 #. Click |image2| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
 
@@ -39,5 +39,5 @@ Rolling Back Disk Data from a Snapshot
 
    The snapshot list is displayed. After the snapshot status changes from **Rolling back** to **Available**, the data rollback is successful.
 
-.. |image1| image:: /_static/images/en-us_image_0237893718.png
-.. |image2| image:: /_static/images/en-us_image_0000001933286285.jpg
+.. |image1| image:: /_static/images/en-us_image_0000002301561710.png
+.. |image2| image:: /_static/images/en-us_image_0000002301721398.jpg

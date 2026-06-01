@@ -31,9 +31,9 @@ Snapshots can only be created for **Available** or **In-use** disks.
 Creating a Snapshot on the **Disks** Page
 -----------------------------------------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image1| in the upper left corner and select a region.
+#. Click |image1| in the upper left corner and select the desired region and project.
 
 #. Click |image2| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
 
@@ -68,9 +68,9 @@ Creating a Snapshot on the **Disks** Page
 Creating a Snapshot on the **Snapshots** Page
 ---------------------------------------------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image3| in the upper left corner and select a region.
+#. Click |image3| in the upper left corner and select the desired region and project.
 
 #. Click |image4| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
 
@@ -116,8 +116,8 @@ Creating a Snapshot on the **Snapshots** Page
 
    |image5|
 
-.. |image1| image:: /_static/images/en-us_image_0237893718.png
-.. |image2| image:: /_static/images/en-us_image_0000001933286285.jpg
-.. |image3| image:: /_static/images/en-us_image_0237893718.png
-.. |image4| image:: /_static/images/en-us_image_0000001933286285.jpg
+.. |image1| image:: /_static/images/en-us_image_0000002301561710.png
+.. |image2| image:: /_static/images/en-us_image_0000002301721398.jpg
+.. |image3| image:: /_static/images/en-us_image_0000002301561710.png
+.. |image4| image:: /_static/images/en-us_image_0000002301721398.jpg
 .. |image5| image:: /_static/images/en-us_image_0000002312239965.png

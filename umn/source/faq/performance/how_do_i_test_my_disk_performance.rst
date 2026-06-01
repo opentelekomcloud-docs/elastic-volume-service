@@ -25,6 +25,8 @@ The testing process for Windows and Linux is different.
 -  :ref:`Windows <evs_faq_0019__en-us_topic_0077859679_section5511718110437>`
 -  :ref:`Linux <evs_faq_0019__en-us_topic_0077859679_section273349017162>`
 
+If the test results do not meet your expectation, see :ref:`Why Does My Disk Performance Test Using Fio Have Incorrect Results? <evs_faq_0080>`
+
 .. _evs_faq_0019__en-us_topic_0077859679_section5511718110437:
 
 Windows

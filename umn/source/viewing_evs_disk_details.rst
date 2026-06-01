@@ -20,9 +20,9 @@ See :ref:`EVS Disk Status <evs_01_0093__en-us_topic_0173687780_section9662151014
 Viewing Disk Details from the EVS Console
 -----------------------------------------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image1| in the upper left corner and select a region.
+#. Click |image1| in the upper left corner and select the desired region and project.
 
 #. Click |image2| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
 
@@ -57,9 +57,9 @@ Viewing Disk Details from the EVS Console
 Viewing Disk Details from the Cloud Server Console
 --------------------------------------------------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image3| in the upper left corner and select a region.
+#. Click |image3| in the upper left corner and select the desired region and project.
 
 #. Choose **Compute** > **Elastic Cloud Server**.
 
@@ -139,7 +139,7 @@ EVS Disk Status
    | Rollback failed       | An error occurs when the EVS disk data is rolled back from a snapshot.                                                                           | -  Deleting                                            |
    |                       |                                                                                                                                                  | -  Rolling back data to EVS disks using snapshots      |
    +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
-   | Awaiting transfer     | The EVS disk is awaiting for a transfer.                                                                                                         | None                                                   |
+   | Awaiting transfer     | The EVS disk is waiting for transfer.                                                                                                            | None                                                   |
    +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
 
 
@@ -152,7 +152,7 @@ EVS Disk Status
 
    If an EVS disk status is **Error**, **Deletion failed**, **Expansion failed**, **Rollback failed**, or **Restoration failed**, you can rectify the error by referring to :ref:`What Should I Do If an Error Occurs on My EVS Disk? <evs_faq_0014>`
 
-.. |image1| image:: /_static/images/en-us_image_0237893718.png
-.. |image2| image:: /_static/images/en-us_image_0000001933286285.jpg
-.. |image3| image:: /_static/images/en-us_image_0237893718.png
+.. |image1| image:: /_static/images/en-us_image_0000002301561710.png
+.. |image2| image:: /_static/images/en-us_image_0000002525584869.jpg
+.. |image3| image:: /_static/images/en-us_image_0000002301561710.png
 .. |image4| image:: /_static/images/en-us_image_0000002301563682.png

@@ -27,18 +27,13 @@ Important Notes on Using Shared EVS Disks
 
 Because most cluster applications, such as Windows MSCS, Veritas VCS, and Veritas CFS, require SCSI reservations, you are advised to use shared EVS disks with SCSI. If a SCSI EVS disk is attached to a Xen ECS, you must install the driver. For details, see :ref:`Device Types <en-us_topic_0052554220>`.
 
-You can create shared VBD disks or shared SCSI disks. It is recommended that you attach a shared disk to ECSs in the same ECS group to improve service reliability.
+You can create shared VBD disks or shared SCSI disks. You are advised to attach a shared disk to ECSs in the same ECS anti-affinity group. This ensures that the ECSs are placed on different physical servers, improving service availability and reliability.
 
--  Shared VBD disks: The device type of a newly created shared disk is VBD by default. Such disks can be used as virtual block storage devices, but do not support SCSI reservations. If SCSI reservations are required for your applications, create shared SCSI EVS disks.
+-  Shared VBD disks: The device type of a newly created shared disk is VBD by default. Such disks can be used as virtual block storage devices and are suitable for most scenarios, but they do not support SCSI reservations.
 
--  Shared SCSI disks: Such disks support SCSI reservations.
+-  Shared SCSI disks: Shared SCSI disks support SCSI reservations and are suitable for scenarios that require advanced storage features.
 
-   .. important::
-
-      -  To improve data security, you are advised to use SCSI reservations together with the anti-affinity policy of an ECS group. That said, ensure that shared SCSI disks are only attached to ECSs in the same anti-affinity ECS group.
-      -  If an ECS does not belong to any anti-affinity ECS group, you are advised not to attach shared SCSI disks to this ECS. Otherwise, SCSI reservations may not work properly, which may put your data at risk.
-
-   Concepts of the anti-affinity ECS group and SCSI reservations:
+   **Concepts of ECS anti-affinity groups and SCSI reservations**:
 
    -  The anti-affinity policy of an ECS group allows ECSs to be created on different physical servers to improve service reliability.
 
@@ -46,7 +41,12 @@ You can create shared VBD disks or shared SCSI disks. It is recommended that you
 
    -  The SCSI reservation mechanism uses a SCSI reservation command to perform SCSI reservation operations. If an ECS sends such a command to an EVS disk, the disk is displayed as locked to other ECSs, preventing the data damage that may be caused by simultaneous reads/writes to the disk from multiple ECSs.
 
-   -  ECS groups and SCSI reservations have the following relationship: A SCSI reservation on a single EVS disk cannot differentiate multiple ECSs on the same physical host. For that reason, if multiple ECSs that use the same shared EVS disk are running on the same physical host, SCSI reservations will not work properly. So you are advised to use SCSI reservations only on ECSs that are in the same ECS group, thus having a working anti-affinity policy.
+   -  ECS groups and SCSI reservations have the following relationship: A SCSI reservation on a single EVS disk cannot differentiate multiple ECSs on the same physical host. For that reason, if multiple ECSs that use the same shared EVS disk are running on the same physical host, SCSI reservations will not work properly. So, you are advised to use SCSI reservations only on ECSs that are in the same ECS group, thus having a working anti-affinity policy.
+
+      .. important::
+
+         -  To improve data security, you are advised to use SCSI reservations together with the anti-affinity policy of an ECS group. That said, ensure that shared SCSI disks are only attached to ECSs in the same anti-affinity ECS group.
+         -  If an ECS does not belong to any anti-affinity ECS group, you are advised not to attach shared SCSI disks to this ECS. Otherwise, SCSI reservations may not work properly, which may put your data at risk.
 
 Advantages
 ----------

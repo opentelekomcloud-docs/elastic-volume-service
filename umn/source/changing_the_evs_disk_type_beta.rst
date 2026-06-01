@@ -66,9 +66,11 @@ You are advised to create a snapshot for the disk to back up the disk data befor
 Procedure
 ---------
 
-#. Sign in to the console.
+#. Log in to the console.
 
-#. Click |image1| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
+#. Click |image1| in the upper left corner and select the desired region and project.
+
+#. Click |image2| in the upper left corner and choose **Storage** > **Elastic Volume Service**.
 
    The **Elastic Volume Service** page is displayed.
 
@@ -88,4 +90,5 @@ Procedure
 
    The disk list is displayed, and the disk status is **Changing disk type**, indicating that the disk type is being changed. After the disk type changes to the target type, the operation is successful.
 
-.. |image1| image:: /_static/images/en-us_image_0000001933286285.jpg
+.. |image1| image:: /_static/images/en-us_image_0000002301561710.png
+.. |image2| image:: /_static/images/en-us_image_0000002493265210.jpg

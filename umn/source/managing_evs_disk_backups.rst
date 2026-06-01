@@ -12,8 +12,8 @@ EVS disk backups are created using the CBR service. For details, see section "Cr
 
 You can configure a backup policy for disks. With backup policies configured, data on EVS disks can be periodically backed up to improve data security.
 
-Notes and Constraints
----------------------
+Constraints
+-----------
 
 -  Backups can be created only when the disks are in the **Available** or **In-use** state.
 -  Backup data can only be restored to original disks.
