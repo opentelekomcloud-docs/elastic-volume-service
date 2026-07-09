@@ -13,8 +13,8 @@ If the data in an EVS disk is incorrect or damaged, you can roll back the data f
 Constraints
 -----------
 
--  When you roll back a snapshot to a disk, you can only roll back the snapshot to the source disk. Rollback to a specified disk is not supported.
--  You can roll back a disk from a snapshot only when the disk is in the **available** or **error_rollbacking** state.
+-  When rolling back data from a snapshot, you can only roll back data to the source EVS disk. Rollback to a specific disk is not supported.
+-  You can only roll back data from a snapshot when the disk is in the **available** or **error_rollbacking** state.
 -  Snapshots whose names started with prefix **autobk_snapshot\_** are automatically created by the system during backup creations. Do not use these snapshots to roll back the disk data.
 
 Involved APIs
