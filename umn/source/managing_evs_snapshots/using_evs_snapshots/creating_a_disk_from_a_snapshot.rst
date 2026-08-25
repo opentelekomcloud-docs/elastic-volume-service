@@ -44,7 +44,7 @@ Creating an EVS Disk from a Snapshot
 
 #. Confirm the configuration and click **Submit**.
 
-#. In the disk list, view the disk status.
+#. After the disk is created, view the new disk in the disk list.
 
    When the disk status changes to **Available**, the disk is successfully created.
 
