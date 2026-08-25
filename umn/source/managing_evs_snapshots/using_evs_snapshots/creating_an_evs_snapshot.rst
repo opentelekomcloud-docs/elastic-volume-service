@@ -17,6 +17,7 @@ Constraints
 -  Snapshots of encrypted disks are stored encrypted, and those of non-encrypted disks are stored non-encrypted.
 
 -  You can manually create a maximum of seven snapshots for a disk.
+-  A snapshot uses the same enterprise project as its source disk.
 
 Impacts on Performance
 ----------------------

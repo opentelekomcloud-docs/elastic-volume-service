@@ -39,9 +39,9 @@ Notes and Constraints
 Prerequisites
 -------------
 
--  Before detaching an EVS disk from a running Windows server, ensure that no programs are reading data from or writing data to the disk. Otherwise, data will be lost.
+-  Before detaching an EVS disk from a running Windows servers, ensure that no programs are reading data from or writing data to the disk. Otherwise, data will be lost.
 
--  Before detaching an EVS disk from a running Linux server, you must log in to the server and run the **umount** command to cancel the association between the disk and the file system, and ensure that no programs are reading data from or writing data to the disk. Otherwise, detaching the disk will fail.
+-  Before detaching an EVS disk from a running Linux servers, you must log in to the servers and run the **umount** command to cancel the association between the disk and the file system, and ensure that no programs are reading data from or writing data to the disk. Otherwise, detaching the disk will fail.
 -  You are advised to back up data. You can :ref:`create snapshots <evs_01_2721>` or :ref:`use CBR to create disk backups <evs_01_0110>`.
 
 .. _evs_01_0003__en-us_topic_0077656290_section58976207172837:
