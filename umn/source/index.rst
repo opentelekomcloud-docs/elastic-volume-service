@@ -15,6 +15,7 @@ Elastic Volume Service - User Guide
    expanding_evs_disk_capacity/index
    detaching_and_deleting_an_evs_disk/index
    managing_evs_snapshots/index
+   managing_evs_recycle_bin/index
    managing_encrypted_evs_disks
    managing_shared_evs_disks
    managing_evs_disk_backups
