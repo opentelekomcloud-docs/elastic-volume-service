@@ -13,27 +13,15 @@ You can add tags for an existing EVS disk. You can also add tags when creating a
 Tag Rules
 ---------
 
-A tag consists of a tag key and a tag value. Tag rules are described as follows: (Tag rules vary depending on regions. See the rules displayed on the console.)
+A tag consists of a tag key and a tag value. Tag rules are described as follows:
 
-First set of rules:
-
--  A tag key can contain a maximum of 36 characters. It can contain only letters, digits, special characters (.-_), and Unicode characters.
--  A tag value can contain a maximum of 43 characters. It can contain only letters, digits, special characters (.-_), and Unicode characters.
-
-Second set of rules:
-
--  A tag key can contain a maximum of 36 characters. It cannot contain special characters ``(=*<>\\,|/)`` or start or end with spaces.
--  A tag value can contain a maximum of 43 characters. It cannot contain special characters ``(=*<>\\,|/)`` or start or end with spaces.
-
-Third set of rules:
-
--  A tag key can contain a maximum of 128 characters. It cannot contain special characters ``(*<>\\/,|),`` start with **\_sys\_**, or start or end with spaces.
--  A tag value can contain a maximum of 255 characters. It cannot contain special characters ``(*<>\\,|)`` or start or end with spaces.
+-  A tag key can contain a maximum of 36 characters. Only digits, letters, underscores (_), hyphens (-), and at signs (@) are allowed.
+-  A tag value can contain a maximum of 43 characters. Only digits, letters, underscores (_), hyphens (-), and at signs (@) are allowed.
 
 Notes and Constraints
 ---------------------
 
--  You can add a maximum of 10tags for a single EVS disk.
+-  A maximum of 10 tags can be added to a single EVS disk.
 -  Tag keys of the same EVS disk must be unique.
 
 Procedure
