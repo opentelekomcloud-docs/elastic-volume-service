@@ -378,7 +378,7 @@ Response
           }
       }
 
-   or
+   Or
 
    .. code-block::
 

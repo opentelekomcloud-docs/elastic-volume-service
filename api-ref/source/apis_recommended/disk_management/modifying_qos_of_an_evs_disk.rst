@@ -20,7 +20,7 @@ URI
 
 PUT /v5/{project_id}/cloudvolumes/{volume_id}/qos
 
-.. table:: **Table 1** URI parameters
+.. table:: **Table 1** Path parameters
 
    ========== ========= ====== ===============
    Parameter  Mandatory Type   Description
@@ -34,11 +34,11 @@ Request Parameters
 
 .. table:: **Table 2** Request header parameter
 
-   +--------------+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter    | Mandatory | Type   | Description                                                                                                                                                       |
-   +==============+===========+========+===================================================================================================================================================================+
-   | X-Auth-Token | Yes       | String | The user token. It can be obtained by calling the IAM API used to obtain a user token. The value of **X-Subject-Token** in the response header is the user token. |
-   +--------------+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------------+-----------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter    | Mandatory | Type   | Description                                                                                                                                                               |
+   +==============+===========+========+===========================================================================================================================================================================+
+   | X-Auth-Token | Yes       | String | The user token. It can be obtained by calling the IAM API that is used to obtain a user token. The value of **X-Subject-Token** in the response header is the user token. |
+   +--------------+-----------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameter
 
@@ -52,13 +52,25 @@ Request Parameters
 
 .. table:: **Table 4** ModifyVolumeQoSOption
 
-   +------------+-----------+---------+----------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter  | Mandatory | Type    | Description                                                                                                                      |
-   +============+===========+=========+==================================================================================================================================+
-   | iops       | Yes       | Integer | The new maximum IOPS of the disk. Only General Purpose SSD V2 disks are supported.                                               |
-   +------------+-----------+---------+----------------------------------------------------------------------------------------------------------------------------------+
-   | throughput | No        | Integer | The new maximum throughput of the disk, in the unit of MiB/s. This parameter is only supported for General Purpose SSD V2 disks. |
-   +------------+-----------+---------+----------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                                                                                                                                                                                                                  |
+   +=================+=================+=================+==============================================================================================================================================================================================================================================================================+
+   | iops            | Yes             | Integer         | The IOPS configured for the disk.                                                                                                                                                                                                                                            |
+   |                 |                 |                 |                                                                                                                                                                                                                                                                              |
+   |                 |                 |                 | This parameter is mandatory when you purchase general purpose SSD V2 disks. This parameter is not available for other types of EVS disks.                                                                                                                                    |
+   |                 |                 |                 |                                                                                                                                                                                                                                                                              |
+   |                 |                 |                 | .. note::                                                                                                                                                                                                                                                                    |
+   |                 |                 |                 |                                                                                                                                                                                                                                                                              |
+   |                 |                 |                 |    To learn the IOPS ranges of general purpose SSD V2 disks, see the EVS performance data table in `Disk Types and Performance <https://docs.otc.t-systems.com/elastic-volume-service/umn/service_overview/disk_types_and_performance.html#en-us-topic-0014580744>`__.       |
+   +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | throughput      | No              | Integer         | The throughput configured for the disk.                                                                                                                                                                                                                                      |
+   |                 |                 |                 |                                                                                                                                                                                                                                                                              |
+   |                 |                 |                 | This parameter is only mandatory when you purchase a general purpose SSD V2 disk.                                                                                                                                                                                            |
+   |                 |                 |                 |                                                                                                                                                                                                                                                                              |
+   |                 |                 |                 | .. note::                                                                                                                                                                                                                                                                    |
+   |                 |                 |                 |                                                                                                                                                                                                                                                                              |
+   |                 |                 |                 |    To learn the throughput ranges of general purpose SSD V2 disks, see the EVS performance data table in `Disk Types and Performance <https://docs.otc.t-systems.com/elastic-volume-service/umn/service_overview/disk_types_and_performance.html#en-us-topic-0014580744>`__. |
+   +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Response Parameters
 -------------------
@@ -99,8 +111,8 @@ Response Parameters
    | message   | String | The error message returned if an error occurs.                                                                      |
    +-----------+--------+---------------------------------------------------------------------------------------------------------------------+
 
-Example Requests
-----------------
+Example Request
+---------------
 
 .. code-block:: text
 
@@ -113,8 +125,8 @@ Example Requests
      }
    }
 
-Example Responses
------------------
+Example Response
+----------------
 
 **Status code: 202**
 

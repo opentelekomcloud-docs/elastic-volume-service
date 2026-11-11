@@ -2,8 +2,8 @@
 
 .. _evs_04_0052:
 
-Querying Details About a Disk (Deprecated)
-==========================================
+Querying Details About a Disk (API V1)
+======================================
 
 Function
 --------
@@ -12,7 +12,7 @@ This API is used to query details about a disk. It does not support enterprise p
 
 .. important::
 
-   This API has been deprecated. Use another API. For details, see :ref:`Querying Details About a Disk <evs_04_3034>`.
+   This API has been deprecated. Use another API. For details, see :ref:`Querying Details About a Disk (API V3) <evs_04_3034>`.
 
 URI
 ---

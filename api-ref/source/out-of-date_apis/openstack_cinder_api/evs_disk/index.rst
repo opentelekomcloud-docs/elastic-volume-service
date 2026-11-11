@@ -10,7 +10,7 @@ EVS Disk
 -  :ref:`Updating an EVS Disk <evs_04_3031>`
 -  :ref:`Querying EVS Disks <evs_04_3032>`
 -  :ref:`Querying Details About All Disks <evs_04_3033>`
--  :ref:`Querying Details About a Disk <evs_04_3034>`
+-  :ref:`Querying Details About a Disk (API V3) <evs_04_3034>`
 -  :ref:`Querying EVS Disk Types <evs_04_3035>`
 -  :ref:`Querying Details About an EVS Disk Type <evs_04_3036>`
 -  :ref:`Querying Details of Tenant Quotas <evs_04_3037>`
@@ -23,7 +23,11 @@ EVS Disk
 -  :ref:`Querying Extension APIs <evs_04_3044>`
 -  :ref:`Querying All AZs <evs_04_3045>`
 -  :ref:`Querying Summary Information of EVS Disks <evs_04_3046>`
--  :ref:`Querying Details About a Disk (Deprecated) <evs_04_0052>`
+-  :ref:`Querying Details About a Disk (API V1) <evs_04_0052>`
+-  :ref:`Attaching an EVS Disk <evs_04_2087>`
+-  :ref:`Detaching an EVS Disk <evs_04_2088>`
+-  :ref:`Reserving an EVS Disk <evs_04_2089>`
+-  :ref:`Canceling Reservation of an EVS Disk <evs_04_2090>`
 
 .. toctree::
    :maxdepth: 1
@@ -34,7 +38,7 @@ EVS Disk
    updating_an_evs_disk
    querying_evs_disks
    querying_details_about_all_disks
-   querying_details_about_a_disk
+   querying_details_about_a_disk_api_v3
    querying_evs_disk_types
    querying_details_about_an_evs_disk_type
    querying_details_of_tenant_quotas
@@ -47,4 +51,8 @@ EVS Disk
    querying_extension_apis
    querying_all_azs
    querying_summary_information_of_evs_disks
-   querying_details_about_a_disk_deprecated
+   querying_details_about_a_disk_api_v1
+   attaching_an_evs_disk
+   detaching_an_evs_disk
+   reserving_an_evs_disk
+   canceling_reservation_of_an_evs_disk

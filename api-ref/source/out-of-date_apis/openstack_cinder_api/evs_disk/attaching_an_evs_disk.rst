@@ -2,8 +2,8 @@
 
 .. _evs_04_2087:
 
-Attaching an EVS Disk (Deprecated)
-==================================
+Attaching an EVS Disk
+=====================
 
 Function
 --------

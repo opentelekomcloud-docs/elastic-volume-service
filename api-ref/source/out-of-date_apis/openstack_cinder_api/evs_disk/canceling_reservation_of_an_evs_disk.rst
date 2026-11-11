@@ -1,23 +1,18 @@
-:original_name: evs_04_2088.html
+:original_name: evs_04_2090.html
 
-.. _evs_04_2088:
+.. _evs_04_2090:
 
-Detaching an EVS Disk (Deprecated)
-==================================
+Canceling Reservation of an EVS Disk
+====================================
 
 Function
 --------
 
-This API is only used to change the EVS disk status from **in-use** to **available**.
+This API is used to cancel the reservation of an EVS disk.
 
 .. important::
 
    This API call exists for compatibility reasons only and is not meant to be used.
-
-Constraints
------------
-
-Do not call this API to detach a disk. If you need to detach a disk, call the ECS Detach Volume API.
 
 URI
 ---
@@ -40,19 +35,11 @@ Request
 
 -  Parameter description
 
-   ========= ====== ========= ===========================
-   Parameter Type   Mandatory Description
-   ========= ====== ========= ===========================
-   os-detach Object Yes       The disk detachment marker.
-   ========= ====== ========= ===========================
-
--  Parameter in the **os-detach** field
-
-   +---------------+--------+-----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter     | Type   | Mandatory | Description                                                                                                                                     |
-   +===============+========+===========+=================================================================================================================================================+
-   | attachment_id | String | No        | The attachment ID. If the disk has only one attachment, this parameter is optional. If it has multiple attachments, the parameter is mandatory. |
-   +---------------+--------+-----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------------+--------+-----------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter    | Type   | Mandatory | Description                                                                                                                         |
+   +==============+========+===========+=====================================================================================================================================+
+   | os-unreserve | Object | Yes       | The disk reservation canceling marker. Defining a value for this parameter is not mandatory, and you are advised to leave it blank. |
+   +--------------+--------+-----------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 -  Example request
 
@@ -60,9 +47,7 @@ Request
 
       POST https://{endpoint}/v2/{project_id}/volumes/b104b8db-170d-441b-897a-3c8ba9c5a214/action
       {
-          "os-detach": {
-              "attachment_id": "d8777f54-84cf-4809-a679-468ffed56cf1"
-          }
+          "os-unreserve": {}
       }
 
 Response
@@ -73,10 +58,10 @@ Response
    +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter | Type   | Description                                                                                                                          |
    +===========+========+======================================================================================================================================+
-   | error     | Object | The error message returned if an error occurs. For details, see :ref:`Parameters in the error field <evs_04_2088__li0419202382514>`. |
+   | error     | Object | The error message returned if an error occurs. For details, see :ref:`Parameters in the error field <evs_04_2090__li0419202382514>`. |
    +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------+
 
--  .. _evs_04_2088__li0419202382514:
+-  .. _evs_04_2090__li0419202382514:
 
    Parameters in the **error** field
 

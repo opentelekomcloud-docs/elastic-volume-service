@@ -1,14 +1,14 @@
-:original_name: evs_04_2090.html
+:original_name: evs_04_2089.html
 
-.. _evs_04_2090:
+.. _evs_04_2089:
 
-Canceling Reservation of an EVS Disk (Deprecated)
-=================================================
+Reserving an EVS Disk
+=====================
 
 Function
 --------
 
-This API is used to cancel the reservation of an EVS disk.
+This API is used to reserve an EVS disk.
 
 .. important::
 
@@ -35,11 +35,11 @@ Request
 
 -  Parameter description
 
-   +--------------+--------+-----------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter    | Type   | Mandatory | Description                                                                                                                         |
-   +==============+========+===========+=====================================================================================================================================+
-   | os-unreserve | Object | Yes       | The disk reservation canceling marker. Defining a value for this parameter is not mandatory, and you are advised to leave it blank. |
-   +--------------+--------+-----------+-------------------------------------------------------------------------------------------------------------------------------------+
+   +------------+--------+-----------+---------------------------------------------------------------------------------------------------------------------------+
+   | Parameter  | Type   | Mandatory | Description                                                                                                               |
+   +============+========+===========+===========================================================================================================================+
+   | os-reserve | Object | Yes       | The disk reservation marker. Defining a value for this parameter is not mandatory, and you are advised to leave it blank. |
+   +------------+--------+-----------+---------------------------------------------------------------------------------------------------------------------------+
 
 -  Example request
 
@@ -47,7 +47,7 @@ Request
 
       POST https://{endpoint}/v2/{project_id}/volumes/b104b8db-170d-441b-897a-3c8ba9c5a214/action
       {
-          "os-unreserve": {}
+          "os-reserve": {}
       }
 
 Response
@@ -58,10 +58,10 @@ Response
    +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter | Type   | Description                                                                                                                          |
    +===========+========+======================================================================================================================================+
-   | error     | Object | The error message returned if an error occurs. For details, see :ref:`Parameters in the error field <evs_04_2090__li0419202382514>`. |
+   | error     | Object | The error message returned if an error occurs. For details, see :ref:`Parameters in the error field <evs_04_2089__li0419202382514>`. |
    +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------+
 
--  .. _evs_04_2090__li0419202382514:
+-  .. _evs_04_2089__li0419202382514:
 
    Parameters in the **error** field
 

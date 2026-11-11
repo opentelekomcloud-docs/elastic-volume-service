@@ -9,6 +9,7 @@ APIs (Recommended)
 -  :ref:`Snapshot Management <evs_04_2015>`
 -  :ref:`Tag Management <evs_04_2024>`
 -  :ref:`Task Management <evs_06_0400>`
+-  :ref:`Recycle Bin Management <topic_300000004>`
 
 .. toctree::
    :maxdepth: 1
@@ -18,3 +19,4 @@ APIs (Recommended)
    snapshot_management/index
    tag_management/index
    task_management/index
+   recycle_bin_management/index
