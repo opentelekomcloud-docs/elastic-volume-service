@@ -2,8 +2,8 @@
 
 .. _evs_04_3034:
 
-Querying Details About a Disk
-=============================
+Querying Details About a Disk (API V3)
+======================================
 
 Function
 --------

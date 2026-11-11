@@ -1,18 +1,23 @@
-:original_name: evs_04_2089.html
+:original_name: evs_04_2088.html
 
-.. _evs_04_2089:
+.. _evs_04_2088:
 
-Reserving an EVS Disk (Deprecated)
-==================================
+Detaching an EVS Disk
+=====================
 
 Function
 --------
 
-This API is used to reserve an EVS disk.
+This API is only used to change the EVS disk status from **in-use** to **available**.
 
 .. important::
 
    This API call exists for compatibility reasons only and is not meant to be used.
+
+Constraints
+-----------
+
+Do not call this API to detach a disk. If you need to detach a disk, call the ECS Detach Volume API.
 
 URI
 ---
@@ -35,11 +40,19 @@ Request
 
 -  Parameter description
 
-   +------------+--------+-----------+---------------------------------------------------------------------------------------------------------------------------+
-   | Parameter  | Type   | Mandatory | Description                                                                                                               |
-   +============+========+===========+===========================================================================================================================+
-   | os-reserve | Object | Yes       | The disk reservation marker. Defining a value for this parameter is not mandatory, and you are advised to leave it blank. |
-   +------------+--------+-----------+---------------------------------------------------------------------------------------------------------------------------+
+   ========= ====== ========= ===========================
+   Parameter Type   Mandatory Description
+   ========= ====== ========= ===========================
+   os-detach Object Yes       The disk detachment marker.
+   ========= ====== ========= ===========================
+
+-  Parameter in the **os-detach** field
+
+   +---------------+--------+-----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter     | Type   | Mandatory | Description                                                                                                                                     |
+   +===============+========+===========+=================================================================================================================================================+
+   | attachment_id | String | No        | The attachment ID. If the disk has only one attachment, this parameter is optional. If it has multiple attachments, the parameter is mandatory. |
+   +---------------+--------+-----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 -  Example request
 
@@ -47,7 +60,9 @@ Request
 
       POST https://{endpoint}/v2/{project_id}/volumes/b104b8db-170d-441b-897a-3c8ba9c5a214/action
       {
-          "os-reserve": {}
+          "os-detach": {
+              "attachment_id": "d8777f54-84cf-4809-a679-468ffed56cf1"
+          }
       }
 
 Response
@@ -58,10 +73,10 @@ Response
    +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter | Type   | Description                                                                                                                          |
    +===========+========+======================================================================================================================================+
-   | error     | Object | The error message returned if an error occurs. For details, see :ref:`Parameters in the error field <evs_04_2089__li0419202382514>`. |
+   | error     | Object | The error message returned if an error occurs. For details, see :ref:`Parameters in the error field <evs_04_2088__li0419202382514>`. |
    +-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------+
 
--  .. _evs_04_2089__li0419202382514:
+-  .. _evs_04_2088__li0419202382514:
 
    Parameters in the **error** field
 
